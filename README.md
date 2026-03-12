@@ -1,11 +1,12 @@
 # Exam Network Locking
 
-Two WinForms apps for classroom exam locking.
+Two WinForms apps for classroom exam locking, plus a log verifier.
 
 Projects:
 - `ExamConfigGenerator`
 - `ExamLockClient`
 - `ExamShared` (shared models/services)
+- `ExamLogVerifier` (console app to validate logs)
 
 ## Build
 
@@ -27,6 +28,12 @@ Open `ExamLocking.sln` in VS Code (C# Dev Kit) or Visual Studio.
 2. Enter unlock password and generate `exam.config`.
 3. Copy `exam.config` to the student machine.
 4. Start `ExamLockClient` and select `exam.config` if not auto-detected.
+
+### Verify a log
+
+```powershell
+dotnet run --project .\ExamLogVerifier -- .\exam.config .\examlog.jsonl
+```
 
 ## Files
 
