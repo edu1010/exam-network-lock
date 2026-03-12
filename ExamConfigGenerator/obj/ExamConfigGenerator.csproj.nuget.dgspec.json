@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Github\\Exams\\ExamConfigGenerator\\ExamConfigGenerator.csproj": {}
+    "g:\\Github\\Exams\\ExamConfigGenerator\\ExamConfigGenerator.csproj": {}
   },
   "projects": {
-    "G:\\Github\\Exams\\ExamConfigGenerator\\ExamConfigGenerator.csproj": {
+    "g:\\Github\\Exams\\ExamConfigGenerator\\ExamConfigGenerator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Github\\Exams\\ExamConfigGenerator\\ExamConfigGenerator.csproj",
+        "projectUniqueName": "g:\\Github\\Exams\\ExamConfigGenerator\\ExamConfigGenerator.csproj",
         "projectName": "ExamConfigGenerator",
-        "projectPath": "G:\\Github\\Exams\\ExamConfigGenerator\\ExamConfigGenerator.csproj",
+        "projectPath": "g:\\Github\\Exams\\ExamConfigGenerator\\ExamConfigGenerator.csproj",
         "packagesPath": "C:\\Users\\edu10\\.nuget\\packages\\",
-        "outputPath": "G:\\Github\\Exams\\ExamConfigGenerator\\obj\\",
+        "outputPath": "g:\\Github\\Exams\\ExamConfigGenerator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "G:\\Github\\Exams\\ExamShared\\ExamShared.csproj": {
-                "projectPath": "G:\\Github\\Exams\\ExamShared\\ExamShared.csproj"
+              "g:\\Github\\Exams\\ExamShared\\ExamShared.csproj": {
+                "projectPath": "g:\\Github\\Exams\\ExamShared\\ExamShared.csproj"
               }
             }
           }
@@ -53,6 +53,14 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.15, )",
+              "autoReferenced": true
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -64,6 +72,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[8.0.15, 8.0.15]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -74,16 +100,21 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
       }
     },
-    "G:\\Github\\Exams\\ExamShared\\ExamShared.csproj": {
+    "g:\\Github\\Exams\\ExamShared\\ExamShared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Github\\Exams\\ExamShared\\ExamShared.csproj",
+        "projectUniqueName": "g:\\Github\\Exams\\ExamShared\\ExamShared.csproj",
         "projectName": "ExamShared",
-        "projectPath": "G:\\Github\\Exams\\ExamShared\\ExamShared.csproj",
+        "projectPath": "g:\\Github\\Exams\\ExamShared\\ExamShared.csproj",
         "packagesPath": "C:\\Users\\edu10\\.nuget\\packages\\",
-        "outputPath": "G:\\Github\\Exams\\ExamShared\\obj\\",
+        "outputPath": "g:\\Github\\Exams\\ExamShared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -121,6 +152,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.15, )",
+              "autoReferenced": true
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -132,12 +171,35 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[8.0.15, 8.0.15]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
         }
       }
     }
