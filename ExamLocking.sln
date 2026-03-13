@@ -8,12 +8,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamConfigGenerator", "Exam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamLockClient", "ExamLockClient\ExamLockClient.csproj", "{BB2272C7-7807-4D4D-A86A-F801C771EEBE}"
 EndProject
+Project(\"{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}\") = \"ExamLogVerifier\", \"ExamLogVerifier\\ExamLogVerifier.csproj\", \"{5A2C9653-2F10-45A3-A0B1-2E7D08A50C13}\"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A2C9653-2F10-45A3-A0B1-2E7D08A50C13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A2C9653-2F10-45A3-A0B1-2E7D08A50C13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A2C9653-2F10-45A3-A0B1-2E7D08A50C13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A2C9653-2F10-45A3-A0B1-2E7D08A50C13}.Release|Any CPU.Build.0 = Release|Any CPU
 		{29ACAC33-28FF-4E18-B43F-0AE8C95E8F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{29ACAC33-28FF-4E18-B43F-0AE8C95E8F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29ACAC33-28FF-4E18-B43F-0AE8C95E8F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
