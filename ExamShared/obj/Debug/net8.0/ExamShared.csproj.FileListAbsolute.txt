@@ -1,0 +1,11 @@
+G:\Github\Exams\ExamShared\bin\Debug\net8.0\ExamShared.deps.json
+G:\Github\Exams\ExamShared\bin\Debug\net8.0\ExamShared.dll
+G:\Github\Exams\ExamShared\bin\Debug\net8.0\ExamShared.pdb
+G:\Github\Exams\ExamShared\obj\Debug\net8.0\ExamShared.GeneratedMSBuildEditorConfig.editorconfig
+G:\Github\Exams\ExamShared\obj\Debug\net8.0\ExamShared.AssemblyInfoInputs.cache
+G:\Github\Exams\ExamShared\obj\Debug\net8.0\ExamShared.AssemblyInfo.cs
+G:\Github\Exams\ExamShared\obj\Debug\net8.0\ExamShared.csproj.CoreCompileInputs.cache
+G:\Github\Exams\ExamShared\obj\Debug\net8.0\ExamShared.dll
+G:\Github\Exams\ExamShared\obj\Debug\net8.0\refint\ExamShared.dll
+G:\Github\Exams\ExamShared\obj\Debug\net8.0\ExamShared.pdb
+G:\Github\Exams\ExamShared\obj\Debug\net8.0\ref\ExamShared.dll
