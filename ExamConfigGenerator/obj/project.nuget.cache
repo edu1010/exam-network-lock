@@ -1,14 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "17jiSjFv7Jg=",
+  "dgSpecHash": "tnc6Z7Kbr1g=",
   "success": true,
-  "projectFilePath": "g:\\Github\\Exams\\ExamConfigGenerator\\ExamConfigGenerator.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\edu10\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.15\\microsoft.net.illink.tasks.8.0.15.nupkg.sha512",
-    "C:\\Users\\edu10\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.15\\microsoft.netcore.app.runtime.win-x64.8.0.15.nupkg.sha512",
-    "C:\\Users\\edu10\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.15\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.15.nupkg.sha512",
-    "C:\\Users\\edu10\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.15\\microsoft.aspnetcore.app.runtime.win-x64.8.0.15.nupkg.sha512",
-    "C:\\Users\\edu10\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.15\\microsoft.netcore.app.crossgen2.win-x64.8.0.15.nupkg.sha512"
-  ],
+  "projectFilePath": "G:\\Github\\exam-network-lock\\ExamConfigGenerator\\ExamConfigGenerator.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

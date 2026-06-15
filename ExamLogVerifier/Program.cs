@@ -86,14 +86,18 @@ internal static class Program
                 var prevMatches = entry.PrevHmacBase64 == prevHmac;
                 var hmacMatches = FixedEqualsBase64(calc, entry.HmacBase64);
 
+                var detail = string.IsNullOrEmpty(entry.EventData)
+                    ? entry.EventType
+                    : $"{entry.EventType}: {entry.EventData}";
+
                 if (!prevMatches || !hmacMatches)
                 {
-                    Console.WriteLine($"FAIL line {lineNumber} (seq {entry.Sequence})");
+                    Console.WriteLine($"FAIL line {lineNumber} (seq {entry.Sequence}) {entry.Timestamp} {detail}");
                     ok = false;
                 }
                 else
                 {
-                    Console.WriteLine($"OK line {lineNumber} (seq {entry.Sequence})");
+                    Console.WriteLine($"OK   line {lineNumber} (seq {entry.Sequence}) {entry.Timestamp} {detail}");
                 }
 
                 prevHmac = entry.HmacBase64;
