@@ -22,6 +22,9 @@ It is a **deterrent system with evidence**: it leaves a tamper-evident log (`exa
 A student can force-close it from Task Manager, but it will be recorded as an unclean exit and
 the teacher will see it.
 
+Both apps have a **language switcher** (flag buttons, top-right: 🇬🇧 English · Catalan ·
+🇪🇸 Spanish). The choice is detected from the system on first run and remembered.
+
 ### How it works
 
 1. The teacher generates `exam.config` (passwords, what is allowed, AI shield…).
@@ -143,6 +146,9 @@ Sistema de bloqueig per a exàmens a l'aula. El formen dues aplicacions d'escrip
 És un sistema de **dissuasió amb evidència**: deixa un registre a prova de manipulació
 (`examlog.jsonl`). L'alumne pot forçar el tancament des de l'Administrador de tasques, però
 quedarà marcat com a tancament brut i el professor ho veurà.
+
+Les dues apps tenen un **selector d'idioma** (botons de bandera, a dalt a la dreta: anglès ·
+català · castellà). Es detecta del sistema en el primer arrencada i es recorda.
 
 ### Com funciona
 
@@ -266,6 +272,9 @@ Sistema de bloqueo para exámenes en el aula. Lo forman dos aplicaciones de escr
 Es un sistema de **disuasión con evidencia**: deja un registro a prueba de manipulación
 (`examlog.jsonl`). El alumno puede forzar el cierre desde el Administrador de tareas, pero
 quedará marcado como cierre sucio en el log, y el profesor lo verá.
+
+Las dos apps tienen un **selector de idioma** (botones de bandera, arriba a la derecha: inglés ·
+catalán · español). Se detecta del sistema en el primer arranque y se recuerda.
 
 ### Cómo funciona
 

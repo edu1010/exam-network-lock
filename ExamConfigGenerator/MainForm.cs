@@ -8,6 +8,9 @@ public sealed class MainForm : Form
 {
     private const int SectionWidth = 600;
 
+    private readonly List<(Control ctrl, string key)> _i18n = new();
+    private readonly List<Button> _flagButtons = new();
+
     private readonly TextBox _passwordBox;
     private readonly TextBox _confirmBox;
     private readonly TextBox _adminPasswordBox;
@@ -32,7 +35,6 @@ public sealed class MainForm : Form
 
     public MainForm()
     {
-        Text = "Generador de configuración de examen";
         Width = 680;
         Height = 820;
         StartPosition = FormStartPosition.CenterScreen;
@@ -46,12 +48,15 @@ public sealed class MainForm : Form
             Dock = DockStyle.Fill,
             Padding = new Padding(16),
             ColumnCount = 1,
-            RowCount = 3,
+            RowCount = 4,
             BackColor = Theme.Background
         };
-        root.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-        root.RowStyles.Add(new RowStyle(SizeType.Absolute, 48));
-        root.RowStyles.Add(new RowStyle(SizeType.Absolute, 28));
+        root.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));   // language bar
+        root.RowStyles.Add(new RowStyle(SizeType.Percent, 100));   // content
+        root.RowStyles.Add(new RowStyle(SizeType.Absolute, 48));   // generate
+        root.RowStyles.Add(new RowStyle(SizeType.Absolute, 28));   // status
+
+        root.Controls.Add(BuildLanguageBar(), 0, 0);
 
         var content = new FlowLayoutPanel
         {
@@ -63,29 +68,29 @@ public sealed class MainForm : Form
         };
 
         // --- Passwords ---
-        var pwdSection = Theme.Section("Contraseñas");
+        var pwdSection = Section("secPasswords");
         var pwdGrid = SectionGrid(4);
-        _passwordBox = AddPasswordRow(pwdGrid, 0, "Contraseña A — Restaurar Wi-Fi");
-        _confirmBox = AddPasswordRow(pwdGrid, 1, "Confirmar contraseña A");
-        _adminPasswordBox = AddPasswordRow(pwdGrid, 2, "Contraseña B — Cerrar / Admin");
-        _adminConfirmBox = AddPasswordRow(pwdGrid, 3, "Confirmar contraseña B");
+        _passwordBox = AddPasswordRow(pwdGrid, 0, "pwdA");
+        _confirmBox = AddPasswordRow(pwdGrid, 1, "pwdAc");
+        _adminPasswordBox = AddPasswordRow(pwdGrid, 2, "pwdB");
+        _adminConfirmBox = AddPasswordRow(pwdGrid, 3, "pwdBc");
         pwdSection.Controls.Add(pwdGrid);
         content.Controls.Add(pwdSection);
 
         // --- Radios ---
-        var radioSection = Theme.Section("Radios");
+        var radioSection = Section("secRadios");
         var radioStack = VerticalStack();
-        _disableWifiCheck = AddCheck(radioStack, "Desactivar Wi-Fi al iniciar (best-effort)", true);
-        _disableBluetoothCheck = AddCheck(radioStack, "Desactivar Bluetooth al iniciar", false);
+        _disableWifiCheck = AddCheck(radioStack, "chkWifi", true);
+        _disableBluetoothCheck = AddCheck(radioStack, "chkBt", false);
         radioSection.Controls.Add(radioStack);
         content.Controls.Add(radioSection);
 
         // --- AI shield ---
-        var aiSection = Theme.Section("Escudo anti-IA");
+        var aiSection = Section("secAi");
         var aiStack = VerticalStack();
-        _aiShieldCheck = AddCheck(aiStack, "Activar escudo anti-IA (vigila conexiones a IA)", true);
-        _raiseVolumeCheck = AddCheck(aiStack, "Subir volumen y pitar al detectar IA", true);
-        aiStack.Controls.Add(new Label { Text = "Dominios/IPs considerados IA:", AutoSize = true, ForeColor = Theme.TextMuted, Margin = new Padding(0, 8, 0, 2) });
+        _aiShieldCheck = AddCheck(aiStack, "chkAi", true);
+        _raiseVolumeCheck = AddCheck(aiStack, "chkVol", true);
+        aiStack.Controls.Add(HintLabel("aiListLabel", new Padding(0, 8, 0, 2)));
         _aiList = new ListBox { Width = SectionWidth - 30, Height = 120, Margin = new Padding(0, 0, 0, 6) };
         Theme.StyleList(_aiList);
         foreach (var d in ConfigDefaults.DefaultAiBlocklist)
@@ -97,37 +102,37 @@ public sealed class MainForm : Form
         _aiInput = new TextBox { Width = 360 };
         Theme.StyleInput(_aiInput);
         aiStack.Controls.Add(InputWithButtons(_aiInput,
-            ("Añadir", () => AddToList(_aiList, _aiInput)),
-            ("Quitar", () => RemoveSelected(_aiList))));
+            ("btnAdd", () => AddToList(_aiList, _aiInput)),
+            ("btnRemove", () => RemoveSelected(_aiList))));
         aiSection.Controls.Add(aiStack);
         content.Controls.Add(aiSection);
 
         // --- Allowed apps ---
-        var appSection = Theme.Section("Programas permitidos");
+        var appSection = Section("secApps");
         var appStack = VerticalStack();
-        appStack.Controls.Add(new Label { Text = "Ejecutables permitidos (ej. eclipse.exe). Vacío = sin restricción.", AutoSize = true, ForeColor = Theme.TextMuted, Margin = new Padding(0, 0, 0, 2) });
+        appStack.Controls.Add(HintLabel("appsHint", new Padding(0, 0, 0, 2)));
         _appList = new ListBox { Width = SectionWidth - 30, Height = 100, Margin = new Padding(0, 0, 0, 6) };
         Theme.StyleList(_appList);
         appStack.Controls.Add(_appList);
         var appManual = new TextBox { Width = 260 };
         Theme.StyleInput(appManual);
         appStack.Controls.Add(InputWithButtons(appManual,
-            ("Añadir .exe…", BrowseExe),
-            ("Añadir", () => AddToList(_appList, appManual)),
-            ("Quitar", () => RemoveSelected(_appList))));
+            ("btnAddExe", BrowseExe),
+            ("btnAdd", () => AddToList(_appList, appManual)),
+            ("btnRemove", () => RemoveSelected(_appList))));
         appSection.Controls.Add(appStack);
         content.Controls.Add(appSection);
 
         // --- Files & folder ---
-        var fileSection = Theme.Section("Archivos y carpeta de trabajo");
+        var fileSection = Section("secFiles");
         var fileStack = VerticalStack();
-        fileStack.Controls.Add(new Label { Text = "Extensiones permitidas, separadas por comas (ej. .java,.txt,.pdf). Vacío = sin restricción.", AutoSize = true, ForeColor = Theme.TextMuted, Margin = new Padding(0, 0, 0, 2) });
-        _extensionsBox = new TextBox { Width = SectionWidth - 30, Margin = new Padding(0, 0, 0, 10) };
+        fileStack.Controls.Add(HintLabel("extHint", new Padding(0, 0, 0, 2)));
+        _extensionsBox = new TextBox { Width = SectionWidth - 30, Margin = new Padding(0, 0, 0, 8) };
         Theme.StyleInput(_extensionsBox);
         fileStack.Controls.Add(_extensionsBox);
 
-        _restrictFolderCheck = AddCheck(fileStack, "Restringir el trabajo a una carpeta y sus subcarpetas", false);
-        fileStack.Controls.Add(new Label { Text = "Base de la carpeta (se resuelve en el equipo del alumno):", AutoSize = true, ForeColor = Theme.TextMuted, Margin = new Padding(0, 6, 0, 2) });
+        _restrictFolderCheck = AddCheck(fileStack, "chkRestrict", false);
+        fileStack.Controls.Add(HintLabel("baseLabel", new Padding(0, 6, 0, 2)));
         _workFolderModeCombo = new ComboBox
         {
             Width = SectionWidth - 30,
@@ -135,43 +140,127 @@ public sealed class MainForm : Form
             FlatStyle = FlatStyle.Flat,
             Font = Theme.Base
         };
-        _workFolderModeCombo.Items.AddRange(new object[]
-        {
-            "Donde esté exam.config (recomendado)",
-            "Escritorio del alumno",
-            "Documentos del alumno",
-            "Ruta fija (igual en todos los equipos)"
-        });
-        _workFolderModeCombo.SelectedIndex = 0;
         _workFolderModeCombo.SelectedIndexChanged += (_, _) => UpdateWorkFolderHint();
         fileStack.Controls.Add(_workFolderModeCombo);
 
-        fileStack.Controls.Add(new Label { Text = "Subcarpeta opcional (o ruta fija):", AutoSize = true, ForeColor = Theme.TextMuted, Margin = new Padding(0, 6, 0, 2) });
+        fileStack.Controls.Add(HintLabel("subLabel", new Padding(0, 6, 0, 2)));
         _workFolderBox = new TextBox { Width = 440 };
         Theme.StyleInput(_workFolderBox);
-        fileStack.Controls.Add(InputWithButtons(_workFolderBox, ("Examinar…", BrowseFolder)));
+        fileStack.Controls.Add(InputWithButtons(_workFolderBox, ("btnBrowse", BrowseFolder)));
 
         _workFolderHint = new Label { Text = "", AutoSize = true, ForeColor = Theme.TextMuted, Margin = new Padding(0, 2, 0, 0) };
         fileStack.Controls.Add(_workFolderHint);
-        UpdateWorkFolderHint();
 
         fileSection.Controls.Add(fileStack);
         content.Controls.Add(fileSection);
 
-        root.Controls.Add(content, 0, 0);
+        root.Controls.Add(content, 0, 1);
 
-        _generateButton = new Button { Text = "Generar configuración", Dock = DockStyle.Fill, Margin = new Padding(0, 6, 0, 6) };
+        _generateButton = new Button { Dock = DockStyle.Fill, Margin = new Padding(0, 6, 0, 6) };
         Theme.StylePrimary(_generateButton);
+        L(_generateButton, "btnGenerate");
         _generateButton.Click += (_, _) => GenerateConfig();
-        root.Controls.Add(_generateButton, 0, 1);
+        root.Controls.Add(_generateButton, 0, 2);
 
         _statusLabel = new Label { Text = "", Dock = DockStyle.Fill, AutoSize = false, TextAlign = ContentAlignment.MiddleLeft, ForeColor = Theme.TextMuted };
-        root.Controls.Add(_statusLabel, 0, 2);
+        root.Controls.Add(_statusLabel, 0, 3);
 
         Controls.Add(root);
+
+        ApplyLanguage();
+    }
+
+    // ----- Language -----
+
+    private Control BuildLanguageBar()
+    {
+        var bar = new FlowLayoutPanel
+        {
+            Anchor = AnchorStyles.Right,
+            AutoSize = true,
+            FlowDirection = FlowDirection.LeftToRight,
+            WrapContents = false,
+            Margin = new Padding(0),
+            BackColor = Theme.Background
+        };
+
+        foreach (var language in new[] { Language.En, Language.Ca, Language.Es })
+        {
+            var lang = language;
+            var btn = new Button
+            {
+                Width = 40,
+                Height = 26,
+                FlatStyle = FlatStyle.Flat,
+                Image = Flags.For(lang),
+                ImageAlign = ContentAlignment.MiddleCenter,
+                Margin = new Padding(4, 0, 0, 0),
+                Cursor = Cursors.Hand,
+                Tag = lang
+            };
+            btn.FlatAppearance.MouseOverBackColor = Theme.Background;
+            btn.Click += (_, _) => { Lang.Set(lang); ApplyLanguage(); };
+            _flagButtons.Add(btn);
+            bar.Controls.Add(btn);
+        }
+
+        return bar;
+    }
+
+    private void ApplyLanguage()
+    {
+        Text = Lang.T("title");
+        foreach (var (ctrl, key) in _i18n)
+        {
+            ctrl.Text = Lang.T(key);
+        }
+
+        RebuildCombo();
+        UpdateWorkFolderHint();
+
+        foreach (var btn in _flagButtons)
+        {
+            var selected = (Language)btn.Tag! == Lang.Current;
+            btn.FlatAppearance.BorderSize = selected ? 2 : 1;
+            btn.FlatAppearance.BorderColor = selected ? Theme.Accent : Theme.Border;
+        }
+    }
+
+    private void RebuildCombo()
+    {
+        var idx = _workFolderModeCombo.SelectedIndex;
+        _workFolderModeCombo.Items.Clear();
+        _workFolderModeCombo.Items.AddRange(new object[]
+        {
+            Lang.T("comboConfig"),
+            Lang.T("comboDesktop"),
+            Lang.T("comboDocuments"),
+            Lang.T("comboFixed")
+        });
+        _workFolderModeCombo.SelectedIndex = idx < 0 ? 0 : idx;
     }
 
     // ----- UI builders -----
+
+    private T L<T>(T ctrl, string key) where T : Control
+    {
+        _i18n.Add((ctrl, key));
+        ctrl.Text = Lang.T(key);
+        return ctrl;
+    }
+
+    private GroupBox Section(string key)
+    {
+        var box = Theme.Section(Lang.T(key));
+        _i18n.Add((box, key));
+        return box;
+    }
+
+    private Label HintLabel(string key, Padding margin)
+    {
+        var label = new Label { AutoSize = true, ForeColor = Theme.TextMuted, Margin = margin };
+        return L(label, key);
+    }
 
     private static TableLayoutPanel SectionGrid(int rows)
     {
@@ -200,30 +289,34 @@ public sealed class MainForm : Form
         };
     }
 
-    private TextBox AddPasswordRow(TableLayoutPanel grid, int row, string label)
+    private TextBox AddPasswordRow(TableLayoutPanel grid, int row, string key)
     {
-        grid.Controls.Add(new Label { Text = label, Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleLeft, ForeColor = Theme.Text }, 0, row);
+        var label = new Label { Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleLeft, ForeColor = Theme.Text };
+        L(label, key);
+        grid.Controls.Add(label, 0, row);
         var box = new TextBox { UseSystemPasswordChar = true, Dock = DockStyle.Fill, Margin = new Padding(0, 4, 0, 4) };
         Theme.StyleInput(box);
         grid.Controls.Add(box, 1, row);
         return box;
     }
 
-    private CheckBox AddCheck(Control parent, string label, bool isChecked)
+    private CheckBox AddCheck(Control parent, string key, bool isChecked)
     {
-        var check = new CheckBox { Text = label, Checked = isChecked, AutoSize = true, ForeColor = Theme.Text, Margin = new Padding(0, 3, 0, 3) };
+        var check = new CheckBox { Checked = isChecked, AutoSize = true, ForeColor = Theme.Text, Margin = new Padding(0, 3, 0, 3) };
+        L(check, key);
         parent.Controls.Add(check);
         return check;
     }
 
-    private FlowLayoutPanel InputWithButtons(Control input, params (string text, Action action)[] buttons)
+    private FlowLayoutPanel InputWithButtons(Control input, params (string key, Action action)[] buttons)
     {
         var row = new FlowLayoutPanel { FlowDirection = FlowDirection.LeftToRight, AutoSize = true, WrapContents = false, Margin = new Padding(0, 0, 0, 8), BackColor = Theme.Background };
         row.Controls.Add(input);
-        foreach (var (text, action) in buttons)
+        foreach (var (key, action) in buttons)
         {
-            var button = new Button { Text = text, AutoSize = true, Margin = new Padding(6, 0, 0, 0), Padding = new Padding(8, 4, 8, 4) };
+            var button = new Button { AutoSize = true, Margin = new Padding(6, 0, 0, 0), Padding = new Padding(8, 4, 8, 4) };
             Theme.StyleSecondary(button);
+            L(button, key);
             button.Click += (_, _) => action();
             row.Controls.Add(button);
         }
@@ -259,8 +352,8 @@ public sealed class MainForm : Form
     {
         using var dialog = new OpenFileDialog
         {
-            Title = "Selecciona el ejecutable permitido",
-            Filter = "Programas (*.exe)|*.exe|Todos los archivos (*.*)|*.*"
+            Title = Lang.T("dlgExe"),
+            Filter = "*.exe|*.exe|*.*|*.*"
         };
 
         if (dialog.ShowDialog(this) == DialogResult.OK)
@@ -275,10 +368,10 @@ public sealed class MainForm : Form
 
     private void BrowseFolder()
     {
-        using var dialog = new FolderBrowserDialog { Description = "Selecciona la carpeta de examen (ruta fija, igual en todos los equipos)" };
+        using var dialog = new FolderBrowserDialog { Description = Lang.T("dlgFolder") };
         if (dialog.ShowDialog(this) == DialogResult.OK)
         {
-            _workFolderModeCombo.SelectedIndex = 3; // Ruta fija (Absolute)
+            _workFolderModeCombo.SelectedIndex = 3; // Fixed path (Absolute)
             _workFolderBox.Text = dialog.SelectedPath;
             UpdateWorkFolderHint();
         }
@@ -302,17 +395,17 @@ public sealed class MainForm : Form
         var sub = _workFolderBox?.Text?.Trim() ?? "";
         _workFolderHint.Text = SelectedWorkFolderMode() switch
         {
-            WorkFolderModes.Desktop => "En cada equipo: Escritorio\\" + (sub.Length > 0 ? sub : "(toda la carpeta del Escritorio)"),
-            WorkFolderModes.Documents => "En cada equipo: Documentos\\" + (sub.Length > 0 ? sub : "(toda la carpeta de Documentos)"),
-            WorkFolderModes.Absolute => "Esa ruta exacta debe existir en todos los portátiles (no recomendado entre usuarios distintos).",
-            _ => "El alumno coloca exam.config dentro de la carpeta del examen; se vigila esa carpeta y sus subcarpetas."
+            WorkFolderModes.Desktop => string.Format(Lang.T("hintDesktop"), sub.Length > 0 ? sub : Lang.T("allDesktop")),
+            WorkFolderModes.Documents => string.Format(Lang.T("hintDocuments"), sub.Length > 0 ? sub : Lang.T("allDocuments")),
+            WorkFolderModes.Absolute => Lang.T("hintAbsolute"),
+            _ => Lang.T("hintConfig")
         };
     }
 
     private void Warn(string message)
     {
         SetStatus(message);
-        MessageBox.Show(this, message, "Configuración de examen", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        MessageBox.Show(this, message, Lang.T("msgTitle"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
     }
 
     // ----- Config generation -----
@@ -326,25 +419,25 @@ public sealed class MainForm : Form
 
         if (string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(adminPassword))
         {
-            Warn("Las dos contraseñas son obligatorias.");
+            Warn(Lang.T("valBothPwd"));
             return;
         }
 
         if (!string.Equals(password, confirm, StringComparison.Ordinal))
         {
-            Warn("La contraseña A no coincide con su confirmación.");
+            Warn(Lang.T("valConfirmA"));
             return;
         }
 
         if (!string.Equals(adminPassword, adminConfirm, StringComparison.Ordinal))
         {
-            Warn("La contraseña B no coincide con su confirmación.");
+            Warn(Lang.T("valConfirmB"));
             return;
         }
 
         if (string.Equals(password, adminPassword, StringComparison.Ordinal))
         {
-            Warn("Las contraseñas A y B deben ser distintas.");
+            Warn(Lang.T("valDistinct"));
             return;
         }
 
@@ -355,13 +448,13 @@ public sealed class MainForm : Form
 
         if (_restrictFolderCheck.Checked && workFolderMode == WorkFolderModes.Absolute && workFolderAbsolute.Length == 0)
         {
-            Warn("Para 'Ruta fija' debes indicar la ruta de la carpeta.");
+            Warn(Lang.T("valFixedPath"));
             return;
         }
 
         var saveDialog = new SaveFileDialog
         {
-            Title = "Guardar exam.config",
+            Title = Lang.T("dlgSave"),
             Filter = "Config Files (*.config)|*.config|All Files (*.*)|*.*",
             FileName = "exam.config"
         };
@@ -412,22 +505,17 @@ public sealed class MainForm : Form
             var payloadJson = ConfigSerializer.SerializePayload(payload);
             var hmac = ConfigIntegrityService.ComputeHmacBase64(payloadJson);
 
-            var envelope = new ConfigEnvelope
-            {
-                Payload = payload,
-                HmacBase64 = hmac
-            };
-
+            var envelope = new ConfigEnvelope { Payload = payload, HmacBase64 = hmac };
             var configJson = ConfigSerializer.SerializeEnvelope(envelope);
             File.WriteAllText(saveDialog.FileName, configJson, Encoding.UTF8);
 
-            SetStatus($"Configuración generada: {saveDialog.FileName}");
-            MessageBox.Show(this, $"Configuración generada correctamente:\n{saveDialog.FileName}", "Configuración de examen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            SetStatus(string.Format(Lang.T("statusGen"), saveDialog.FileName));
+            MessageBox.Show(this, string.Format(Lang.T("genOk"), saveDialog.FileName), Lang.T("msgTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         catch (Exception ex)
         {
-            SetStatus($"Error al generar la configuración: {ex.Message}");
-            MessageBox.Show(this, $"Error al generar la configuración:\n{ex.Message}", "Configuración de examen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            SetStatus(string.Format(Lang.T("genErr"), ex.Message));
+            MessageBox.Show(this, string.Format(Lang.T("genErr"), ex.Message), Lang.T("msgTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 

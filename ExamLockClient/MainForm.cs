@@ -9,12 +9,18 @@ public sealed class MainForm : Form
     private readonly Label _statusLabel;
     private readonly Label _configPathLabel;
     private readonly Label _radioStateLabel;
+    private readonly Label _configTitleLabel;
+    private readonly Label _radiosTitleLabel;
+    private readonly Label _incidentsTitleLabel;
+    private readonly Label _pwdALabel;
+    private readonly Label _pwdBLabel;
     private readonly ListBox _incidentList;
     private readonly TextBox _restorePasswordBox;
     private readonly TextBox _adminPasswordBox;
     private readonly Button _restoreButton;
     private readonly Button _adminButton;
     private readonly Button _loadConfigButton;
+    private readonly List<Button> _flagButtons = new();
 
     private ConfigPayload? _config;
     private SecureLogService? _log;
@@ -41,9 +47,8 @@ public sealed class MainForm : Form
 
     public MainForm()
     {
-        Text = "Escudo de examen";
         Width = 600;
-        Height = 700;
+        Height = 720;
         StartPosition = FormStartPosition.CenterScreen;
         FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
@@ -57,17 +62,20 @@ public sealed class MainForm : Form
             Dock = DockStyle.Fill,
             Padding = new Padding(16),
             ColumnCount = 1,
-            RowCount = 5,
+            RowCount = 6,
             BackColor = Theme.Background
         };
-        layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 230)); // shield
+        layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));  // language bar
+        layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 210)); // shield
         layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 64));  // info card
         layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));  // incidents
         layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 132)); // controls card
         layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 26));  // status
 
-        _shield = new ShieldControl { Dock = DockStyle.Fill, Caption = "Esperando…" };
-        layout.Controls.Add(_shield, 0, 0);
+        layout.Controls.Add(BuildLanguageBar(), 0, 0);
+
+        _shield = new ShieldControl { Dock = DockStyle.Fill };
+        layout.Controls.Add(_shield, 0, 1);
 
         // --- Info card: config path + radios ---
         var infoCard = Theme.Card();
@@ -75,14 +83,16 @@ public sealed class MainForm : Form
         var infoGrid = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 2, RowCount = 2, BackColor = Theme.Surface };
         infoGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 70));
         infoGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
-        infoGrid.Controls.Add(MutedLabel("Config"), 0, 0);
-        _configPathLabel = ValueLabel("(no cargada)");
+        _configTitleLabel = MutedLabel("");
+        infoGrid.Controls.Add(_configTitleLabel, 0, 0);
+        _configPathLabel = ValueLabel("");
         infoGrid.Controls.Add(_configPathLabel, 1, 0);
-        infoGrid.Controls.Add(MutedLabel("Radios"), 0, 1);
+        _radiosTitleLabel = MutedLabel("");
+        infoGrid.Controls.Add(_radiosTitleLabel, 0, 1);
         _radioStateLabel = ValueLabel("—");
         infoGrid.Controls.Add(_radioStateLabel, 1, 1);
         infoCard.Controls.Add(infoGrid);
-        layout.Controls.Add(infoCard, 0, 1);
+        layout.Controls.Add(infoCard, 0, 2);
 
         // --- Incidents ---
         var incidentsCard = Theme.Card();
@@ -90,8 +100,8 @@ public sealed class MainForm : Form
         var incidentsLayout = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 2, BackColor = Theme.Surface };
         incidentsLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 22));
         incidentsLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-        var incidentsTitle = new Label { Text = "Incidencias", Dock = DockStyle.Fill, Font = Theme.Heading, ForeColor = Theme.Text };
-        incidentsLayout.Controls.Add(incidentsTitle, 0, 0);
+        _incidentsTitleLabel = new Label { Text = "", Dock = DockStyle.Fill, Font = Theme.Heading, ForeColor = Theme.Text };
+        incidentsLayout.Controls.Add(_incidentsTitleLabel, 0, 0);
         _incidentList = new ListBox
         {
             Dock = DockStyle.Fill,
@@ -103,7 +113,7 @@ public sealed class MainForm : Form
         };
         incidentsLayout.Controls.Add(_incidentList, 0, 1);
         incidentsCard.Controls.Add(incidentsLayout);
-        layout.Controls.Add(incidentsCard, 0, 2);
+        layout.Controls.Add(incidentsCard, 0, 3);
 
         // --- Controls card: passwords + load ---
         var controlsCard = Theme.Card();
@@ -116,39 +126,103 @@ public sealed class MainForm : Form
         controls.RowStyles.Add(new RowStyle(SizeType.Absolute, 34));
         controls.RowStyles.Add(new RowStyle(SizeType.Absolute, 34));
 
-        controls.Controls.Add(MutedLabel("Contraseña A (Wi-Fi)"), 0, 0);
+        _pwdALabel = MutedLabel("");
+        controls.Controls.Add(_pwdALabel, 0, 0);
         _restorePasswordBox = new TextBox { UseSystemPasswordChar = true, Dock = DockStyle.Fill, Margin = new Padding(0, 3, 8, 3) };
         Theme.StyleInput(_restorePasswordBox);
         controls.Controls.Add(_restorePasswordBox, 1, 0);
-        _restoreButton = new Button { Text = "Restaurar Wi-Fi", Dock = DockStyle.Fill, Margin = new Padding(0, 2, 0, 2) };
+        _restoreButton = new Button { Dock = DockStyle.Fill, Margin = new Padding(0, 2, 0, 2) };
         Theme.StyleSecondary(_restoreButton);
         _restoreButton.Click += (_, _) => AttemptRestoreWifi();
         controls.Controls.Add(_restoreButton, 2, 0);
 
-        controls.Controls.Add(MutedLabel("Contraseña B (cerrar)"), 0, 1);
+        _pwdBLabel = MutedLabel("");
+        controls.Controls.Add(_pwdBLabel, 0, 1);
         _adminPasswordBox = new TextBox { UseSystemPasswordChar = true, Dock = DockStyle.Fill, Margin = new Padding(0, 3, 8, 3) };
         Theme.StyleInput(_adminPasswordBox);
         controls.Controls.Add(_adminPasswordBox, 1, 1);
-        _adminButton = new Button { Text = "Cerrar programa", Dock = DockStyle.Fill, Margin = new Padding(0, 2, 0, 2) };
+        _adminButton = new Button { Dock = DockStyle.Fill, Margin = new Padding(0, 2, 0, 2) };
         Theme.StylePrimary(_adminButton);
         _adminButton.Click += (_, _) => AttemptAdminClose();
         controls.Controls.Add(_adminButton, 2, 1);
 
-        _loadConfigButton = new Button { Text = "Cargar config…", Dock = DockStyle.Fill, Margin = new Padding(0, 2, 0, 2) };
+        _loadConfigButton = new Button { Dock = DockStyle.Fill, Margin = new Padding(0, 2, 0, 2) };
         Theme.StyleSecondary(_loadConfigButton);
         _loadConfigButton.Click += (_, _) => LoadConfig(true);
         controls.Controls.Add(_loadConfigButton, 2, 2);
 
         controlsCard.Controls.Add(controls);
-        layout.Controls.Add(controlsCard, 0, 3);
+        layout.Controls.Add(controlsCard, 0, 4);
 
         _statusLabel = new Label { Text = "", Dock = DockStyle.Fill, AutoSize = false, TextAlign = ContentAlignment.MiddleLeft, ForeColor = Theme.TextMuted };
-        layout.Controls.Add(_statusLabel, 0, 4);
+        layout.Controls.Add(_statusLabel, 0, 5);
 
         Controls.Add(layout);
 
         Load += (_, _) => LoadConfig(false);
         FormClosing += OnFormClosing;
+
+        ApplyLanguage();
+    }
+
+    private Control BuildLanguageBar()
+    {
+        var bar = new FlowLayoutPanel
+        {
+            Anchor = AnchorStyles.Right,
+            AutoSize = true,
+            FlowDirection = FlowDirection.LeftToRight,
+            WrapContents = false,
+            Margin = new Padding(0),
+            BackColor = Theme.Background
+        };
+
+        foreach (var language in new[] { Language.En, Language.Ca, Language.Es })
+        {
+            var lang = language;
+            var btn = new Button
+            {
+                Width = 40,
+                Height = 26,
+                FlatStyle = FlatStyle.Flat,
+                Image = Flags.For(lang),
+                ImageAlign = ContentAlignment.MiddleCenter,
+                Margin = new Padding(4, 0, 0, 0),
+                Cursor = Cursors.Hand,
+                Tag = lang
+            };
+            btn.FlatAppearance.MouseOverBackColor = Theme.Background;
+            btn.Click += (_, _) => { Lang.Set(lang); ApplyLanguage(); };
+            _flagButtons.Add(btn);
+            bar.Controls.Add(btn);
+        }
+
+        return bar;
+    }
+
+    private void ApplyLanguage()
+    {
+        Text = Lang.T("title");
+        _configTitleLabel.Text = Lang.T("config");
+        _radiosTitleLabel.Text = Lang.T("radios");
+        _incidentsTitleLabel.Text = Lang.T("incidents");
+        _pwdALabel.Text = Lang.T("pwdA");
+        _pwdBLabel.Text = Lang.T("pwdB");
+        _restoreButton.Text = Lang.T("restoreBtn");
+        _adminButton.Text = Lang.T("closeBtn");
+        _loadConfigButton.Text = Lang.T("loadBtn");
+
+        if (_config is null)
+        {
+            _configPathLabel.Text = Lang.T("notLoaded");
+        }
+
+        foreach (var btn in _flagButtons)
+        {
+            var selected = (Language)btn.Tag! == Lang.Current;
+            btn.FlatAppearance.BorderSize = selected ? 2 : 1;
+            btn.FlatAppearance.BorderColor = selected ? Theme.Accent : Theme.Border;
+        }
 
         UpdateShield();
     }
@@ -190,13 +264,13 @@ public sealed class MainForm : Form
 
         using var openDialog = new OpenFileDialog
         {
-            Title = "Selecciona exam.config",
+            Title = Lang.T("dlgSelectConfig"),
             Filter = "Config Files (*.config)|*.config|All Files (*.*)|*.*"
         };
 
         if (openDialog.ShowDialog(this) != DialogResult.OK)
         {
-            SetStatus("Se necesita un archivo de configuración para empezar.");
+            SetStatus(Lang.T("needConfig"));
             return;
         }
 
@@ -225,7 +299,7 @@ public sealed class MainForm : Form
 
             if (!ConfigIntegrityService.VerifyHmac(payloadJson, envelope.HmacBase64))
             {
-                SetStatus("La integridad de la configuración no es válida.");
+                SetStatus(Lang.T("integrityFail"));
                 return;
             }
 
@@ -241,7 +315,7 @@ public sealed class MainForm : Form
         }
         catch (Exception ex)
         {
-            SetStatus($"No se pudo cargar la configuración: {ex.Message}");
+            SetStatus(string.Format(Lang.T("loadFail"), ex.Message));
         }
     }
 
@@ -278,19 +352,19 @@ public sealed class MainForm : Form
             if (_network.DisableWifi(out var error))
             {
                 _log?.Append(LogEvents.WifiDisabled);
-                radioStates.Add("Wi-Fi: desactivado");
+                radioStates.Add(Lang.T("wifiOff"));
                 _wifiDisableFailed = false;
             }
             else
             {
                 _log?.Append(LogEvents.WifiDisableFailed, error);
-                radioStates.Add("Wi-Fi: fallo al desactivar");
+                radioStates.Add(Lang.T("wifiOffFail"));
                 _wifiDisableFailed = true;
             }
         }
         else
         {
-            radioStates.Add("Wi-Fi: activo (vigilado)");
+            radioStates.Add(Lang.T("wifiWatched"));
         }
 
         if (_config.DisableBluetooth)
@@ -299,12 +373,12 @@ public sealed class MainForm : Form
             if (ok)
             {
                 _log?.Append(LogEvents.BluetoothDisabled);
-                radioStates.Add("BT: desactivado");
+                radioStates.Add(Lang.T("btOff"));
             }
             else
             {
                 _log?.Append(LogEvents.BluetoothFailed, error);
-                radioStates.Add("BT: fallo");
+                radioStates.Add(Lang.T("btFail"));
             }
         }
 
@@ -313,8 +387,8 @@ public sealed class MainForm : Form
         StartMonitors();
 
         UpdateShield();
-        AddIncident("Bloqueo iniciado.");
-        SetStatus("Examen en curso. El escudo está activo.");
+        AddIncident(Lang.T("lockStarted"));
+        SetStatus(Lang.T("statusActive"));
     }
 
     private void StartMonitors()
@@ -365,14 +439,14 @@ public sealed class MainForm : Form
         }
 
         _log?.Append(LogEvents.AiDetected, desc);
-        AddIncident($"⚠ IA detectada: {desc}");
+        AddIncident(string.Format(Lang.T("incAi"), desc));
         if (_config?.RaiseVolumeOnAi == true)
         {
             _audio.RaiseVolumeToMax();
         }
 
         _audio.StartAlarm();
-        SetRed("Conexión a IA detectada. Avisa al profesor.");
+        SetRed(Lang.T("statusAi"));
     }
 
     private void OnForbiddenFile(string file)
@@ -383,13 +457,13 @@ public sealed class MainForm : Form
         }
 
         _log?.Append(LogEvents.ForbiddenFile, file);
-        AddIncident($"⛔ Archivo no permitido: {file}");
+        AddIncident(string.Format(Lang.T("incForbidden"), file));
         if (_config?.BeepOnViolation == true)
         {
             _audio.StartAlarm();
         }
 
-        SetRed("Se ha abierto un archivo no permitido.");
+        SetRed(Lang.T("statusForbidden"));
     }
 
     private void OnOutsideFolder(string file)
@@ -400,13 +474,13 @@ public sealed class MainForm : Form
         }
 
         _log?.Append(LogEvents.OutsideFolder, file);
-        AddIncident($"⛔ Fuera de la carpeta de examen: {file}");
+        AddIncident(string.Format(Lang.T("incOutside"), file));
         if (_config?.BeepOnViolation == true)
         {
             _audio.StartAlarm();
         }
 
-        SetRed("Se está trabajando fuera de la carpeta del examen.");
+        SetRed(Lang.T("statusOutside"));
     }
 
     private void OnUnknownProcess(string exe)
@@ -417,8 +491,8 @@ public sealed class MainForm : Form
         }
 
         _log?.Append(LogEvents.UnknownProcess, exe);
-        AddIncident($"❔ Programa desconocido: {exe}");
-        SetYellow($"Programa no autorizado abierto: {exe}");
+        AddIncident(string.Format(Lang.T("incUnknownProc"), exe));
+        SetYellow(string.Format(Lang.T("statusUnknownProc"), exe));
     }
 
     private void OnUnknownFile(string file)
@@ -429,8 +503,8 @@ public sealed class MainForm : Form
         }
 
         _log?.Append(LogEvents.UnknownFile, file);
-        AddIncident($"❔ Archivo desconocido: {file}");
-        SetYellow($"Archivo de tipo no reconocido: {file}");
+        AddIncident(string.Format(Lang.T("incUnknownFile"), file));
+        SetYellow(string.Format(Lang.T("statusUnknownFile"), file));
     }
 
     private void SetRed(string status)
@@ -452,7 +526,7 @@ public sealed class MainForm : Form
         if (_config is null)
         {
             _shield.Status = ShieldControl.ShieldStatus.Idle;
-            _shield.Caption = "Esperando configuración…";
+            _shield.Caption = Lang.T("waitingConfig");
             return;
         }
 
@@ -463,9 +537,9 @@ public sealed class MainForm : Form
         _shield.Status = state;
         _shield.Caption = state switch
         {
-            ShieldControl.ShieldStatus.Red => "PELIGRO",
-            ShieldControl.ShieldStatus.Yellow => "ATENCIÓN",
-            _ => "PROTEGIDO"
+            ShieldControl.ShieldStatus.Red => Lang.T("shieldDanger"),
+            ShieldControl.ShieldStatus.Yellow => Lang.T("shieldAttention"),
+            _ => Lang.T("shieldProtected")
         };
 
         // Log shield transitions only (avoid spamming the log on every refresh).
@@ -488,7 +562,7 @@ public sealed class MainForm : Form
     {
         if (_config is null)
         {
-            SetStatus("Carga una configuración válida primero.");
+            SetStatus(Lang.T("needValidConfig"));
             return;
         }
 
@@ -497,13 +571,13 @@ public sealed class MainForm : Form
         if (!PasswordHasher.VerifyPassword(password, _config.SaltBase64, _config.Iterations, _config.PasswordHashBase64))
         {
             _log?.Append(LogEvents.UnlockFailed);
-            SetStatus("Contraseña A incorrecta.");
+            SetStatus(Lang.T("wrongA"));
             return;
         }
 
         _log?.Append(LogEvents.UnlockSuccess);
         ReenableRadios();
-        SetStatus("Wi-Fi restaurado. El escudo sigue activo.");
+        SetStatus(Lang.T("wifiRestored"));
     }
 
     private async void ReenableRadios()
@@ -519,12 +593,12 @@ public sealed class MainForm : Form
             if (_network.EnableWifi(out var error))
             {
                 _log?.Append(LogEvents.WifiEnabled);
-                states.Add("Wi-Fi: activo");
+                states.Add(Lang.T("wifiOn"));
             }
             else
             {
                 _log?.Append(LogEvents.WifiEnableFailed, error);
-                states.Add("Wi-Fi: fallo al activar");
+                states.Add(Lang.T("wifiOnFail"));
             }
         }
 
@@ -534,7 +608,7 @@ public sealed class MainForm : Form
             if (ok)
             {
                 _log?.Append(LogEvents.BluetoothEnabled);
-                states.Add("BT: activo");
+                states.Add(Lang.T("btOn"));
             }
         }
 
@@ -549,7 +623,7 @@ public sealed class MainForm : Form
     {
         if (_config is null)
         {
-            SetStatus("Carga una configuración válida primero.");
+            SetStatus(Lang.T("needValidConfig"));
             return;
         }
 
@@ -558,7 +632,7 @@ public sealed class MainForm : Form
         if (!PasswordHasher.VerifyPassword(password, _config.AdminSaltBase64, _config.Iterations, _config.AdminPasswordHashBase64))
         {
             _log?.Append(LogEvents.AdminAuthFailed);
-            SetStatus("Contraseña B incorrecta.");
+            SetStatus(Lang.T("wrongB"));
             return;
         }
 
@@ -595,7 +669,7 @@ public sealed class MainForm : Form
         if (!_adminAuthenticated)
         {
             e.Cancel = true;
-            SetStatus("Introduce la contraseña B (cerrar) para salir.");
+            SetStatus(Lang.T("needBToExit"));
             return;
         }
 
