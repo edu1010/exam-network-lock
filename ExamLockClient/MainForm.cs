@@ -439,13 +439,13 @@ public sealed class MainForm : Form
             _processMonitor.Start();
         }
 
-        if (_config.AllowedFileExtensions.Length > 0 || _config.RestrictToWorkFolder)
+        if (_config.AllowedFileExtensions.Length > 0 || _config.BlockedFileExtensions.Length > 0 || _config.RestrictToWorkFolder)
         {
             var configDir = Path.GetDirectoryName(_configPath) ?? AppContext.BaseDirectory;
             var workFolder = WorkFolderResolver.Resolve(_config, configDir);
             var restrict = _config.RestrictToWorkFolder && workFolder.Length > 0;
             _fileMonitor = new FileActivityMonitor(
-                _config.AllowedFileExtensions, workFolder, restrict, _config.AllowedProcesses);
+                _config.AllowedFileExtensions, workFolder, restrict, _config.AllowedProcesses, _config.BlockedFileExtensions);
             _fileMonitor.ForbiddenFileDetected += f => RunOnUi(() => OnForbiddenFile(f));
             _fileMonitor.OutsideFolderDetected += f => RunOnUi(() => OnOutsideFolder(f));
             _fileMonitor.UnknownFileDetected += f => RunOnUi(() => OnUnknownFile(f));

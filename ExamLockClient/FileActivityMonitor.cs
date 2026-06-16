@@ -30,6 +30,7 @@ public sealed class FileActivityMonitor : IDisposable
     };
 
     private readonly HashSet<string> _allowedExtensions;
+    private readonly HashSet<string> _blockedExtensions;
     private readonly HashSet<string> _inspectProcesses;
     private readonly string _workFolder;
     private readonly bool _restrictToFolder;
@@ -44,11 +45,19 @@ public sealed class FileActivityMonitor : IDisposable
     public event Action<string>? OutsideFolderDetected;   // red
     public event Action<string>? UnknownFileDetected;     // yellow
 
-    public FileActivityMonitor(IEnumerable<string> allowedExtensions, string workFolder, bool restrictToFolder, IEnumerable<string>? allowedProcesses = null)
+    public FileActivityMonitor(IEnumerable<string> allowedExtensions, string workFolder, bool restrictToFolder, IEnumerable<string>? allowedProcesses = null, IEnumerable<string>? blockedExtensions = null)
     {
         _allowedExtensions = new HashSet<string>(
             allowedExtensions.Select(e => e.Trim().ToLowerInvariant()).Where(e => e.Length > 0),
             StringComparer.OrdinalIgnoreCase);
+        // An allow-list is stricter than a block-list, so it takes precedence: when extensions are
+        // explicitly allowed, the block-list is redundant and ignored.
+        _blockedExtensions = _allowedExtensions.Count > 0
+            ? new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+            : new HashSet<string>(
+                (blockedExtensions ?? Enumerable.Empty<string>())
+                    .Select(e => e.Trim().ToLowerInvariant()).Where(e => e.Length > 0),
+                StringComparer.OrdinalIgnoreCase);
         _workFolder = workFolder?.Trim() ?? string.Empty;
         _restrictToFolder = restrictToFolder;
 
@@ -171,6 +180,13 @@ public sealed class FileActivityMonitor : IDisposable
             return;
         }
 
+        // An explicitly blocked extension is a clear violation (red), not merely "unknown" (yellow).
+        if (_blockedExtensions.Contains(ext))
+        {
+            ForbiddenFileDetected?.Invoke(Path.GetFileName(fullPath));
+            return;
+        }
+
         if (_allowedExtensions.Count > 0 && !_allowedExtensions.Contains(ext))
         {
             UnknownFileDetected?.Invoke(Path.GetFileName(fullPath));
@@ -253,7 +269,14 @@ public sealed class FileActivityMonitor : IDisposable
                 continue;
             }
 
-            if (_allowedExtensions.Count > 0 && !_allowedExtensions.Contains(ext.ToLowerInvariant()))
+            var lowerExt = ext.ToLowerInvariant();
+            if (_blockedExtensions.Contains(lowerExt))
+            {
+                ForbiddenFileDetected?.Invoke(token);
+                continue;
+            }
+
+            if (_allowedExtensions.Count > 0 && !_allowedExtensions.Contains(lowerExt))
             {
                 ForbiddenFileDetected?.Invoke(token);
             }

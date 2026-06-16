@@ -28,6 +28,7 @@ public sealed class MainForm : Form
     private readonly TextBox _aiInput;
     private readonly ListBox _appList;
     private readonly TextBox _extensionsBox;
+    private readonly TextBox _blockedExtensionsBox;
     private readonly CheckBox _restrictFolderCheck;
     private readonly ComboBox _workFolderModeCombo;
     private readonly TextBox _workFolderBox;
@@ -159,7 +160,13 @@ public sealed class MainForm : Form
         fileStack.Controls.Add(HintLabel("extHint", new Padding(0, 0, 0, 2)));
         _extensionsBox = new TextBox { Width = SectionWidth - 30, Margin = new Padding(0, 0, 0, 8) };
         Theme.StyleInput(_extensionsBox);
+        _extensionsBox.TextChanged += (_, _) => UpdateBlockedExtState();
         fileStack.Controls.Add(_extensionsBox);
+
+        fileStack.Controls.Add(HintLabel("extBlockHint", new Padding(0, 0, 0, 2)));
+        _blockedExtensionsBox = new TextBox { Width = SectionWidth - 30, Margin = new Padding(0, 0, 0, 8) };
+        Theme.StyleInput(_blockedExtensionsBox);
+        fileStack.Controls.Add(_blockedExtensionsBox);
 
         _restrictFolderCheck = AddCheck(fileStack, "chkRestrict", false);
         fileStack.Controls.Add(HintLabel("baseLabel", new Padding(0, 6, 0, 2)));
@@ -248,6 +255,7 @@ public sealed class MainForm : Form
         RebuildCombo();
         RebuildBeepModeCombo();
         UpdateWorkFolderHint();
+        UpdateBlockedExtState();
 
         foreach (var btn in _flagButtons)
         {
@@ -269,6 +277,19 @@ public sealed class MainForm : Form
             Lang.T("comboFixed")
         });
         _workFolderModeCombo.SelectedIndex = idx < 0 ? 0 : idx;
+    }
+
+    // An allow-list is stricter than a block-list (it permits ONLY the listed extensions), so once
+    // the teacher fills in allowed extensions the block-list is redundant: disable and clear it.
+    private void UpdateBlockedExtState()
+    {
+        var hasAllowList = !string.IsNullOrWhiteSpace(_extensionsBox.Text);
+        if (hasAllowList)
+        {
+            _blockedExtensionsBox.Clear();
+        }
+
+        _blockedExtensionsBox.Enabled = !hasAllowList;
     }
 
     private void RebuildBeepModeCombo()
@@ -522,6 +543,8 @@ public sealed class MainForm : Form
             var logSecret = new byte[32];
             RandomNumberGenerator.Fill(logSecret);
 
+            var allowedExtensions = ParseExtensions(_extensionsBox.Text);
+
             var payload = new ConfigPayload
             {
                 Version = 2,
@@ -541,7 +564,12 @@ public sealed class MainForm : Form
                 AlarmVolumePercent = _volumeCombo.SelectedIndex switch { 0 => 25, 1 => 50, 2 => 75, _ => 100 },
                 AiBlocklist = _aiList.Items.Cast<string>().ToArray(),
                 AllowedProcesses = _appList.Items.Cast<string>().ToArray(),
-                AllowedFileExtensions = ParseExtensions(_extensionsBox.Text),
+                AllowedFileExtensions = allowedExtensions,
+                // An allow-list already restricts to ONLY the listed extensions, so a block-list
+                // would be redundant; keep it empty whenever the allow-list is in use.
+                BlockedFileExtensions = allowedExtensions.Length > 0
+                    ? Array.Empty<string>()
+                    : ParseExtensions(_blockedExtensionsBox.Text),
                 WorkFolderMode = workFolderMode,
                 WorkFolderRelative = workFolderRelative,
                 WorkFolder = workFolderAbsolute,

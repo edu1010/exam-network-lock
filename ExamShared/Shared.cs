@@ -37,6 +37,11 @@ public sealed class ConfigPayload
     public string[] AllowedProcesses { get; init; } = Array.Empty<string>();
     public string[] AllowedFileExtensions { get; init; } = Array.Empty<string>();
 
+    // Explicitly blocked file extensions (e.g. ".exe"). Empty = nothing blocked. Only meaningful
+    // when AllowedFileExtensions is empty: an allow-list is already stricter (it permits ONLY the
+    // listed extensions), so when it is set this block-list is redundant and ignored.
+    public string[] BlockedFileExtensions { get; init; } = Array.Empty<string>();
+
     // Exam work folder: work allowed here and in subfolders.
     // The base is resolved on the STUDENT machine (per-user), so it is portable across
     // laptops with different usernames. See WorkFolderModes / WorkFolderResolver.

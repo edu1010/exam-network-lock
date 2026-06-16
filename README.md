@@ -54,6 +54,8 @@ noticing).
 - **Allowed programs**: list of executables (e.g. `eclipse.exe`). Empty = no restriction. Only
   the `.exe` **name** is stored, so it works even if the install path differs between machines.
 - **Allowed file types**: e.g. `.java,.txt,.pdf`. Empty = no restriction.
+- **Blocked file types**: e.g. `.exe,.zip`. Empty = nothing blocked. Disabled when allowed file
+  types are set, because an allow-list is already stricter (it permits only the listed types).
 - **Work folder (portable)**: restrict work to a folder and its subfolders. The base is
   resolved **on the student machine**, so the same config works on every laptop even with
   different usernames:
@@ -186,6 +188,8 @@ Genera el `exam.config`, signat amb HMAC (no es pot manipular sense que el clien
   Només es desa el **nom** de l'`.exe`, així funciona encara que la ruta d'instal·lació canviï
   entre equips.
 - **Extensions permeses**: p. ex. `.java,.txt,.pdf`. Buit = sense restricció.
+- **Extensions bloquejades**: p. ex. `.exe,.zip`. Buit = res bloquejat. Es desactiva si hi ha
+  extensions permeses, perquè la llista de permeses ja és més estricta (només permet les indicades).
 - **Carpeta de treball (portable)**: restringeix el treball a una carpeta i les seves
   subcarpetes. La base es resol **a l'equip de l'alumne**, de manera que la mateixa configuració
   serveix per a tots els portàtils encara que el nom d'usuari sigui diferent:
@@ -320,6 +324,8 @@ Genera el `exam.config` firmado con HMAC (no se puede manipular sin que el clien
   Se guarda solo el **nombre** del `.exe`, así funciona aunque la ruta de instalación cambie
   entre equipos.
 - **Extensiones permitidas**: ej. `.java,.txt,.pdf`. Vacío = sin restricción.
+- **Extensiones no permitidas**: ej. `.exe,.zip`. Vacío = no bloquea nada. Se desactiva si hay
+  extensiones permitidas, porque la lista de permitidas ya es más estricta (solo permite las indicadas).
 - **Carpeta de trabajo (portable)**: restringe el trabajo a una carpeta y sus subcarpetas. La
   base se resuelve **en el equipo del alumno**, así que el mismo config vale para todos los
   portátiles aunque el nombre de usuario sea distinto:
