@@ -20,6 +20,7 @@ public sealed class MainForm : Form
     private readonly CheckBox _disableBluetoothCheck;
     private readonly CheckBox _aiShieldCheck;
     private readonly CheckBox _raiseVolumeCheck;
+    private readonly CheckBox _detectVmCheck;
 
     private readonly ListBox _aiList;
     private readonly TextBox _aiInput;
@@ -90,6 +91,7 @@ public sealed class MainForm : Form
         var aiStack = VerticalStack();
         _aiShieldCheck = AddCheck(aiStack, "chkAi", true);
         _raiseVolumeCheck = AddCheck(aiStack, "chkVol", true);
+        _detectVmCheck = AddCheck(aiStack, "chkVm", true);
         aiStack.Controls.Add(HintLabel("aiListLabel", new Padding(0, 8, 0, 2)));
         _aiList = new ListBox { Width = SectionWidth - 30, Height = 120, Margin = new Padding(0, 0, 0, 6) };
         Theme.StyleList(_aiList);
@@ -492,6 +494,7 @@ public sealed class MainForm : Form
                 DisableBluetooth = _disableBluetoothCheck.Checked,
                 AiShieldEnabled = _aiShieldCheck.Checked,
                 RaiseVolumeOnAi = _raiseVolumeCheck.Checked,
+                DetectVirtualMachines = _detectVmCheck.Checked,
                 BeepOnViolation = true,
                 AiBlocklist = _aiList.Items.Cast<string>().ToArray(),
                 AllowedProcesses = _appList.Items.Cast<string>().ToArray(),

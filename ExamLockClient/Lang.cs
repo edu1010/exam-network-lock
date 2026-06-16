@@ -67,6 +67,9 @@ internal static class Lang
 
         ["lockStarted"] = new[] { "Lockdown started.", "Bloqueig iniciat.", "Bloqueo iniciado." },
         ["incAi"] = new[] { "⚠ AI detected: {0}", "⚠ IA detectada: {0}", "⚠ IA detectada: {0}" },
+        ["incAiTool"] = new[] { "⚠ AI tool: {0}", "⚠ Eina d'IA: {0}", "⚠ Herramienta de IA: {0}" },
+        ["incVm"] = new[] { "⛔ Virtual machine: {0}", "⛔ Màquina virtual: {0}", "⛔ Máquina virtual: {0}" },
+        ["statusVm"] = new[] { "Virtual machine detected. Notify the teacher.", "Màquina virtual detectada. Avisa el professor.", "Máquina virtual detectada. Avisa al profesor." },
         ["incForbidden"] = new[] { "⛔ Forbidden file: {0}", "⛔ Fitxer no permès: {0}", "⛔ Archivo no permitido: {0}" },
         ["incOutside"] = new[] { "⛔ Outside the exam folder: {0}", "⛔ Fora de la carpeta de l'examen: {0}", "⛔ Fuera de la carpeta de examen: {0}" },
         ["incUnknownProc"] = new[] { "❔ Unknown program: {0}", "❔ Programa desconegut: {0}", "❔ Programa desconocido: {0}" },

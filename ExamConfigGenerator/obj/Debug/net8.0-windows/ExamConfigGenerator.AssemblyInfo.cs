@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExamConfigGenerator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82b7b8fbdaf9e756efb9cd7ad6fd4aa4fda9dbab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba005da4d56a598e83d34e9267836fee3a85d45f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExamConfigGenerator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExamConfigGenerator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -24,11 +24,14 @@ public sealed class ConfigPayload
     public bool DisableWifi { get; init; } = true;
     public bool DisableBluetooth { get; init; }
 
-    // AI shield: monitor active TCP connections against a blocklist.
+    // AI shield: monitor active TCP connections (and the DNS cache) against a blocklist.
     public bool AiShieldEnabled { get; init; } = true;
     public string[] AiBlocklist { get; init; } = Array.Empty<string>();
     public bool RaiseVolumeOnAi { get; init; } = true;
     public bool BeepOnViolation { get; init; } = true;
+
+    // Flag running virtual machines / hypervisors (a common way to bypass the lock).
+    public bool DetectVirtualMachines { get; init; } = true;
 
     // Allowed programs (exe names, e.g. "eclipse.exe") and file extensions (e.g. ".java").
     public string[] AllowedProcesses { get; init; } = Array.Empty<string>();
@@ -94,6 +97,7 @@ public static class ConfigDefaults
     // resolved hostname; entries that are already IPs are used as-is.
     public static readonly string[] DefaultAiBlocklist =
     {
+        // Web assistants
         "claude.ai",
         "anthropic.com",
         "openai.com",
@@ -114,6 +118,23 @@ public static class ConfigDefaults
         "you.com",
         "phind.com",
         "character.ai",
+        // API / CLI / IDE-assistant endpoints (Codex, Claude Code, Copilot, Cursor…)
+        "api.openai.com",
+        "api.anthropic.com",
+        "api.x.ai",
+        "api.deepseek.com",
+        "api.mistral.ai",
+        "api.cohere.ai",
+        "api.groq.com",
+        "api.perplexity.ai",
+        "api.githubcopilot.com",
+        "copilot-proxy.githubusercontent.com",
+        "githubcopilot.com",
+        "cursor.sh",
+        "cursor.com",
+        "codeium.com",
+        "windsurf.com",
+        "tabnine.com",
     };
 }
 
@@ -134,6 +155,9 @@ public static class LogEvents
     public const string BluetoothFailed = "BT_FAILED";
 
     public const string AiDetected = "AI_DETECTED";
+    public const string AiDnsDetected = "AI_DNS_DETECTED";
+    public const string AiToolDetected = "AI_TOOL_DETECTED";
+    public const string VmDetected = "VM_DETECTED";
     public const string AiCleared = "AI_CLEARED";
 
     public const string UnknownProcess = "UNKNOWN_PROCESS";

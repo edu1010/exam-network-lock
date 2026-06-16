@@ -30,6 +30,8 @@ public sealed class MainForm : Form
     private readonly AudioAlerter _audio = new();
 
     private AiConnectionMonitor? _aiMonitor;
+    private DnsCacheMonitor? _dnsMonitor;
+    private ThreatProcessMonitor? _threatMonitor;
     private ProcessMonitor? _processMonitor;
     private FileActivityMonitor? _fileMonitor;
 
@@ -406,6 +408,18 @@ public sealed class MainForm : Form
             _aiMonitor = new AiConnectionMonitor(blocklist);
             _aiMonitor.AiConnectionDetected += desc => RunOnUi(() => OnAiDetected(desc));
             _aiMonitor.Start();
+
+            _dnsMonitor = new DnsCacheMonitor(blocklist);
+            _dnsMonitor.AiHostnameResolved += host => RunOnUi(() => OnAiDns(host));
+            _dnsMonitor.Start();
+        }
+
+        if (_config.AiShieldEnabled || _config.DetectVirtualMachines)
+        {
+            _threatMonitor = new ThreatProcessMonitor(_config.AiShieldEnabled, _config.DetectVirtualMachines);
+            _threatMonitor.AiToolDetected += name => RunOnUi(() => OnAiTool(name));
+            _threatMonitor.VmDetected += name => RunOnUi(() => OnVmDetected(name));
+            _threatMonitor.Start();
         }
 
         if (_config.AllowedProcesses.Length > 0)
@@ -431,22 +445,48 @@ public sealed class MainForm : Form
 
     // ----- Incident handlers -----
 
-    private void OnAiDetected(string desc)
+    private void OnAiDetected(string desc) =>
+        RaiseAiAlarm("AI:" + desc, LogEvents.AiDetected, desc, "incAi", "statusAi");
+
+    private void OnAiDns(string host) =>
+        RaiseAiAlarm("DNS:" + host, LogEvents.AiDnsDetected, host, "incAi", "statusAi");
+
+    private void OnAiTool(string name) =>
+        RaiseAiAlarm("TOOL:" + name, LogEvents.AiToolDetected, name, "incAiTool", "statusAi");
+
+    private void RaiseAiAlarm(string dedupKey, string logEvent, string data, string incidentKey, string statusKey)
     {
-        if (!_reported.Add("AI:" + desc))
+        if (!_reported.Add(dedupKey))
         {
             return;
         }
 
-        _log?.Append(LogEvents.AiDetected, desc);
-        AddIncident(string.Format(Lang.T("incAi"), desc));
+        _log?.Append(logEvent, data);
+        AddIncident(string.Format(Lang.T(incidentKey), data));
         if (_config?.RaiseVolumeOnAi == true)
         {
             _audio.RaiseVolumeToMax();
         }
 
         _audio.StartAlarm();
-        SetRed(Lang.T("statusAi"));
+        SetRed(Lang.T(statusKey));
+    }
+
+    private void OnVmDetected(string name)
+    {
+        if (!_reported.Add("VM:" + name))
+        {
+            return;
+        }
+
+        _log?.Append(LogEvents.VmDetected, name);
+        AddIncident(string.Format(Lang.T("incVm"), name));
+        if (_config?.BeepOnViolation == true)
+        {
+            _audio.StartAlarm();
+        }
+
+        SetRed(Lang.T("statusVm"));
     }
 
     private void OnForbiddenFile(string file)
@@ -657,9 +697,13 @@ public sealed class MainForm : Form
     private void StopMonitors()
     {
         _aiMonitor?.Dispose();
+        _dnsMonitor?.Dispose();
+        _threatMonitor?.Dispose();
         _processMonitor?.Dispose();
         _fileMonitor?.Dispose();
         _aiMonitor = null;
+        _dnsMonitor = null;
+        _threatMonitor = null;
         _processMonitor = null;
         _fileMonitor = null;
     }

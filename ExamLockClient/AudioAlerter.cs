@@ -14,9 +14,14 @@ public sealed class AudioAlerter : IDisposable
     [DllImport("user32.dll")]
     private static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, UIntPtr dwExtraInfo);
 
+    // Alarm tone: a long beep with a short gap, repeated until acknowledged.
+    private const int BeepFrequency = 1000;   // Hz
+    private const int BeepDurationMs = 1500;  // length of each beep
+    private const int BeepGapMs = 250;        // silence between beeps
+
     private readonly object _gate = new();
-    private System.Threading.Timer? _beepTimer;
-    private bool _alarming;
+    private Thread? _beepThread;
+    private volatile bool _alarming;
 
     public void RaiseVolumeToMax()
     {
@@ -45,7 +50,8 @@ public sealed class AudioAlerter : IDisposable
             }
 
             _alarming = true;
-            _beepTimer = new System.Threading.Timer(_ => SafeBeep(), null, 0, 1500);
+            _beepThread = new Thread(BeepLoop) { IsBackground = true };
+            _beepThread.Start();
         }
     }
 
@@ -54,8 +60,29 @@ public sealed class AudioAlerter : IDisposable
         lock (_gate)
         {
             _alarming = false;
-            _beepTimer?.Dispose();
-            _beepTimer = null;
+            _beepThread = null;
+        }
+    }
+
+    private void BeepLoop()
+    {
+        while (_alarming)
+        {
+            try
+            {
+                Console.Beep(BeepFrequency, BeepDurationMs);
+            }
+            catch
+            {
+                // Console.Beep can fail on some configurations; ignore.
+            }
+
+            if (!_alarming)
+            {
+                break;
+            }
+
+            Thread.Sleep(BeepGapMs);
         }
     }
 
@@ -63,18 +90,6 @@ public sealed class AudioAlerter : IDisposable
     {
         keybd_event(vk, 0, 0, UIntPtr.Zero);
         keybd_event(vk, 0, KeyEventFKeyUp, UIntPtr.Zero);
-    }
-
-    private static void SafeBeep()
-    {
-        try
-        {
-            Console.Beep(1000, 600);
-        }
-        catch
-        {
-            // Console.Beep can fail on some configurations; ignore.
-        }
     }
 
     public void Dispose()

@@ -81,7 +81,14 @@ teacher enters **password B** (the "teacher walks over and silences it" flow).
 #### AI detection is a safety net
 
 The shield monitors real TCP connections, so it **fires even if disabling Wi-Fi failed** on a
-particular laptop — the "double check" that simply turning off the driver cannot guarantee.
+particular laptop — the "double check" that simply turning off the driver cannot guarantee. It
+also reads the **DNS resolver cache**, so it catches CLI/IDE agents (Codex, Claude Code,
+Copilot…) that talk to `api.*` endpoints, even after the connection closes. **AI desktop tools**
+(Cursor, Windsurf, the ChatGPT/Claude desktop apps, local LLMs) and running **virtual machines**
+(VirtualBox, VMware, Hyper-V, QEMU) are flagged by process name.
+
+Limits: traffic generated *inside* a bridged VM, or on a second device such as a phone, is not
+visible to the host — that is what proctoring and the log are for. A running VM is still flagged.
 
 #### File monitoring is a deterrent
 
@@ -207,7 +214,15 @@ el professor introdueix la **contrasenya B** (el flux "el profe s'acosta i la si
 
 L'escut vigila connexions TCP reals, així que **salta encara que la desactivació del Wi-Fi
 falli** en algun portàtil concret — la "doble comprovació" que el simple apagat del driver no
-pot garantir.
+pot garantir. També llegeix la **caché DNS**, de manera que detecta agents de CLI/IDE (Codex,
+Claude Code, Copilot…) que parlen amb endpoints `api.*`, fins i tot després de tancar-se la
+connexió. Les **eines d'IA d'escriptori** (Cursor, Windsurf, les apps d'escriptori de
+ChatGPT/Claude, LLM locals) i les **màquines virtuals** en execució (VirtualBox, VMware,
+Hyper-V, QEMU) es detecten pel nom del procés.
+
+Límits: el trànsit generat *dins* d'una VM en mode bridged, o en un segon dispositiu com un
+mòbil, no és visible per al host — per a això hi ha la vigilància presencial i el registre. Una
+VM en execució, tot i així, queda marcada.
 
 #### La vigilància de fitxers és dissuasiva
 
@@ -333,6 +348,15 @@ profesor introduce la **contraseña B** (el flujo "el profe se acerca y la silen
 
 El escudo vigila conexiones TCP reales, así que **salta aunque el desactivado del Wi-Fi falle**
 en algún portátil concreto — el "doble check" que el simple apagado del driver no garantiza.
+También lee la **caché DNS**, así que detecta agentes de CLI/IDE (Codex, Claude Code,
+Copilot…) que hablan con endpoints `api.*`, incluso después de cerrarse la conexión. Las
+**herramientas de IA de escritorio** (Cursor, Windsurf, las apps de escritorio de
+ChatGPT/Claude, LLM locales) y las **máquinas virtuales** en ejecución (VirtualBox, VMware,
+Hyper-V, QEMU) se detectan por el nombre del proceso.
+
+Límites: el tráfico generado *dentro* de una VM en modo bridged, o en un segundo dispositivo
+como un móvil, no es visible para el host — para eso están la vigilancia presencial y el
+registro. Una VM en ejecución, aun así, queda marcada.
 
 #### La vigilancia de archivos es disuasoria
 
