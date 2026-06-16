@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationIcon>..\branding\app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <!-- Self-contained single-file publish: the .NET runtime is embedded in the .exe so it runs
+       on machines without .NET installed. Kicks in on `dotnet publish -c Release -r win-x64`;
+       a plain `dotnet build` stays framework-dependent (fast dev builds). -->
+  <PropertyGroup>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' != ''">
+    <SelfContained>true</SelfContained>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExamShared\ExamShared.csproj" />
+  </ItemGroup>
+</Project>

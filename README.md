@@ -17,6 +17,9 @@ log verifier:
 - **ExamLockClient** — the **student** app: enforces the lockdown and shows the shield.
 - **ExamShared** — shared library (models, cryptography, hash-chained log).
 - **ExamLogVerifier** — console tool that validates the log afterwards.
+- **ExamLogVerifierUI** — desktop app to verify **many** logs at once: drag in the exam folders,
+  load the `exam.config`, and each log turns green (intact), amber (warnings) or red (tampered or
+  AI/forbidden-file incidents). Selecting a log shows its events on the right, Finder-style.
 
 It is a **deterrent system with evidence**: it leaves a tamper-evident log (`examlog.jsonl`).
 A student can force-close it from Task Manager, but it will be recorded as an unclean exit and
@@ -116,9 +119,16 @@ dotnet build .\ExamLocking.sln
 
 ### Verify a log
 
+Single log, from the console:
+
 ```powershell
 dotnet run --project .\ExamLogVerifier -- .\exam.config .\examlog.jsonl
 ```
+
+Many logs, with a UI: open `ExamLogVerifierUI`, drag in the student exam folders (it finds every
+`examlog.jsonl` recursively), load the `exam.config`, and press **Verify**. Each log shows green /
+amber / red; click one to inspect its events on the right, filter the list by event type, and
+optionally export a CSV summary.
 
 ### Runtime files
 
@@ -151,6 +161,10 @@ Sistema de bloqueig per a exàmens a l'aula. El formen dues aplicacions d'escrip
 - **ExamLockClient** — app de l'**alumne**: aplica el bloqueig i mostra l'escut.
 - **ExamShared** — biblioteca comuna (models, criptografia, registre encadenat).
 - **ExamLogVerifier** — consola que valida el registre a posteriori.
+- **ExamLogVerifierUI** — app d'escriptori per verificar **molts** registres alhora: arrossega-hi
+  les carpetes d'examen, carrega l'`exam.config` i cada registre es posa verd (íntegre), groc
+  (avisos) o vermell (manipulat o incidències d'IA/fitxer prohibit). En seleccionar-ne un, veus
+  els seus esdeveniments a la dreta, a l'estil Finder.
 
 És un sistema de **dissuasió amb evidència**: deixa un registre a prova de manipulació
 (`examlog.jsonl`). L'alumne pot forçar el tancament des de l'Administrador de tasques, però
@@ -252,9 +266,16 @@ dotnet build .\ExamLocking.sln
 
 ### Verificar un registre
 
+Un sol registre, des de la consola:
+
 ```powershell
 dotnet run --project .\ExamLogVerifier -- .\exam.config .\examlog.jsonl
 ```
+
+Molts registres, amb interfície: obre `ExamLogVerifierUI`, arrossega-hi les carpetes d'examen
+dels alumnes (troba cada `examlog.jsonl` de forma recursiva), carrega l'`exam.config` i prem
+**Comprova**. Cada registre es posa verd / groc / vermell; fes clic per inspeccionar-ne els
+esdeveniments a la dreta, filtra la llista per tipus d'esdeveniment i, si vols, exporta un resum CSV.
 
 ### Fitxers en temps d'execució
 
@@ -287,6 +308,10 @@ Sistema de bloqueo para exámenes en el aula. Lo forman dos aplicaciones de escr
 - **ExamLockClient** — app del **alumno**: aplica el bloqueo y muestra el escudo.
 - **ExamShared** — biblioteca común (modelos, criptografía, log encadenado).
 - **ExamLogVerifier** — consola que valida el registro a posteriori.
+- **ExamLogVerifierUI** — app de escritorio para verificar **muchos** logs a la vez: arrastra las
+  carpetas de examen, carga el `exam.config` y cada log se pone verde (íntegro), ámbar (avisos) o
+  rojo (manipulado o incidencias de IA/archivo prohibido). Al seleccionar uno, ves sus eventos a la
+  derecha, estilo Finder.
 
 Es un sistema de **disuasión con evidencia**: deja un registro a prueba de manipulación
 (`examlog.jsonl`). El alumno puede forzar el cierre desde el Administrador de tareas, pero
@@ -388,9 +413,16 @@ dotnet build .\ExamLocking.sln
 
 ### Verificar un registro
 
+Un solo log, desde la consola:
+
 ```powershell
 dotnet run --project .\ExamLogVerifier -- .\exam.config .\examlog.jsonl
 ```
+
+Muchos logs, con interfaz: abre `ExamLogVerifierUI`, arrastra las carpetas de examen de los
+alumnos (encuentra cada `examlog.jsonl` de forma recursiva), carga el `exam.config` y pulsa
+**Comprobar**. Cada log se pone verde / ámbar / rojo; haz clic para inspeccionar sus eventos a la
+derecha, filtra la lista por tipo de evento y, si quieres, exporta un resumen CSV.
 
 ### Archivos en tiempo de ejecución
 
