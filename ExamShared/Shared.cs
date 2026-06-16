@@ -44,6 +44,18 @@ public sealed class ConfigPayload
     public string WorkFolderRelative { get; init; } = ""; // optional subfolder under the base
     public string WorkFolder { get; init; } = "";         // absolute path, only for "Absolute" mode
     public bool RestrictToWorkFolder { get; init; }
+
+    // Alarm sound: a continuous tone that repeats until acknowledged (legacy default),
+    // or a short three-beep burst per incident. Plus the speaker volume (0–100) the
+    // alarm raises to when it sounds.
+    public string BeepMode { get; init; } = BeepModes.Continuous;
+    public int AlarmVolumePercent { get; init; } = 100;
+}
+
+public static class BeepModes
+{
+    public const string Continuous = "Continuous"; // long tone, repeats until acknowledged (legacy)
+    public const string ThreeBeeps = "ThreeBeeps"; // three short beeps per incident, then silence
 }
 
 public static class WorkFolderModes

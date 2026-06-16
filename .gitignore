@@ -20,6 +20,7 @@ Thumbs.db
 
 # Publish output
 publish/
+dist/
 
 # Logs
 *.log

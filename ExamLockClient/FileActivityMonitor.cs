@@ -33,6 +33,7 @@ public sealed class FileActivityMonitor : IDisposable
     private readonly HashSet<string> _inspectProcesses;
     private readonly string _workFolder;
     private readonly bool _restrictToFolder;
+    private readonly string[] _excludedRoots;
     private readonly HashSet<int> _knownPids = new();
     private readonly object _gate = new();
 
@@ -60,6 +61,68 @@ public sealed class FileActivityMonitor : IDisposable
                 _inspectProcesses.Add(name);
             }
         }
+
+        _excludedRoots = BuildExcludedRoots();
+    }
+
+    // Per-user temp/roaming/cache locations the student's own apps churn constantly (temp
+    // files, autosaves, browser caches). Files here are machine noise, not the student opening
+    // a document. We deliberately exclude ONLY these user-profile paths — not ProgramData,
+    // Windows or Program Files: those are not where openers read the student's files, and some
+    // (ProgramData, Windows\Temp) are user-writable, so excluding them would let a stashed
+    // cheat file slip past the folder/extension checks.
+    private static string[] BuildExcludedRoots()
+    {
+        var folders = new[]
+        {
+            Path.GetTempPath(),
+            Environment.GetEnvironmentVariable("TEMP") ?? "",
+            Environment.GetEnvironmentVariable("TMP") ?? "",
+            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), // AppData\Local (incl. Temp, caches)
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),      // AppData\Roaming
+        };
+
+        return folders
+            .Where(f => !string.IsNullOrWhiteSpace(f))
+            .Select(NormalizeRoot)
+            .Where(f => f.Length > 0)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+    }
+
+    private static string NormalizeRoot(string path)
+    {
+        try
+        {
+            return Path.GetFullPath(path)
+                       .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)
+                   + Path.DirectorySeparatorChar;
+        }
+        catch
+        {
+            return string.Empty;
+        }
+    }
+
+    private bool IsInExcludedSystemLocation(string path)
+    {
+        try
+        {
+            var full = Path.GetFullPath(path);
+            foreach (var root in _excludedRoots)
+            {
+                if (full.StartsWith(root, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+        }
+        catch
+        {
+            // If we cannot resolve it, do not treat it as excluded.
+        }
+
+        return false;
     }
 
     public void Start()
@@ -172,7 +235,19 @@ public sealed class FileActivityMonitor : IDisposable
                 continue;
             }
 
-            if (_restrictToFolder && _workFolder.Length > 0 && !IsInsideWorkFolder(token))
+            // Files inside the teacher-designated work folder are always inspected, even if
+            // that folder happens to live under a temp/roaming path.
+            var insideWorkFolder = _restrictToFolder && _workFolder.Length > 0 && IsInsideWorkFolder(token);
+
+            // Ignore temp/roaming/cache locations outside the work folder: the student's own
+            // apps constantly read and write there, so they are machine noise rather than the
+            // student opening a disallowed file.
+            if (!insideWorkFolder && IsInExcludedSystemLocation(token))
+            {
+                continue;
+            }
+
+            if (_restrictToFolder && _workFolder.Length > 0 && !insideWorkFolder)
             {
                 OutsideFolderDetected?.Invoke(token);
                 continue;

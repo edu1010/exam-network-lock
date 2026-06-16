@@ -63,6 +63,7 @@ internal static class Lang
         ["wrongA"] = new[] { "Wrong password A.", "Contrasenya A incorrecta.", "Contraseña A incorrecta." },
         ["wrongB"] = new[] { "Wrong password B.", "Contrasenya B incorrecta.", "Contraseña B incorrecta." },
         ["wifiRestored"] = new[] { "Wi-Fi restored. The shield is still active.", "Wi-Fi restaurat. L'escut continua actiu.", "Wi-Fi restaurado. El escudo sigue activo." },
+        ["submissionMode"] = new[] { "Internet restored for submission — folder checks paused.", "Internet restaurat per a l'entrega — comprovació de carpetes en pausa.", "Internet restaurado para la entrega — comprobación de carpetas en pausa." },
         ["needBToExit"] = new[] { "Enter password B (close) to exit.", "Introdueix la contrasenya B (tancar) per sortir.", "Introduce la contraseña B (cerrar) para salir." },
 
         ["lockStarted"] = new[] { "Lockdown started.", "Bloqueig iniciat.", "Bloqueo iniciado." },

@@ -39,6 +39,8 @@ public sealed class MainForm : Form
     private bool _adminAuthenticated;
     private bool _closeLogged;
     private bool _wifiDisableFailed;
+    private bool _submissionMode;
+    private bool _threatActive;   // an AI/DNS/tool/VM threat is currently sounding the alarm
 
     private bool _redActive;
     private bool _yellowActive;
@@ -52,8 +54,9 @@ public sealed class MainForm : Form
         Width = 600;
         Height = 720;
         StartPosition = FormStartPosition.CenterScreen;
-        FormBorderStyle = FormBorderStyle.FixedSingle;
-        MaximizeBox = false;
+        FormBorderStyle = FormBorderStyle.Sizable;
+        MinimumSize = new Size(560, 620);
+        MaximizeBox = true;
         MinimizeBox = true;
         BackColor = Theme.Background;
         Font = Theme.Base;
@@ -347,6 +350,13 @@ public sealed class MainForm : Form
             return;
         }
 
+        _audio.Pattern = _config.BeepMode == BeepModes.ThreeBeeps
+            ? BeepPattern.ThreeBeeps
+            : BeepPattern.Continuous;
+        _audio.VolumePercent = _config.AlarmVolumePercent is > 0 and <= 100
+            ? _config.AlarmVolumePercent
+            : 100;
+
         var radioStates = new List<string>();
 
         if (_config.DisableWifi)
@@ -465,10 +475,11 @@ public sealed class MainForm : Form
         AddIncident(string.Format(Lang.T(incidentKey), data));
         if (_config?.RaiseVolumeOnAi == true)
         {
-            _audio.RaiseVolumeToMax();
+            _audio.RaiseVolume();
         }
 
         _audio.StartAlarm();
+        _threatActive = true;
         SetRed(Lang.T(statusKey));
     }
 
@@ -484,6 +495,7 @@ public sealed class MainForm : Form
         if (_config?.BeepOnViolation == true)
         {
             _audio.StartAlarm();
+            _threatActive = true;
         }
 
         SetRed(Lang.T("statusVm"));
@@ -491,7 +503,7 @@ public sealed class MainForm : Form
 
     private void OnForbiddenFile(string file)
     {
-        if (!_reported.Add("FILE:" + file))
+        if (_submissionMode || !_reported.Add("FILE:" + file))
         {
             return;
         }
@@ -508,7 +520,7 @@ public sealed class MainForm : Form
 
     private void OnOutsideFolder(string file)
     {
-        if (!_reported.Add("OUT:" + file))
+        if (_submissionMode || !_reported.Add("OUT:" + file))
         {
             return;
         }
@@ -537,7 +549,7 @@ public sealed class MainForm : Form
 
     private void OnUnknownFile(string file)
     {
-        if (!_reported.Add("UFILE:" + file))
+        if (_submissionMode || !_reported.Add("UFILE:" + file))
         {
             return;
         }
@@ -617,7 +629,34 @@ public sealed class MainForm : Form
 
         _log?.Append(LogEvents.UnlockSuccess);
         ReenableRadios();
+        EnterSubmissionMode();
         SetStatus(Lang.T("wifiRestored"));
+    }
+
+    // Password A restores internet so students can open the browser and upload the exam.
+    // From here, normal browsing touches files outside the exam folder, so folder checking
+    // would only produce false alarms: stop it and silence the alarm. The AI/VM shield stays
+    // active and will sound again if a new AI connection or tool appears.
+    private void EnterSubmissionMode()
+    {
+        if (_submissionMode)
+        {
+            return;
+        }
+
+        _submissionMode = true;
+        _fileMonitor?.Dispose();
+        _fileMonitor = null;
+
+        // Silence folder-violation beeping. StopAlarm stops the single shared alarm thread,
+        // so if an AI/VM threat is still active we re-arm it — that shield must stay audible.
+        _audio.StopAlarm();
+        if (_threatActive)
+        {
+            _audio.StartAlarm();
+        }
+
+        AddIncident(Lang.T("submissionMode"));
     }
 
     private async void ReenableRadios()

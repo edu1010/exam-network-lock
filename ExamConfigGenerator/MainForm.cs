@@ -21,6 +21,8 @@ public sealed class MainForm : Form
     private readonly CheckBox _aiShieldCheck;
     private readonly CheckBox _raiseVolumeCheck;
     private readonly CheckBox _detectVmCheck;
+    private readonly ComboBox _beepModeCombo;
+    private readonly ComboBox _volumeCombo;
 
     private readonly ListBox _aiList;
     private readonly TextBox _aiInput;
@@ -92,6 +94,32 @@ public sealed class MainForm : Form
         _aiShieldCheck = AddCheck(aiStack, "chkAi", true);
         _raiseVolumeCheck = AddCheck(aiStack, "chkVol", true);
         _detectVmCheck = AddCheck(aiStack, "chkVm", true);
+
+        // Alarm sound shape and volume (applies to every violation that beeps).
+        aiStack.Controls.Add(HintLabel("beepModeLabel", new Padding(0, 8, 0, 2)));
+        _beepModeCombo = new ComboBox
+        {
+            Width = 300,
+            DropDownStyle = ComboBoxStyle.DropDownList,
+            FlatStyle = FlatStyle.Flat,
+            Font = Theme.Base,
+            Margin = new Padding(0, 0, 0, 6)
+        };
+        aiStack.Controls.Add(_beepModeCombo);
+
+        aiStack.Controls.Add(HintLabel("volumeLabel", new Padding(0, 4, 0, 2)));
+        _volumeCombo = new ComboBox
+        {
+            Width = 300,
+            DropDownStyle = ComboBoxStyle.DropDownList,
+            FlatStyle = FlatStyle.Flat,
+            Font = Theme.Base,
+            Margin = new Padding(0, 0, 0, 6)
+        };
+        _volumeCombo.Items.AddRange(new object[] { "25%", "50%", "75%", "100%" });
+        _volumeCombo.SelectedIndex = 3;
+        aiStack.Controls.Add(_volumeCombo);
+
         aiStack.Controls.Add(HintLabel("aiListLabel", new Padding(0, 8, 0, 2)));
         _aiList = new ListBox { Width = SectionWidth - 30, Height = 120, Margin = new Padding(0, 0, 0, 6) };
         Theme.StyleList(_aiList);
@@ -218,6 +246,7 @@ public sealed class MainForm : Form
         }
 
         RebuildCombo();
+        RebuildBeepModeCombo();
         UpdateWorkFolderHint();
 
         foreach (var btn in _flagButtons)
@@ -240,6 +269,18 @@ public sealed class MainForm : Form
             Lang.T("comboFixed")
         });
         _workFolderModeCombo.SelectedIndex = idx < 0 ? 0 : idx;
+    }
+
+    private void RebuildBeepModeCombo()
+    {
+        var idx = _beepModeCombo.SelectedIndex;
+        _beepModeCombo.Items.Clear();
+        _beepModeCombo.Items.AddRange(new object[]
+        {
+            Lang.T("beepContinuous"),
+            Lang.T("beepThree")
+        });
+        _beepModeCombo.SelectedIndex = idx < 0 ? 0 : idx;
     }
 
     // ----- UI builders -----
@@ -496,6 +537,8 @@ public sealed class MainForm : Form
                 RaiseVolumeOnAi = _raiseVolumeCheck.Checked,
                 DetectVirtualMachines = _detectVmCheck.Checked,
                 BeepOnViolation = true,
+                BeepMode = _beepModeCombo.SelectedIndex == 1 ? BeepModes.ThreeBeeps : BeepModes.Continuous,
+                AlarmVolumePercent = _volumeCombo.SelectedIndex switch { 0 => 25, 1 => 50, 2 => 75, _ => 100 },
                 AiBlocklist = _aiList.Items.Cast<string>().ToArray(),
                 AllowedProcesses = _appList.Items.Cast<string>().ToArray(),
                 AllowedFileExtensions = ParseExtensions(_extensionsBox.Text),
