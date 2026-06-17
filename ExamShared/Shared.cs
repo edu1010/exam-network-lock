@@ -33,6 +33,9 @@ public sealed class ConfigPayload
     // Flag running virtual machines / hypervisors (a common way to bypass the lock).
     public bool DetectVirtualMachines { get; init; } = true;
 
+    // Broadcast live status + log to the teacher's ExamMonitor over the LAN (UDP).
+    public bool MonitorBroadcast { get; init; } = true;
+
     // Allowed programs (exe names, e.g. "eclipse.exe") and file extensions (e.g. ".java").
     public string[] AllowedProcesses { get; init; } = Array.Empty<string>();
     public string[] AllowedFileExtensions { get; init; } = Array.Empty<string>();

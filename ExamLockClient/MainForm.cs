@@ -34,6 +34,8 @@ public sealed class MainForm : Form
     private ThreatProcessMonitor? _threatMonitor;
     private ProcessMonitor? _processMonitor;
     private FileActivityMonitor? _fileMonitor;
+    private MonitorReporter? _reporter;
+    private string _stateStr = "Idle";
 
     private string _configPath = string.Empty;
     private bool _adminAuthenticated;
@@ -332,6 +334,7 @@ public sealed class MainForm : Form
 
         _log = new SecureLogService(logPath, logSecretBase64);
         _session = new SessionStateService(sessionPath);
+        _reporter = new MonitorReporter(logPath);
 
         if (_session.HasUncleanPreviousSession())
         {
@@ -397,6 +400,11 @@ public sealed class MainForm : Form
         _radioStateLabel.Text = string.Join("    ", radioStates);
 
         StartMonitors();
+
+        if (_config.MonitorBroadcast)
+        {
+            _reporter?.Start();
+        }
 
         UpdateShield();
         AddIncident(Lang.T("lockStarted"));
@@ -579,12 +587,16 @@ public sealed class MainForm : Form
         {
             _shield.Status = ShieldControl.ShieldStatus.Idle;
             _shield.Caption = Lang.T("waitingConfig");
+            _stateStr = "Idle";
             return;
         }
 
         var state = _redActive ? ShieldControl.ShieldStatus.Red
             : _yellowActive ? ShieldControl.ShieldStatus.Yellow
             : ShieldControl.ShieldStatus.Green;
+
+        _stateStr = state.ToString();
+        ReportState();
 
         _shield.Status = state;
         _shield.Caption = state switch
@@ -765,6 +777,7 @@ public sealed class MainForm : Form
             _closeLogged = true;
         }
 
+        _reporter?.Dispose();
         _audio.Dispose();
     }
 
@@ -809,5 +822,11 @@ public sealed class MainForm : Form
     private void SetStatus(string message)
     {
         _statusLabel.Text = message;
+        ReportState();
+    }
+
+    private void ReportState()
+    {
+        _reporter?.SetState(_stateStr, _statusLabel.Text);
     }
 }

@@ -15,6 +15,7 @@ log verifier:
 
 - **ExamConfigGenerator** — the **teacher** app: generates a signed `exam.config`.
 - **ExamLockClient** — the **student** app: enforces the lockdown and shows the shield.
+- **ExamMonitor** — the **teacher** dashboard: a live grid of students over the LAN.
 - **ExamShared** — shared library (models, cryptography, hash-chained log).
 - **ExamLogVerifier** — console tool that validates the log afterwards.
 - **ExamLogVerifierUI** — desktop app to verify **many** logs at once: drag in the exam folders,
@@ -102,6 +103,21 @@ document-opener apps (and any the teacher allows). It leaves evidence in the log
 exhaustive hook on every file open. Tune the allowed extensions/folder to reduce false
 positives.
 
+### Teacher monitor — ExamMonitor
+
+![Teacher monitor](docs/img/monitor.png)
+
+A live dashboard on the teacher's PC. Each client **broadcasts** its shield state and
+tamper-evident log over the LAN (UDP, send-only); the monitor listens and shows one row per
+student, identified by **user@machine**: state (green/amber/red), last event, number of log
+entries and **integrity** (verified with the `LogSecret` from `exam.config`, so tampering shows
+here too). No IP setup — students are discovered automatically.
+
+In lockdown mode (Wi-Fi disabled) the data arrives **when the student restores the connection**
+(password A) to upload the exam; in monitored mode it streams live. The monitor needs inbound
+UDP allowed (Windows Firewall) and works on a single LAN/subnet — networks with client
+isolation may block it.
+
 ### Build
 
 Requirement: .NET 8 SDK for Windows. The client targets `net8.0-windows10.0.19041.0` to use the
@@ -159,6 +175,7 @@ Sistema de bloqueig per a exàmens a l'aula. El formen dues aplicacions d'escrip
 
 - **ExamConfigGenerator** — app del **professor**: genera un `exam.config` signat.
 - **ExamLockClient** — app de l'**alumne**: aplica el bloqueig i mostra l'escut.
+- **ExamMonitor** — el **panell** del professor: graella d'alumnes en viu per la LAN.
 - **ExamShared** — biblioteca comuna (models, criptografia, registre encadenat).
 - **ExamLogVerifier** — consola que valida el registre a posteriori.
 - **ExamLogVerifierUI** — app d'escriptori per verificar **molts** registres alhora: arrossega-hi
@@ -249,6 +266,22 @@ d'ordres de les apps que obren documents (i de les que el profe permeti). Deixa 
 registre; no és un ganxo exhaustiu de cada obertura. Ajusta extensions/carpeta per reduir
 falsos positius.
 
+### Panell del professor — ExamMonitor
+
+![Panell del professor](docs/img/monitor.png)
+
+Un panell en viu a l'ordinador del professor. Cada client **difon** el seu estat d'escut i el
+registre (a prova de manipulació) per la LAN (UDP, només enviament); el monitor escolta i mostra
+una fila per alumne, identificat amb **usuari@equip**: estat (verd/ambre/vermell), últim
+esdeveniment, nombre d'entrades del registre i **integritat** (verificada amb el `LogSecret` de
+l'`exam.config`, així que la manipulació també es veu aquí). Sense configurar IPs: els alumnes
+es detecten automàticament.
+
+En mode bloqueig (Wi-Fi desactivat) les dades arriben **quan l'alumne restaura la connexió**
+(contrasenya A) per pujar l'examen; en mode vigilància arriben en viu. El monitor necessita
+permís d'entrada UDP (tallafocs de Windows) i funciona en una sola LAN/subxarxa — les xarxes amb
+aïllament de clients el poden bloquejar.
+
 ### Compilació
 
 Requisit: .NET 8 SDK per a Windows. El client apunta a `net8.0-windows10.0.19041.0` per usar
@@ -306,6 +339,7 @@ Sistema de bloqueo para exámenes en el aula. Lo forman dos aplicaciones de escr
 
 - **ExamConfigGenerator** — app del **profesor**: genera un `exam.config` firmado.
 - **ExamLockClient** — app del **alumno**: aplica el bloqueo y muestra el escudo.
+- **ExamMonitor** — el **panel** del profesor: rejilla de alumnos en vivo por la LAN.
 - **ExamShared** — biblioteca común (modelos, criptografía, log encadenado).
 - **ExamLogVerifier** — consola que valida el registro a posteriori.
 - **ExamLogVerifierUI** — app de escritorio para verificar **muchos** logs a la vez: arrastra las
@@ -395,6 +429,22 @@ Es heurística: un `FileSystemWatcher` sobre la carpeta de trabajo más la inspe
 de comandos de las apps que abren documentos (y de las que el profe permita). Deja evidencia en
 el log; no es un gancho exhaustivo de cada apertura. Ajusta extensiones/carpeta para reducir
 falsos positivos.
+
+### Panel del profesor — ExamMonitor
+
+![Panel del profesor](docs/img/monitor.png)
+
+Un panel en vivo en el ordenador del profesor. Cada cliente **difunde** su estado de escudo y el
+registro (a prueba de manipulación) por la LAN (UDP, solo envío); el monitor escucha y muestra
+una fila por alumno, identificado con **usuario@equipo**: estado (verde/ámbar/rojo), último
+evento, número de entradas del registro e **integridad** (verificada con el `LogSecret` del
+`exam.config`, así que la manipulación también se ve aquí). Sin configurar IPs: los alumnos se
+detectan automáticamente.
+
+En modo bloqueo (Wi-Fi desactivado) los datos llegan **cuando el alumno restaura la conexión**
+(contraseña A) para subir el examen; en modo vigilancia llegan en vivo. El monitor necesita
+permiso de entrada UDP (firewall de Windows) y funciona en una sola LAN/subred — las redes con
+aislamiento de clientes pueden bloquearlo.
 
 ### Build
 

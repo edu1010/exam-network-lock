@@ -21,6 +21,7 @@ public sealed class MainForm : Form
     private readonly CheckBox _aiShieldCheck;
     private readonly CheckBox _raiseVolumeCheck;
     private readonly CheckBox _detectVmCheck;
+    private readonly CheckBox _monitorCheck;
     private readonly ComboBox _beepModeCombo;
     private readonly ComboBox _volumeCombo;
 
@@ -95,6 +96,7 @@ public sealed class MainForm : Form
         _aiShieldCheck = AddCheck(aiStack, "chkAi", true);
         _raiseVolumeCheck = AddCheck(aiStack, "chkVol", true);
         _detectVmCheck = AddCheck(aiStack, "chkVm", true);
+        _monitorCheck = AddCheck(aiStack, "chkMonitor", true);
 
         // Alarm sound shape and volume (applies to every violation that beeps).
         aiStack.Controls.Add(HintLabel("beepModeLabel", new Padding(0, 8, 0, 2)));
@@ -559,6 +561,7 @@ public sealed class MainForm : Form
                 AiShieldEnabled = _aiShieldCheck.Checked,
                 RaiseVolumeOnAi = _raiseVolumeCheck.Checked,
                 DetectVirtualMachines = _detectVmCheck.Checked,
+                MonitorBroadcast = _monitorCheck.Checked,
                 BeepOnViolation = true,
                 BeepMode = _beepModeCombo.SelectedIndex == 1 ? BeepModes.ThreeBeeps : BeepModes.Continuous,
                 AlarmVolumePercent = _volumeCombo.SelectedIndex switch { 0 => 25, 1 => 50, 2 => 75, _ => 100 },

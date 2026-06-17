@@ -48,6 +48,7 @@ internal static class Lang
         ["chkAi"] = new[] { "Enable AI shield (monitor AI connections)", "Activar escut anti-IA (vigila connexions a IA)", "Activar escudo anti-IA (vigila conexiones a IA)" },
         ["chkVol"] = new[] { "Raise volume and beep on AI detection", "Apujar volum i xiular en detectar IA", "Subir volumen y pitar al detectar IA" },
         ["chkVm"] = new[] { "Detect virtual machines (VirtualBox, VMware, Hyper-V…)", "Detectar màquines virtuals (VirtualBox, VMware, Hyper-V…)", "Detectar máquinas virtuales (VirtualBox, VMware, Hyper-V…)" },
+        ["chkMonitor"] = new[] { "Report status and log to the teacher monitor (LAN)", "Informar de l'estat i el registre al monitor del professor (LAN)", "Informar del estado y el registro al monitor del profesor (LAN)" },
         ["beepModeLabel"] = new[] { "Alarm sound:", "So de l'alarma:", "Sonido de la alarma:" },
         ["beepContinuous"] = new[] { "Continuous tone (until acknowledged)", "To continu (fins a reconèixer)", "Tono continuo (hasta reconocer)" },
         ["beepThree"] = new[] { "Three beeps per incident", "Tres xiulets per incidència", "Tres pitidos por incidencia" },
