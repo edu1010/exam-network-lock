@@ -20,6 +20,7 @@ public sealed class MainForm : Form
     private readonly Button _restoreButton;
     private readonly Button _adminButton;
     private readonly Button _loadConfigButton;
+    private readonly Button _adminRelaunchButton;
     private readonly List<Button> _flagButtons = new();
 
     private ConfigPayload? _config;
@@ -39,6 +40,7 @@ public sealed class MainForm : Form
 
     private string _configPath = string.Empty;
     private bool _adminAuthenticated;
+    private bool _adminRelaunchClosing;
     private bool _closeLogged;
     private bool _wifiDisableFailed;
     private bool _submissionMode;
@@ -158,6 +160,12 @@ public sealed class MainForm : Form
         _loadConfigButton.Click += (_, _) => LoadConfig(true);
         controls.Controls.Add(_loadConfigButton, 2, 2);
 
+        _adminRelaunchButton = new Button { Dock = DockStyle.Fill, Margin = new Padding(0, 2, 8, 2) };
+        Theme.StyleSecondary(_adminRelaunchButton);
+        _adminRelaunchButton.Click += (_, _) => AttemptAdminRelaunch();
+        controls.Controls.Add(_adminRelaunchButton, 0, 2);
+        controls.SetColumnSpan(_adminRelaunchButton, 2);
+
         controlsCard.Controls.Add(controls);
         layout.Controls.Add(controlsCard, 0, 4);
 
@@ -218,6 +226,8 @@ public sealed class MainForm : Form
         _restoreButton.Text = Lang.T("restoreBtn");
         _adminButton.Text = Lang.T("closeBtn");
         _loadConfigButton.Text = Lang.T("loadBtn");
+        _adminRelaunchButton.Text = Lang.T("reopenAdminBtn");
+        UpdateAdminRelaunchButton();
 
         if (_config is null)
         {
@@ -262,7 +272,14 @@ public sealed class MainForm : Form
             return;
         }
 
-        var candidate = FindDefaultConfig();
+        var candidate = Program.StartupConfigPath;
+        if (!forceDialog && !string.IsNullOrWhiteSpace(candidate) && File.Exists(candidate))
+        {
+            TryLoadConfig(candidate);
+            return;
+        }
+
+        candidate = FindDefaultConfig();
         if (!forceDialog && candidate is not null)
         {
             TryLoadConfig(candidate);
@@ -406,9 +423,17 @@ public sealed class MainForm : Form
             _reporter?.Start();
         }
 
-        UpdateShield();
         AddIncident(Lang.T("lockStarted"));
-        SetStatus(Lang.T("statusActive"));
+        if (NeedsAdminButIsNotElevated())
+        {
+            AddIncident(Lang.T("incNoAdmin"));
+            SetYellow(Lang.T("statusNoAdmin"));
+        }
+        else
+        {
+            UpdateShield();
+            SetStatus(Lang.T("statusActive"));
+        }
     }
 
     private void StartMonitors()
@@ -768,6 +793,25 @@ public sealed class MainForm : Form
         Close();
     }
 
+    private void AttemptAdminRelaunch()
+    {
+        if (Program.IsAdministrator())
+        {
+            UpdateAdminRelaunchButton();
+            return;
+        }
+
+        var configPath = _configPath.Length > 0 ? _configPath : null;
+        if (!Program.TryRelaunchAsAdministrator(this, configPath))
+        {
+            SetStatus(Lang.T("adminRelaunchCanceled"));
+            return;
+        }
+
+        _adminRelaunchClosing = true;
+        Close();
+    }
+
     // ----- Lifecycle -----
 
     private void StopMonitors()
@@ -786,7 +830,7 @@ public sealed class MainForm : Form
 
     private void OnFormClosing(object? sender, FormClosingEventArgs e)
     {
-        if (!_adminAuthenticated)
+        if (!_adminAuthenticated && !_adminRelaunchClosing)
         {
             e.Cancel = true;
             SetStatus(Lang.T("needBToExit"));
@@ -848,6 +892,16 @@ public sealed class MainForm : Form
     {
         _statusLabel.Text = message;
         ReportState();
+    }
+
+    private bool NeedsAdminButIsNotElevated() =>
+        _config is not null &&
+        !Program.IsAdministrator() &&
+        (_config.DisableWifi || _config.DisableBluetooth);
+
+    private void UpdateAdminRelaunchButton()
+    {
+        _adminRelaunchButton.Visible = !Program.IsAdministrator();
     }
 
     private void ReportState()

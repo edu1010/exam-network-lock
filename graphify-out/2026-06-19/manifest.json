@@ -15,13 +15,13 @@
     "semantic_hash": "67f283a68f3b67fced3fafc25b33760d"
   },
   "ExamConfigGenerator/Lang.cs": {
-    "mtime": 1781818645.4489298,
-    "ast_hash": "813a18cea054c5e077122604c591c56e",
+    "mtime": 1781820275.0745602,
+    "ast_hash": "325b5967596568b55abc26423a36fc66",
     "semantic_hash": ""
   },
   "ExamConfigGenerator/MainForm.cs": {
-    "mtime": 1781818625.442623,
-    "ast_hash": "a6dcf7e4c31d716ce95e911ea70ee6ce",
+    "mtime": 1781820244.4496517,
+    "ast_hash": "57e76774e63896ebb2150f37cfef81b2",
     "semantic_hash": ""
   },
   "ExamConfigGenerator/Program.cs": {
@@ -65,13 +65,13 @@
     "semantic_hash": "f672f30e3c3a6c90acce90c877a47db5"
   },
   "ExamLockClient/Lang.cs": {
-    "mtime": 1781816053.114822,
-    "ast_hash": "00ac35cf6d41b22759a91564ecd6f648",
+    "mtime": 1781823360.3822412,
+    "ast_hash": "ecd92dd0993bf270613fb7c25577f9fb",
     "semantic_hash": ""
   },
   "ExamLockClient/MainForm.cs": {
-    "mtime": 1781818596.109676,
-    "ast_hash": "6b7e8697a05fecda6a9af8e7e0c74806",
+    "mtime": 1781823332.6236558,
+    "ast_hash": "b588f895b92551224f18ba22cdb4dbb1",
     "semantic_hash": ""
   },
   "ExamLockClient/MonitorReporter.cs": {
@@ -90,9 +90,9 @@
     "semantic_hash": "65e7192e6af5c0614fe051c0732d9dc8"
   },
   "ExamLockClient/Program.cs": {
-    "mtime": 1781565995.8216305,
-    "ast_hash": "7efea30b9eea230869da0f667c24dafe",
-    "semantic_hash": "7efea30b9eea230869da0f667c24dafe"
+    "mtime": 1781823312.9879382,
+    "ast_hash": "23f3e1bf83a9a5d517dd04ee607e617d",
+    "semantic_hash": ""
   },
   "ExamLockClient/RadioService.cs": {
     "mtime": 1781567329.8642523,

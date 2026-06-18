@@ -4,8 +4,8 @@
   <trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">
     <security>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
-        <!-- Disabling network adapters and Bluetooth radio requires elevation. -->
-        <requestedExecutionLevel level="requireAdministrator" uiAccess="false" />
+        <!-- Start normally so the app can show its own elevation prompt before loading exam.config. -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
     </security>
   </trustInfo>

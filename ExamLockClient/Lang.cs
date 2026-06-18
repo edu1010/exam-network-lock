@@ -42,6 +42,7 @@ internal static class Lang
         ["restoreBtn"] = new[] { "Restore Wi-Fi", "Restaurar Wi-Fi", "Restaurar Wi-Fi" },
         ["closeBtn"] = new[] { "Close program", "Tancar programa", "Cerrar programa" },
         ["loadBtn"] = new[] { "Load config…", "Carregar config…", "Cargar config…" },
+        ["reopenAdminBtn"] = new[] { "Reopen as admin", "Reobrir com a admin", "Reabrir como admin" },
         ["notLoaded"] = new[] { "(not loaded)", "(no carregada)", "(no cargada)" },
         ["waitingConfig"] = new[] { "Waiting for configuration…", "Esperant configuració…", "Esperando configuración…" },
         ["shieldProtected"] = new[] { "PROTECTED", "PROTEGIT", "PROTEGIDO" },
@@ -49,12 +50,17 @@ internal static class Lang
         ["shieldDanger"] = new[] { "DANGER", "PERILL", "PELIGRO" },
 
         ["dlgSelectConfig"] = new[] { "Select exam.config", "Selecciona exam.config", "Selecciona exam.config" },
+        ["adminTitle"] = new[] { "Administrator permissions", "Permisos d'administrador", "Permisos de administrador" },
+        ["adminPrompt"] = new[] { "This app needs administrator permissions to disable Wi-Fi/Bluetooth. Press OK to relaunch as administrator. If you cancel the Windows permission prompt, the app will continue but radio lockdown may fail.", "Cal obrir aquesta app amb permisos d'administrador per desactivar Wi-Fi/Bluetooth. Prem OK per reobrir com a administrador. Si cancel·les el permis de Windows, l'app continuara pero el bloqueig de radios pot fallar.", "Esta app necesita permisos de administrador para desactivar Wi-Fi/Bluetooth. Pulsa OK para reabrir como administrador. Si cancelas el permiso de Windows, la app continuara, pero el bloqueo de radios puede fallar." },
+        ["adminRelaunchFail"] = new[] { "Could not relaunch as administrator. The app will continue without elevation.", "No s'ha pogut reobrir com a administrador. L'app continuara sense elevacio.", "No se pudo reabrir como administrador. La app continuara sin elevacion." },
+        ["adminRelaunchCanceled"] = new[] { "Administrator relaunch canceled.", "Reobertura com a administrador cancel·lada.", "Reapertura como administrador cancelada." },
         ["needConfig"] = new[] { "A configuration file is required to start.", "Cal un fitxer de configuració per començar.", "Se necesita un archivo de configuración para empezar." },
         ["integrityFail"] = new[] { "Configuration integrity is invalid.", "La integritat de la configuració no és vàlida.", "La integridad de la configuración no es válida." },
         ["loadFail"] = new[] { "Could not load configuration: {0}", "No s'ha pogut carregar la configuració: {0}", "No se pudo cargar la configuración: {0}" },
         ["needValidConfig"] = new[] { "Load a valid configuration first.", "Carrega una configuració vàlida primer.", "Carga una configuración válida primero." },
 
         ["statusActive"] = new[] { "Exam in progress. The shield is active.", "Examen en curs. L'escut està actiu.", "Examen en curso. El escudo está activo." },
+        ["statusNoAdmin"] = new[] { "Running without administrator permissions. Radio lockdown may fail.", "S'executa sense permisos d'administrador. El bloqueig de radios pot fallar.", "Ejecutando sin permisos de administrador. El bloqueo de radios puede fallar." },
         ["statusAi"] = new[] { "AI connection attributed to a browser, IDE, or developer tool. Notify the teacher.", "Connexió a IA atribuïda a un navegador, IDE o eina de desenvolupament. Avisa el professor.", "Conexión a IA atribuida a un navegador, IDE o herramienta de desarrollo. Avisa al profesor." },
         ["statusAiPossible"] = new[] { "Possible AI connection detected. Process not confirmed.", "Possible connexió a IA detectada. Procés no confirmat.", "Posible conexión a IA detectada. Proceso no confirmado." },
         ["statusForbidden"] = new[] { "A forbidden file was opened.", "S'ha obert un fitxer no permès.", "Se ha abierto un archivo no permitido." },
@@ -68,6 +74,7 @@ internal static class Lang
         ["needBToExit"] = new[] { "Enter password B (close) to exit.", "Introdueix la contrasenya B (tancar) per sortir.", "Introduce la contraseña B (cerrar) para salir." },
 
         ["lockStarted"] = new[] { "Lockdown started.", "Bloqueig iniciat.", "Bloqueo iniciado." },
+        ["incNoAdmin"] = new[] { "Running without administrator permissions.", "Executant-se sense permisos d'administrador.", "Ejecutando sin permisos de administrador." },
         ["incAi"] = new[] { "⚠ AI detected: {0}", "⚠ IA detectada: {0}", "⚠ IA detectada: {0}" },
         ["incAiPossible"] = new[] { "Possible AI activity: {0}", "Possible activitat d'IA: {0}", "Posible actividad de IA: {0}" },
         ["incAiTool"] = new[] { "⚠ AI tool: {0}", "⚠ Eina d'IA: {0}", "⚠ Herramienta de IA: {0}" },

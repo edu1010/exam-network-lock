@@ -2315,7 +2315,7 @@
       "label": ".DetectDefault()",
       "file_type": "code",
       "source_file": "ExamLockClient/Lang.cs",
-      "source_location": "L91",
+      "source_location": "L98",
       "_origin": "ast",
       "id": "examlockclient_lang_lang_detectdefault",
       "community": 30,
@@ -2325,7 +2325,7 @@
       "label": ".Save()",
       "file_type": "code",
       "source_file": "ExamLockClient/Lang.cs",
-      "source_location": "L110",
+      "source_location": "L117",
       "_origin": "ast",
       "id": "examlockclient_lang_lang_save",
       "community": 30,
@@ -2335,7 +2335,7 @@
       "label": ".Load()",
       "file_type": "code",
       "source_file": "ExamLockClient/Lang.cs",
-      "source_location": "L123",
+      "source_location": "L130",
       "_origin": "ast",
       "id": "examlockclient_lang_lang_load",
       "community": 30,
@@ -2415,7 +2415,7 @@
       "label": "List",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L23",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "examlockclient_mainform_cs_list",
       "community": 1,
@@ -2425,7 +2425,7 @@
       "label": "ConfigPayload",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L25",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "configpayload",
       "community": 1,
@@ -2435,7 +2435,7 @@
       "label": "SecureLogService",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L26",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "securelogservice",
       "community": 1,
@@ -2445,7 +2445,7 @@
       "label": "SessionStateService",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L27",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "sessionstateservice",
       "community": 1,
@@ -2455,7 +2455,7 @@
       "label": "NetworkAdapterService",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L28",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "networkadapterservice",
       "community": 1,
@@ -2465,7 +2465,7 @@
       "label": "RadioService",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L29",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "radioservice",
       "community": 1,
@@ -2475,7 +2475,7 @@
       "label": "AudioAlerter",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L30",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "audioalerter",
       "community": 1,
@@ -2485,7 +2485,7 @@
       "label": "AiConnectionMonitor",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L32",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "aiconnectionmonitor",
       "community": 1,
@@ -2495,7 +2495,7 @@
       "label": "DnsCacheMonitor",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L33",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "dnscachemonitor",
       "community": 1,
@@ -2505,7 +2505,7 @@
       "label": "ThreatProcessMonitor",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L34",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "threatprocessmonitor",
       "community": 1,
@@ -2515,7 +2515,7 @@
       "label": "ProcessMonitor",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L35",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "processmonitor",
       "community": 1,
@@ -2525,7 +2525,7 @@
       "label": "FileActivityMonitor",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L36",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "fileactivitymonitor",
       "community": 1,
@@ -2535,7 +2535,7 @@
       "label": "MonitorReporter",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L37",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "monitorreporter",
       "community": 1,
@@ -2545,7 +2545,7 @@
       "label": "string",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L38",
+      "source_location": "L39",
       "_origin": "ast",
       "id": "examlockclient_mainform_cs_string",
       "community": 1,
@@ -2555,7 +2555,7 @@
       "label": "bool",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L41",
+      "source_location": "L42",
       "_origin": "ast",
       "id": "examlockclient_mainform_cs_bool",
       "community": 1,
@@ -2565,7 +2565,7 @@
       "label": "HashSet",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L49",
+      "source_location": "L51",
       "_origin": "ast",
       "id": "examlockclient_mainform_cs_hashset",
       "community": 1,
@@ -2575,7 +2575,7 @@
       "label": "ShieldStatus",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L51",
+      "source_location": "L53",
       "_origin": "ast",
       "id": "examlockclient_mainform_cs_shieldstatus",
       "community": 1,
@@ -2585,7 +2585,7 @@
       "label": ".BuildLanguageBar()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L175",
+      "source_location": "L183",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_buildlanguagebar",
       "community": 1,
@@ -2595,7 +2595,7 @@
       "label": "Control",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L175",
+      "source_location": "L183",
       "_origin": "ast",
       "id": "examlockclient_mainform_cs_control",
       "community": 1,
@@ -2605,7 +2605,7 @@
       "label": ".ApplyLanguage()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L210",
+      "source_location": "L218",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_applylanguage",
       "community": 1,
@@ -2615,7 +2615,7 @@
       "label": ".MutedLabel()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L237",
+      "source_location": "L247",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_mutedlabel",
       "community": 1,
@@ -2625,7 +2625,7 @@
       "label": ".ValueLabel()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L246",
+      "source_location": "L256",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_valuelabel",
       "community": 1,
@@ -2635,7 +2635,7 @@
       "label": ".LoadConfig()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L258",
+      "source_location": "L268",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_loadconfig",
       "community": 1,
@@ -2645,7 +2645,7 @@
       "label": ".FindDefaultConfig()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L287",
+      "source_location": "L304",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_finddefaultconfig",
       "community": 1,
@@ -2655,7 +2655,7 @@
       "label": ".TryLoadConfig()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L299",
+      "source_location": "L316",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_tryloadconfig",
       "community": 1,
@@ -2665,7 +2665,7 @@
       "label": ".InitializeServices()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L329",
+      "source_location": "L346",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_initializeservices",
       "community": 1,
@@ -2675,7 +2675,7 @@
       "label": ".StartLockdown()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L349",
+      "source_location": "L366",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_startlockdown",
       "community": 1,
@@ -2685,7 +2685,7 @@
       "label": ".StartMonitors()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L414",
+      "source_location": "L439",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_startmonitors",
       "community": 1,
@@ -2695,7 +2695,7 @@
       "label": ".OnAiDetected()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L466",
+      "source_location": "L491",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onaidetected",
       "community": 1,
@@ -2705,7 +2705,7 @@
       "label": "AiConnectionEvidence",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L466",
+      "source_location": "L491",
       "_origin": "ast",
       "id": "examlockclient_mainform_cs_aiconnectionevidence",
       "community": 1,
@@ -2715,7 +2715,7 @@
       "label": ".OnAiDns()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L482",
+      "source_location": "L507",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onaidns",
       "community": 1,
@@ -2725,7 +2725,7 @@
       "label": ".OnAiTool()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L485",
+      "source_location": "L510",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onaitool",
       "community": 1,
@@ -2735,7 +2735,7 @@
       "label": ".RaiseAiAlarm()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L488",
+      "source_location": "L513",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_raiseaialarm",
       "community": 1,
@@ -2745,7 +2745,7 @@
       "label": ".RaiseAiWarning()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L507",
+      "source_location": "L532",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_raiseaiwarning",
       "community": 1,
@@ -2755,7 +2755,7 @@
       "label": ".OnVmDetected()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L519",
+      "source_location": "L544",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onvmdetected",
       "community": 1,
@@ -2765,7 +2765,7 @@
       "label": ".OnForbiddenFile()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L537",
+      "source_location": "L562",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onforbiddenfile",
       "community": 1,
@@ -2775,7 +2775,7 @@
       "label": ".OnOutsideFolder()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L554",
+      "source_location": "L579",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onoutsidefolder",
       "community": 1,
@@ -2785,7 +2785,7 @@
       "label": ".OnUnknownProcess()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L571",
+      "source_location": "L596",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onunknownprocess",
       "community": 1,
@@ -2795,7 +2795,7 @@
       "label": ".OnUnknownFile()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L583",
+      "source_location": "L608",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onunknownfile",
       "community": 1,
@@ -2805,7 +2805,7 @@
       "label": ".SetRed()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L595",
+      "source_location": "L620",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_setred",
       "community": 1,
@@ -2815,7 +2815,7 @@
       "label": ".SetYellow()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L602",
+      "source_location": "L627",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_setyellow",
       "community": 1,
@@ -2825,7 +2825,7 @@
       "label": ".UpdateShield()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L609",
+      "source_location": "L634",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_updateshield",
       "community": 1,
@@ -2835,7 +2835,7 @@
       "label": ".AttemptRestoreWifi()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L650",
+      "source_location": "L675",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_attemptrestorewifi",
       "community": 1,
@@ -2845,7 +2845,7 @@
       "label": ".EnterSubmissionMode()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L677",
+      "source_location": "L702",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_entersubmissionmode",
       "community": 1,
@@ -2855,7 +2855,7 @@
       "label": ".ReenableRadios()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L699",
+      "source_location": "L724",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_reenableradios",
       "community": 1,
@@ -2865,17 +2865,27 @@
       "label": ".AttemptAdminClose()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L738",
+      "source_location": "L763",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_attemptadminclose",
       "community": 1,
       "norm_label": ".attemptadminclose()"
     },
     {
+      "label": ".AttemptAdminRelaunch()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/MainForm.cs",
+      "source_location": "L796",
+      "_origin": "ast",
+      "id": "examlockclient_mainform_mainform_attemptadminrelaunch",
+      "community": 1,
+      "norm_label": ".attemptadminrelaunch()"
+    },
+    {
       "label": ".StopMonitors()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L773",
+      "source_location": "L817",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_stopmonitors",
       "community": 1,
@@ -2885,7 +2895,7 @@
       "label": ".OnFormClosing()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L787",
+      "source_location": "L831",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onformclosing",
       "community": 1,
@@ -2895,7 +2905,7 @@
       "label": "FormClosingEventArgs",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L787",
+      "source_location": "L831",
       "_origin": "ast",
       "id": "formclosingeventargs",
       "community": 1,
@@ -2905,7 +2915,7 @@
       "label": ".RunOnUi()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L811",
+      "source_location": "L855",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_runonui",
       "community": 1,
@@ -2915,7 +2925,7 @@
       "label": "Action",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L811",
+      "source_location": "L855",
       "_origin": "ast",
       "id": "examlockclient_mainform_cs_action",
       "community": 1,
@@ -2925,7 +2935,7 @@
       "label": ".AddIncident()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L837",
+      "source_location": "L881",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_addincident",
       "community": 1,
@@ -2935,17 +2945,37 @@
       "label": ".SetStatus()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L847",
+      "source_location": "L891",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_setstatus",
       "community": 1,
       "norm_label": ".setstatus()"
     },
     {
+      "label": ".NeedsAdminButIsNotElevated()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/MainForm.cs",
+      "source_location": "L897",
+      "_origin": "ast",
+      "id": "examlockclient_mainform_mainform_needsadminbutisnotelevated",
+      "community": 1,
+      "norm_label": ".needsadminbutisnotelevated()"
+    },
+    {
+      "label": ".UpdateAdminRelaunchButton()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/MainForm.cs",
+      "source_location": "L902",
+      "_origin": "ast",
+      "id": "examlockclient_mainform_mainform_updateadminrelaunchbutton",
+      "community": 1,
+      "norm_label": ".updateadminrelaunchbutton()"
+    },
+    {
       "label": ".ReportState()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L853",
+      "source_location": "L907",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_reportstate",
       "community": 1,
@@ -3255,7 +3285,7 @@
       "label": "Program",
       "file_type": "code",
       "source_file": "ExamLockClient/Program.cs",
-      "source_location": "L3",
+      "source_location": "L7",
       "_origin": "ast",
       "id": "examlockclient_program_program",
       "community": 41,
@@ -3265,7 +3295,7 @@
       "label": ".Main()",
       "file_type": "code",
       "source_file": "ExamLockClient/Program.cs",
-      "source_location": "L5",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "examlockclient_program_program_main",
       "community": 41,
@@ -3275,7 +3305,7 @@
       "label": "STAThread",
       "file_type": "code",
       "source_file": "ExamLockClient/Program.cs",
-      "source_location": "L5",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "examlockclient_program_cs_stathread",
       "community": 41,
@@ -3285,11 +3315,51 @@
       "label": ".EnsureAdministrator()",
       "file_type": "code",
       "source_file": "ExamLockClient/Program.cs",
-      "source_location": "L17",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "examlockclient_program_program_ensureadministrator",
       "community": 41,
       "norm_label": ".ensureadministrator()"
+    },
+    {
+      "label": ".TryRelaunchAsAdministrator()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/Program.cs",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "examlockclient_program_program_tryrelaunchasadministrator",
+      "community": 41,
+      "norm_label": ".tryrelaunchasadministrator()"
+    },
+    {
+      "label": "IWin32Window",
+      "file_type": "code",
+      "source_file": "ExamLockClient/Program.cs",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "iwin32window",
+      "community": 41,
+      "norm_label": "iwin32window"
+    },
+    {
+      "label": ".IsAdministrator()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/Program.cs",
+      "source_location": "L88",
+      "_origin": "ast",
+      "id": "examlockclient_program_program_isadministrator",
+      "community": 41,
+      "norm_label": ".isadministrator()"
+    },
+    {
+      "label": ".ParseStartupConfigPath()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/Program.cs",
+      "source_location": "L102",
+      "_origin": "ast",
+      "id": "examlockclient_program_program_parsestartupconfigpath",
+      "community": 41,
+      "norm_label": ".parsestartupconfigpath()"
     },
     {
       "label": "RadioService.cs",
@@ -3768,7 +3838,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor",
-      "community": 52,
+      "community": 2,
       "norm_label": "threatprocessmonitor.cs"
     },
     {
@@ -3778,7 +3848,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_threatprocessmonitor",
-      "community": 52,
+      "community": 2,
       "norm_label": "threatprocessmonitor"
     },
     {
@@ -3788,7 +3858,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_cs_hashset",
-      "community": 52,
+      "community": 2,
       "norm_label": "hashset"
     },
     {
@@ -3798,7 +3868,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_cs_bool",
-      "community": 52,
+      "community": 2,
       "norm_label": "bool"
     },
     {
@@ -3808,7 +3878,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_cs_object",
-      "community": 52,
+      "community": 2,
       "norm_label": "object"
     },
     {
@@ -3818,7 +3888,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_cs_timer",
-      "community": 52,
+      "community": 2,
       "norm_label": "timer"
     },
     {
@@ -3828,7 +3898,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_threatprocessmonitor_start",
-      "community": 52,
+      "community": 2,
       "norm_label": ".start()"
     },
     {
@@ -3838,7 +3908,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_threatprocessmonitor_poll",
-      "community": 52,
+      "community": 2,
       "norm_label": ".poll()"
     },
     {
@@ -3848,7 +3918,7 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_threatprocessmonitor_dispose",
-      "community": 52,
+      "community": 2,
       "norm_label": ".dispose()"
     },
     {
@@ -5908,7 +5978,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "examshared_monitoring",
-      "community": 55,
+      "community": 2,
       "norm_label": "monitoring.cs"
     },
     {
@@ -5918,7 +5988,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "examshared_monitoring_statusmessage",
-      "community": 55,
+      "community": 2,
       "norm_label": "statusmessage"
     },
     {
@@ -5928,7 +5998,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "examshared_monitoring_logchunkmessage",
-      "community": 55,
+      "community": 2,
       "norm_label": "logchunkmessage"
     },
     {
@@ -5938,7 +6008,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorprotocol",
-      "community": 54,
+      "community": 2,
       "norm_label": "monitorprotocol"
     },
     {
@@ -5948,7 +6018,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_int",
-      "community": 54,
+      "community": 2,
       "norm_label": "int"
     },
     {
@@ -5958,7 +6028,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_jsonserializeroptions",
-      "community": 54,
+      "community": 2,
       "norm_label": "jsonserializeroptions"
     },
     {
@@ -5968,7 +6038,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorprotocol_serialize",
-      "community": 54,
+      "community": 2,
       "norm_label": ".serialize()"
     },
     {
@@ -5988,7 +6058,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorprotocol_deserialize",
-      "community": 54,
+      "community": 2,
       "norm_label": ".deserialize()"
     },
     {
@@ -5998,7 +6068,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_t",
-      "community": 54,
+      "community": 2,
       "norm_label": "t"
     },
     {
@@ -6008,7 +6078,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorbroadcaster",
-      "community": 64,
+      "community": 2,
       "norm_label": "monitorbroadcaster"
     },
     {
@@ -6028,7 +6098,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "ipendpoint",
-      "community": 64,
+      "community": 2,
       "norm_label": "ipendpoint"
     },
     {
@@ -6038,7 +6108,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorbroadcaster_send",
-      "community": 54,
+      "community": 2,
       "norm_label": ".send()"
     },
     {
@@ -6058,7 +6128,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorbroadcaster_getbroadcastendpoints",
-      "community": 64,
+      "community": 2,
       "norm_label": ".getbroadcastendpoints()"
     },
     {
@@ -6068,7 +6138,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_ienumerable",
-      "community": 64,
+      "community": 2,
       "norm_label": "ienumerable"
     },
     {
@@ -6078,7 +6148,7 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorbroadcaster_trygetdirectedbroadcast",
-      "community": 64,
+      "community": 2,
       "norm_label": ".trygetdirectedbroadcast()"
     },
     {
@@ -6088,7 +6158,7 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "unicastipaddressinformation",
-      "community": 64,
+      "community": 2,
       "norm_label": "unicastipaddressinformation"
     },
     {
@@ -6098,7 +6168,7 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_ipaddress",
-      "community": 64,
+      "community": 2,
       "norm_label": "ipaddress"
     },
     {
@@ -6108,7 +6178,7 @@
       "source_location": "L196",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorbroadcaster_isapipa",
-      "community": 64,
+      "community": 2,
       "norm_label": ".isapipa()"
     },
     {
@@ -6178,7 +6248,7 @@
       "source_location": "L273",
       "_origin": "ast",
       "id": "examshared_monitoring_logchainverifier",
-      "community": 55,
+      "community": 2,
       "norm_label": "logchainverifier"
     },
     {
@@ -6188,7 +6258,7 @@
       "source_location": "L275",
       "_origin": "ast",
       "id": "examshared_monitoring_logchainverifier_verify",
-      "community": 55,
+      "community": 2,
       "norm_label": ".verify()"
     },
     {
@@ -6198,7 +6268,7 @@
       "source_location": "L275",
       "_origin": "ast",
       "id": "ireadonlylist",
-      "community": 55,
+      "community": 2,
       "norm_label": "ireadonlylist"
     },
     {
@@ -6208,7 +6278,7 @@
       "source_location": "L275",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_logentry",
-      "community": 55,
+      "community": 2,
       "norm_label": "logentry"
     },
     {
@@ -6218,7 +6288,7 @@
       "source_location": "L305",
       "_origin": "ast",
       "id": "examshared_monitoring_logchainverifier_computehmac",
-      "community": 55,
+      "community": 2,
       "norm_label": ".computehmac()"
     },
     {
@@ -6228,7 +6298,7 @@
       "source_location": "L311",
       "_origin": "ast",
       "id": "examshared_monitoring_logchainverifier_fixedequals",
-      "community": 55,
+      "community": 2,
       "norm_label": ".fixedequals()"
     },
     {
@@ -7198,7 +7268,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "readme",
-      "community": 66,
+      "community": 7,
       "norm_label": "readme.md"
     },
     {
@@ -7208,7 +7278,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "readme_exam_network_locking",
-      "community": 66,
+      "community": 7,
       "norm_label": "exam network locking"
     },
     {
@@ -8638,7 +8708,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 65,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "examconfiggenerator",
       "id": "readme_examconfiggenerator"
@@ -8652,7 +8722,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 65,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "examlockclient",
       "id": "readme_examlockclient"
@@ -8666,7 +8736,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 66,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "exammonitor",
       "id": "readme_exammonitor"
@@ -8680,7 +8750,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 66,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "examshared",
       "id": "readme_examshared"
@@ -8694,7 +8764,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 66,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "examlogverifier",
       "id": "readme_examlogverifier"
@@ -8708,7 +8778,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 66,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "examlogverifierui",
       "id": "readme_examlogverifierui"
@@ -8722,7 +8792,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 66,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "exam.config",
       "id": "readme_exam_config"
@@ -8736,7 +8806,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 66,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "hmac signature",
       "id": "readme_hmac_signature"
@@ -8750,7 +8820,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 66,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "tamper evident log",
       "id": "readme_tamper_evident_log"
@@ -8764,7 +8834,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 65,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "password a restore wi-fi",
       "id": "readme_password_a_restore_wifi"
@@ -8778,7 +8848,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 65,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "password b close admin",
       "id": "readme_password_b_close_admin"
@@ -8792,7 +8862,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 65,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "radio lockdown",
       "id": "readme_radio_lockdown"
@@ -8806,7 +8876,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 65,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "ai shield",
       "id": "readme_ai_shield"
@@ -8820,7 +8890,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 65,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "allowed programs",
       "id": "readme_allowed_programs"
@@ -8834,7 +8904,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 65,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "allowed file types",
       "id": "readme_allowed_file_types"
@@ -8848,7 +8918,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 65,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "blocked file types",
       "id": "readme_blocked_file_types"
@@ -8862,7 +8932,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 65,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "portable work folder",
       "id": "readme_work_folder_portable"
@@ -8877,7 +8947,7 @@
       "author": null,
       "contributor": null,
       "rationale": "File monitoring is heuristic and intended to leave evidence rather than exhaustively hook every file open.",
-      "community": 66,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "file monitoring",
       "id": "readme_file_monitoring"
@@ -8891,7 +8961,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 66,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "teacher monitor udp",
       "id": "readme_teacher_monitor_udp"
@@ -8905,7 +8975,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 66,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "log integrity verification",
       "id": "readme_log_integrity_verification"
@@ -8919,7 +8989,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 65,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "multilingual ui",
       "id": "readme_multilingual_ui"
@@ -8933,7 +9003,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 65,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "admin permissions",
       "id": "readme_admin_permissions"
@@ -8948,7 +9018,7 @@
       "author": null,
       "contributor": null,
       "rationale": "The system is a practical deterrent that records evidence, not a fully secure lock against administrator users.",
-      "community": 66,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "deterrent system with evidence",
       "id": "readme_deterrent_system_with_evidence"
@@ -8977,7 +9047,7 @@
       "author": null,
       "contributor": null,
       "rationale": "AI detection checks real connections and DNS cache so it can catch AI access even if radio disabling fails.",
-      "community": 65,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "ai detection safety net",
       "id": "readme_ai_detection_safety_net"
@@ -8991,7 +9061,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 65,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "vm detection",
       "id": "readme_vm_detection"
@@ -9005,7 +9075,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 65,
+      "community": 7,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "dns cache monitoring",
       "id": "readme_dns_cache_monitoring"
@@ -10465,9 +10535,9 @@
       "source_file": "ExamConfigGenerator/MainForm.cs",
       "source_location": "L642",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examconfiggenerator_mainform_mainform",
-      "target": "examconfiggenerator_mainform_mainform_detectcurrentmonitorip",
-      "confidence_score": 1.0
+      "target": "examconfiggenerator_mainform_mainform_detectcurrentmonitorip"
     },
     {
       "relation": "method",
@@ -10505,9 +10575,9 @@
       "source_file": "ExamConfigGenerator/MainForm.cs",
       "source_location": "L705",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examconfiggenerator_mainform_mainform",
-      "target": "examconfiggenerator_mainform_mainform_isprivateipv4",
-      "confidence_score": 1.0
+      "target": "examconfiggenerator_mainform_mainform_isprivateipv4"
     },
     {
       "relation": "method",
@@ -10515,9 +10585,9 @@
       "source_file": "ExamConfigGenerator/MainForm.cs",
       "source_location": "L713",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examconfiggenerator_mainform_mainform",
-      "target": "examconfiggenerator_mainform_mainform_issamesubnet",
-      "confidence_score": 1.0
+      "target": "examconfiggenerator_mainform_mainform_issamesubnet"
     },
     {
       "relation": "method",
@@ -10525,9 +10595,9 @@
       "source_file": "ExamConfigGenerator/MainForm.cs",
       "source_location": "L699",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examconfiggenerator_mainform_mainform",
-      "target": "examconfiggenerator_mainform_mainform_isusableipv4",
-      "confidence_score": 1.0
+      "target": "examconfiggenerator_mainform_mainform_isusableipv4"
     },
     {
       "relation": "method",
@@ -10655,9 +10725,9 @@
       "source_file": "ExamConfigGenerator/MainForm.cs",
       "source_location": "L459",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examconfiggenerator_mainform_mainform",
-      "target": "examconfiggenerator_mainform_mainform_usecurrentip",
-      "confidence_score": 1.0
+      "target": "examconfiggenerator_mainform_mainform_usecurrentip"
     },
     {
       "relation": "method",
@@ -11023,9 +11093,9 @@
       "source_file": "ExamConfigGenerator/MainForm.cs",
       "source_location": "L464",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examconfiggenerator_mainform_mainform_usecurrentip",
-      "target": "examconfiggenerator_mainform_cs_t",
-      "confidence_score": 1.0
+      "target": "examconfiggenerator_mainform_cs_t"
     },
     {
       "relation": "calls",
@@ -11122,9 +11192,9 @@
       "source_file": "ExamConfigGenerator/MainForm.cs",
       "source_location": "L461",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examconfiggenerator_mainform_mainform_usecurrentip",
-      "target": "examconfiggenerator_mainform_mainform_detectcurrentmonitorip",
-      "confidence_score": 1.0
+      "target": "examconfiggenerator_mainform_mainform_detectcurrentmonitorip"
     },
     {
       "relation": "calls",
@@ -11133,9 +11203,9 @@
       "source_file": "ExamConfigGenerator/MainForm.cs",
       "source_location": "L464",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examconfiggenerator_mainform_mainform_usecurrentip",
-      "target": "examconfiggenerator_mainform_mainform_warn",
-      "confidence_score": 1.0
+      "target": "examconfiggenerator_mainform_mainform_warn"
     },
     {
       "relation": "calls",
@@ -11221,9 +11291,9 @@
       "source_file": "ExamConfigGenerator/MainForm.cs",
       "source_location": "L669",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examconfiggenerator_mainform_mainform_detectcurrentmonitorip",
-      "target": "examconfiggenerator_mainform_mainform_isprivateipv4",
-      "confidence_score": 1.0
+      "target": "examconfiggenerator_mainform_mainform_isprivateipv4"
     },
     {
       "relation": "calls",
@@ -11232,9 +11302,9 @@
       "source_file": "ExamConfigGenerator/MainForm.cs",
       "source_location": "L670",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examconfiggenerator_mainform_mainform_detectcurrentmonitorip",
-      "target": "examconfiggenerator_mainform_mainform_issamesubnet",
-      "confidence_score": 1.0
+      "target": "examconfiggenerator_mainform_mainform_issamesubnet"
     },
     {
       "relation": "calls",
@@ -11243,9 +11313,9 @@
       "source_file": "ExamConfigGenerator/MainForm.cs",
       "source_location": "L664",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examconfiggenerator_mainform_mainform_detectcurrentmonitorip",
-      "target": "examconfiggenerator_mainform_mainform_isusableipv4",
-      "confidence_score": 1.0
+      "target": "examconfiggenerator_mainform_mainform_isusableipv4"
     },
     {
       "relation": "references",
@@ -11254,9 +11324,9 @@
       "source_location": "L699",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examconfiggenerator_mainform_mainform_isusableipv4",
-      "target": "examconfiggenerator_mainform_cs_ipaddress",
-      "confidence_score": 1.0
+      "target": "examconfiggenerator_mainform_cs_ipaddress"
     },
     {
       "relation": "references",
@@ -11265,9 +11335,9 @@
       "source_location": "L705",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examconfiggenerator_mainform_mainform_isprivateipv4",
-      "target": "examconfiggenerator_mainform_cs_ipaddress",
-      "confidence_score": 1.0
+      "target": "examconfiggenerator_mainform_cs_ipaddress"
     },
     {
       "relation": "references",
@@ -11276,9 +11346,9 @@
       "source_location": "L713",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examconfiggenerator_mainform_mainform_issamesubnet",
-      "target": "examconfiggenerator_mainform_cs_ipaddress",
-      "confidence_score": 1.0
+      "target": "examconfiggenerator_mainform_cs_ipaddress"
     },
     {
       "relation": "contains",
@@ -13803,6 +13873,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "ExamLockClient/MainForm.cs",
+      "source_location": "L789",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_mainform_mainform",
+      "target": "examlockclient_mainform_mainform_attemptadminrelaunch"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L625",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -13868,6 +13948,16 @@
       "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform",
       "target": "examlockclient_mainform_mainform_mutedlabel"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/MainForm.cs",
+      "source_location": "L889",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_mainform_mainform",
+      "target": "examlockclient_mainform_mainform_needsadminbutisnotelevated"
     },
     {
       "relation": "method",
@@ -14083,6 +14173,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "ExamLockClient/MainForm.cs",
+      "source_location": "L894",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_mainform_mainform",
+      "target": "examlockclient_mainform_mainform_updateadminrelaunchbutton"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L584",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -14247,6 +14347,17 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "ExamLockClient/MainForm.cs",
+      "source_location": "L230",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_mainform_mainform_applylanguage",
+      "target": "examlockclient_mainform_mainform_updateadminrelaunchbutton"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L234",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -14335,11 +14446,33 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "ExamLockClient/MainForm.cs",
+      "source_location": "L420",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_mainform_mainform_startlockdown",
+      "target": "examlockclient_mainform_mainform_needsadminbutisnotelevated"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L411",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform_startlockdown",
       "target": "examlockclient_mainform_mainform_setstatus"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/MainForm.cs",
+      "source_location": "L423",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_mainform_mainform_startlockdown",
+      "target": "examlockclient_mainform_mainform_setyellow"
     },
     {
       "relation": "calls",
@@ -14819,6 +14952,28 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "ExamLockClient/MainForm.cs",
+      "source_location": "L799",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_mainform_mainform_attemptadminrelaunch",
+      "target": "examlockclient_mainform_mainform_setstatus"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/MainForm.cs",
+      "source_location": "L793",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_mainform_mainform_attemptadminrelaunch",
+      "target": "examlockclient_mainform_mainform_updateadminrelaunchbutton"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L774",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -15240,11 +15395,41 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "ExamLockClient/Program.cs",
+      "source_location": "L73",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_program_program",
+      "target": "examlockclient_program_program_isadministrator"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/Program.cs",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "examlockclient_program_program",
       "target": "examlockclient_program_program_main"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/Program.cs",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "examlockclient_program_program",
+      "target": "examlockclient_program_program_parsestartupconfigpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/Program.cs",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_program_program",
+      "target": "examlockclient_program_program_tryrelaunchasadministrator"
     },
     {
       "relation": "references",
@@ -15267,6 +15452,50 @@
       "confidence_score": 1.0,
       "source": "examlockclient_program_program_main",
       "target": "examlockclient_program_program_ensureadministrator"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/Program.cs",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "examlockclient_program_program_main",
+      "target": "examlockclient_program_program_parsestartupconfigpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/Program.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_program_program_ensureadministrator",
+      "target": "examlockclient_program_program_isadministrator"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/Program.cs",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_program_program_ensureadministrator",
+      "target": "examlockclient_program_program_tryrelaunchasadministrator"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/Program.cs",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "confidence_score": 1.0,
+      "source": "examlockclient_program_program_tryrelaunchasadministrator",
+      "target": "iwin32window"
     },
     {
       "relation": "contains",
@@ -23995,5 +24224,5 @@
       "source_file": "docs/img/monitor.png"
     }
   ],
-  "built_at_commit": "639fa05c62db5defb26ff265187cf3d02c08e322"
+  "built_at_commit": "71430df0797c691660818b3185898d00a33484e2"
 }
