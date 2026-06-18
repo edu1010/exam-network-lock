@@ -60,6 +60,7 @@ internal static class Lang
         ["btnRemove"] = new[] { "Remove", "Treu", "Quitar" },
         ["btnAddExe"] = new[] { "Add .exe…", "Afegeix .exe…", "Añadir .exe…" },
         ["btnBrowse"] = new[] { "Browse…", "Examina…", "Examinar…" },
+        ["btnUseCurrentIp"] = new[] { "Use my IP", "Usa la meva IP", "Usar mi IP" },
         ["btnGenerate"] = new[] { "Generate configuration", "Generar configuració", "Generar configuración" },
 
         ["appsHint"] = new[] { "Allowed executables (e.g. eclipse.exe). Empty = no restriction.", "Executables permesos (p. ex. eclipse.exe). Buit = sense restricció.", "Ejecutables permitidos (ej. eclipse.exe). Vacío = sin restricción." },
@@ -86,6 +87,7 @@ internal static class Lang
         ["valConfirmB"] = new[] { "Password B does not match its confirmation.", "La contrasenya B no coincideix amb la confirmació.", "La contraseña B no coincide con su confirmación." },
         ["valDistinct"] = new[] { "Passwords A and B must be different.", "Les contrasenyes A i B han de ser diferents.", "Las contraseñas A y B deben ser distintas." },
         ["valFixedPath"] = new[] { "For 'Fixed path' you must enter the folder path.", "Per a 'Ruta fixa' has d'indicar la ruta de la carpeta.", "Para 'Ruta fija' debes indicar la ruta de la carpeta." },
+        ["valCurrentIp"] = new[] { "No active IPv4 address was found.", "No s'ha trobat cap adreca IPv4 activa.", "No se ha encontrado ninguna direccion IPv4 activa." },
         ["statusGen"] = new[] { "Configuration generated: {0}", "Configuració generada: {0}", "Configuración generada: {0}" },
         ["genOk"] = new[] { "Configuration generated correctly:\n{0}", "Configuració generada correctament:\n{0}", "Configuración generada correctamente:\n{0}" },
         ["genErr"] = new[] { "Error generating configuration:\n{0}", "Error en generar la configuració:\n{0}", "Error al generar la configuración:\n{0}" },

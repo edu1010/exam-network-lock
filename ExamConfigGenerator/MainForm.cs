@@ -1,3 +1,6 @@
+using System.Net;
+using System.Net.NetworkInformation;
+using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
 using ExamShared;
@@ -101,12 +104,12 @@ public sealed class MainForm : Form
         aiStack.Controls.Add(HintLabel("monitorTargetsLabel", new Padding(0, 6, 0, 2)));
         _monitorTargetsBox = new TextBox
         {
-            Width = SectionWidth - 30,
+            Width = 390,
             Margin = new Padding(0, 0, 0, 6),
             PlaceholderText = "192.168.1.70"
         };
         Theme.StyleInput(_monitorTargetsBox);
-        aiStack.Controls.Add(_monitorTargetsBox);
+        aiStack.Controls.Add(InputWithButtons(_monitorTargetsBox, ("btnUseCurrentIp", UseCurrentIp)));
 
         // Alarm sound shape and volume (applies to every violation that beeps).
         aiStack.Controls.Add(HintLabel("beepModeLabel", new Padding(0, 8, 0, 2)));
@@ -453,6 +456,18 @@ public sealed class MainForm : Form
         }
     }
 
+    private void UseCurrentIp()
+    {
+        var ip = DetectCurrentMonitorIp();
+        if (string.IsNullOrWhiteSpace(ip))
+        {
+            Warn(Lang.T("valCurrentIp"));
+            return;
+        }
+
+        _monitorTargetsBox.Text = ip;
+    }
+
     private string SelectedWorkFolderMode() => _workFolderModeCombo.SelectedIndex switch
     {
         1 => WorkFolderModes.Desktop,
@@ -622,6 +637,94 @@ public sealed class MainForm : Form
             .Split(new[] { ',', ';', ' ', '\r', '\n', '\t' }, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
             .Distinct(StringComparer.OrdinalIgnoreCase)
             .ToArray();
+    }
+
+    private static string? DetectCurrentMonitorIp()
+    {
+        var candidates = new List<(int Score, string Address)>();
+
+        foreach (var networkInterface in NetworkInterface.GetAllNetworkInterfaces())
+        {
+            if (networkInterface.OperationalStatus != OperationalStatus.Up ||
+                networkInterface.NetworkInterfaceType is NetworkInterfaceType.Loopback or NetworkInterfaceType.Tunnel)
+            {
+                continue;
+            }
+
+            var properties = networkInterface.GetIPProperties();
+            var gateways = properties.GatewayAddresses
+                .Select(g => g.Address)
+                .Where(g => g.AddressFamily == AddressFamily.InterNetwork && !g.Equals(IPAddress.Any))
+                .ToArray();
+
+            foreach (var unicast in properties.UnicastAddresses)
+            {
+                if (unicast.Address.AddressFamily != AddressFamily.InterNetwork ||
+                    unicast.IPv4Mask is null ||
+                    !IsUsableIpv4(unicast.Address))
+                {
+                    continue;
+                }
+
+                var score = IsPrivateIpv4(unicast.Address) ? 20 : 0;
+                if (gateways.Any(g => IsSameSubnet(unicast.Address, g, unicast.IPv4Mask)))
+                {
+                    score += 100;
+                }
+                else if (gateways.Length > 0)
+                {
+                    score += 60;
+                }
+
+                var adapterText = (networkInterface.Name + " " + networkInterface.Description).ToLowerInvariant();
+                if (adapterText.Contains("virtualbox") ||
+                    adapterText.Contains("vmware") ||
+                    adapterText.Contains("hyper-v") ||
+                    adapterText.Contains("docker"))
+                {
+                    score -= 40;
+                }
+
+                candidates.Add((score, unicast.Address.ToString()));
+            }
+        }
+
+        return candidates
+            .OrderByDescending(c => c.Score)
+            .ThenBy(c => c.Address, StringComparer.Ordinal)
+            .FirstOrDefault()
+            .Address;
+    }
+
+    private static bool IsUsableIpv4(IPAddress address)
+    {
+        var bytes = address.GetAddressBytes();
+        return bytes[0] != 0 && bytes[0] != 127 && !(bytes[0] == 169 && bytes[1] == 254);
+    }
+
+    private static bool IsPrivateIpv4(IPAddress address)
+    {
+        var bytes = address.GetAddressBytes();
+        return bytes[0] == 10 ||
+               (bytes[0] == 172 && bytes[1] >= 16 && bytes[1] <= 31) ||
+               (bytes[0] == 192 && bytes[1] == 168);
+    }
+
+    private static bool IsSameSubnet(IPAddress address, IPAddress gateway, IPAddress mask)
+    {
+        var addressBytes = address.GetAddressBytes();
+        var gatewayBytes = gateway.GetAddressBytes();
+        var maskBytes = mask.GetAddressBytes();
+
+        for (var i = 0; i < addressBytes.Length; i++)
+        {
+            if ((addressBytes[i] & maskBytes[i]) != (gatewayBytes[i] & maskBytes[i]))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private void SetStatus(string message)

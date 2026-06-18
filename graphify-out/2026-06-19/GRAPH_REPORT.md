@@ -1,11 +1,11 @@
 # Graph Report - exam-network-lock  (2026-06-19)
 
 ## Corpus Check
-- 56 files · ~42,536 words
+- 56 files · ~42,224 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 904 nodes · 1338 edges · 67 communities (57 shown, 10 thin omitted)
+- 898 nodes · 1324 edges · 65 communities (55 shown, 10 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
@@ -80,13 +80,11 @@
 - [[_COMMUNITY_Community 62|Community 62]]
 - [[_COMMUNITY_Community 63|Community 63]]
 - [[_COMMUNITY_Community 64|Community 64]]
-- [[_COMMUNITY_Community 65|Community 65]]
-- [[_COMMUNITY_Community 66|Community 66]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `MainForm` - 57 edges
 2. `MainForm` - 56 edges
-3. `MainForm` - 39 edges
+3. `MainForm` - 34 edges
 4. `MainForm` - 24 edges
 5. `FileActivityMonitor` - 22 edges
 6. `AudioAlerter` - 18 edges
@@ -123,7 +121,7 @@
 - **Student Status Snapshot** — img_monitor_student_identity, img_monitor_exam_status_ok, img_monitor_exam_in_progress_event, img_monitor_event_count, img_monitor_integrity_ok, img_monitor_last_seen_recent [EXTRACTED 1.00]
 - **Exam Monitor Operator Controls** — img_monitor_load_config_button, img_monitor_save_logs_button, img_monitor_language_selector_flags [EXTRACTED 1.00]
 
-## Communities (67 total, 10 thin omitted)
+## Communities (65 total, 10 thin omitted)
 
 ### Community 0 - "Build Left Filter Log"
 Cohesion: 0.07
@@ -142,8 +140,8 @@ Cohesion: 0.08
 Nodes (17): AudioAlerter, bool, byte, DllImport, int, IntPtr, object, uint (+9 more)
 
 ### Community 4 - "Box Combo List Add"
-Cohesion: 0.09
-Nodes (16): CheckBox, Button, ComboBox, Control, GroupBox, int, IPAddress, Label (+8 more)
+Cohesion: 0.10
+Nodes (15): CheckBox, Button, ComboBox, Control, GroupBox, int, Label, List (+7 more)
 
 ### Community 5 - "Config Hmac Session Envelope"
 Cohesion: 0.09
@@ -154,8 +152,8 @@ Cohesion: 0.09
 Nodes (17): DateTime, ClientRow, Action, Button, Color, Control, DataGridView, Dictionary (+9 more)
 
 ### Community 7 - "Exam Log Admin Detection"
-Cohesion: 0.12
-Nodes (16): AI detection is a safety net, Build, English, File monitoring is a deterrent, Force Close Evidence, How it works, Notes, Permissions (+8 more)
+Cohesion: 0.07
+Nodes (43): Admin Permissions, AI detection is a safety net, AI Detection Safety Net, AI Shield, Allowed File Types, Allowed Programs, Blocked File Types, Build (+35 more)
 
 ### Community 8 - "Activity Monitor Excluded Inspect"
 Cohesion: 0.13
@@ -170,16 +168,16 @@ Cohesion: 0.13
 Nodes (15): ExamConfigGenerator, net8.0-windows, Microsoft.NET.Sdk, ExamLockClient, Microsoft.NET.Sdk, net8.0, Microsoft.NET.Sdk, net8.0-windows (+7 more)
 
 ### Community 11 - "Graph Cluster Cost Whisper"
-Cohesion: 0.13
-Nodes (16): Community Labeling, File Detection, Full Pipeline, Gemini Backend, Graph Build Cluster Analysis, Installation Guard, Manifest Cost Cleanup, Obsidian Vault (+8 more)
+Cohesion: 0.12
+Nodes (18): Graph Report Fallback, Community Labeling, File Detection, Full Pipeline, Gemini Backend, Graph Build Cluster Analysis, GRAPH_REPORT.md, Installation Guard (+10 more)
 
 ### Community 12 - "Query Graph Traversal Dirty"
 Cohesion: 0.18
 Nodes (13): Dirty Graph Tolerance, Query First Rule, Existing Graph Fast Path, Query Path Explain, BFS Traversal, Constrained Query Expansion, DFS Traversal, Graph Vocabulary (+5 more)
 
 ### Community 13 - "Update Code Extraction Only"
-Cohesion: 0.14
-Nodes (18): Graph Report Fallback, Update After Modifying Code, AST Extraction, GRAPH_REPORT.md, Structural Extraction, Code Only AST Update, Docs Need Update Flag, Supported URL Types (+10 more)
+Cohesion: 0.19
+Nodes (14): Update After Modifying Code, AST Extraction, Structural Extraction, Code Only AST Update, Docs Need Update Flag, Watch Mode, Doc Image Manual Update, Post Commit Hook (+6 more)
 
 ### Community 14 - "Shield Paint Color Build"
 Cohesion: 0.21
@@ -282,8 +280,8 @@ Cohesion: 0.33
 Nodes (6): GraphRAG JSON, MCP Server, Cross Repo Merge, GitHub Clone, Monorepo Subfolder Flow, Reusable Clones
 
 ### Community 42 - "Graphify Project Instructions Supported"
-Cohesion: 0.18
-Nodes (10): Project Graphify Instructions, For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only, /graphify, Interpreter guard for subcommands, Usage (+2 more)
+Cohesion: 0.15
+Nodes (12): Project Graphify Instructions, For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only, /graphify, Interpreter guard for subcommands, Usage (+4 more)
 
 ### Community 46 - "Community 46"
 Cohesion: 0.23
@@ -345,14 +343,6 @@ Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphif
 Cohesion: 0.39
 Nodes (5): IEnumerable, IPAddress, MonitorBroadcaster, IPEndPoint, UnicastIPAddressInformation
 
-### Community 65 - "Community 65"
-Cohesion: 0.22
-Nodes (15): Admin Permissions, AI Detection Safety Net, AI Shield, Allowed File Types, Allowed Programs, Blocked File Types, DNS Cache Monitoring, ExamConfigGenerator (+7 more)
-
-### Community 66 - "Community 66"
-Cohesion: 0.24
-Nodes (12): Deterrent System With Evidence, exam.config, Exam Network Locking, ExamLogVerifier, ExamLogVerifierUI, ExamMonitor, ExamShared, File Monitoring (+4 more)
-
 ## Knowledge Gaps
 - **307 isolated node(s):** `net8.0-windows`, `Microsoft.NET.Sdk`, `Language`, `int`, `Graphics` (+302 more)
   These have ≤1 connection - possible missing edges or undocumented components.
@@ -364,9 +354,9 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `MainForm` connect `Build Left Filter Log` to `Load Config Color Grid`?**
   _High betweenness centrality (0.028) - this node is a cross-community bridge._
 - **Why does `MainForm` connect `Monitor Config Service Shield` to `Load Config Color Grid`?**
-  _High betweenness centrality (0.026) - this node is a cross-community bridge._
+  _High betweenness centrality (0.025) - this node is a cross-community bridge._
 - **Why does `MainForm` connect `Box Combo List Add` to `Load Config Color Grid`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **What connects `net8.0-windows`, `Microsoft.NET.Sdk`, `Language` to the rest of the system?**
   _311 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Build Left Filter Log` be split into smaller, more focused modules?**

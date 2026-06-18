@@ -15,13 +15,13 @@
     "semantic_hash": "67f283a68f3b67fced3fafc25b33760d"
   },
   "ExamConfigGenerator/Lang.cs": {
-    "mtime": 1781820275.0745602,
-    "ast_hash": "325b5967596568b55abc26423a36fc66",
+    "mtime": 1781818645.4489298,
+    "ast_hash": "813a18cea054c5e077122604c591c56e",
     "semantic_hash": ""
   },
   "ExamConfigGenerator/MainForm.cs": {
-    "mtime": 1781820244.4496517,
-    "ast_hash": "57e76774e63896ebb2150f37cfef81b2",
+    "mtime": 1781818625.442623,
+    "ast_hash": "a6dcf7e4c31d716ce95e911ea70ee6ce",
     "semantic_hash": ""
   },
   "ExamConfigGenerator/Program.cs": {

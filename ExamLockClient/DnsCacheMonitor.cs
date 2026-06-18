@@ -27,12 +27,16 @@ public sealed class DnsCacheMonitor : IDisposable
 
     public void Start()
     {
+        // Ignore DNS entries that were already cached before the exam shield started.
+        // They may come from browser preload, Windows background services, or earlier activity.
+        Poll(raiseEvents: false);
+
         _timer = new System.Timers.Timer(3_000) { AutoReset = true };
-        _timer.Elapsed += (_, _) => Poll();
+        _timer.Elapsed += (_, _) => Poll(raiseEvents: true);
         _timer.Start();
     }
 
-    private void Poll()
+    private void Poll(bool raiseEvents)
     {
         try
         {
@@ -43,9 +47,9 @@ public sealed class DnsCacheMonitor : IDisposable
 
             foreach (var obj in results)
             {
-                Check(obj["Entry"] as string);
-                Check(obj["Name"] as string);
-                Check(obj["Data"] as string);
+                Check(obj["Entry"] as string, raiseEvents);
+                Check(obj["Name"] as string, raiseEvents);
+                Check(obj["Data"] as string, raiseEvents);
             }
         }
         catch
@@ -54,7 +58,7 @@ public sealed class DnsCacheMonitor : IDisposable
         }
     }
 
-    private void Check(string? host)
+    private void Check(string? host, bool raiseEvents)
     {
         if (string.IsNullOrWhiteSpace(host))
         {
@@ -67,7 +71,7 @@ public sealed class DnsCacheMonitor : IDisposable
             return;
         }
 
-        if (IsBlocked(h))
+        if (raiseEvents && IsBlocked(h))
         {
             AiHostnameResolved?.Invoke(h);
         }
