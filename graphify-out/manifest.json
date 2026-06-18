@@ -15,14 +15,14 @@
     "semantic_hash": "67f283a68f3b67fced3fafc25b33760d"
   },
   "ExamConfigGenerator/Lang.cs": {
-    "mtime": 1781811542.0614758,
-    "ast_hash": "00790cffcd74197bdb115f5b50adf2ac",
-    "semantic_hash": "00790cffcd74197bdb115f5b50adf2ac"
+    "mtime": 1781818645.4489298,
+    "ast_hash": "813a18cea054c5e077122604c591c56e",
+    "semantic_hash": ""
   },
   "ExamConfigGenerator/MainForm.cs": {
-    "mtime": 1781811542.064495,
-    "ast_hash": "a50910dd0d53823e8295783d656ac11e",
-    "semantic_hash": "a50910dd0d53823e8295783d656ac11e"
+    "mtime": 1781818625.442623,
+    "ast_hash": "a6dcf7e4c31d716ce95e911ea70ee6ce",
+    "semantic_hash": ""
   },
   "ExamConfigGenerator/Program.cs": {
     "mtime": 1781557567.1526608,
@@ -70,14 +70,14 @@
     "semantic_hash": ""
   },
   "ExamLockClient/MainForm.cs": {
-    "mtime": 1781816028.4936986,
-    "ast_hash": "4ba6b76c2c03ebbc3dee52203dc8ec19",
+    "mtime": 1781818596.109676,
+    "ast_hash": "6b7e8697a05fecda6a9af8e7e0c74806",
     "semantic_hash": ""
   },
   "ExamLockClient/MonitorReporter.cs": {
-    "mtime": 1781811542.0813162,
-    "ast_hash": "f1681e82e6dcdf07456ed9a73026e81c",
-    "semantic_hash": "f1681e82e6dcdf07456ed9a73026e81c"
+    "mtime": 1781818596.1086748,
+    "ast_hash": "be15383fe348d5bcb5b9cf8b01a7368f",
+    "semantic_hash": ""
   },
   "ExamLockClient/NetworkAdapterService.cs": {
     "mtime": 1781557567.165183,
@@ -205,13 +205,13 @@
     "semantic_hash": "f3537bf91d9cbef9bae884479e740ef9"
   },
   "ExamShared/Monitoring.cs": {
-    "mtime": 1781811542.5003278,
-    "ast_hash": "14d671b0c5641b211b99c5d5a5861831",
-    "semantic_hash": "14d671b0c5641b211b99c5d5a5861831"
+    "mtime": 1781818596.1106768,
+    "ast_hash": "7968a7b9792d8065753e53e6251e1549",
+    "semantic_hash": ""
   },
   "ExamShared/Shared.cs": {
-    "mtime": 1781816015.7506948,
-    "ast_hash": "0490f9d3158d90d48e58010f33745d9c",
+    "mtime": 1781818596.1076741,
+    "ast_hash": "cc076c066706f7ac64c5f11c899e5c3e",
     "semantic_hash": ""
   },
   ".codex/skills/graphify/SKILL.md": {
@@ -265,8 +265,8 @@
     "semantic_hash": "752aa83aa64361ac32860f882dcff932"
   },
   "README.md": {
-    "mtime": 1781816226.6651893,
-    "ast_hash": "42babeb2f179d811b1efda2719a7df94",
+    "mtime": 1781818714.8191824,
+    "ast_hash": "f301ba89c2aaca415aed5590cb4cf107",
     "semantic_hash": ""
   },
   "docs/img/client.png": {

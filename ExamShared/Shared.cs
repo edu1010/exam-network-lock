@@ -35,6 +35,7 @@ public sealed class ConfigPayload
 
     // Broadcast live status + log to the teacher's ExamMonitor over the LAN (UDP).
     public bool MonitorBroadcast { get; init; } = true;
+    public string[] MonitorTargets { get; init; } = Array.Empty<string>();
 
     // Allowed programs (exe names, e.g. "eclipse.exe") and file extensions (e.g. ".java").
     public string[] AllowedProcesses { get; init; } = Array.Empty<string>();

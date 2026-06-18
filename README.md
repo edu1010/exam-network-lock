@@ -121,7 +121,9 @@ here too). No IP setup — students are discovered automatically.
 In lockdown mode (Wi-Fi disabled) the data arrives **when the student restores the connection**
 (password A) to upload the exam; in monitored mode it streams live. The monitor needs inbound
 UDP allowed (Windows Firewall) and works on a single LAN/subnet — networks with client
-isolation may block it.
+isolation may block it. If broadcast discovery is unreliable, enter the teacher PC's monitor IP
+in the config generator (for example `192.168.1.70`); the client will send direct UDP status
+packets to that address in addition to LAN broadcasts.
 
 ### Build
 
@@ -290,7 +292,9 @@ es detecten automàticament.
 En mode bloqueig (Wi-Fi desactivat) les dades arriben **quan l'alumne restaura la connexió**
 (contrasenya A) per pujar l'examen; en mode vigilància arriben en viu. El monitor necessita
 permís d'entrada UDP (tallafocs de Windows) i funciona en una sola LAN/subxarxa — les xarxes amb
-aïllament de clients el poden bloquejar.
+aïllament de clients el poden bloquejar. Si el descobriment per broadcast no és fiable, introdueix
+la IP del monitor del professor al generador de configuració (per exemple `192.168.1.70`); el
+client enviarà paquets UDP directes a aquesta adreça, a més dels broadcasts de la LAN.
 
 ### Compilació
 
@@ -459,7 +463,10 @@ detectan automáticamente.
 En modo bloqueo (Wi-Fi desactivado) los datos llegan **cuando el alumno restaura la conexión**
 (contraseña A) para subir el examen; en modo vigilancia llegan en vivo. El monitor necesita
 permiso de entrada UDP (firewall de Windows) y funciona en una sola LAN/subred — las redes con
-aislamiento de clientes pueden bloquearlo.
+aislamiento de clientes pueden bloquearlo. Si el descubrimiento por broadcast no es fiable,
+introduce la IP del monitor del profesor en el generador de configuración (por ejemplo
+`192.168.1.70`); el cliente enviará paquetes UDP directos a esa dirección además de los broadcasts
+de la LAN.
 
 ### Build
 

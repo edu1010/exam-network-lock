@@ -22,6 +22,7 @@ public sealed class MainForm : Form
     private readonly CheckBox _raiseVolumeCheck;
     private readonly CheckBox _detectVmCheck;
     private readonly CheckBox _monitorCheck;
+    private readonly TextBox _monitorTargetsBox;
     private readonly ComboBox _beepModeCombo;
     private readonly ComboBox _volumeCombo;
 
@@ -97,6 +98,15 @@ public sealed class MainForm : Form
         _raiseVolumeCheck = AddCheck(aiStack, "chkVol", true);
         _detectVmCheck = AddCheck(aiStack, "chkVm", true);
         _monitorCheck = AddCheck(aiStack, "chkMonitor", true);
+        aiStack.Controls.Add(HintLabel("monitorTargetsLabel", new Padding(0, 6, 0, 2)));
+        _monitorTargetsBox = new TextBox
+        {
+            Width = SectionWidth - 30,
+            Margin = new Padding(0, 0, 0, 6),
+            PlaceholderText = "192.168.1.70"
+        };
+        Theme.StyleInput(_monitorTargetsBox);
+        aiStack.Controls.Add(_monitorTargetsBox);
 
         // Alarm sound shape and volume (applies to every violation that beeps).
         aiStack.Controls.Add(HintLabel("beepModeLabel", new Padding(0, 8, 0, 2)));
@@ -562,6 +572,7 @@ public sealed class MainForm : Form
                 RaiseVolumeOnAi = _raiseVolumeCheck.Checked,
                 DetectVirtualMachines = _detectVmCheck.Checked,
                 MonitorBroadcast = _monitorCheck.Checked,
+                MonitorTargets = ParseMonitorTargets(_monitorTargetsBox.Text),
                 BeepOnViolation = true,
                 BeepMode = _beepModeCombo.SelectedIndex == 1 ? BeepModes.ThreeBeeps : BeepModes.Continuous,
                 AlarmVolumePercent = _volumeCombo.SelectedIndex switch { 0 => 25, 1 => 50, 2 => 75, _ => 100 },
@@ -602,6 +613,14 @@ public sealed class MainForm : Form
             .Split(new[] { ',', ';', ' ' }, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
             .Select(e => e.StartsWith('.') ? e.ToLowerInvariant() : "." + e.ToLowerInvariant())
             .Distinct()
+            .ToArray();
+    }
+
+    private static string[] ParseMonitorTargets(string raw)
+    {
+        return raw
+            .Split(new[] { ',', ';', ' ', '\r', '\n', '\t' }, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
             .ToArray();
     }
 

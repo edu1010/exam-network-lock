@@ -1,16 +1,16 @@
 # Graph Report - exam-network-lock  (2026-06-18)
 
 ## Corpus Check
-- 56 files · ~41,744 words
+- 56 files · ~42,187 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 891 nodes · 1312 edges · 64 communities (54 shown, 10 thin omitted)
+- 898 nodes · 1324 edges · 65 communities (55 shown, 10 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f91e75c2`
+- Built from commit: `913f179d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -79,11 +79,12 @@
 - [[_COMMUNITY_Community 61|Community 61]]
 - [[_COMMUNITY_Community 62|Community 62]]
 - [[_COMMUNITY_Community 63|Community 63]]
+- [[_COMMUNITY_Community 64|Community 64]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `MainForm` - 57 edges
 2. `MainForm` - 56 edges
-3. `MainForm` - 33 edges
+3. `MainForm` - 34 edges
 4. `MainForm` - 24 edges
 5. `FileActivityMonitor` - 22 edges
 6. `AudioAlerter` - 18 edges
@@ -120,7 +121,7 @@
 - **Student Status Snapshot** — img_monitor_student_identity, img_monitor_exam_status_ok, img_monitor_exam_in_progress_event, img_monitor_event_count, img_monitor_integrity_ok, img_monitor_last_seen_recent [EXTRACTED 1.00]
 - **Exam Monitor Operator Controls** — img_monitor_load_config_button, img_monitor_save_logs_button, img_monitor_language_selector_flags [EXTRACTED 1.00]
 
-## Communities (64 total, 10 thin omitted)
+## Communities (65 total, 10 thin omitted)
 
 ### Community 0 - "Build Left Filter Log"
 Cohesion: 0.07
@@ -131,8 +132,8 @@ Cohesion: 0.06
 Nodes (27): AiConnectionMonitor, AudioAlerter, ConfigPayload, DnsCacheMonitor, Action, AiConnectionEvidence, bool, Button (+19 more)
 
 ### Community 2 - "Monitor Dispose Start Log"
-Cohesion: 0.19
-Nodes (9): bool, Task, LogChunkMessage, MonitorBroadcaster, MonitorListener, StatusMessage, IDisposable, IPEndPoint (+1 more)
+Cohesion: 0.22
+Nodes (5): bool, Task, MonitorListener, IDisposable, UdpClient
 
 ### Community 3 - "Volume Level Audio Channel"
 Cohesion: 0.08
@@ -167,16 +168,16 @@ Cohesion: 0.13
 Nodes (15): ExamConfigGenerator, net8.0-windows, Microsoft.NET.Sdk, ExamLockClient, Microsoft.NET.Sdk, net8.0, Microsoft.NET.Sdk, net8.0-windows (+7 more)
 
 ### Community 11 - "Graph Cluster Cost Whisper"
-Cohesion: 0.13
-Nodes (16): Community Labeling, File Detection, Full Pipeline, Gemini Backend, Graph Build Cluster Analysis, Installation Guard, Manifest Cost Cleanup, Obsidian Vault (+8 more)
+Cohesion: 0.12
+Nodes (18): Graph Report Fallback, Community Labeling, File Detection, Full Pipeline, Gemini Backend, Graph Build Cluster Analysis, GRAPH_REPORT.md, Installation Guard (+10 more)
 
 ### Community 12 - "Query Graph Traversal Dirty"
 Cohesion: 0.18
 Nodes (13): Dirty Graph Tolerance, Query First Rule, Existing Graph Fast Path, Query Path Explain, BFS Traversal, Constrained Query Expansion, DFS Traversal, Graph Vocabulary (+5 more)
 
 ### Community 13 - "Update Code Extraction Only"
-Cohesion: 0.14
-Nodes (18): Graph Report Fallback, Update After Modifying Code, AST Extraction, GRAPH_REPORT.md, Structural Extraction, Code Only AST Update, Docs Need Update Flag, Supported URL Types (+10 more)
+Cohesion: 0.19
+Nodes (14): Update After Modifying Code, AST Extraction, Structural Extraction, Code Only AST Update, Docs Need Update Flag, Watch Mode, Doc Image Manual Update, Post Commit Hook (+6 more)
 
 ### Community 14 - "Shield Paint Color Build"
 Cohesion: 0.21
@@ -192,7 +193,7 @@ Nodes (7): Button, Color, Font, GroupBox, ListBox, TextBox, Theme
 
 ### Community 17 - "Connection Monitor Describe Match"
 Cohesion: 0.22
-Nodes (7): AiConnectionMonitor, AiConnectionEvidence, HashSet, object, string, Timer, IPAddress
+Nodes (7): AiConnectionMonitor, AiConnectionEvidence, HashSet, IPAddress, object, string, Timer
 
 ### Community 18 - "Monitor Reporter Log List"
 Cohesion: 0.18
@@ -279,8 +280,8 @@ Cohesion: 0.33
 Nodes (6): GraphRAG JSON, MCP Server, Cross Repo Merge, GitHub Clone, Monorepo Subfolder Flow, Reusable Clones
 
 ### Community 42 - "Graphify Project Instructions Supported"
-Cohesion: 0.18
-Nodes (10): Project Graphify Instructions, For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only, /graphify, Interpreter guard for subcommands, Usage (+2 more)
+Cohesion: 0.15
+Nodes (12): Project Graphify Instructions, For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only, /graphify, Interpreter guard for subcommands, Usage (+4 more)
 
 ### Community 46 - "Community 46"
 Cohesion: 0.23
@@ -315,12 +316,12 @@ Cohesion: 0.22
 Nodes (8): graphify reference: extra exports and benchmark, Step 6b - Wiki (only if --wiki flag), Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag), Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag), Step 7b - SVG export (only if --svg flag), Step 7c - GraphML export (only if --graphml flag), Step 7d - MCP server (only if --mcp flag), Step 8 - Token reduction benchmark (only if total_words > 5000)
 
 ### Community 54 - "Community 54"
-Cohesion: 0.25
+Cohesion: 0.29
 Nodes (4): int, JsonSerializerOptions, T, MonitorProtocol
 
 ### Community 55 - "Community 55"
-Cohesion: 0.47
-Nodes (3): LogEntry, LogChainVerifier, IReadOnlyList
+Cohesion: 0.28
+Nodes (5): LogEntry, LogChainVerifier, LogChunkMessage, StatusMessage, IReadOnlyList
 
 ### Community 56 - "Community 56"
 Cohesion: 0.33
@@ -338,8 +339,12 @@ Nodes (3): For git commit hook, For native CLAUDE.md integration, graphify refer
 Cohesion: 0.50
 Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphify reference: incremental update and cluster-only
 
+### Community 64 - "Community 64"
+Cohesion: 0.39
+Nodes (5): IEnumerable, IPAddress, MonitorBroadcaster, IPEndPoint, UnicastIPAddressInformation
+
 ## Knowledge Gaps
-- **306 isolated node(s):** `net8.0-windows`, `Microsoft.NET.Sdk`, `Language`, `int`, `Graphics` (+301 more)
+- **307 isolated node(s):** `net8.0-windows`, `Microsoft.NET.Sdk`, `Language`, `int`, `Graphics` (+302 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -349,11 +354,11 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `MainForm` connect `Build Left Filter Log` to `Load Config Color Grid`?**
   _High betweenness centrality (0.028) - this node is a cross-community bridge._
 - **Why does `MainForm` connect `Monitor Config Service Shield` to `Load Config Color Grid`?**
-  _High betweenness centrality (0.026) - this node is a cross-community bridge._
+  _High betweenness centrality (0.025) - this node is a cross-community bridge._
 - **Why does `MainForm` connect `Box Combo List Add` to `Load Config Color Grid`?**
   _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **What connects `net8.0-windows`, `Microsoft.NET.Sdk`, `Language` to the rest of the system?**
-  _310 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _311 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Build Left Filter Log` be split into smaller, more focused modules?**
   _Cohesion score 0.07494824016563147 - nodes in this community are weakly interconnected._
 - **Should `Monitor Config Service Shield` be split into smaller, more focused modules?**

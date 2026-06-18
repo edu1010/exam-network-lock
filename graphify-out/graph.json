@@ -385,7 +385,7 @@
       "label": ".DetectDefault()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/Lang.cs",
-      "source_location": "L97",
+      "source_location": "L98",
       "_origin": "ast",
       "id": "examconfiggenerator_lang_lang_detectdefault",
       "community": 29,
@@ -395,7 +395,7 @@
       "label": ".Save()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/Lang.cs",
-      "source_location": "L116",
+      "source_location": "L117",
       "_origin": "ast",
       "id": "examconfiggenerator_lang_lang_save",
       "community": 29,
@@ -405,7 +405,7 @@
       "label": ".Load()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/Lang.cs",
-      "source_location": "L129",
+      "source_location": "L130",
       "_origin": "ast",
       "id": "examconfiggenerator_lang_lang_load",
       "community": 29,
@@ -485,7 +485,7 @@
       "label": "ComboBox",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L25",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_cs_combobox",
       "community": 4,
@@ -495,7 +495,7 @@
       "label": "ListBox",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L28",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_cs_listbox",
       "community": 4,
@@ -505,7 +505,7 @@
       "label": "Label",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L36",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_cs_label",
       "community": 4,
@@ -515,7 +515,7 @@
       "label": "Button",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L38",
+      "source_location": "L39",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_cs_button",
       "community": 4,
@@ -525,7 +525,7 @@
       "label": ".BuildLanguageBar()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L214",
+      "source_location": "L224",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_buildlanguagebar",
       "community": 4,
@@ -535,7 +535,7 @@
       "label": "Control",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L214",
+      "source_location": "L224",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_cs_control",
       "community": 4,
@@ -545,7 +545,7 @@
       "label": ".ApplyLanguage()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L249",
+      "source_location": "L259",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_applylanguage",
       "community": 4,
@@ -555,7 +555,7 @@
       "label": ".RebuildCombo()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L270",
+      "source_location": "L280",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_rebuildcombo",
       "community": 4,
@@ -565,7 +565,7 @@
       "label": ".UpdateBlockedExtState()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L286",
+      "source_location": "L296",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_updateblockedextstate",
       "community": 4,
@@ -575,7 +575,7 @@
       "label": ".RebuildBeepModeCombo()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L297",
+      "source_location": "L307",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_rebuildbeepmodecombo",
       "community": 4,
@@ -585,7 +585,7 @@
       "label": ".L()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L311",
+      "source_location": "L321",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_l",
       "community": 4,
@@ -595,7 +595,7 @@
       "label": "T",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L311",
+      "source_location": "L321",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_cs_t",
       "community": 4,
@@ -605,7 +605,7 @@
       "label": ".Section()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L318",
+      "source_location": "L328",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_section",
       "community": 4,
@@ -615,7 +615,7 @@
       "label": "GroupBox",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L318",
+      "source_location": "L328",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_cs_groupbox",
       "community": 4,
@@ -625,7 +625,7 @@
       "label": ".HintLabel()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L325",
+      "source_location": "L335",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_hintlabel",
       "community": 4,
@@ -635,7 +635,7 @@
       "label": "Padding",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L325",
+      "source_location": "L335",
       "_origin": "ast",
       "id": "padding",
       "community": 4,
@@ -645,7 +645,7 @@
       "label": ".SectionGrid()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L331",
+      "source_location": "L341",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_sectiongrid",
       "community": 4,
@@ -655,7 +655,7 @@
       "label": "TableLayoutPanel",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L331",
+      "source_location": "L341",
       "_origin": "ast",
       "id": "tablelayoutpanel",
       "community": 4,
@@ -665,7 +665,7 @@
       "label": ".VerticalStack()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L346",
+      "source_location": "L356",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_verticalstack",
       "community": 4,
@@ -675,7 +675,7 @@
       "label": "FlowLayoutPanel",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L346",
+      "source_location": "L356",
       "_origin": "ast",
       "id": "flowlayoutpanel",
       "community": 4,
@@ -685,7 +685,7 @@
       "label": ".AddPasswordRow()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L358",
+      "source_location": "L368",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_addpasswordrow",
       "community": 4,
@@ -695,7 +695,7 @@
       "label": ".AddCheck()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L369",
+      "source_location": "L379",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_addcheck",
       "community": 4,
@@ -705,7 +705,7 @@
       "label": ".InputWithButtons()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L377",
+      "source_location": "L387",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_inputwithbuttons",
       "community": 4,
@@ -715,7 +715,7 @@
       "label": ".AddToList()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L393",
+      "source_location": "L403",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_addtolist",
       "community": 4,
@@ -725,7 +725,7 @@
       "label": ".RemoveSelected()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L409",
+      "source_location": "L419",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_removeselected",
       "community": 4,
@@ -735,7 +735,7 @@
       "label": ".BrowseExe()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L417",
+      "source_location": "L427",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_browseexe",
       "community": 4,
@@ -745,7 +745,7 @@
       "label": ".BrowseFolder()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L435",
+      "source_location": "L445",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_browsefolder",
       "community": 4,
@@ -755,7 +755,7 @@
       "label": ".SelectedWorkFolderMode()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L446",
+      "source_location": "L456",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_selectedworkfoldermode",
       "community": 4,
@@ -765,7 +765,7 @@
       "label": ".UpdateWorkFolderHint()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L454",
+      "source_location": "L464",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_updateworkfolderhint",
       "community": 4,
@@ -775,7 +775,7 @@
       "label": ".Warn()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L471",
+      "source_location": "L481",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_warn",
       "community": 4,
@@ -785,7 +785,7 @@
       "label": ".GenerateConfig()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L479",
+      "source_location": "L489",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_generateconfig",
       "community": 4,
@@ -795,17 +795,27 @@
       "label": ".ParseExtensions()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L599",
+      "source_location": "L610",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_parseextensions",
       "community": 4,
       "norm_label": ".parseextensions()"
     },
     {
+      "label": ".ParseMonitorTargets()",
+      "file_type": "code",
+      "source_file": "ExamConfigGenerator/MainForm.cs",
+      "source_location": "L619",
+      "_origin": "ast",
+      "id": "examconfiggenerator_mainform_mainform_parsemonitortargets",
+      "community": 4,
+      "norm_label": ".parsemonitortargets()"
+    },
+    {
       "label": ".SetStatus()",
       "file_type": "code",
       "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L608",
+      "source_location": "L627",
       "_origin": "ast",
       "id": "examconfiggenerator_mainform_mainform_setstatus",
       "community": 4,
@@ -1217,7 +1227,7 @@
       "source_file": "ExamLockClient/AiConnectionMonitor.cs",
       "source_location": "L114",
       "_origin": "ast",
-      "id": "ipaddress",
+      "id": "examlockclient_aiconnectionmonitor_cs_ipaddress",
       "community": 17,
       "norm_label": "ipaddress"
     },
@@ -2945,7 +2955,7 @@
       "label": ".SetState()",
       "file_type": "code",
       "source_file": "ExamLockClient/MonitorReporter.cs",
-      "source_location": "L31",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "examlockclient_monitorreporter_monitorreporter_setstate",
       "community": 18,
@@ -2955,7 +2965,7 @@
       "label": ".Start()",
       "file_type": "code",
       "source_file": "ExamLockClient/MonitorReporter.cs",
-      "source_location": "L37",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "examlockclient_monitorreporter_monitorreporter_start",
       "community": 18,
@@ -2965,7 +2975,7 @@
       "label": ".Tick()",
       "file_type": "code",
       "source_file": "ExamLockClient/MonitorReporter.cs",
-      "source_location": "L45",
+      "source_location": "L46",
       "_origin": "ast",
       "id": "examlockclient_monitorreporter_monitorreporter_tick",
       "community": 18,
@@ -2975,7 +2985,7 @@
       "label": ".ReadLog()",
       "file_type": "code",
       "source_file": "ExamLockClient/MonitorReporter.cs",
-      "source_location": "L71",
+      "source_location": "L72",
       "_origin": "ast",
       "id": "examlockclient_monitorreporter_monitorreporter_readlog",
       "community": 18,
@@ -2985,7 +2995,7 @@
       "label": "List",
       "file_type": "code",
       "source_file": "ExamLockClient/MonitorReporter.cs",
-      "source_location": "L71",
+      "source_location": "L72",
       "_origin": "ast",
       "id": "examlockclient_monitorreporter_cs_list",
       "community": 18,
@@ -2995,7 +3005,7 @@
       "label": "LogEntry",
       "file_type": "code",
       "source_file": "ExamLockClient/MonitorReporter.cs",
-      "source_location": "L71",
+      "source_location": "L72",
       "_origin": "ast",
       "id": "examlockclient_monitorreporter_cs_logentry",
       "community": 18,
@@ -3005,7 +3015,7 @@
       "label": ".Dispose()",
       "file_type": "code",
       "source_file": "ExamLockClient/MonitorReporter.cs",
-      "source_location": "L103",
+      "source_location": "L104",
       "_origin": "ast",
       "id": "examlockclient_monitorreporter_monitorreporter_dispose",
       "community": 18,
@@ -5838,34 +5848,34 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "examshared_monitoring",
-      "community": 2,
+      "community": 55,
       "norm_label": "monitoring.cs"
     },
     {
       "label": "StatusMessage",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L11",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "examshared_monitoring_statusmessage",
-      "community": 2,
+      "community": 55,
       "norm_label": "statusmessage"
     },
     {
       "label": "LogChunkMessage",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L22",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "examshared_monitoring_logchunkmessage",
-      "community": 2,
+      "community": 55,
       "norm_label": "logchunkmessage"
     },
     {
       "label": "MonitorProtocol",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L30",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorprotocol",
       "community": 54,
@@ -5875,7 +5885,7 @@
       "label": "int",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L32",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_int",
       "community": 54,
@@ -5885,7 +5895,7 @@
       "label": "JsonSerializerOptions",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L35",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_jsonserializeroptions",
       "community": 54,
@@ -5895,7 +5905,7 @@
       "label": ".Serialize()",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L41",
+      "source_location": "L42",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorprotocol_serialize",
       "community": 54,
@@ -5905,17 +5915,17 @@
       "label": ".KindOf()",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L44",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorprotocol_kindof",
-      "community": 54,
+      "community": 2,
       "norm_label": ".kindof()"
     },
     {
       "label": ".Deserialize()",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L57",
+      "source_location": "L58",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorprotocol_deserialize",
       "community": 54,
@@ -5925,7 +5935,7 @@
       "label": "T",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L57",
+      "source_location": "L58",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_t",
       "community": 54,
@@ -5935,17 +5945,17 @@
       "label": "MonitorBroadcaster",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L71",
+      "source_location": "L72",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorbroadcaster",
-      "community": 2,
+      "community": 64,
       "norm_label": "monitorbroadcaster"
     },
     {
       "label": "UdpClient",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L73",
+      "source_location": "L74",
       "_origin": "ast",
       "id": "udpclient",
       "community": 2,
@@ -5955,17 +5965,17 @@
       "label": "IPEndPoint",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L74",
+      "source_location": "L75",
       "_origin": "ast",
       "id": "ipendpoint",
-      "community": 2,
+      "community": 64,
       "norm_label": "ipendpoint"
     },
     {
       "label": ".Send()",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L82",
+      "source_location": "L83",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorbroadcaster_send",
       "community": 54,
@@ -5975,17 +5985,77 @@
       "label": ".Dispose()",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L96",
+      "source_location": "L100",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorbroadcaster_dispose",
       "community": 2,
       "norm_label": ".dispose()"
     },
     {
+      "label": ".GetBroadcastEndpoints()",
+      "file_type": "code",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L102",
+      "_origin": "ast",
+      "id": "examshared_monitoring_monitorbroadcaster_getbroadcastendpoints",
+      "community": 64,
+      "norm_label": ".getbroadcastendpoints()"
+    },
+    {
+      "label": "IEnumerable",
+      "file_type": "code",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L102",
+      "_origin": "ast",
+      "id": "examshared_monitoring_cs_ienumerable",
+      "community": 64,
+      "norm_label": "ienumerable"
+    },
+    {
+      "label": ".TryGetDirectedBroadcast()",
+      "file_type": "code",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L164",
+      "_origin": "ast",
+      "id": "examshared_monitoring_monitorbroadcaster_trygetdirectedbroadcast",
+      "community": 64,
+      "norm_label": ".trygetdirectedbroadcast()"
+    },
+    {
+      "label": "UnicastIPAddressInformation",
+      "file_type": "code",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L164",
+      "_origin": "ast",
+      "id": "unicastipaddressinformation",
+      "community": 64,
+      "norm_label": "unicastipaddressinformation"
+    },
+    {
+      "label": "IPAddress",
+      "file_type": "code",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L164",
+      "_origin": "ast",
+      "id": "examshared_monitoring_cs_ipaddress",
+      "community": 64,
+      "norm_label": "ipaddress"
+    },
+    {
+      "label": ".IsApipa()",
+      "file_type": "code",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L196",
+      "_origin": "ast",
+      "id": "examshared_monitoring_monitorbroadcaster_isapipa",
+      "community": 64,
+      "norm_label": ".isapipa()"
+    },
+    {
       "label": "MonitorListener",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L100",
+      "source_location": "L204",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorlistener",
       "community": 2,
@@ -5995,7 +6065,7 @@
       "label": "bool",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L103",
+      "source_location": "L207",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_bool",
       "community": 2,
@@ -6005,7 +6075,7 @@
       "label": ".Start()",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L115",
+      "source_location": "L219",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorlistener_start",
       "community": 2,
@@ -6015,7 +6085,7 @@
       "label": ".ReceiveLoopAsync()",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L126",
+      "source_location": "L230",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorlistener_receiveloopasync",
       "community": 2,
@@ -6025,7 +6095,7 @@
       "label": "Task",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L126",
+      "source_location": "L230",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_task",
       "community": 2,
@@ -6035,7 +6105,7 @@
       "label": ".Dispose()",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L161",
+      "source_location": "L265",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorlistener_dispose",
       "community": 2,
@@ -6045,7 +6115,7 @@
       "label": "LogChainVerifier",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L169",
+      "source_location": "L273",
       "_origin": "ast",
       "id": "examshared_monitoring_logchainverifier",
       "community": 55,
@@ -6055,7 +6125,7 @@
       "label": ".Verify()",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L171",
+      "source_location": "L275",
       "_origin": "ast",
       "id": "examshared_monitoring_logchainverifier_verify",
       "community": 55,
@@ -6065,7 +6135,7 @@
       "label": "IReadOnlyList",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L171",
+      "source_location": "L275",
       "_origin": "ast",
       "id": "ireadonlylist",
       "community": 55,
@@ -6075,7 +6145,7 @@
       "label": "LogEntry",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L171",
+      "source_location": "L275",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_logentry",
       "community": 55,
@@ -6085,7 +6155,7 @@
       "label": ".ComputeHmac()",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L201",
+      "source_location": "L305",
       "_origin": "ast",
       "id": "examshared_monitoring_logchainverifier_computehmac",
       "community": 55,
@@ -6095,7 +6165,7 @@
       "label": ".FixedEquals()",
       "file_type": "code",
       "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L207",
+      "source_location": "L311",
       "_origin": "ast",
       "id": "examshared_monitoring_logchainverifier_fixedequals",
       "community": 55,
@@ -6125,7 +6195,7 @@
       "label": "BeepModes",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L63",
+      "source_location": "L64",
       "_origin": "ast",
       "id": "examshared_shared_beepmodes",
       "community": 5,
@@ -6135,7 +6205,7 @@
       "label": "string",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L65",
+      "source_location": "L66",
       "_origin": "ast",
       "id": "examshared_shared_cs_string",
       "community": 5,
@@ -6145,7 +6215,7 @@
       "label": "WorkFolderModes",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L69",
+      "source_location": "L70",
       "_origin": "ast",
       "id": "examshared_shared_workfoldermodes",
       "community": 5,
@@ -6155,7 +6225,7 @@
       "label": "WorkFolderResolver",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L82",
+      "source_location": "L83",
       "_origin": "ast",
       "id": "examshared_shared_workfolderresolver",
       "community": 5,
@@ -6165,7 +6235,7 @@
       "label": ".Resolve()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L84",
+      "source_location": "L85",
       "_origin": "ast",
       "id": "examshared_shared_workfolderresolver_resolve",
       "community": 5,
@@ -6175,7 +6245,7 @@
       "label": "ConfigDefaults",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L114",
+      "source_location": "L115",
       "_origin": "ast",
       "id": "examshared_shared_configdefaults",
       "community": 5,
@@ -6185,7 +6255,7 @@
       "label": "LogEvents",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L161",
+      "source_location": "L162",
       "_origin": "ast",
       "id": "examshared_shared_logevents",
       "community": 5,
@@ -6195,7 +6265,7 @@
       "label": "ConfigEnvelope",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L200",
+      "source_location": "L201",
       "_origin": "ast",
       "id": "examshared_shared_configenvelope",
       "community": 5,
@@ -6205,7 +6275,7 @@
       "label": "PasswordHasher",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L206",
+      "source_location": "L207",
       "_origin": "ast",
       "id": "examshared_shared_passwordhasher",
       "community": 5,
@@ -6215,7 +6285,7 @@
       "label": ".HashPassword()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L208",
+      "source_location": "L209",
       "_origin": "ast",
       "id": "examshared_shared_passwordhasher_hashpassword",
       "community": 5,
@@ -6225,7 +6295,7 @@
       "label": ".VerifyPassword()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L215",
+      "source_location": "L216",
       "_origin": "ast",
       "id": "examshared_shared_passwordhasher_verifypassword",
       "community": 5,
@@ -6235,7 +6305,7 @@
       "label": "ConfigIntegrityService",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L224",
+      "source_location": "L225",
       "_origin": "ast",
       "id": "examshared_shared_configintegrityservice",
       "community": 5,
@@ -6245,7 +6315,7 @@
       "label": "byte",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L226",
+      "source_location": "L227",
       "_origin": "ast",
       "id": "examshared_shared_cs_byte",
       "community": 5,
@@ -6255,7 +6325,7 @@
       "label": ".ComputeHmacBase64()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L228",
+      "source_location": "L229",
       "_origin": "ast",
       "id": "examshared_shared_configintegrityservice_computehmacbase64",
       "community": 5,
@@ -6265,7 +6335,7 @@
       "label": ".VerifyHmac()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L235",
+      "source_location": "L236",
       "_origin": "ast",
       "id": "examshared_shared_configintegrityservice_verifyhmac",
       "community": 5,
@@ -6275,7 +6345,7 @@
       "label": "ConfigSerializer",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L243",
+      "source_location": "L244",
       "_origin": "ast",
       "id": "examshared_shared_configserializer",
       "community": 5,
@@ -6285,7 +6355,7 @@
       "label": "JsonSerializerOptions",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L245",
+      "source_location": "L246",
       "_origin": "ast",
       "id": "examshared_shared_cs_jsonserializeroptions",
       "community": 5,
@@ -6295,7 +6365,7 @@
       "label": ".SerializePayload()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L252",
+      "source_location": "L253",
       "_origin": "ast",
       "id": "examshared_shared_configserializer_serializepayload",
       "community": 5,
@@ -6305,7 +6375,7 @@
       "label": ".SerializeEnvelope()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L257",
+      "source_location": "L258",
       "_origin": "ast",
       "id": "examshared_shared_configserializer_serializeenvelope",
       "community": 5,
@@ -6315,7 +6385,7 @@
       "label": ".DeserializeEnvelope()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L262",
+      "source_location": "L263",
       "_origin": "ast",
       "id": "examshared_shared_configserializer_deserializeenvelope",
       "community": 5,
@@ -6325,7 +6395,7 @@
       "label": "LogEntry",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L274",
+      "source_location": "L275",
       "_origin": "ast",
       "id": "examshared_shared_logentry",
       "community": 5,
@@ -6335,7 +6405,7 @@
       "label": "SecureLogService",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L284",
+      "source_location": "L285",
       "_origin": "ast",
       "id": "examshared_shared_securelogservice",
       "community": 5,
@@ -6345,7 +6415,7 @@
       "label": "int",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L289",
+      "source_location": "L290",
       "_origin": "ast",
       "id": "examshared_shared_cs_int",
       "community": 5,
@@ -6355,7 +6425,7 @@
       "label": ".Append()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L299",
+      "source_location": "L300",
       "_origin": "ast",
       "id": "examshared_shared_securelogservice_append",
       "community": 5,
@@ -6365,7 +6435,7 @@
       "label": ".CreateEntry()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L308",
+      "source_location": "L309",
       "_origin": "ast",
       "id": "examshared_shared_securelogservice_createentry",
       "community": 5,
@@ -6375,7 +6445,7 @@
       "label": ".ComputeHmac()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L325",
+      "source_location": "L326",
       "_origin": "ast",
       "id": "examshared_shared_securelogservice_computehmac",
       "community": 5,
@@ -6385,7 +6455,7 @@
       "label": ".TryLoadLastHmac()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L332",
+      "source_location": "L333",
       "_origin": "ast",
       "id": "examshared_shared_securelogservice_tryloadlasthmac",
       "community": 5,
@@ -6395,7 +6465,7 @@
       "label": ".TryLoadLastSequence()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L356",
+      "source_location": "L357",
       "_origin": "ast",
       "id": "examshared_shared_securelogservice_tryloadlastsequence",
       "community": 5,
@@ -6405,7 +6475,7 @@
       "label": ".ReadLastNonEmptyLine()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L380",
+      "source_location": "L381",
       "_origin": "ast",
       "id": "examshared_shared_securelogservice_readlastnonemptyline",
       "community": 5,
@@ -6415,7 +6485,7 @@
       "label": "SessionStateService",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L398",
+      "source_location": "L399",
       "_origin": "ast",
       "id": "examshared_shared_sessionstateservice",
       "community": 5,
@@ -6425,7 +6495,7 @@
       "label": ".HasUncleanPreviousSession()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L407",
+      "source_location": "L408",
       "_origin": "ast",
       "id": "examshared_shared_sessionstateservice_hasuncleanprevioussession",
       "community": 5,
@@ -6435,7 +6505,7 @@
       "label": ".MarkSessionStart()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L412",
+      "source_location": "L413",
       "_origin": "ast",
       "id": "examshared_shared_sessionstateservice_marksessionstart",
       "community": 5,
@@ -6445,7 +6515,7 @@
       "label": ".MarkSessionCleanEnd()",
       "file_type": "code",
       "source_file": "ExamShared/Shared.cs",
-      "source_location": "L417",
+      "source_location": "L418",
       "_origin": "ast",
       "id": "examshared_shared_sessionstateservice_marksessioncleanend",
       "community": 5,
@@ -7155,7 +7225,7 @@
       "label": "Build",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L126",
+      "source_location": "L128",
       "_origin": "ast",
       "id": "readme_build",
       "community": 7,
@@ -7165,7 +7235,7 @@
       "label": "Run",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L135",
+      "source_location": "L137",
       "_origin": "ast",
       "id": "readme_run",
       "community": 7,
@@ -7175,7 +7245,7 @@
       "label": "Verify a log",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L141",
+      "source_location": "L143",
       "_origin": "ast",
       "id": "readme_verify_a_log",
       "community": 7,
@@ -7185,7 +7255,7 @@
       "label": "Runtime files",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L154",
+      "source_location": "L156",
       "_origin": "ast",
       "id": "readme_runtime_files",
       "community": 7,
@@ -7195,7 +7265,7 @@
       "label": "Wi-Fi adapter name",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L159",
+      "source_location": "L161",
       "_origin": "ast",
       "id": "readme_wi_fi_adapter_name",
       "community": 7,
@@ -7205,7 +7275,7 @@
       "label": "Permissions",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L164",
+      "source_location": "L166",
       "_origin": "ast",
       "id": "readme_permissions",
       "community": 7,
@@ -7215,7 +7285,7 @@
       "label": "Notes",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L169",
+      "source_location": "L171",
       "_origin": "ast",
       "id": "readme_notes",
       "community": 7,
@@ -7225,7 +7295,7 @@
       "label": "Catal\u00e0",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L176",
+      "source_location": "L178",
       "_origin": "ast",
       "id": "readme_catal\u00e0",
       "community": 48,
@@ -7235,7 +7305,7 @@
       "label": "Com funciona",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L198",
+      "source_location": "L200",
       "_origin": "ast",
       "id": "readme_com_funciona",
       "community": 48,
@@ -7245,7 +7315,7 @@
       "label": "App del professor \u2014 ExamConfigGenerator",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L206",
+      "source_location": "L208",
       "_origin": "ast",
       "id": "readme_app_del_professor_examconfiggenerator",
       "community": 48,
@@ -7255,7 +7325,7 @@
       "label": "App de l'alumne \u2014 ExamLockClient",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L237",
+      "source_location": "L239",
       "_origin": "ast",
       "id": "readme_app_de_l_alumne_examlockclient",
       "community": 48,
@@ -7265,7 +7335,7 @@
       "label": "La detecci\u00f3 d'IA \u00e9s una xarxa de seguretat",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L253",
+      "source_location": "L255",
       "_origin": "ast",
       "id": "readme_la_detecci\u00f3_d_ia_\u00e9s_una_xarxa_de_seguretat",
       "community": 48,
@@ -7275,7 +7345,7 @@
       "label": "La vigil\u00e0ncia de fitxers \u00e9s dissuasiva",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L272",
+      "source_location": "L274",
       "_origin": "ast",
       "id": "readme_la_vigil\u00e0ncia_de_fitxers_\u00e9s_dissuasiva",
       "community": 48,
@@ -7285,7 +7355,7 @@
       "label": "Panell del professor \u2014 ExamMonitor",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L279",
+      "source_location": "L281",
       "_origin": "ast",
       "id": "readme_panell_del_professor_exammonitor",
       "community": 48,
@@ -7295,7 +7365,7 @@
       "label": "Compilaci\u00f3",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L295",
+      "source_location": "L299",
       "_origin": "ast",
       "id": "readme_compilaci\u00f3",
       "community": 48,
@@ -7305,7 +7375,7 @@
       "label": "Executar",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L304",
+      "source_location": "L308",
       "_origin": "ast",
       "id": "readme_executar",
       "community": 48,
@@ -7315,7 +7385,7 @@
       "label": "Verificar un registre",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L310",
+      "source_location": "L314",
       "_origin": "ast",
       "id": "readme_verificar_un_registre",
       "community": 48,
@@ -7325,7 +7395,7 @@
       "label": "Fitxers en temps d'execuci\u00f3",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L323",
+      "source_location": "L327",
       "_origin": "ast",
       "id": "readme_fitxers_en_temps_d_execuci\u00f3",
       "community": 48,
@@ -7335,7 +7405,7 @@
       "label": "Nom de l'adaptador Wi-Fi",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L328",
+      "source_location": "L332",
       "_origin": "ast",
       "id": "readme_nom_de_l_adaptador_wi_fi",
       "community": 48,
@@ -7345,7 +7415,7 @@
       "label": "Permisos",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L333",
+      "source_location": "L337",
       "_origin": "ast",
       "id": "readme_permisos",
       "community": 48,
@@ -7355,9 +7425,9 @@
       "label": "Notes",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L338",
+      "source_location": "L342",
       "_origin": "ast",
-      "id": "readme_notes_338",
+      "id": "readme_notes_342",
       "community": 48,
       "norm_label": "notes"
     },
@@ -7365,7 +7435,7 @@
       "label": "Castellano",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L345",
+      "source_location": "L349",
       "_origin": "ast",
       "id": "readme_castellano",
       "community": 49,
@@ -7375,7 +7445,7 @@
       "label": "C\u00f3mo funciona",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L367",
+      "source_location": "L371",
       "_origin": "ast",
       "id": "readme_c\u00f3mo_funciona",
       "community": 49,
@@ -7385,7 +7455,7 @@
       "label": "App del profesor \u2014 ExamConfigGenerator",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L375",
+      "source_location": "L379",
       "_origin": "ast",
       "id": "readme_app_del_profesor_examconfiggenerator",
       "community": 49,
@@ -7395,7 +7465,7 @@
       "label": "App del alumno \u2014 ExamLockClient",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L406",
+      "source_location": "L410",
       "_origin": "ast",
       "id": "readme_app_del_alumno_examlockclient",
       "community": 49,
@@ -7405,7 +7475,7 @@
       "label": "La detecci\u00f3n de IA es una red de seguridad",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L422",
+      "source_location": "L426",
       "_origin": "ast",
       "id": "readme_la_detecci\u00f3n_de_ia_es_una_red_de_seguridad",
       "community": 49,
@@ -7415,7 +7485,7 @@
       "label": "La vigilancia de archivos es disuasoria",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L441",
+      "source_location": "L445",
       "_origin": "ast",
       "id": "readme_la_vigilancia_de_archivos_es_disuasoria",
       "community": 49,
@@ -7425,7 +7495,7 @@
       "label": "Panel del profesor \u2014 ExamMonitor",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L448",
+      "source_location": "L452",
       "_origin": "ast",
       "id": "readme_panel_del_profesor_exammonitor",
       "community": 49,
@@ -7435,9 +7505,9 @@
       "label": "Build",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L464",
+      "source_location": "L471",
       "_origin": "ast",
-      "id": "readme_build_464",
+      "id": "readme_build_471",
       "community": 49,
       "norm_label": "build"
     },
@@ -7445,7 +7515,7 @@
       "label": "Ejecutar",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L473",
+      "source_location": "L480",
       "_origin": "ast",
       "id": "readme_ejecutar",
       "community": 49,
@@ -7455,7 +7525,7 @@
       "label": "Verificar un registro",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L479",
+      "source_location": "L486",
       "_origin": "ast",
       "id": "readme_verificar_un_registro",
       "community": 49,
@@ -7465,7 +7535,7 @@
       "label": "Archivos en tiempo de ejecuci\u00f3n",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L492",
+      "source_location": "L499",
       "_origin": "ast",
       "id": "readme_archivos_en_tiempo_de_ejecuci\u00f3n",
       "community": 49,
@@ -7475,7 +7545,7 @@
       "label": "Nombre del adaptador Wi-Fi",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L497",
+      "source_location": "L504",
       "_origin": "ast",
       "id": "readme_nombre_del_adaptador_wi_fi",
       "community": 49,
@@ -7485,9 +7555,9 @@
       "label": "Permisos",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L502",
+      "source_location": "L509",
       "_origin": "ast",
-      "id": "readme_permisos_502",
+      "id": "readme_permisos_509",
       "community": 49,
       "norm_label": "permisos"
     },
@@ -7495,7 +7565,7 @@
       "label": "Notas",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L507",
+      "source_location": "L514",
       "_origin": "ast",
       "id": "readme_notas",
       "community": 49,
@@ -7736,7 +7806,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 11,
       "community_name": "Graph Cluster Cost Whisper",
       "norm_label": "graph_report.md",
       "id": "graphify_skill_graph_report"
@@ -7764,7 +7834,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 42,
       "community_name": "Graphify Project Instructions Supported",
       "norm_label": "url ingest",
       "id": "references_add_watch_url_ingest"
@@ -7792,7 +7862,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 42,
       "community_name": "Graphify Project Instructions Supported",
       "norm_label": "supported url types",
       "id": "references_add_watch_supported_url_types"
@@ -8480,7 +8550,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 11,
       "community_name": "Graph Cluster Cost Whisper",
       "norm_label": "graph report fallback",
       "id": "agents_graph_report_fallback"
@@ -10383,6 +10453,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "ExamConfigGenerator/MainForm.cs",
+      "source_location": "L619",
+      "weight": 1.0,
+      "source": "examconfiggenerator_mainform_mainform",
+      "target": "examconfiggenerator_mainform_mainform_parsemonitortargets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamConfigGenerator/MainForm.cs",
       "source_location": "L297",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -10974,6 +11054,17 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "ExamConfigGenerator/MainForm.cs",
+      "source_location": "L575",
+      "weight": 1.0,
+      "source": "examconfiggenerator_mainform_mainform_generateconfig",
+      "target": "examconfiggenerator_mainform_mainform_parsemonitortargets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamConfigGenerator/MainForm.cs",
       "source_location": "L589",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -11154,9 +11245,9 @@
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence",
-      "target": "examlockclient_aiconnectionevidence_aiconnectionevidence",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_aiconnectionevidence"
     },
     {
       "relation": "contains",
@@ -11164,9 +11255,9 @@
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence",
-      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier"
     },
     {
       "relation": "contains",
@@ -11174,9 +11265,9 @@
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence",
-      "target": "examlockclient_aiconnectionevidence_processevidence",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_processevidence"
     },
     {
       "relation": "method",
@@ -11184,9 +11275,9 @@
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiconnectionevidence",
-      "target": "examlockclient_aiconnectionevidence_aiconnectionevidence_clip",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_aiconnectionevidence_clip"
     },
     {
       "relation": "references",
@@ -11195,9 +11286,9 @@
       "source_location": "L127",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_isstudentfacing",
-      "target": "examlockclient_aiconnectionevidence_processevidence",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_processevidence"
     },
     {
       "relation": "references",
@@ -11206,9 +11297,9 @@
       "source_location": "L102",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_trygetprocess",
-      "target": "examlockclient_aiconnectionevidence_processevidence",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_processevidence"
     },
     {
       "relation": "method",
@@ -11216,9 +11307,9 @@
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
       "source_location": "L127",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier",
-      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_isstudentfacing",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_isstudentfacing"
     },
     {
       "relation": "method",
@@ -11226,9 +11317,9 @@
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
       "source_location": "L164",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier",
-      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_safecommandline",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_safecommandline"
     },
     {
       "relation": "method",
@@ -11236,9 +11327,9 @@
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
       "source_location": "L137",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier",
-      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocessname",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocessname"
     },
     {
       "relation": "method",
@@ -11246,9 +11337,9 @@
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
       "source_location": "L152",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier",
-      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocesspath",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocesspath"
     },
     {
       "relation": "method",
@@ -11256,9 +11347,9 @@
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
       "source_location": "L102",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier",
-      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_trygetprocess",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_trygetprocess"
     },
     {
       "relation": "references",
@@ -11267,9 +11358,9 @@
       "source_location": "L73",
       "weight": 1.0,
       "context": "field",
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier",
-      "target": "examlockclient_aiconnectionevidence_cs_hashset",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_cs_hashset"
     },
     {
       "relation": "calls",
@@ -11278,9 +11369,9 @@
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
       "source_location": "L118",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_trygetprocess",
-      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_safecommandline",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_safecommandline"
     },
     {
       "relation": "calls",
@@ -11289,9 +11380,9 @@
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
       "source_location": "L107",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_trygetprocess",
-      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocessname",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocessname"
     },
     {
       "relation": "calls",
@@ -11300,9 +11391,9 @@
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_trygetprocess",
-      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocesspath",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocesspath"
     },
     {
       "relation": "references",
@@ -11311,9 +11402,9 @@
       "source_location": "L137",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocessname",
-      "target": "examlockclient_aiconnectionevidence_cs_process",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_cs_process"
     },
     {
       "relation": "references",
@@ -11322,9 +11413,9 @@
       "source_location": "L152",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocesspath",
-      "target": "examlockclient_aiconnectionevidence_cs_process",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionevidence_cs_process"
     },
     {
       "relation": "contains",
@@ -11342,9 +11433,9 @@
       "source_file": "ExamLockClient/AiConnectionMonitor.cs",
       "source_location": "L155",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionmonitor_aiconnectionmonitor",
-      "target": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_buildevidence",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_buildevidence"
     },
     {
       "relation": "method",
@@ -11392,9 +11483,9 @@
       "source_file": "ExamLockClient/AiConnectionMonitor.cs",
       "source_location": "L135",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionmonitor_aiconnectionmonitor",
-      "target": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_pollwithoutownerpid",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_pollwithoutownerpid"
     },
     {
       "relation": "method",
@@ -11579,9 +11670,9 @@
       "source_file": "ExamLockClient/AiConnectionMonitor.cs",
       "source_location": "L95",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_poll",
-      "target": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_buildevidence",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_buildevidence"
     },
     {
       "relation": "calls",
@@ -11612,42 +11703,9 @@
       "source_file": "ExamLockClient/AiConnectionMonitor.cs",
       "source_location": "L106",
       "weight": 1.0,
-      "source": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_poll",
-      "target": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_pollwithoutownerpid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "ExamLockClient/AiConnectionMonitor.cs",
-      "source_location": "L106",
-      "weight": 1.0,
-      "context": "parameter_type",
       "confidence_score": 1.0,
-      "source": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_matches",
-      "target": "ipaddress"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "ExamLockClient/AiConnectionMonitor.cs",
-      "source_location": "L147",
-      "weight": 1.0,
-      "source": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_pollwithoutownerpid",
-      "target": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_matches",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "ExamLockClient/AiConnectionMonitor.cs",
-      "source_location": "L155",
-      "weight": 1.0,
-      "context": "parameter_type",
-      "source": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_buildevidence",
-      "target": "ipaddress",
-      "confidence_score": 1.0
+      "source": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_poll",
+      "target": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_pollwithoutownerpid"
     },
     {
       "relation": "references",
@@ -11656,9 +11714,42 @@
       "source_location": "L114",
       "weight": 1.0,
       "context": "parameter_type",
+      "source": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_matches",
+      "target": "examlockclient_aiconnectionmonitor_cs_ipaddress",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionMonitor.cs",
+      "source_location": "L147",
+      "weight": 1.0,
       "confidence_score": 1.0,
+      "source": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_pollwithoutownerpid",
+      "target": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_matches"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionMonitor.cs",
+      "source_location": "L155",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_buildevidence",
+      "target": "examlockclient_aiconnectionmonitor_cs_ipaddress",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionMonitor.cs",
+      "source_location": "L122",
+      "weight": 1.0,
+      "context": "parameter_type",
       "source": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_describematch",
-      "target": "ipaddress"
+      "target": "examlockclient_aiconnectionmonitor_cs_ipaddress",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -11667,9 +11758,9 @@
       "source_file": "ExamLockClient/AiConnectionMonitor.cs",
       "source_location": "L160",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_buildevidence",
-      "target": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_describematch",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_describematch"
     },
     {
       "relation": "calls",
@@ -11678,9 +11769,9 @@
       "source_file": "ExamLockClient/AiConnectionMonitor.cs",
       "source_location": "L149",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_pollwithoutownerpid",
-      "target": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_buildevidence",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_buildevidence"
     },
     {
       "relation": "references",
@@ -11689,9 +11780,9 @@
       "source_location": "L155",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionmonitor_aiconnectionmonitor_buildevidence",
-      "target": "examlockclient_aiconnectionmonitor_cs_aiconnectionevidence",
-      "confidence_score": 1.0
+      "target": "examlockclient_aiconnectionmonitor_cs_aiconnectionevidence"
     },
     {
       "relation": "contains",
@@ -11894,9 +11985,9 @@
       "source_location": "L21",
       "weight": 1.0,
       "context": "field",
+      "confidence_score": 1.0,
       "source": "examlockclient_audioalerter_audioalerter",
-      "target": "examlockclient_audioalerter_cs_uint",
-      "confidence_score": 1.0
+      "target": "examlockclient_audioalerter_cs_uint"
     },
     {
       "relation": "references",
@@ -11916,9 +12007,9 @@
       "source_location": "L23",
       "weight": 1.0,
       "context": "attribute",
+      "confidence_score": 1.0,
       "source": "examlockclient_audioalerter_audioalerter_keybd_event",
-      "target": "examlockclient_audioalerter_cs_dllimport",
-      "confidence_score": 1.0
+      "target": "examlockclient_audioalerter_cs_dllimport"
     },
     {
       "relation": "references",
@@ -12068,9 +12159,9 @@
       "source_location": "L199",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_audioalerter_immdeviceenumerator_enumaudioendpoints",
-      "target": "examlockclient_audioalerter_cs_intptr",
-      "confidence_score": 1.0
+      "target": "examlockclient_audioalerter_cs_intptr"
     },
     {
       "relation": "references",
@@ -12090,9 +12181,9 @@
       "source_location": "L215",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_audioalerter_iaudioendpointvolume_registercontrolchangenotify",
-      "target": "examlockclient_audioalerter_cs_intptr",
-      "confidence_score": 1.0
+      "target": "examlockclient_audioalerter_cs_intptr"
     },
     {
       "relation": "references",
@@ -12101,9 +12192,9 @@
       "source_location": "L216",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_audioalerter_iaudioendpointvolume_unregistercontrolchangenotify",
-      "target": "examlockclient_audioalerter_cs_intptr",
-      "confidence_score": 1.0
+      "target": "examlockclient_audioalerter_cs_intptr"
     },
     {
       "relation": "references",
@@ -12112,9 +12203,9 @@
       "source_location": "L207",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_audioalerter_immdevice_activate",
-      "target": "examlockclient_audioalerter_cs_intptr",
-      "confidence_score": 1.0
+      "target": "examlockclient_audioalerter_cs_intptr"
     },
     {
       "relation": "references",
@@ -13675,9 +13766,9 @@
       "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L507",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform",
-      "target": "examlockclient_mainform_mainform_raiseaiwarning",
-      "confidence_score": 1.0
+      "target": "examlockclient_mainform_mainform_raiseaiwarning"
     },
     {
       "relation": "method",
@@ -14169,9 +14260,9 @@
       "source_location": "L466",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform_onaidetected",
-      "target": "examlockclient_mainform_cs_aiconnectionevidence",
-      "confidence_score": 1.0
+      "target": "examlockclient_mainform_cs_aiconnectionevidence"
     },
     {
       "relation": "calls",
@@ -14191,9 +14282,9 @@
       "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L474",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform_onaidetected",
-      "target": "examlockclient_mainform_mainform_raiseaiwarning",
-      "confidence_score": 1.0
+      "target": "examlockclient_mainform_mainform_raiseaiwarning"
     },
     {
       "relation": "calls",
@@ -14213,9 +14304,9 @@
       "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L483",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform_onaidns",
-      "target": "examlockclient_mainform_mainform_raiseaiwarning",
-      "confidence_score": 1.0
+      "target": "examlockclient_mainform_mainform_raiseaiwarning"
     },
     {
       "relation": "calls",
@@ -14257,9 +14348,9 @@
       "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L515",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform_raiseaiwarning",
-      "target": "examlockclient_mainform_mainform_addincident",
-      "confidence_score": 1.0
+      "target": "examlockclient_mainform_mainform_addincident"
     },
     {
       "relation": "calls",
@@ -14268,9 +14359,9 @@
       "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L516",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform_raiseaiwarning",
-      "target": "examlockclient_mainform_mainform_setyellow",
-      "confidence_score": 1.0
+      "target": "examlockclient_mainform_mainform_setyellow"
     },
     {
       "relation": "calls",
@@ -14912,9 +15003,9 @@
       "source_location": "L97",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_processmonitor_processmonitor_safeprocessname",
-      "target": "examlockclient_processmonitor_cs_process",
-      "confidence_score": 1.0
+      "target": "examlockclient_processmonitor_cs_process"
     },
     {
       "relation": "contains",
@@ -15229,9 +15320,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionowner",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionowner"
     },
     {
       "relation": "contains",
@@ -15239,9 +15330,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable"
     },
     {
       "relation": "references",
@@ -15250,9 +15341,9 @@
       "source_location": "L22",
       "weight": 1.0,
       "context": "generic_arg",
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_trygetall",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionowner",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionowner"
     },
     {
       "relation": "references",
@@ -15261,9 +15352,9 @@
       "source_location": "L30",
       "weight": 1.0,
       "context": "generic_arg",
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv4",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionowner",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionowner"
     },
     {
       "relation": "references",
@@ -15272,9 +15363,9 @@
       "source_location": "L92",
       "weight": 1.0,
       "context": "generic_arg",
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv6",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionowner",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionowner"
     },
     {
       "relation": "references",
@@ -15283,9 +15374,9 @@
       "source_location": "L18",
       "weight": 1.0,
       "context": "field",
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable",
-      "target": "examlockclient_tcpconnectionownertable_cs_int",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_cs_int"
     },
     {
       "relation": "references",
@@ -15294,9 +15385,9 @@
       "source_location": "L20",
       "weight": 1.0,
       "context": "field",
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable",
-      "target": "examlockclient_tcpconnectionownertable_cs_uint",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_cs_uint"
     },
     {
       "relation": "method",
@@ -15304,9 +15395,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L159",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_getextendedtcptable",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_getextendedtcptable"
     },
     {
       "relation": "method",
@@ -15314,9 +15405,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_readport",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_readport"
     },
     {
       "relation": "method",
@@ -15324,9 +15415,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L156",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_totcpstate",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_totcpstate"
     },
     {
       "relation": "method",
@@ -15334,9 +15425,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_trygetall",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_trygetall"
     },
     {
       "relation": "method",
@@ -15344,9 +15435,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv4",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv4"
     },
     {
       "relation": "method",
@@ -15354,9 +15445,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv6",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv6"
     },
     {
       "relation": "references",
@@ -15365,9 +15456,9 @@
       "source_location": "L22",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_trygetall",
-      "target": "examlockclient_tcpconnectionownertable_cs_list",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_cs_list"
     },
     {
       "relation": "calls",
@@ -15376,9 +15467,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_trygetall",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv4",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv4"
     },
     {
       "relation": "calls",
@@ -15387,9 +15478,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_trygetall",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv6",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv6"
     },
     {
       "relation": "references",
@@ -15398,9 +15489,9 @@
       "source_location": "L30",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv4",
-      "target": "examlockclient_tcpconnectionownertable_cs_list",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_cs_list"
     },
     {
       "relation": "references",
@@ -15409,9 +15500,9 @@
       "source_location": "L92",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv6",
-      "target": "examlockclient_tcpconnectionownertable_cs_list",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_cs_list"
     },
     {
       "relation": "calls",
@@ -15420,9 +15511,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv4",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_getextendedtcptable",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_getextendedtcptable"
     },
     {
       "relation": "calls",
@@ -15431,9 +15522,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv4",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_readport",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_readport"
     },
     {
       "relation": "calls",
@@ -15442,9 +15533,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv4",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_totcpstate",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_totcpstate"
     },
     {
       "relation": "calls",
@@ -15453,9 +15544,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L95",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv6",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_getextendedtcptable",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_getextendedtcptable"
     },
     {
       "relation": "calls",
@@ -15464,9 +15555,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L139",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv6",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_readport",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_readport"
     },
     {
       "relation": "calls",
@@ -15475,9 +15566,9 @@
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L140",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_tryreadipv6",
-      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_totcpstate",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_totcpstate"
     },
     {
       "relation": "references",
@@ -15486,9 +15577,9 @@
       "source_location": "L156",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_totcpstate",
-      "target": "tcpstate",
-      "confidence_score": 1.0
+      "target": "tcpstate"
     },
     {
       "relation": "references",
@@ -15497,9 +15588,9 @@
       "source_location": "L159",
       "weight": 1.0,
       "context": "attribute",
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_getextendedtcptable",
-      "target": "examlockclient_tcpconnectionownertable_cs_dllimport",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_cs_dllimport"
     },
     {
       "relation": "references",
@@ -15508,9 +15599,9 @@
       "source_location": "L159",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_getextendedtcptable",
-      "target": "examlockclient_tcpconnectionownertable_cs_intptr",
-      "confidence_score": 1.0
+      "target": "examlockclient_tcpconnectionownertable_cs_intptr"
     },
     {
       "relation": "references",
@@ -15519,9 +15610,9 @@
       "source_location": "L159",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_tcpconnectionownertable_tcpconnectionownertable_getextendedtcptable",
-      "target": "tcptableclass",
-      "confidence_score": 1.0
+      "target": "tcptableclass"
     },
     {
       "relation": "contains",
@@ -19672,11 +19763,41 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "examshared_monitoring_monitorbroadcaster",
+      "target": "examshared_monitoring_monitorbroadcaster_getbroadcastendpoints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L196",
+      "weight": 1.0,
+      "source": "examshared_monitoring_monitorbroadcaster",
+      "target": "examshared_monitoring_monitorbroadcaster_isapipa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamShared/Monitoring.cs",
       "source_location": "L82",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "examshared_monitoring_monitorbroadcaster",
       "target": "examshared_monitoring_monitorbroadcaster_send"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L164",
+      "weight": 1.0,
+      "source": "examshared_monitoring_monitorbroadcaster",
+      "target": "examshared_monitoring_monitorbroadcaster_trygetdirectedbroadcast",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -19712,6 +19833,17 @@
       "target": "udpclient"
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L102",
+      "weight": 1.0,
+      "context": "return_type",
+      "source": "examshared_monitoring_monitorbroadcaster_getbroadcastendpoints",
+      "target": "ipendpoint",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -19721,6 +19853,72 @@
       "confidence_score": 1.0,
       "source": "examshared_monitoring_monitorbroadcaster_dispose",
       "target": "examshared_monitoring_monitorlistener_dispose"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L102",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "examshared_monitoring_monitorbroadcaster_getbroadcastendpoints",
+      "target": "examshared_monitoring_cs_ienumerable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L122",
+      "weight": 1.0,
+      "source": "examshared_monitoring_monitorbroadcaster_getbroadcastendpoints",
+      "target": "examshared_monitoring_monitorbroadcaster_isapipa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "examshared_monitoring_monitorbroadcaster_getbroadcastendpoints",
+      "target": "examshared_monitoring_monitorbroadcaster_trygetdirectedbroadcast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L164",
+      "weight": 1.0,
+      "context": "return_type",
+      "source": "examshared_monitoring_monitorbroadcaster_trygetdirectedbroadcast",
+      "target": "examshared_monitoring_cs_ipaddress",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L164",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "examshared_monitoring_monitorbroadcaster_trygetdirectedbroadcast",
+      "target": "unicastipaddressinformation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L196",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "examshared_monitoring_monitorbroadcaster_isapipa",
+      "target": "examshared_monitoring_cs_ipaddress",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -20396,9 +20594,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill",
-      "target": "graphify_skill_graphify",
-      "confidence_score": 1.0
+      "target": "graphify_skill_graphify"
     },
     {
       "relation": "references",
@@ -20426,9 +20624,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L596",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_graphify",
-      "target": "graphify_skill_for_graphify_add_and_watch",
-      "confidence_score": 1.0
+      "target": "graphify_skill_for_graphify_add_and_watch"
     },
     {
       "relation": "contains",
@@ -20436,9 +20634,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L584",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_graphify",
-      "target": "graphify_skill_for_graphify_query",
-      "confidence_score": 1.0
+      "target": "graphify_skill_for_graphify_query"
     },
     {
       "relation": "contains",
@@ -20446,9 +20644,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L602",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_graphify",
-      "target": "graphify_skill_for_the_commit_hook_and_native_claude_md_integration",
-      "confidence_score": 1.0
+      "target": "graphify_skill_for_the_commit_hook_and_native_claude_md_integration"
     },
     {
       "relation": "contains",
@@ -20456,9 +20654,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L578",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_graphify",
-      "target": "graphify_skill_for_update_and_cluster_only",
-      "confidence_score": 1.0
+      "target": "graphify_skill_for_update_and_cluster_only"
     },
     {
       "relation": "implements",
@@ -20486,9 +20684,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L560",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_graphify",
-      "target": "graphify_skill_interpreter_guard_for_subcommands",
-      "confidence_score": 1.0
+      "target": "graphify_skill_interpreter_guard_for_subcommands"
     },
     {
       "relation": "contains",
@@ -20496,9 +20694,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_graphify",
-      "target": "graphify_skill_usage",
-      "confidence_score": 1.0
+      "target": "graphify_skill_usage"
     },
     {
       "relation": "contains",
@@ -20506,9 +20704,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_graphify",
-      "target": "graphify_skill_what_graphify_is_for",
-      "confidence_score": 1.0
+      "target": "graphify_skill_what_graphify_is_for"
     },
     {
       "relation": "contains",
@@ -20516,9 +20714,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_graphify",
-      "target": "graphify_skill_what_you_must_do_when_invoked",
-      "confidence_score": 1.0
+      "target": "graphify_skill_what_you_must_do_when_invoked"
     },
     {
       "relation": "references",
@@ -20566,9 +20764,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_what_you_must_do_when_invoked",
-      "target": "graphify_skill_step_0_github_repos_and_multi_path_merge_only_if_a_url_or_several_paths",
-      "confidence_score": 1.0
+      "target": "graphify_skill_step_0_github_repos_and_multi_path_merge_only_if_a_url_or_several_paths"
     },
     {
       "relation": "contains",
@@ -20576,9 +20774,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_what_you_must_do_when_invoked",
-      "target": "graphify_skill_step_1_ensure_graphify_is_installed",
-      "confidence_score": 1.0
+      "target": "graphify_skill_step_1_ensure_graphify_is_installed"
     },
     {
       "relation": "contains",
@@ -20586,9 +20784,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_what_you_must_do_when_invoked",
-      "target": "graphify_skill_step_2_5_video_and_audio_only_if_video_files_detected",
-      "confidence_score": 1.0
+      "target": "graphify_skill_step_2_5_video_and_audio_only_if_video_files_detected"
     },
     {
       "relation": "contains",
@@ -20596,9 +20794,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L107",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_what_you_must_do_when_invoked",
-      "target": "graphify_skill_step_2_detect_files",
-      "confidence_score": 1.0
+      "target": "graphify_skill_step_2_detect_files"
     },
     {
       "relation": "contains",
@@ -20606,9 +20804,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L148",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_what_you_must_do_when_invoked",
-      "target": "graphify_skill_step_3_extract_entities_and_relationships",
-      "confidence_score": 1.0
+      "target": "graphify_skill_step_3_extract_entities_and_relationships"
     },
     {
       "relation": "contains",
@@ -20616,9 +20814,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L367",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_what_you_must_do_when_invoked",
-      "target": "graphify_skill_step_4_build_graph_cluster_analyze_generate_outputs",
-      "confidence_score": 1.0
+      "target": "graphify_skill_step_4_build_graph_cluster_analyze_generate_outputs"
     },
     {
       "relation": "contains",
@@ -20626,9 +20824,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L419",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_what_you_must_do_when_invoked",
-      "target": "graphify_skill_step_5_label_communities",
-      "confidence_score": 1.0
+      "target": "graphify_skill_step_5_label_communities"
     },
     {
       "relation": "contains",
@@ -20636,9 +20834,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L459",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_what_you_must_do_when_invoked",
-      "target": "graphify_skill_step_6_generate_obsidian_vault_opt_in_html",
-      "confidence_score": 1.0
+      "target": "graphify_skill_step_6_generate_obsidian_vault_opt_in_html"
     },
     {
       "relation": "contains",
@@ -20646,9 +20844,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L485",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_what_you_must_do_when_invoked",
-      "target": "graphify_skill_step_9_save_manifest_update_cost_tracker_clean_up_and_report",
-      "confidence_score": 1.0
+      "target": "graphify_skill_step_9_save_manifest_update_cost_tracker_clean_up_and_report"
     },
     {
       "relation": "contains",
@@ -20656,9 +20854,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L479",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_what_you_must_do_when_invoked",
-      "target": "graphify_skill_steps_6b_8_wiki_neo4j_falkordb_svg_graphml_mcp_benchmark_only_on_their_flags",
-      "confidence_score": 1.0
+      "target": "graphify_skill_steps_6b_8_wiki_neo4j_falkordb_svg_graphml_mcp_benchmark_only_on_their_flags"
     },
     {
       "relation": "contains",
@@ -20666,9 +20864,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_step_3_extract_entities_and_relationships",
-      "target": "graphify_skill_part_a_structural_extraction_for_code_files",
-      "confidence_score": 1.0
+      "target": "graphify_skill_part_a_structural_extraction_for_code_files"
     },
     {
       "relation": "contains",
@@ -20676,9 +20874,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L191",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_step_3_extract_entities_and_relationships",
-      "target": "graphify_skill_part_b_semantic_extraction_parallel_subagents",
-      "confidence_score": 1.0
+      "target": "graphify_skill_part_b_semantic_extraction_parallel_subagents"
     },
     {
       "relation": "contains",
@@ -20686,9 +20884,9 @@
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L333",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_skill_step_3_extract_entities_and_relationships",
-      "target": "graphify_skill_part_c_merge_ast_semantic_into_final_extraction",
-      "confidence_score": 1.0
+      "target": "graphify_skill_part_c_merge_ast_semantic_into_final_extraction"
     },
     {
       "relation": "semantically_similar_to",
@@ -20706,9 +20904,9 @@
       "source_file": ".codex/skills/graphify/references/add-watch.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_add_watch",
-      "target": "references_add_watch_graphify_reference_add_a_url_and_watch_a_folder",
-      "confidence_score": 1.0
+      "target": "references_add_watch_graphify_reference_add_a_url_and_watch_a_folder"
     },
     {
       "relation": "contains",
@@ -20716,9 +20914,9 @@
       "source_file": ".codex/skills/graphify/references/add-watch.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_add_watch_graphify_reference_add_a_url_and_watch_a_folder",
-      "target": "references_add_watch_for_graphify_add",
-      "confidence_score": 1.0
+      "target": "references_add_watch_for_graphify_add"
     },
     {
       "relation": "contains",
@@ -20726,9 +20924,9 @@
       "source_file": ".codex/skills/graphify/references/add-watch.md",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_add_watch_graphify_reference_add_a_url_and_watch_a_folder",
-      "target": "references_add_watch_for_watch",
-      "confidence_score": 1.0
+      "target": "references_add_watch_for_watch"
     },
     {
       "relation": "contains",
@@ -20736,9 +20934,9 @@
       "source_file": ".codex/skills/graphify/references/exports.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_exports",
-      "target": "references_exports_graphify_reference_extra_exports_and_benchmark",
-      "confidence_score": 1.0
+      "target": "references_exports_graphify_reference_extra_exports_and_benchmark"
     },
     {
       "relation": "contains",
@@ -20746,9 +20944,9 @@
       "source_file": ".codex/skills/graphify/references/exports.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_exports_graphify_reference_extra_exports_and_benchmark",
-      "target": "references_exports_step_6b_wiki_only_if_wiki_flag",
-      "confidence_score": 1.0
+      "target": "references_exports_step_6b_wiki_only_if_wiki_flag"
     },
     {
       "relation": "contains",
@@ -20756,9 +20954,9 @@
       "source_file": ".codex/skills/graphify/references/exports.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_exports_graphify_reference_extra_exports_and_benchmark",
-      "target": "references_exports_step_7_neo4j_export_only_if_neo4j_or_neo4j_push_flag",
-      "confidence_score": 1.0
+      "target": "references_exports_step_7_neo4j_export_only_if_neo4j_or_neo4j_push_flag"
     },
     {
       "relation": "contains",
@@ -20766,9 +20964,9 @@
       "source_file": ".codex/skills/graphify/references/exports.md",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_exports_graphify_reference_extra_exports_and_benchmark",
-      "target": "references_exports_step_7a_falkordb_export_only_if_falkordb_or_falkordb_push_flag",
-      "confidence_score": 1.0
+      "target": "references_exports_step_7a_falkordb_export_only_if_falkordb_or_falkordb_push_flag"
     },
     {
       "relation": "contains",
@@ -20776,9 +20974,9 @@
       "source_file": ".codex/skills/graphify/references/exports.md",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_exports_graphify_reference_extra_exports_and_benchmark",
-      "target": "references_exports_step_7b_svg_export_only_if_svg_flag",
-      "confidence_score": 1.0
+      "target": "references_exports_step_7b_svg_export_only_if_svg_flag"
     },
     {
       "relation": "contains",
@@ -20786,9 +20984,9 @@
       "source_file": ".codex/skills/graphify/references/exports.md",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_exports_graphify_reference_extra_exports_and_benchmark",
-      "target": "references_exports_step_7c_graphml_export_only_if_graphml_flag",
-      "confidence_score": 1.0
+      "target": "references_exports_step_7c_graphml_export_only_if_graphml_flag"
     },
     {
       "relation": "contains",
@@ -20796,9 +20994,9 @@
       "source_file": ".codex/skills/graphify/references/exports.md",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_exports_graphify_reference_extra_exports_and_benchmark",
-      "target": "references_exports_step_7d_mcp_server_only_if_mcp_flag",
-      "confidence_score": 1.0
+      "target": "references_exports_step_7d_mcp_server_only_if_mcp_flag"
     },
     {
       "relation": "contains",
@@ -20806,9 +21004,9 @@
       "source_file": ".codex/skills/graphify/references/exports.md",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_exports_graphify_reference_extra_exports_and_benchmark",
-      "target": "references_exports_step_8_token_reduction_benchmark_only_if_total_words_5000",
-      "confidence_score": 1.0
+      "target": "references_exports_step_8_token_reduction_benchmark_only_if_total_words_5000"
     },
     {
       "relation": "contains",
@@ -20816,9 +21014,9 @@
       "source_file": ".codex/skills/graphify/references/extraction-spec.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_extraction_spec",
-      "target": "references_extraction_spec_graphify_reference_extraction_subagent_prompt_compact",
-      "confidence_score": 1.0
+      "target": "references_extraction_spec_graphify_reference_extraction_subagent_prompt_compact"
     },
     {
       "relation": "contains",
@@ -20826,9 +21024,9 @@
       "source_file": ".codex/skills/graphify/references/github-and-merge.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_github_and_merge",
-      "target": "references_github_and_merge_graphify_reference_github_clone_and_cross_repo_merge",
-      "confidence_score": 1.0
+      "target": "references_github_and_merge_graphify_reference_github_clone_and_cross_repo_merge"
     },
     {
       "relation": "contains",
@@ -20836,9 +21034,9 @@
       "source_file": ".codex/skills/graphify/references/github-and-merge.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_github_and_merge_graphify_reference_github_clone_and_cross_repo_merge",
-      "target": "references_github_and_merge_step_0_clone_github_repo_s_only_if_a_github_url_was_given",
-      "confidence_score": 1.0
+      "target": "references_github_and_merge_step_0_clone_github_repo_s_only_if_a_github_url_was_given"
     },
     {
       "relation": "contains",
@@ -20846,9 +21044,9 @@
       "source_file": ".codex/skills/graphify/references/hooks.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_hooks",
-      "target": "references_hooks_graphify_reference_commit_hook_and_native_claude_md_integration",
-      "confidence_score": 1.0
+      "target": "references_hooks_graphify_reference_commit_hook_and_native_claude_md_integration"
     },
     {
       "relation": "contains",
@@ -20856,9 +21054,9 @@
       "source_file": ".codex/skills/graphify/references/hooks.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_hooks_graphify_reference_commit_hook_and_native_claude_md_integration",
-      "target": "references_hooks_for_git_commit_hook",
-      "confidence_score": 1.0
+      "target": "references_hooks_for_git_commit_hook"
     },
     {
       "relation": "contains",
@@ -20866,9 +21064,9 @@
       "source_file": ".codex/skills/graphify/references/hooks.md",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_hooks_graphify_reference_commit_hook_and_native_claude_md_integration",
-      "target": "references_hooks_for_native_claude_md_integration",
-      "confidence_score": 1.0
+      "target": "references_hooks_for_native_claude_md_integration"
     },
     {
       "relation": "contains",
@@ -20876,9 +21074,9 @@
       "source_file": ".codex/skills/graphify/references/query.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_query",
-      "target": "references_query_graphify_reference_query_path_explain",
-      "confidence_score": 1.0
+      "target": "references_query_graphify_reference_query_path_explain"
     },
     {
       "relation": "contains",
@@ -20886,9 +21084,9 @@
       "source_file": ".codex/skills/graphify/references/query.md",
       "source_location": "L246",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_query_graphify_reference_query_path_explain",
-      "target": "references_query_for_graphify_explain",
-      "confidence_score": 1.0
+      "target": "references_query_for_graphify_explain"
     },
     {
       "relation": "contains",
@@ -20896,9 +21094,9 @@
       "source_file": ".codex/skills/graphify/references/query.md",
       "source_location": "L178",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_query_graphify_reference_query_path_explain",
-      "target": "references_query_for_graphify_path",
-      "confidence_score": 1.0
+      "target": "references_query_for_graphify_path"
     },
     {
       "relation": "contains",
@@ -20906,9 +21104,9 @@
       "source_file": ".codex/skills/graphify/references/query.md",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_query_graphify_reference_query_path_explain",
-      "target": "references_query_step_0_constrained_query_expansion_required_before_traversal",
-      "confidence_score": 1.0
+      "target": "references_query_step_0_constrained_query_expansion_required_before_traversal"
     },
     {
       "relation": "contains",
@@ -20916,9 +21114,9 @@
       "source_file": ".codex/skills/graphify/references/query.md",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_query_graphify_reference_query_path_explain",
-      "target": "references_query_step_1_traversal",
-      "confidence_score": 1.0
+      "target": "references_query_step_1_traversal"
     },
     {
       "relation": "contains",
@@ -20926,9 +21124,9 @@
       "source_file": ".codex/skills/graphify/references/transcribe.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_transcribe",
-      "target": "references_transcribe_graphify_reference_transcribe_video_and_audio",
-      "confidence_score": 1.0
+      "target": "references_transcribe_graphify_reference_transcribe_video_and_audio"
     },
     {
       "relation": "contains",
@@ -20936,9 +21134,9 @@
       "source_file": ".codex/skills/graphify/references/transcribe.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_transcribe_graphify_reference_transcribe_video_and_audio",
-      "target": "references_transcribe_step_2_5_transcribe_video_audio_files_only_if_video_files_detected",
-      "confidence_score": 1.0
+      "target": "references_transcribe_step_2_5_transcribe_video_audio_files_only_if_video_files_detected"
     },
     {
       "relation": "contains",
@@ -20946,9 +21144,9 @@
       "source_file": ".codex/skills/graphify/references/update.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_update",
-      "target": "references_update_graphify_reference_incremental_update_and_cluster_only",
-      "confidence_score": 1.0
+      "target": "references_update_graphify_reference_incremental_update_and_cluster_only"
     },
     {
       "relation": "contains",
@@ -20956,9 +21154,9 @@
       "source_file": ".codex/skills/graphify/references/update.md",
       "source_location": "L175",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_update_graphify_reference_incremental_update_and_cluster_only",
-      "target": "references_update_for_cluster_only",
-      "confidence_score": 1.0
+      "target": "references_update_for_cluster_only"
     },
     {
       "relation": "contains",
@@ -20966,9 +21164,9 @@
       "source_file": ".codex/skills/graphify/references/update.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "references_update_graphify_reference_incremental_update_and_cluster_only",
-      "target": "references_update_for_update_incremental_re_extraction",
-      "confidence_score": 1.0
+      "target": "references_update_for_update_incremental_re_extraction"
     },
     {
       "relation": "contains",
@@ -20976,9 +21174,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents",
-      "target": "agents_graphify",
-      "confidence_score": 1.0
+      "target": "agents_graphify"
     },
     {
       "relation": "contains",
@@ -20986,9 +21184,9 @@
       "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme",
-      "target": "readme_exam_network_locking",
-      "confidence_score": 1.0
+      "target": "readme_exam_network_locking"
     },
     {
       "relation": "rationale_for",
@@ -21006,9 +21204,9 @@
       "source_file": "README.md",
       "source_location": "L345",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_exam_network_locking",
-      "target": "readme_castellano",
-      "confidence_score": 1.0
+      "target": "readme_castellano"
     },
     {
       "relation": "contains",
@@ -21016,9 +21214,9 @@
       "source_file": "README.md",
       "source_location": "L176",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_exam_network_locking",
-      "target": "readme_catal\u00e0",
-      "confidence_score": 1.0
+      "target": "readme_catal\u00e0"
     },
     {
       "relation": "contains",
@@ -21026,9 +21224,9 @@
       "source_file": "README.md",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_exam_network_locking",
-      "target": "readme_english",
-      "confidence_score": 1.0
+      "target": "readme_english"
     },
     {
       "relation": "references",
@@ -21096,9 +21294,9 @@
       "source_file": "README.md",
       "source_location": "L126",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_english",
-      "target": "readme_build",
-      "confidence_score": 1.0
+      "target": "readme_build"
     },
     {
       "relation": "contains",
@@ -21106,9 +21304,9 @@
       "source_file": "README.md",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_english",
-      "target": "readme_how_it_works",
-      "confidence_score": 1.0
+      "target": "readme_how_it_works"
     },
     {
       "relation": "contains",
@@ -21116,9 +21314,9 @@
       "source_file": "README.md",
       "source_location": "L169",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_english",
-      "target": "readme_notes",
-      "confidence_score": 1.0
+      "target": "readme_notes"
     },
     {
       "relation": "contains",
@@ -21126,9 +21324,9 @@
       "source_file": "README.md",
       "source_location": "L164",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_english",
-      "target": "readme_permissions",
-      "confidence_score": 1.0
+      "target": "readme_permissions"
     },
     {
       "relation": "contains",
@@ -21136,9 +21334,9 @@
       "source_file": "README.md",
       "source_location": "L135",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_english",
-      "target": "readme_run",
-      "confidence_score": 1.0
+      "target": "readme_run"
     },
     {
       "relation": "contains",
@@ -21146,9 +21344,9 @@
       "source_file": "README.md",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_english",
-      "target": "readme_runtime_files",
-      "confidence_score": 1.0
+      "target": "readme_runtime_files"
     },
     {
       "relation": "contains",
@@ -21156,9 +21354,9 @@
       "source_file": "README.md",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_english",
-      "target": "readme_student_app_examlockclient",
-      "confidence_score": 1.0
+      "target": "readme_student_app_examlockclient"
     },
     {
       "relation": "contains",
@@ -21166,9 +21364,9 @@
       "source_file": "README.md",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_english",
-      "target": "readme_teacher_app_examconfiggenerator",
-      "confidence_score": 1.0
+      "target": "readme_teacher_app_examconfiggenerator"
     },
     {
       "relation": "contains",
@@ -21176,9 +21374,9 @@
       "source_file": "README.md",
       "source_location": "L111",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_english",
-      "target": "readme_teacher_monitor_exammonitor",
-      "confidence_score": 1.0
+      "target": "readme_teacher_monitor_exammonitor"
     },
     {
       "relation": "contains",
@@ -21186,9 +21384,9 @@
       "source_file": "README.md",
       "source_location": "L141",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_english",
-      "target": "readme_verify_a_log",
-      "confidence_score": 1.0
+      "target": "readme_verify_a_log"
     },
     {
       "relation": "contains",
@@ -21196,9 +21394,9 @@
       "source_file": "README.md",
       "source_location": "L159",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_english",
-      "target": "readme_wi_fi_adapter_name",
-      "confidence_score": 1.0
+      "target": "readme_wi_fi_adapter_name"
     },
     {
       "relation": "contains",
@@ -21206,9 +21404,9 @@
       "source_file": "README.md",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_student_app_examlockclient",
-      "target": "readme_ai_detection_is_a_safety_net",
-      "confidence_score": 1.0
+      "target": "readme_ai_detection_is_a_safety_net"
     },
     {
       "relation": "contains",
@@ -21216,9 +21414,9 @@
       "source_file": "README.md",
       "source_location": "L104",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_student_app_examlockclient",
-      "target": "readme_file_monitoring_is_a_deterrent",
-      "confidence_score": 1.0
+      "target": "readme_file_monitoring_is_a_deterrent"
     },
     {
       "relation": "references",
@@ -21256,9 +21454,9 @@
       "source_file": "README.md",
       "source_location": "L237",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_catal\u00e0",
-      "target": "readme_app_de_l_alumne_examlockclient",
-      "confidence_score": 1.0
+      "target": "readme_app_de_l_alumne_examlockclient"
     },
     {
       "relation": "contains",
@@ -21266,9 +21464,9 @@
       "source_file": "README.md",
       "source_location": "L206",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_catal\u00e0",
-      "target": "readme_app_del_professor_examconfiggenerator",
-      "confidence_score": 1.0
+      "target": "readme_app_del_professor_examconfiggenerator"
     },
     {
       "relation": "contains",
@@ -21276,9 +21474,9 @@
       "source_file": "README.md",
       "source_location": "L198",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_catal\u00e0",
-      "target": "readme_com_funciona",
-      "confidence_score": 1.0
+      "target": "readme_com_funciona"
     },
     {
       "relation": "contains",
@@ -21286,9 +21484,9 @@
       "source_file": "README.md",
       "source_location": "L295",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_catal\u00e0",
-      "target": "readme_compilaci\u00f3",
-      "confidence_score": 1.0
+      "target": "readme_compilaci\u00f3"
     },
     {
       "relation": "contains",
@@ -21296,9 +21494,9 @@
       "source_file": "README.md",
       "source_location": "L304",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_catal\u00e0",
-      "target": "readme_executar",
-      "confidence_score": 1.0
+      "target": "readme_executar"
     },
     {
       "relation": "contains",
@@ -21306,9 +21504,9 @@
       "source_file": "README.md",
       "source_location": "L323",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_catal\u00e0",
-      "target": "readme_fitxers_en_temps_d_execuci\u00f3",
-      "confidence_score": 1.0
+      "target": "readme_fitxers_en_temps_d_execuci\u00f3"
     },
     {
       "relation": "contains",
@@ -21316,18 +21514,18 @@
       "source_file": "README.md",
       "source_location": "L328",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_catal\u00e0",
-      "target": "readme_nom_de_l_adaptador_wi_fi",
-      "confidence_score": 1.0
+      "target": "readme_nom_de_l_adaptador_wi_fi"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L338",
+      "source_location": "L342",
       "weight": 1.0,
       "source": "readme_catal\u00e0",
-      "target": "readme_notes_338",
+      "target": "readme_notes_342",
       "confidence_score": 1.0
     },
     {
@@ -21336,9 +21534,9 @@
       "source_file": "README.md",
       "source_location": "L279",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_catal\u00e0",
-      "target": "readme_panell_del_professor_exammonitor",
-      "confidence_score": 1.0
+      "target": "readme_panell_del_professor_exammonitor"
     },
     {
       "relation": "contains",
@@ -21346,9 +21544,9 @@
       "source_file": "README.md",
       "source_location": "L333",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_catal\u00e0",
-      "target": "readme_permisos",
-      "confidence_score": 1.0
+      "target": "readme_permisos"
     },
     {
       "relation": "contains",
@@ -21356,9 +21554,9 @@
       "source_file": "README.md",
       "source_location": "L310",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_catal\u00e0",
-      "target": "readme_verificar_un_registre",
-      "confidence_score": 1.0
+      "target": "readme_verificar_un_registre"
     },
     {
       "relation": "contains",
@@ -21366,9 +21564,9 @@
       "source_file": "README.md",
       "source_location": "L253",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_app_de_l_alumne_examlockclient",
-      "target": "readme_la_detecci\u00f3_d_ia_\u00e9s_una_xarxa_de_seguretat",
-      "confidence_score": 1.0
+      "target": "readme_la_detecci\u00f3_d_ia_\u00e9s_una_xarxa_de_seguretat"
     },
     {
       "relation": "contains",
@@ -21376,9 +21574,9 @@
       "source_file": "README.md",
       "source_location": "L272",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_app_de_l_alumne_examlockclient",
-      "target": "readme_la_vigil\u00e0ncia_de_fitxers_\u00e9s_dissuasiva",
-      "confidence_score": 1.0
+      "target": "readme_la_vigil\u00e0ncia_de_fitxers_\u00e9s_dissuasiva"
     },
     {
       "relation": "contains",
@@ -21386,9 +21584,9 @@
       "source_file": "README.md",
       "source_location": "L406",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_castellano",
-      "target": "readme_app_del_alumno_examlockclient",
-      "confidence_score": 1.0
+      "target": "readme_app_del_alumno_examlockclient"
     },
     {
       "relation": "contains",
@@ -21396,9 +21594,9 @@
       "source_file": "README.md",
       "source_location": "L375",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_castellano",
-      "target": "readme_app_del_profesor_examconfiggenerator",
-      "confidence_score": 1.0
+      "target": "readme_app_del_profesor_examconfiggenerator"
     },
     {
       "relation": "contains",
@@ -21406,18 +21604,18 @@
       "source_file": "README.md",
       "source_location": "L492",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_castellano",
-      "target": "readme_archivos_en_tiempo_de_ejecuci\u00f3n",
-      "confidence_score": 1.0
+      "target": "readme_archivos_en_tiempo_de_ejecuci\u00f3n"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L464",
+      "source_location": "L471",
       "weight": 1.0,
       "source": "readme_castellano",
-      "target": "readme_build_464",
+      "target": "readme_build_471",
       "confidence_score": 1.0
     },
     {
@@ -21426,9 +21624,9 @@
       "source_file": "README.md",
       "source_location": "L367",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_castellano",
-      "target": "readme_c\u00f3mo_funciona",
-      "confidence_score": 1.0
+      "target": "readme_c\u00f3mo_funciona"
     },
     {
       "relation": "contains",
@@ -21436,9 +21634,9 @@
       "source_file": "README.md",
       "source_location": "L473",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_castellano",
-      "target": "readme_ejecutar",
-      "confidence_score": 1.0
+      "target": "readme_ejecutar"
     },
     {
       "relation": "contains",
@@ -21446,9 +21644,9 @@
       "source_file": "README.md",
       "source_location": "L497",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_castellano",
-      "target": "readme_nombre_del_adaptador_wi_fi",
-      "confidence_score": 1.0
+      "target": "readme_nombre_del_adaptador_wi_fi"
     },
     {
       "relation": "contains",
@@ -21456,9 +21654,9 @@
       "source_file": "README.md",
       "source_location": "L507",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_castellano",
-      "target": "readme_notas",
-      "confidence_score": 1.0
+      "target": "readme_notas"
     },
     {
       "relation": "contains",
@@ -21466,18 +21664,18 @@
       "source_file": "README.md",
       "source_location": "L448",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_castellano",
-      "target": "readme_panel_del_profesor_exammonitor",
-      "confidence_score": 1.0
+      "target": "readme_panel_del_profesor_exammonitor"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L502",
+      "source_location": "L509",
       "weight": 1.0,
       "source": "readme_castellano",
-      "target": "readme_permisos_502",
+      "target": "readme_permisos_509",
       "confidence_score": 1.0
     },
     {
@@ -21486,9 +21684,9 @@
       "source_file": "README.md",
       "source_location": "L479",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_castellano",
-      "target": "readme_verificar_un_registro",
-      "confidence_score": 1.0
+      "target": "readme_verificar_un_registro"
     },
     {
       "relation": "contains",
@@ -21496,9 +21694,9 @@
       "source_file": "README.md",
       "source_location": "L422",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_app_del_alumno_examlockclient",
-      "target": "readme_la_detecci\u00f3n_de_ia_es_una_red_de_seguridad",
-      "confidence_score": 1.0
+      "target": "readme_la_detecci\u00f3n_de_ia_es_una_red_de_seguridad"
     },
     {
       "relation": "contains",
@@ -21506,9 +21704,9 @@
       "source_file": "README.md",
       "source_location": "L441",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_app_del_alumno_examlockclient",
-      "target": "readme_la_vigilancia_de_archivos_es_disuasoria",
-      "confidence_score": 1.0
+      "target": "readme_la_vigilancia_de_archivos_es_disuasoria"
     },
     {
       "relation": "references",
@@ -23588,5 +23786,5 @@
       "source_file": "docs/img/monitor.png"
     }
   ],
-  "built_at_commit": "f91e75c29105911a1cec4ba1ca4788ab65f984e3"
+  "built_at_commit": "913f179d6926c5b6de739ff2612b062a7267ae72"
 }

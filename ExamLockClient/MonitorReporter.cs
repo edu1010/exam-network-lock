@@ -14,7 +14,7 @@ public sealed class MonitorReporter : IDisposable
 {
     private const int MaxEntries = 300;
 
-    private readonly MonitorBroadcaster _broadcaster = new();
+    private readonly MonitorBroadcaster _broadcaster;
     private readonly string _user = Environment.UserName;
     private readonly string _machine = Environment.MachineName;
     private readonly string _logPath;
@@ -23,9 +23,10 @@ public sealed class MonitorReporter : IDisposable
     private volatile string _statusText = "";
     private System.Timers.Timer? _timer;
 
-    public MonitorReporter(string logPath)
+    public MonitorReporter(string logPath, IEnumerable<string>? monitorTargets = null)
     {
         _logPath = logPath;
+        _broadcaster = new MonitorBroadcaster(monitorTargets);
     }
 
     public void SetState(string state, string statusText)

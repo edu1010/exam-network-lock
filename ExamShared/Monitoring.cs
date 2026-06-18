@@ -1,4 +1,5 @@
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
@@ -71,12 +72,12 @@ public static class MonitorProtocol
 public sealed class MonitorBroadcaster : IDisposable
 {
     private readonly UdpClient _udp;
-    private readonly IPEndPoint _broadcast;
+    private readonly IPEndPoint[] _broadcasts;
 
-    public MonitorBroadcaster()
+    public MonitorBroadcaster(IEnumerable<string>? targets = null)
     {
         _udp = new UdpClient { EnableBroadcast = true };
-        _broadcast = new IPEndPoint(IPAddress.Broadcast, MonitorProtocol.UdpPort);
+        _broadcasts = GetBroadcastEndpoints(targets);
     }
 
     public void Send(object message)
@@ -84,7 +85,10 @@ public sealed class MonitorBroadcaster : IDisposable
         try
         {
             var bytes = MonitorProtocol.Serialize(message);
-            _udp.Send(bytes, bytes.Length, _broadcast);
+            foreach (var endpoint in _broadcasts)
+            {
+                _udp.Send(bytes, bytes.Length, endpoint);
+            }
         }
         catch
         {
@@ -94,6 +98,106 @@ public sealed class MonitorBroadcaster : IDisposable
     }
 
     public void Dispose() => _udp.Dispose();
+
+    private static IPEndPoint[] GetBroadcastEndpoints(IEnumerable<string>? targets)
+    {
+        var endpoints = new List<IPEndPoint>();
+        var seen = new HashSet<string>(StringComparer.Ordinal);
+
+        AddEndpoint(IPAddress.Broadcast);
+        AddTargets(targets);
+
+        foreach (var nic in NetworkInterface.GetAllNetworkInterfaces())
+        {
+            if (nic.OperationalStatus != OperationalStatus.Up)
+            {
+                continue;
+            }
+
+            var properties = nic.GetIPProperties();
+            foreach (var unicast in properties.UnicastAddresses)
+            {
+                if (unicast.Address.AddressFamily != AddressFamily.InterNetwork ||
+                    IPAddress.IsLoopback(unicast.Address) ||
+                    IsApipa(unicast.Address))
+                {
+                    continue;
+                }
+
+                var broadcast = TryGetDirectedBroadcast(unicast);
+                if (broadcast is not null)
+                {
+                    AddEndpoint(broadcast);
+                }
+            }
+        }
+
+        return endpoints.ToArray();
+
+        void AddEndpoint(IPAddress address)
+        {
+            var key = address.ToString();
+            if (seen.Add(key))
+            {
+                endpoints.Add(new IPEndPoint(address, MonitorProtocol.UdpPort));
+            }
+        }
+
+        void AddTargets(IEnumerable<string>? rawTargets)
+        {
+            if (rawTargets is null)
+            {
+                return;
+            }
+
+            foreach (var target in rawTargets)
+            {
+                if (IPAddress.TryParse(target.Trim(), out var address) &&
+                    address.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    AddEndpoint(address);
+                }
+            }
+        }
+    }
+
+    private static IPAddress? TryGetDirectedBroadcast(UnicastIPAddressInformation unicast)
+    {
+        try
+        {
+            var mask = unicast.IPv4Mask;
+            if (mask is null)
+            {
+                return null;
+            }
+
+            var addressBytes = unicast.Address.GetAddressBytes();
+            var maskBytes = mask.GetAddressBytes();
+            if (addressBytes.Length != 4 || maskBytes.Length != 4)
+            {
+                return null;
+            }
+
+            var broadcastBytes = new byte[4];
+            for (var i = 0; i < broadcastBytes.Length; i++)
+            {
+                broadcastBytes[i] = (byte)(addressBytes[i] | ~maskBytes[i]);
+            }
+
+            var broadcast = new IPAddress(broadcastBytes);
+            return broadcast.Equals(unicast.Address) ? null : broadcast;
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    private static bool IsApipa(IPAddress address)
+    {
+        var bytes = address.GetAddressBytes();
+        return bytes.Length == 4 && bytes[0] == 169 && bytes[1] == 254;
+    }
 }
 
 /// <summary>Teacher side: listens for client broadcasts and raises events.</summary>

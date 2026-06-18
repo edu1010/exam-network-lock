@@ -1,12 +1,18 @@
-# Graph Report - G:\Github\exam-network-lock  (2026-06-18)
+# Graph Report - exam-network-lock  (2026-06-18)
 
 ## Corpus Check
-- Corpus is ~40,376 words - fits in a single context window. You may not need a graph.
+- 56 files · ~41,744 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 757 nodes · 1159 edges · 46 communities (40 shown, 6 thin omitted)
+- 891 nodes · 1312 edges · 64 communities (54 shown, 10 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `f91e75c2`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - [[_COMMUNITY_Build Left Filter Log|Build Left Filter Log]]
@@ -55,30 +61,48 @@
 - [[_COMMUNITY_Sta Thread|Sta Thread]]
 - [[_COMMUNITY_Sta Thread|Sta Thread]]
 - [[_COMMUNITY_Sta Thread|Sta Thread]]
+- [[_COMMUNITY_Community 46|Community 46]]
+- [[_COMMUNITY_Community 47|Community 47]]
+- [[_COMMUNITY_Community 48|Community 48]]
+- [[_COMMUNITY_Community 49|Community 49]]
+- [[_COMMUNITY_Community 50|Community 50]]
+- [[_COMMUNITY_Community 51|Community 51]]
+- [[_COMMUNITY_Community 52|Community 52]]
+- [[_COMMUNITY_Community 53|Community 53]]
+- [[_COMMUNITY_Community 54|Community 54]]
+- [[_COMMUNITY_Community 55|Community 55]]
+- [[_COMMUNITY_Community 56|Community 56]]
+- [[_COMMUNITY_Community 57|Community 57]]
+- [[_COMMUNITY_Community 58|Community 58]]
+- [[_COMMUNITY_Community 59|Community 59]]
+- [[_COMMUNITY_Community 60|Community 60]]
+- [[_COMMUNITY_Community 61|Community 61]]
+- [[_COMMUNITY_Community 62|Community 62]]
+- [[_COMMUNITY_Community 63|Community 63]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `MainForm` - 56 edges
+1. `MainForm` - 57 edges
 2. `MainForm` - 56 edges
 3. `MainForm` - 33 edges
 4. `MainForm` - 24 edges
 5. `FileActivityMonitor` - 22 edges
 6. `AudioAlerter` - 18 edges
 7. `T` - 17 edges
-8. `PreserveSig` - 15 edges
-9. `IAudioEndpointVolume` - 13 edges
-10. `AiConnectionMonitor` - 12 edges
+8. `/graphify` - 17 edges
+9. `PreserveSig` - 15 edges
+10. `AiConnectionMonitor` - 14 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `CLAUDE.md Integration` --semantically_similar_to--> `Project Graphify Instructions`  [INFERRED] [semantically similar]
-  .codex/skills/graphify/references/hooks.md → AGENTS.md
 - `Query First Rule` --semantically_similar_to--> `Existing Graph Fast Path`  [INFERRED] [semantically similar]
   AGENTS.md → .codex/skills/graphify/SKILL.md
-- `Project Graphify Instructions` --references--> `graphify`  [EXTRACTED]
+- `CLAUDE.md Integration` --semantically_similar_to--> `Project Graphify Instructions`  [INFERRED] [semantically similar]
+  .codex/skills/graphify/references/hooks.md → AGENTS.md
+- `Project Graphify Instructions` --references--> `/graphify`  [EXTRACTED]
   AGENTS.md → .codex/skills/graphify/SKILL.md
 - `Update After Modifying Code` --references--> `Incremental Update`  [EXTRACTED]
   AGENTS.md → .codex/skills/graphify/references/update.md
-- `Monorepo Subfolder Flow` --references--> `Existing Graph Fast Path`  [EXTRACTED]
-  .codex/skills/graphify/references/github-and-merge.md → .codex/skills/graphify/SKILL.md
+- `Honesty Rules` --semantically_similar_to--> `Confidence Rubric`  [INFERRED] [semantically similar]
+  .codex/skills/graphify/SKILL.md → .codex/skills/graphify/references/extraction-spec.md
 
 ## Import Cycles
 - None detected.
@@ -96,7 +120,7 @@
 - **Student Status Snapshot** — img_monitor_student_identity, img_monitor_exam_status_ok, img_monitor_exam_in_progress_event, img_monitor_event_count, img_monitor_integrity_ok, img_monitor_last_seen_recent [EXTRACTED 1.00]
 - **Exam Monitor Operator Controls** — img_monitor_load_config_button, img_monitor_save_logs_button, img_monitor_language_selector_flags [EXTRACTED 1.00]
 
-## Communities (46 total, 6 thin omitted)
+## Communities (64 total, 10 thin omitted)
 
 ### Community 0 - "Build Left Filter Log"
 Cohesion: 0.07
@@ -104,15 +128,15 @@ Nodes (24): DragEventArgs, bool, Button, byte, Color, ComboBox, Control, DataGri
 
 ### Community 1 - "Monitor Config Service Shield"
 Cohesion: 0.06
-Nodes (26): AiConnectionMonitor, AudioAlerter, ConfigPayload, DnsCacheMonitor, Action, bool, Button, Control (+18 more)
+Nodes (27): AiConnectionMonitor, AudioAlerter, ConfigPayload, DnsCacheMonitor, Action, AiConnectionEvidence, bool, Button (+19 more)
 
 ### Community 2 - "Monitor Dispose Start Log"
-Cohesion: 0.05
-Nodes (25): HashSet, string, Timer, DnsCacheMonitor, bool, HashSet, object, Timer (+17 more)
+Cohesion: 0.19
+Nodes (9): bool, Task, LogChunkMessage, MonitorBroadcaster, MonitorListener, StatusMessage, IDisposable, IPEndPoint (+1 more)
 
 ### Community 3 - "Volume Level Audio Channel"
 Cohesion: 0.08
-Nodes (17): DllImport, AudioAlerter, bool, byte, int, object, IAudioEndpointVolume, IMMDevice (+9 more)
+Nodes (17): AudioAlerter, bool, byte, DllImport, int, IntPtr, object, uint (+9 more)
 
 ### Community 4 - "Box Combo List Add"
 Cohesion: 0.10
@@ -127,8 +151,8 @@ Cohesion: 0.09
 Nodes (17): DateTime, ClientRow, Action, Button, Color, Control, DataGridView, Dictionary (+9 more)
 
 ### Community 7 - "Exam Log Admin Detection"
-Cohesion: 0.12
-Nodes (30): Admin Permissions, AI Detection Safety Net, AI Shield, Allowed File Types, Allowed Programs, Blocked File Types, Deterrent System With Evidence, DNS Cache Monitoring (+22 more)
+Cohesion: 0.07
+Nodes (43): Admin Permissions, AI detection is a safety net, AI Detection Safety Net, AI Shield, Allowed File Types, Allowed Programs, Blocked File Types, Build (+35 more)
 
 ### Community 8 - "Activity Monitor Excluded Inspect"
 Cohesion: 0.13
@@ -143,16 +167,16 @@ Cohesion: 0.13
 Nodes (15): ExamConfigGenerator, net8.0-windows, Microsoft.NET.Sdk, ExamLockClient, Microsoft.NET.Sdk, net8.0, Microsoft.NET.Sdk, net8.0-windows (+7 more)
 
 ### Community 11 - "Graph Cluster Cost Whisper"
-Cohesion: 0.12
-Nodes (18): Graph Report Fallback, Community Labeling, File Detection, Full Pipeline, Gemini Backend, Graph Build Cluster Analysis, GRAPH_REPORT.md, Installation Guard (+10 more)
+Cohesion: 0.13
+Nodes (16): Community Labeling, File Detection, Full Pipeline, Gemini Backend, Graph Build Cluster Analysis, Installation Guard, Manifest Cost Cleanup, Obsidian Vault (+8 more)
 
 ### Community 12 - "Query Graph Traversal Dirty"
-Cohesion: 0.16
-Nodes (14): Dirty Graph Tolerance, Query First Rule, Existing Graph Fast Path, Query Path Explain, CLAUDE.md Integration, BFS Traversal, Constrained Query Expansion, DFS Traversal (+6 more)
+Cohesion: 0.18
+Nodes (13): Dirty Graph Tolerance, Query First Rule, Existing Graph Fast Path, Query Path Explain, BFS Traversal, Constrained Query Expansion, DFS Traversal, Graph Vocabulary (+5 more)
 
 ### Community 13 - "Update Code Extraction Only"
-Cohesion: 0.19
-Nodes (14): Update After Modifying Code, AST Extraction, Structural Extraction, Code Only AST Update, Docs Need Update Flag, Watch Mode, Doc Image Manual Update, Post Commit Hook (+6 more)
+Cohesion: 0.14
+Nodes (18): Graph Report Fallback, Update After Modifying Code, AST Extraction, GRAPH_REPORT.md, Structural Extraction, Code Only AST Update, Docs Need Update Flag, Supported URL Types (+10 more)
 
 ### Community 14 - "Shield Paint Color Build"
 Cohesion: 0.21
@@ -168,7 +192,7 @@ Nodes (7): Button, Color, Font, GroupBox, ListBox, TextBox, Theme
 
 ### Community 17 - "Connection Monitor Describe Match"
 Cohesion: 0.22
-Nodes (6): AiConnectionMonitor, HashSet, object, string, Timer, IPAddress
+Nodes (7): AiConnectionMonitor, AiConnectionEvidence, HashSet, object, string, Timer, IPAddress
 
 ### Community 18 - "Monitor Reporter Log List"
 Cohesion: 0.18
@@ -196,7 +220,7 @@ Nodes (5): Bitmap, Graphics, int, Language, Flags
 
 ### Community 24 - "Process Monitor Hash Object"
 Cohesion: 0.24
-Nodes (5): HashSet, object, Timer, ProcessMonitor, Process
+Nodes (5): HashSet, object, Process, Timer, ProcessMonitor
 
 ### Community 25 - "Style Theme Color Font"
 Cohesion: 0.20
@@ -255,28 +279,84 @@ Cohesion: 0.33
 Nodes (6): GraphRAG JSON, MCP Server, Cross Repo Merge, GitHub Clone, Monorepo Subfolder Flow, Reusable Clones
 
 ### Community 42 - "Graphify Project Instructions Supported"
+Cohesion: 0.18
+Nodes (10): Project Graphify Instructions, For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only, /graphify, Interpreter guard for subcommands, Usage (+2 more)
+
+### Community 46 - "Community 46"
+Cohesion: 0.23
+Nodes (9): DllImport, int, IntPtr, List, uint, TcpConnectionOwner, TcpConnectionOwnerTable, TcpState (+1 more)
+
+### Community 47 - "Community 47"
+Cohesion: 0.14
+Nodes (14): Part A - Structural extraction for code files, Part B - Semantic extraction (parallel subagents), Part C - Merge AST + semantic into final extraction, Step 0 - GitHub repos and multi-path merge (only if a URL or several paths), Step 1 - Ensure graphify is installed, Step 2.5 - Video and audio (only if video files detected), Step 2 - Detect files, Step 3 - Extract entities and relationships (+6 more)
+
+### Community 48 - "Community 48"
+Cohesion: 0.14
+Nodes (14): App de l'alumne — ExamLockClient, App del professor — ExamConfigGenerator, Català, Com funciona, Compilació, Executar, Fitxers en temps d'execució, La detecció d'IA és una xarxa de seguretat (+6 more)
+
+### Community 49 - "Community 49"
+Cohesion: 0.14
+Nodes (14): App del alumno — ExamLockClient, App del profesor — ExamConfigGenerator, Archivos en tiempo de ejecución, Build, Castellano, Cómo funciona, Ejecutar, La detección de IA es una red de seguridad (+6 more)
+
+### Community 50 - "Community 50"
+Cohesion: 0.26
+Nodes (5): AiConnectionEvidence, AiProcessClassifier, HashSet, Process, ProcessEvidence
+
+### Community 51 - "Community 51"
+Cohesion: 0.27
+Nodes (4): HashSet, string, Timer, DnsCacheMonitor
+
+### Community 52 - "Community 52"
+Cohesion: 0.25
+Nodes (5): bool, HashSet, object, Timer, ThreatProcessMonitor
+
+### Community 53 - "Community 53"
+Cohesion: 0.22
+Nodes (8): graphify reference: extra exports and benchmark, Step 6b - Wiki (only if --wiki flag), Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag), Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag), Step 7b - SVG export (only if --svg flag), Step 7c - GraphML export (only if --graphml flag), Step 7d - MCP server (only if --mcp flag), Step 8 - Token reduction benchmark (only if total_words > 5000)
+
+### Community 54 - "Community 54"
+Cohesion: 0.25
+Nodes (4): int, JsonSerializerOptions, T, MonitorProtocol
+
+### Community 55 - "Community 55"
+Cohesion: 0.47
+Nodes (3): LogEntry, LogChainVerifier, IReadOnlyList
+
+### Community 56 - "Community 56"
+Cohesion: 0.33
+Nodes (5): For /graphify explain, For /graphify path, graphify reference: query, path, explain, Step 0 — Constrained query expansion (REQUIRED before traversal), Step 1 — Traversal
+
+### Community 57 - "Community 57"
 Cohesion: 0.50
-Nodes (4): Project Graphify Instructions, graphify, Supported URL Types, URL Ingest
+Nodes (3): For /graphify add, For --watch, graphify reference: add a URL and watch a folder
+
+### Community 58 - "Community 58"
+Cohesion: 0.50
+Nodes (3): For git commit hook, For native CLAUDE.md integration, graphify reference: commit hook and native CLAUDE.md integration
+
+### Community 59 - "Community 59"
+Cohesion: 0.50
+Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphify reference: incremental update and cluster-only
 
 ## Knowledge Gaps
-- **222 isolated node(s):** `net8.0-windows`, `Microsoft.NET.Sdk`, `Language`, `int`, `Graphics` (+217 more)
+- **306 isolated node(s):** `net8.0-windows`, `Microsoft.NET.Sdk`, `Language`, `int`, `Graphics` (+301 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `MainForm` connect `Build Left Filter Log` to `Load Config Color Grid`?**
-  _High betweenness centrality (0.038) - this node is a cross-community bridge._
+  _High betweenness centrality (0.028) - this node is a cross-community bridge._
 - **Why does `MainForm` connect `Monitor Config Service Shield` to `Load Config Color Grid`?**
-  _High betweenness centrality (0.034) - this node is a cross-community bridge._
+  _High betweenness centrality (0.026) - this node is a cross-community bridge._
 - **Why does `MainForm` connect `Box Combo List Add` to `Load Config Color Grid`?**
-  _High betweenness centrality (0.024) - this node is a cross-community bridge._
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **What connects `net8.0-windows`, `Microsoft.NET.Sdk`, `Language` to the rest of the system?**
-  _226 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _310 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Build Left Filter Log` be split into smaller, more focused modules?**
   _Cohesion score 0.07494824016563147 - nodes in this community are weakly interconnected._
 - **Should `Monitor Config Service Shield` be split into smaller, more focused modules?**
-  _Cohesion score 0.06487434248977206 - nodes in this community are weakly interconnected._
-- **Should `Monitor Dispose Start Log` be split into smaller, more focused modules?**
-  _Cohesion score 0.05365402405180388 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06393442622950819 - nodes in this community are weakly interconnected._
+- **Should `Volume Level Audio Channel` be split into smaller, more focused modules?**
+  _Cohesion score 0.08194905869324474 - nodes in this community are weakly interconnected._

@@ -334,7 +334,7 @@ public sealed class MainForm : Form
 
         _log = new SecureLogService(logPath, logSecretBase64);
         _session = new SessionStateService(sessionPath);
-        _reporter = new MonitorReporter(logPath);
+        _reporter = new MonitorReporter(logPath, _config?.MonitorTargets);
 
         if (_session.HasUncleanPreviousSession())
         {
