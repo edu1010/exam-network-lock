@@ -17,7 +17,7 @@ rem ============================================================================
 set "RID=%~1"
 if "%RID%"=="" set "RID=win-x64"
 
-set "PROJECTS=ExamLockClient ExamConfigGenerator ExamLogVerifier ExamLogVerifierUI"
+set "PROJECTS=ExamLockClient ExamConfigGenerator ExamLogVerifier ExamLogVerifierUI ExamMonitor"
 
 rem --- Localizar dotnet (PATH o ruta por defecto) ---
 set "DOTNET=dotnet"
