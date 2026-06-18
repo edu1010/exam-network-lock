@@ -55,7 +55,8 @@ internal static class Lang
         ["needValidConfig"] = new[] { "Load a valid configuration first.", "Carrega una configuració vàlida primer.", "Carga una configuración válida primero." },
 
         ["statusActive"] = new[] { "Exam in progress. The shield is active.", "Examen en curs. L'escut està actiu.", "Examen en curso. El escudo está activo." },
-        ["statusAi"] = new[] { "AI connection detected. Notify the teacher.", "Connexió a IA detectada. Avisa el professor.", "Conexión a IA detectada. Avisa al profesor." },
+        ["statusAi"] = new[] { "AI connection attributed to a browser, IDE, or developer tool. Notify the teacher.", "Connexió a IA atribuïda a un navegador, IDE o eina de desenvolupament. Avisa el professor.", "Conexión a IA atribuida a un navegador, IDE o herramienta de desarrollo. Avisa al profesor." },
+        ["statusAiPossible"] = new[] { "Possible AI connection detected. Process not confirmed.", "Possible connexió a IA detectada. Procés no confirmat.", "Posible conexión a IA detectada. Proceso no confirmado." },
         ["statusForbidden"] = new[] { "A forbidden file was opened.", "S'ha obert un fitxer no permès.", "Se ha abierto un archivo no permitido." },
         ["statusOutside"] = new[] { "Working outside the exam folder.", "S'està treballant fora de la carpeta de l'examen.", "Se está trabajando fuera de la carpeta del examen." },
         ["statusUnknownProc"] = new[] { "Unauthorized program opened: {0}", "Programa no autoritzat obert: {0}", "Programa no autorizado abierto: {0}" },
@@ -68,6 +69,7 @@ internal static class Lang
 
         ["lockStarted"] = new[] { "Lockdown started.", "Bloqueig iniciat.", "Bloqueo iniciado." },
         ["incAi"] = new[] { "⚠ AI detected: {0}", "⚠ IA detectada: {0}", "⚠ IA detectada: {0}" },
+        ["incAiPossible"] = new[] { "Possible AI activity: {0}", "Possible activitat d'IA: {0}", "Posible actividad de IA: {0}" },
         ["incAiTool"] = new[] { "⚠ AI tool: {0}", "⚠ Eina d'IA: {0}", "⚠ Herramienta de IA: {0}" },
         ["incVm"] = new[] { "⛔ Virtual machine: {0}", "⛔ Màquina virtual: {0}", "⛔ Máquina virtual: {0}" },
         ["statusVm"] = new[] { "Virtual machine detected. Notify the teacher.", "Màquina virtual detectada. Avisa el professor.", "Máquina virtual detectada. Avisa al profesor." },

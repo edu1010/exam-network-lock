@@ -21,9 +21,8 @@ internal static class EventCatalog
 
     private static readonly Dictionary<string, Severity> Map = new(StringComparer.OrdinalIgnoreCase)
     {
-        // Critical — a student contacted AI, opened a forbidden file, left the folder, or ran a VM.
+        // Critical — a student-facing process contacted AI, opened a forbidden file, left the folder, or ran a VM.
         [LogEvents.AiDetected] = Severity.Critical,
-        [LogEvents.AiDnsDetected] = Severity.Critical,
         [LogEvents.AiToolDetected] = Severity.Critical,
         [LogEvents.VmDetected] = Severity.Critical,
         [LogEvents.ForbiddenFile] = Severity.Critical,
@@ -31,7 +30,9 @@ internal static class EventCatalog
         // The shield's top alarm state — only raised alongside a real incident on the client.
         [LogEvents.ShieldRed] = Severity.Critical,
 
-        // Warning — worth a look: unknown app/file, a dirty previous session, failed admin attempts.
+        // Warning — worth a look: unknown app/file, unattributed AI evidence, dirty session, failed admin attempts.
+        [LogEvents.AiDnsDetected] = Severity.Warning,
+        [LogEvents.AiUnattributedDetected] = Severity.Warning,
         [LogEvents.UnknownProcess] = Severity.Warning,
         [LogEvents.UnknownFile] = Severity.Warning,
         [LogEvents.UncleanPreviousSession] = Severity.Warning,

@@ -1,302 +1,292 @@
 {
-  ".codex/hooks.json": {
+  "G:\\Github\\exam-network-lock\\.codex\\hooks.json": {
     "mtime": 1781811771.2498991,
     "ast_hash": "16a0fe9baf378eaf316f7f7164188c38",
     "semantic_hash": "16a0fe9baf378eaf316f7f7164188c38"
   },
-  "ExamConfigGenerator/ExamConfigGenerator.csproj": {
+  "G:\\Github\\exam-network-lock\\ExamConfigGenerator\\ExamConfigGenerator.csproj": {
     "mtime": 1781811542.0579493,
     "ast_hash": "90b6252a4245a7b85717b003a13d2c10",
     "semantic_hash": "90b6252a4245a7b85717b003a13d2c10"
   },
-  "ExamConfigGenerator/Flags.cs": {
+  "G:\\Github\\exam-network-lock\\ExamConfigGenerator\\Flags.cs": {
     "mtime": 1781567329.8475468,
     "ast_hash": "67f283a68f3b67fced3fafc25b33760d",
     "semantic_hash": "67f283a68f3b67fced3fafc25b33760d"
   },
-  "ExamConfigGenerator/Lang.cs": {
+  "G:\\Github\\exam-network-lock\\ExamConfigGenerator\\Lang.cs": {
     "mtime": 1781811542.0614758,
     "ast_hash": "00790cffcd74197bdb115f5b50adf2ac",
     "semantic_hash": "00790cffcd74197bdb115f5b50adf2ac"
   },
-  "ExamConfigGenerator/MainForm.cs": {
+  "G:\\Github\\exam-network-lock\\ExamConfigGenerator\\MainForm.cs": {
     "mtime": 1781811542.064495,
     "ast_hash": "a50910dd0d53823e8295783d656ac11e",
     "semantic_hash": "a50910dd0d53823e8295783d656ac11e"
   },
-  "ExamConfigGenerator/Program.cs": {
+  "G:\\Github\\exam-network-lock\\ExamConfigGenerator\\Program.cs": {
     "mtime": 1781557567.1526608,
     "ast_hash": "b54791f73ede3835349ef8a30a15d517",
     "semantic_hash": "b54791f73ede3835349ef8a30a15d517"
   },
-  "ExamConfigGenerator/Theme.cs": {
+  "G:\\Github\\exam-network-lock\\ExamConfigGenerator\\Theme.cs": {
     "mtime": 1781567329.8495574,
     "ast_hash": "c6a303a84687dbb679e2cd7d0ebb2150",
     "semantic_hash": "c6a303a84687dbb679e2cd7d0ebb2150"
   },
-  "ExamLockClient/AiConnectionMonitor.cs": {
-    "mtime": 1781816010.3704712,
-    "ast_hash": "261dd306ba0292b5247bb1c11aaeda0b",
-    "semantic_hash": ""
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\AiConnectionMonitor.cs": {
+    "mtime": 1781567329.861623,
+    "ast_hash": "2aeb28355d9169f44aadaa0a61537ff9",
+    "semantic_hash": "2aeb28355d9169f44aadaa0a61537ff9"
   },
-  "ExamLockClient/AudioAlerter.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\AudioAlerter.cs": {
     "mtime": 1781811542.0675395,
     "ast_hash": "f0e0cababbce39f3bdf9603ae5b8b232",
     "semantic_hash": "f0e0cababbce39f3bdf9603ae5b8b232"
   },
-  "ExamLockClient/DnsCacheMonitor.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\DnsCacheMonitor.cs": {
     "mtime": 1781811542.0696595,
     "ast_hash": "dc64ff74d01024ee22765c5c035c714a",
     "semantic_hash": "dc64ff74d01024ee22765c5c035c714a"
   },
-  "ExamLockClient/ExamLockClient.csproj": {
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\ExamLockClient.csproj": {
     "mtime": 1781811542.071671,
     "ast_hash": "ff51138eac60f67aa6dc4ceb662d8365",
     "semantic_hash": "ff51138eac60f67aa6dc4ceb662d8365"
   },
-  "ExamLockClient/FileActivityMonitor.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\FileActivityMonitor.cs": {
     "mtime": 1781811542.0747313,
     "ast_hash": "ab464037e21aab10331f526590ce1afd",
     "semantic_hash": "ab464037e21aab10331f526590ce1afd"
   },
-  "ExamLockClient/Flags.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\Flags.cs": {
     "mtime": 1781567329.8627496,
     "ast_hash": "f672f30e3c3a6c90acce90c877a47db5",
     "semantic_hash": "f672f30e3c3a6c90acce90c877a47db5"
   },
-  "ExamLockClient/Lang.cs": {
-    "mtime": 1781816053.114822,
-    "ast_hash": "00ac35cf6d41b22759a91564ecd6f648",
-    "semantic_hash": ""
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\Lang.cs": {
+    "mtime": 1781811542.076764,
+    "ast_hash": "bcd8b0883b4d380798911c11b344a268",
+    "semantic_hash": "bcd8b0883b4d380798911c11b344a268"
   },
-  "ExamLockClient/MainForm.cs": {
-    "mtime": 1781816028.4936986,
-    "ast_hash": "4ba6b76c2c03ebbc3dee52203dc8ec19",
-    "semantic_hash": ""
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\MainForm.cs": {
+    "mtime": 1781811542.0792766,
+    "ast_hash": "0acc0c4c6e1f5fa5b8329cd7ade9e64e",
+    "semantic_hash": "0acc0c4c6e1f5fa5b8329cd7ade9e64e"
   },
-  "ExamLockClient/MonitorReporter.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\MonitorReporter.cs": {
     "mtime": 1781811542.0813162,
     "ast_hash": "f1681e82e6dcdf07456ed9a73026e81c",
     "semantic_hash": "f1681e82e6dcdf07456ed9a73026e81c"
   },
-  "ExamLockClient/NetworkAdapterService.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\NetworkAdapterService.cs": {
     "mtime": 1781557567.165183,
     "ast_hash": "8c4a0ac5060afc3d9a34bf8514081c0a",
     "semantic_hash": "8c4a0ac5060afc3d9a34bf8514081c0a"
   },
-  "ExamLockClient/ProcessMonitor.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\ProcessMonitor.cs": {
     "mtime": 1781567329.8627496,
     "ast_hash": "65e7192e6af5c0614fe051c0732d9dc8",
     "semantic_hash": "65e7192e6af5c0614fe051c0732d9dc8"
   },
-  "ExamLockClient/Program.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\Program.cs": {
     "mtime": 1781565995.8216305,
     "ast_hash": "7efea30b9eea230869da0f667c24dafe",
     "semantic_hash": "7efea30b9eea230869da0f667c24dafe"
   },
-  "ExamLockClient/RadioService.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\RadioService.cs": {
     "mtime": 1781567329.8642523,
     "ast_hash": "beb0394c6a757f9a68700e73a111cf73",
     "semantic_hash": "beb0394c6a757f9a68700e73a111cf73"
   },
-  "ExamLockClient/ShieldControl.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\ShieldControl.cs": {
     "mtime": 1781567329.8642523,
     "ast_hash": "5bdac69c4c5474a4e56b358bb540508b",
     "semantic_hash": "5bdac69c4c5474a4e56b358bb540508b"
   },
-  "ExamLockClient/Theme.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\Theme.cs": {
     "mtime": 1781567329.8642523,
     "ast_hash": "44f96c248fb2b3b573e4db99e5e7e5b8",
     "semantic_hash": "44f96c248fb2b3b573e4db99e5e7e5b8"
   },
-  "ExamLockClient/ThreatProcessMonitor.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLockClient\\ThreatProcessMonitor.cs": {
     "mtime": 1781811542.0833542,
     "ast_hash": "0e07f20eb62c0952d4c03c047ad734c1",
     "semantic_hash": "0e07f20eb62c0952d4c03c047ad734c1"
   },
-  "ExamLocking.sln": {
+  "G:\\Github\\exam-network-lock\\ExamLocking.sln": {
     "mtime": 1781811542.0854504,
     "ast_hash": "50f662e0dc05f2c9892f199ad27c5529",
     "semantic_hash": "50f662e0dc05f2c9892f199ad27c5529"
   },
-  "ExamLogVerifierUI/EventCatalog.cs": {
-    "mtime": 1781816061.3026593,
-    "ast_hash": "b6cf77438db5fcb14de6e0b1be3fba6f",
-    "semantic_hash": ""
+  "G:\\Github\\exam-network-lock\\ExamLogVerifierUI\\EventCatalog.cs": {
+    "mtime": 1781811542.0895877,
+    "ast_hash": "6daa25e31a35fca3af1a6c5cee2bf5b1",
+    "semantic_hash": "6daa25e31a35fca3af1a6c5cee2bf5b1"
   },
-  "ExamLogVerifierUI/ExamLogVerifierUI.csproj": {
+  "G:\\Github\\exam-network-lock\\ExamLogVerifierUI\\ExamLogVerifierUI.csproj": {
     "mtime": 1781811542.0895877,
     "ast_hash": "90b6252a4245a7b85717b003a13d2c10",
     "semantic_hash": "90b6252a4245a7b85717b003a13d2c10"
   },
-  "ExamLogVerifierUI/Flags.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLogVerifierUI\\Flags.cs": {
     "mtime": 1781811542.0916057,
     "ast_hash": "59cd58b8577dcb8454b1cd45e61bd5fa",
     "semantic_hash": "59cd58b8577dcb8454b1cd45e61bd5fa"
   },
-  "ExamLogVerifierUI/Lang.cs": {
-    "mtime": 1781816071.7100954,
-    "ast_hash": "8ded3b630bfa4d5fdb81fab83c8f5402",
-    "semantic_hash": ""
+  "G:\\Github\\exam-network-lock\\ExamLogVerifierUI\\Lang.cs": {
+    "mtime": 1781811542.0936437,
+    "ast_hash": "914f039fa6d11afaad05d9f888694f92",
+    "semantic_hash": "914f039fa6d11afaad05d9f888694f92"
   },
-  "ExamLogVerifierUI/MainForm.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLogVerifierUI\\MainForm.cs": {
     "mtime": 1781811542.0957184,
     "ast_hash": "6dc8ab52684303ccd3e35f6cd8ad5a28",
     "semantic_hash": "6dc8ab52684303ccd3e35f6cd8ad5a28"
   },
-  "ExamLogVerifierUI/Program.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLogVerifierUI\\Program.cs": {
     "mtime": 1781811542.097773,
     "ast_hash": "70dc9097dd86ef3153c7621611e1c1f6",
     "semantic_hash": "70dc9097dd86ef3153c7621611e1c1f6"
   },
-  "ExamLogVerifierUI/Theme.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLogVerifierUI\\Theme.cs": {
     "mtime": 1781811542.4187238,
     "ast_hash": "98cf53afed7a6efa44c0aa1d1ac16369",
     "semantic_hash": "98cf53afed7a6efa44c0aa1d1ac16369"
   },
-  "ExamLogVerifier/ExamLogVerifier.csproj": {
+  "G:\\Github\\exam-network-lock\\ExamLogVerifier\\ExamLogVerifier.csproj": {
     "mtime": 1781811542.0875628,
     "ast_hash": "5a8f36e6cf4265314499f5c3b7ab1cad",
     "semantic_hash": "5a8f36e6cf4265314499f5c3b7ab1cad"
   },
-  "ExamLogVerifier/Program.cs": {
+  "G:\\Github\\exam-network-lock\\ExamLogVerifier\\Program.cs": {
     "mtime": 1781567329.866772,
     "ast_hash": "d4408f702c6b2e28d8d206b5208d7b14",
     "semantic_hash": "d4408f702c6b2e28d8d206b5208d7b14"
   },
-  "ExamMonitor/ExamMonitor.csproj": {
+  "G:\\Github\\exam-network-lock\\ExamMonitor\\ExamMonitor.csproj": {
     "mtime": 1781811542.4187238,
     "ast_hash": "90b6252a4245a7b85717b003a13d2c10",
     "semantic_hash": "90b6252a4245a7b85717b003a13d2c10"
   },
-  "ExamMonitor/Flags.cs": {
+  "G:\\Github\\exam-network-lock\\ExamMonitor\\Flags.cs": {
     "mtime": 1781811542.4865575,
     "ast_hash": "6e061a5fcc343203d536a8c2ef3604b5",
     "semantic_hash": "6e061a5fcc343203d536a8c2ef3604b5"
   },
-  "ExamMonitor/Lang.cs": {
+  "G:\\Github\\exam-network-lock\\ExamMonitor\\Lang.cs": {
     "mtime": 1781811542.4897468,
     "ast_hash": "472249d7797371a0bb56abc9f141adcb",
     "semantic_hash": "472249d7797371a0bb56abc9f141adcb"
   },
-  "ExamMonitor/MainForm.cs": {
+  "G:\\Github\\exam-network-lock\\ExamMonitor\\MainForm.cs": {
     "mtime": 1781811542.4917488,
     "ast_hash": "79cb7838aa08d30512bad8a145bd6b8a",
     "semantic_hash": "79cb7838aa08d30512bad8a145bd6b8a"
   },
-  "ExamMonitor/Program.cs": {
+  "G:\\Github\\exam-network-lock\\ExamMonitor\\Program.cs": {
     "mtime": 1781811542.494208,
     "ast_hash": "d6a0b3bf9e9b464eae18428d13eafd85",
     "semantic_hash": "d6a0b3bf9e9b464eae18428d13eafd85"
   },
-  "ExamMonitor/Theme.cs": {
+  "G:\\Github\\exam-network-lock\\ExamMonitor\\Theme.cs": {
     "mtime": 1781811542.4952204,
     "ast_hash": "ef6356fed7b2233821d96f0439cea115",
     "semantic_hash": "ef6356fed7b2233821d96f0439cea115"
   },
-  "ExamShared/ExamShared.csproj": {
+  "G:\\Github\\exam-network-lock\\ExamShared\\ExamShared.csproj": {
     "mtime": 1781557567.1768553,
     "ast_hash": "e1674a5aa08ea648c1e27b70cf4ab110",
     "semantic_hash": "e1674a5aa08ea648c1e27b70cf4ab110"
   },
-  "ExamShared/LogVerifier.cs": {
+  "G:\\Github\\exam-network-lock\\ExamShared\\LogVerifier.cs": {
     "mtime": 1781811542.4982984,
     "ast_hash": "f3537bf91d9cbef9bae884479e740ef9",
     "semantic_hash": "f3537bf91d9cbef9bae884479e740ef9"
   },
-  "ExamShared/Monitoring.cs": {
+  "G:\\Github\\exam-network-lock\\ExamShared\\Monitoring.cs": {
     "mtime": 1781811542.5003278,
     "ast_hash": "14d671b0c5641b211b99c5d5a5861831",
     "semantic_hash": "14d671b0c5641b211b99c5d5a5861831"
   },
-  "ExamShared/Shared.cs": {
-    "mtime": 1781816015.7506948,
-    "ast_hash": "0490f9d3158d90d48e58010f33745d9c",
-    "semantic_hash": ""
+  "G:\\Github\\exam-network-lock\\ExamShared\\Shared.cs": {
+    "mtime": 1781811542.5024853,
+    "ast_hash": "8a185f58ba459366e8a5ffe9a7ccab6e",
+    "semantic_hash": "8a185f58ba459366e8a5ffe9a7ccab6e"
   },
-  ".codex/skills/graphify/SKILL.md": {
+  "G:\\Github\\exam-network-lock\\.codex\\skills\\graphify\\SKILL.md": {
     "mtime": 1781811771.229503,
     "ast_hash": "2b3477036742471691b444be392c3f81",
     "semantic_hash": "2b3477036742471691b444be392c3f81"
   },
-  ".codex/skills/graphify/references/add-watch.md": {
+  "G:\\Github\\exam-network-lock\\.codex\\skills\\graphify\\references\\add-watch.md": {
     "mtime": 1781811756.7152102,
     "ast_hash": "0df0589623217ca38a12bdcabfb42f4c",
     "semantic_hash": "0df0589623217ca38a12bdcabfb42f4c"
   },
-  ".codex/skills/graphify/references/exports.md": {
+  "G:\\Github\\exam-network-lock\\.codex\\skills\\graphify\\references\\exports.md": {
     "mtime": 1781811756.7162378,
     "ast_hash": "c04ddf8f1f5ef5e262ebec491a523c74",
     "semantic_hash": "c04ddf8f1f5ef5e262ebec491a523c74"
   },
-  ".codex/skills/graphify/references/extraction-spec.md": {
+  "G:\\Github\\exam-network-lock\\.codex\\skills\\graphify\\references\\extraction-spec.md": {
     "mtime": 1781811756.7162378,
     "ast_hash": "a86a7321597b23cc2b22e011b3dc6e1d",
     "semantic_hash": "a86a7321597b23cc2b22e011b3dc6e1d"
   },
-  ".codex/skills/graphify/references/github-and-merge.md": {
+  "G:\\Github\\exam-network-lock\\.codex\\skills\\graphify\\references\\github-and-merge.md": {
     "mtime": 1781811756.7172453,
     "ast_hash": "cde13df085e4c492aeb7ba298a996d0d",
     "semantic_hash": "cde13df085e4c492aeb7ba298a996d0d"
   },
-  ".codex/skills/graphify/references/hooks.md": {
+  "G:\\Github\\exam-network-lock\\.codex\\skills\\graphify\\references\\hooks.md": {
     "mtime": 1781811756.7172453,
     "ast_hash": "3f545db6ce646650bb9de588f5512a27",
     "semantic_hash": "3f545db6ce646650bb9de588f5512a27"
   },
-  ".codex/skills/graphify/references/query.md": {
+  "G:\\Github\\exam-network-lock\\.codex\\skills\\graphify\\references\\query.md": {
     "mtime": 1781811756.7182505,
     "ast_hash": "7d1ff295a0e0aa1cc9a14e52c3a19202",
     "semantic_hash": "7d1ff295a0e0aa1cc9a14e52c3a19202"
   },
-  ".codex/skills/graphify/references/transcribe.md": {
+  "G:\\Github\\exam-network-lock\\.codex\\skills\\graphify\\references\\transcribe.md": {
     "mtime": 1781811756.7182505,
     "ast_hash": "70f6aa30d6211f3a2c7e9fc45479f50c",
     "semantic_hash": "70f6aa30d6211f3a2c7e9fc45479f50c"
   },
-  ".codex/skills/graphify/references/update.md": {
+  "G:\\Github\\exam-network-lock\\.codex\\skills\\graphify\\references\\update.md": {
     "mtime": 1781811756.7182505,
     "ast_hash": "0662e1a77b21d670132cd5855954bfff",
     "semantic_hash": "0662e1a77b21d670132cd5855954bfff"
   },
-  "AGENTS.md": {
+  "G:\\Github\\exam-network-lock\\AGENTS.md": {
     "mtime": 1781811771.233548,
     "ast_hash": "752aa83aa64361ac32860f882dcff932",
     "semantic_hash": "752aa83aa64361ac32860f882dcff932"
   },
-  "README.md": {
-    "mtime": 1781816226.6651893,
-    "ast_hash": "42babeb2f179d811b1efda2719a7df94",
-    "semantic_hash": ""
+  "G:\\Github\\exam-network-lock\\README.md": {
+    "mtime": 1781811542.5055063,
+    "ast_hash": "ae5d033edb26c98a4657c2e791994aec",
+    "semantic_hash": "ae5d033edb26c98a4657c2e791994aec"
   },
-  "docs/img/client.png": {
+  "G:\\Github\\exam-network-lock\\docs\\img\\client.png": {
     "mtime": 1781567329.875305,
     "ast_hash": "e7cc49279754a4d9624a4300cadabab3",
     "semantic_hash": "e7cc49279754a4d9624a4300cadabab3"
   },
-  "docs/img/generator-bottom.png": {
+  "G:\\Github\\exam-network-lock\\docs\\img\\generator-bottom.png": {
     "mtime": 1781567329.8763132,
     "ast_hash": "518320ceb384871f60035bce24b8c7de",
     "semantic_hash": "518320ceb384871f60035bce24b8c7de"
   },
-  "docs/img/generator-top.png": {
+  "G:\\Github\\exam-network-lock\\docs\\img\\generator-top.png": {
     "mtime": 1781567329.8763132,
     "ast_hash": "d3b282cb68d7e8e1a313556e2638941d",
     "semantic_hash": "d3b282cb68d7e8e1a313556e2638941d"
   },
-  "docs/img/monitor.png": {
+  "G:\\Github\\exam-network-lock\\docs\\img\\monitor.png": {
     "mtime": 1781811542.5085258,
     "ast_hash": "ee331d117827618a639707567017179b",
     "semantic_hash": "ee331d117827618a639707567017179b"
-  },
-  "ExamLockClient/AiConnectionEvidence.cs": {
-    "mtime": 1781815993.614015,
-    "ast_hash": "30c1e9404dc1c801c52842e04776ef89",
-    "semantic_hash": ""
-  },
-  "ExamLockClient/TcpConnectionOwnerTable.cs": {
-    "mtime": 1781816315.7913141,
-    "ast_hash": "1441219a4c4dcbc9569940579f5e2129",
-    "semantic_hash": ""
   }
 }

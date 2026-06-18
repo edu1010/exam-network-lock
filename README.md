@@ -93,6 +93,11 @@ Copilot…) that talk to `api.*` endpoints, even after the connection closes. **
 (Cursor, Windsurf, the ChatGPT/Claude desktop apps, local LLMs) and running **virtual machines**
 (VirtualBox, VMware, Hyper-V, QEMU) are flagged by process name.
 
+TCP detections are attributed to the owning process when Windows exposes its PID. A browser, IDE,
+editor, developer runtime, or AI tool talking to an AI endpoint raises a red alarm. DNS-only or
+unattributed matches are logged as amber warnings so the teacher can distinguish background system
+traffic from stronger student-app evidence.
+
 Limits: traffic generated *inside* a bridged VM, or on a second device such as a phone, is not
 visible to the host — that is what proctoring and the log are for. A running VM is still flagged.
 
@@ -254,6 +259,11 @@ Claude Code, Copilot…) que parlen amb endpoints `api.*`, fins i tot després d
 connexió. Les **eines d'IA d'escriptori** (Cursor, Windsurf, les apps d'escriptori de
 ChatGPT/Claude, LLM locals) i les **màquines virtuals** en execució (VirtualBox, VMware,
 Hyper-V, QEMU) es detecten pel nom del procés.
+
+Les deteccions TCP s'atribueixen al procés propietari quan Windows n'exposa el PID. Un navegador,
+IDE, editor, runtime de desenvolupament o eina d'IA que parli amb un endpoint d'IA genera una alarma
+vermella. Les coincidències només per DNS o sense atribució queden com a avisos ambre perquè el
+professor pugui distingir trànsit de sistema de proves més fortes d'una app de l'alumne.
 
 Límits: el trànsit generat *dins* d'una VM en mode bridged, o en un segon dispositiu com un
 mòbil, no és visible per al host — per a això hi ha la vigilància presencial i el registre. Una
@@ -418,6 +428,11 @@ Copilot…) que hablan con endpoints `api.*`, incluso después de cerrarse la co
 **herramientas de IA de escritorio** (Cursor, Windsurf, las apps de escritorio de
 ChatGPT/Claude, LLM locales) y las **máquinas virtuales** en ejecución (VirtualBox, VMware,
 Hyper-V, QEMU) se detectan por el nombre del proceso.
+
+Las detecciones TCP se atribuyen al proceso propietario cuando Windows expone su PID. Un navegador,
+IDE, editor, runtime de desarrollo o herramienta de IA hablando con un endpoint de IA genera alarma
+roja. Las coincidencias solo por DNS o sin atribución quedan como avisos ámbar para que el profesor
+distinga tráfico de sistema de evidencia más fuerte de una app del alumno.
 
 Límites: el tráfico generado *dentro* de una VM en modo bridged, o en un segundo dispositivo
 como un móvil, no es visible para el host — para eso están la vigilancia presencial y el

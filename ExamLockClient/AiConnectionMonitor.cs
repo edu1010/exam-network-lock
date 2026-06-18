@@ -18,8 +18,8 @@ public sealed class AiConnectionMonitor : IDisposable
     private System.Timers.Timer? _pollTimer;
     private System.Timers.Timer? _resolveTimer;
 
-    /// <summary>Raised (on a background thread) with the matching host/IP description.</summary>
-    public event Action<string>? AiConnectionDetected;
+    /// <summary>Raised (on a background thread) with the matching endpoint and process evidence.</summary>
+    public event Action<AiConnectionEvidence>? AiConnectionDetected;
 
     public AiConnectionMonitor(IEnumerable<string> blocklist)
     {
@@ -80,22 +80,30 @@ public sealed class AiConnectionMonitor : IDisposable
     {
         try
         {
-            var properties = IPGlobalProperties.GetIPGlobalProperties();
-            foreach (var conn in properties.GetActiveTcpConnections())
+            if (TcpConnectionOwnerTable.TryGetAll(out var ownedConnections))
             {
-                if (conn.State != TcpState.Established &&
-                    conn.State != TcpState.SynSent)
+                foreach (var conn in ownedConnections)
                 {
-                    continue;
+                    if (conn.State != TcpState.Established &&
+                        conn.State != TcpState.SynSent)
+                    {
+                        continue;
+                    }
+
+                    if (Matches(conn.RemoteAddress))
+                    {
+                        AiConnectionDetected?.Invoke(BuildEvidence(
+                            conn.RemoteAddress,
+                            conn.RemotePort,
+                            conn.ProcessId > 0 ? conn.ProcessId : null));
+                        return;
+                    }
                 }
 
-                var remote = conn.RemoteEndPoint.Address;
-                if (Matches(remote))
-                {
-                    AiConnectionDetected?.Invoke(DescribeMatch(remote));
-                    return;
-                }
+                return;
             }
+
+            PollWithoutOwnerPid();
         }
         catch
         {
@@ -122,6 +130,42 @@ public sealed class AiConnectionMonitor : IDisposable
         {
             return remote.ToString();
         }
+    }
+
+    private void PollWithoutOwnerPid()
+    {
+        var properties = IPGlobalProperties.GetIPGlobalProperties();
+        foreach (var conn in properties.GetActiveTcpConnections())
+        {
+            if (conn.State != TcpState.Established &&
+                conn.State != TcpState.SynSent)
+            {
+                continue;
+            }
+
+            var remote = conn.RemoteEndPoint.Address;
+            if (Matches(remote))
+            {
+                AiConnectionDetected?.Invoke(BuildEvidence(remote, conn.RemoteEndPoint.Port, null));
+                return;
+            }
+        }
+    }
+
+    private AiConnectionEvidence BuildEvidence(IPAddress remote, int remotePort, int? processId)
+    {
+        var process = processId is int pid ? AiProcessClassifier.TryGetProcess(pid) : null;
+        return new AiConnectionEvidence
+        {
+            Destination = DescribeMatch(remote),
+            RemoteAddress = remote,
+            RemotePort = remotePort,
+            ProcessId = processId,
+            ProcessName = process?.ProcessName,
+            ProcessPath = process?.ProcessPath,
+            CommandLine = process?.CommandLine,
+            IsStudentFacingProcess = AiProcessClassifier.IsStudentFacing(process)
+        };
     }
 
     public void Dispose()

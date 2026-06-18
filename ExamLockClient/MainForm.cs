@@ -424,7 +424,7 @@ public sealed class MainForm : Form
                 ? _config.AiBlocklist
                 : ConfigDefaults.DefaultAiBlocklist;
             _aiMonitor = new AiConnectionMonitor(blocklist);
-            _aiMonitor.AiConnectionDetected += desc => RunOnUi(() => OnAiDetected(desc));
+            _aiMonitor.AiConnectionDetected += evidence => RunOnUi(() => OnAiDetected(evidence));
             _aiMonitor.Start();
 
             _dnsMonitor = new DnsCacheMonitor(blocklist);
@@ -463,11 +463,24 @@ public sealed class MainForm : Form
 
     // ----- Incident handlers -----
 
-    private void OnAiDetected(string desc) =>
-        RaiseAiAlarm("AI:" + desc, LogEvents.AiDetected, desc, "incAi", "statusAi");
+    private void OnAiDetected(AiConnectionEvidence evidence)
+    {
+        if (evidence.IsStudentFacingProcess)
+        {
+            RaiseAiAlarm("AI:" + evidence.DedupKey, LogEvents.AiDetected, evidence.Summary, "incAi", "statusAi");
+            return;
+        }
+
+        RaiseAiWarning(
+            "AIWARN:" + evidence.DedupKey,
+            LogEvents.AiUnattributedDetected,
+            evidence.Summary,
+            "incAiPossible",
+            "statusAiPossible");
+    }
 
     private void OnAiDns(string host) =>
-        RaiseAiAlarm("DNS:" + host, LogEvents.AiDnsDetected, host, "incAi", "statusAi");
+        RaiseAiWarning("DNS:" + host, LogEvents.AiDnsDetected, host, "incAiPossible", "statusAiPossible");
 
     private void OnAiTool(string name) =>
         RaiseAiAlarm("TOOL:" + name, LogEvents.AiToolDetected, name, "incAiTool", "statusAi");
@@ -489,6 +502,18 @@ public sealed class MainForm : Form
         _audio.StartAlarm();
         _threatActive = true;
         SetRed(Lang.T(statusKey));
+    }
+
+    private void RaiseAiWarning(string dedupKey, string logEvent, string data, string incidentKey, string statusKey)
+    {
+        if (!_reported.Add(dedupKey))
+        {
+            return;
+        }
+
+        _log?.Append(logEvent, data);
+        AddIncident(string.Format(Lang.T(incidentKey), data));
+        SetYellow(Lang.T(statusKey));
     }
 
     private void OnVmDetected(string name)

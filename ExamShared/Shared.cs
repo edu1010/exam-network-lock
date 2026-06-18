@@ -176,6 +176,7 @@ public static class LogEvents
 
     public const string AiDetected = "AI_DETECTED";
     public const string AiDnsDetected = "AI_DNS_DETECTED";
+    public const string AiUnattributedDetected = "AI_UNATTRIBUTED_DETECTED";
     public const string AiToolDetected = "AI_TOOL_DETECTED";
     public const string VmDetected = "VM_DETECTED";
     public const string AiCleared = "AI_CLEARED";
