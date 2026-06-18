@@ -1,16 +1,16 @@
 # Graph Report - exam-network-lock  (2026-06-19)
 
 ## Corpus Check
-- 56 files · ~42,911 words
+- 56 files · ~43,236 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 910 nodes · 1351 edges · 65 communities (56 shown, 9 thin omitted)
+- 917 nodes · 1363 edges · 64 communities (55 shown, 9 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `71430df0`
+- Built from commit: `0d82cde7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -79,7 +79,6 @@
 - [[_COMMUNITY_Community 61|Community 61]]
 - [[_COMMUNITY_Community 62|Community 62]]
 - [[_COMMUNITY_Community 63|Community 63]]
-- [[_COMMUNITY_Community 64|Community 64]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `MainForm` - 60 edges
@@ -121,7 +120,7 @@
 - **Student Status Snapshot** — img_monitor_student_identity, img_monitor_exam_status_ok, img_monitor_exam_in_progress_event, img_monitor_event_count, img_monitor_integrity_ok, img_monitor_last_seen_recent [EXTRACTED 1.00]
 - **Exam Monitor Operator Controls** — img_monitor_load_config_button, img_monitor_save_logs_button, img_monitor_language_selector_flags [EXTRACTED 1.00]
 
-## Communities (65 total, 9 thin omitted)
+## Communities (64 total, 9 thin omitted)
 
 ### Community 0 - "Build Left Filter Log"
 Cohesion: 0.07
@@ -132,16 +131,16 @@ Cohesion: 0.06
 Nodes (27): AiConnectionMonitor, AudioAlerter, ConfigPayload, DnsCacheMonitor, Action, AiConnectionEvidence, bool, Button (+19 more)
 
 ### Community 2 - "Monitor Dispose Start Log"
-Cohesion: 0.22
-Nodes (5): bool, Task, MonitorListener, IDisposable, UdpClient
+Cohesion: 0.06
+Nodes (23): HashSet, string, Timer, DnsCacheMonitor, bool, IEnumerable, int, IPAddress (+15 more)
 
 ### Community 3 - "Volume Level Audio Channel"
 Cohesion: 0.08
 Nodes (17): AudioAlerter, bool, byte, DllImport, int, IntPtr, object, uint (+9 more)
 
 ### Community 4 - "Box Combo List Add"
-Cohesion: 0.08
-Nodes (17): CheckBox, Button, ComboBox, Control, GroupBox, int, IPAddress, Label (+9 more)
+Cohesion: 0.09
+Nodes (16): CheckBox, Button, ComboBox, Control, GroupBox, int, IPAddress, Label (+8 more)
 
 ### Community 5 - "Config Hmac Session Envelope"
 Cohesion: 0.09
@@ -149,11 +148,11 @@ Nodes (17): BeepModes, ConfigDefaults, ConfigEnvelope, ConfigIntegrityService, C
 
 ### Community 6 - "Load Config Color Grid"
 Cohesion: 0.09
-Nodes (16): DateTime, ClientRow, Action, Button, Color, Control, DataGridView, Dictionary (+8 more)
+Nodes (17): DateTime, ClientRow, Action, Button, Color, Control, DataGridView, Dictionary (+9 more)
 
 ### Community 7 - "Exam Log Admin Detection"
-Cohesion: 0.07
-Nodes (43): Admin Permissions, AI detection is a safety net, AI Detection Safety Net, AI Shield, Allowed File Types, Allowed Programs, Blocked File Types, Build (+35 more)
+Cohesion: 0.22
+Nodes (15): Admin Permissions, AI Detection Safety Net, AI Shield, Allowed File Types, Allowed Programs, Blocked File Types, DNS Cache Monitoring, ExamConfigGenerator (+7 more)
 
 ### Community 8 - "Activity Monitor Excluded Inspect"
 Cohesion: 0.13
@@ -280,7 +279,7 @@ Cohesion: 0.33
 Nodes (6): GraphRAG JSON, MCP Server, Cross Repo Merge, GitHub Clone, Monorepo Subfolder Flow, Reusable Clones
 
 ### Community 41 - "Sta Thread Ensure Administrator"
-Cohesion: 0.36
+Cohesion: 0.33
 Nodes (3): STAThread, Program, IWin32Window
 
 ### Community 42 - "Graphify Project Instructions Supported"
@@ -304,28 +303,28 @@ Cohesion: 0.14
 Nodes (14): App del alumno — ExamLockClient, App del profesor — ExamConfigGenerator, Archivos en tiempo de ejecución, Build, Castellano, Cómo funciona, Ejecutar, La detección de IA es una red de seguridad (+6 more)
 
 ### Community 50 - "Community 50"
-Cohesion: 0.26
-Nodes (5): AiConnectionEvidence, AiProcessClassifier, HashSet, Process, ProcessEvidence
+Cohesion: 0.20
+Nodes (6): AiConnectionEvidence, AiProcessClassifier, HashSet, Process, string, ProcessEvidence
 
 ### Community 51 - "Community 51"
-Cohesion: 0.27
-Nodes (4): HashSet, string, Timer, DnsCacheMonitor
+Cohesion: 0.24
+Nodes (12): Deterrent System With Evidence, exam.config, Exam Network Locking, ExamLogVerifier, ExamLogVerifierUI, ExamMonitor, ExamShared, File Monitoring (+4 more)
 
 ### Community 52 - "Community 52"
-Cohesion: 0.25
-Nodes (5): bool, HashSet, object, Timer, ThreatProcessMonitor
+Cohesion: 0.15
+Nodes (13): AI detection is a safety net, Build, English, File monitoring is a deterrent, How it works, Notes, Permissions, Run (+5 more)
 
 ### Community 53 - "Community 53"
 Cohesion: 0.22
 Nodes (8): graphify reference: extra exports and benchmark, Step 6b - Wiki (only if --wiki flag), Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag), Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag), Step 7b - SVG export (only if --svg flag), Step 7c - GraphML export (only if --graphml flag), Step 7d - MCP server (only if --mcp flag), Step 8 - Token reduction benchmark (only if total_words > 5000)
 
 ### Community 54 - "Community 54"
-Cohesion: 0.29
-Nodes (4): int, JsonSerializerOptions, T, MonitorProtocol
+Cohesion: 0.22
+Nodes (6): bool, HashSet, object, Process, Timer, ThreatProcessMonitor
 
 ### Community 55 - "Community 55"
-Cohesion: 0.28
-Nodes (5): LogEntry, LogChainVerifier, LogChunkMessage, StatusMessage, IReadOnlyList
+Cohesion: 0.67
+Nodes (3): Force Close Evidence, Runtime files, Unclean Shutdown Marker
 
 ### Community 56 - "Community 56"
 Cohesion: 0.33
@@ -343,29 +342,25 @@ Nodes (3): For git commit hook, For native CLAUDE.md integration, graphify refer
 Cohesion: 0.50
 Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphify reference: incremental update and cluster-only
 
-### Community 64 - "Community 64"
-Cohesion: 0.39
-Nodes (5): IEnumerable, IPAddress, MonitorBroadcaster, IPEndPoint, UnicastIPAddressInformation
-
 ## Knowledge Gaps
-- **308 isolated node(s):** `net8.0-windows`, `Microsoft.NET.Sdk`, `Language`, `int`, `Graphics` (+303 more)
+- **310 isolated node(s):** `net8.0-windows`, `Microsoft.NET.Sdk`, `Language`, `int`, `Graphics` (+305 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `MainForm` connect `Build Left Filter Log` to `Box Combo List Add`?**
+- **Why does `MainForm` connect `Build Left Filter Log` to `Load Config Color Grid`?**
   _High betweenness centrality (0.028) - this node is a cross-community bridge._
-- **Why does `MainForm` connect `Monitor Config Service Shield` to `Box Combo List Add`?**
+- **Why does `MainForm` connect `Monitor Config Service Shield` to `Load Config Color Grid`?**
   _High betweenness centrality (0.027) - this node is a cross-community bridge._
+- **Why does `MainForm` connect `Box Combo List Add` to `Load Config Color Grid`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **What connects `net8.0-windows`, `Microsoft.NET.Sdk`, `Language` to the rest of the system?**
-  _312 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _314 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Build Left Filter Log` be split into smaller, more focused modules?**
   _Cohesion score 0.07494824016563147 - nodes in this community are weakly interconnected._
 - **Should `Monitor Config Service Shield` be split into smaller, more focused modules?**
   _Cohesion score 0.062003968253968256 - nodes in this community are weakly interconnected._
-- **Should `Volume Level Audio Channel` be split into smaller, more focused modules?**
-  _Cohesion score 0.08194905869324474 - nodes in this community are weakly interconnected._
-- **Should `Box Combo List Add` be split into smaller, more focused modules?**
-  _Cohesion score 0.08325624421831637 - nodes in this community are weakly interconnected._
+- **Should `Monitor Dispose Start Log` be split into smaller, more focused modules?**
+  _Cohesion score 0.0613107822410148 - nodes in this community are weakly interconnected._

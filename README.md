@@ -77,12 +77,12 @@ noticing).
   - 🟡 **ATENCIÓN** (attention) — unknown program or file type.
   - 🔴 **PELIGRO** (danger) — AI connection, forbidden file, or work outside the folder.
 - **Config / Incidents**: shows the loaded file and an event history.
-- **Password A (Wi-Fi)**: restores the network without closing.
-- **Password B (close)**: the only way to close the app. A force-close from Task Manager is
+- **Restore Wi-Fi password**: restores the network without closing.
+- **Close program password**: the only way to close the app. A force-close from Task Manager is
   recorded as an unclean session in the log.
 
 On a red AI detection the app **beeps and raises the volume**, and the alarm persists until the
-teacher enters **password B** (the "teacher walks over and silences it" flow).
+teacher enters the **close program password** (the "teacher walks over and silences it" flow).
 
 #### AI detection is a safety net
 
@@ -245,12 +245,12 @@ Genera el `exam.config`, signat amb HMAC (no es pot manipular sense que el clien
   - 🟡 **ATENCIÓN** (atenció) — programa o tipus de fitxer desconegut.
   - 🔴 **PELIGRO** (perill) — connexió a IA, fitxer no permès o treball fora de la carpeta.
 - **Config / Incidències**: mostra el fitxer carregat i un historial d'esdeveniments.
-- **Contrasenya A (Wi-Fi)**: restaura la xarxa sense tancar.
-- **Contrasenya B (tancar)**: única manera de tancar l'app. Un tancament forçat des de
+- **Contrasenya per restaurar Wi-Fi**: restaura la xarxa sense tancar.
+- **Contrasenya per tancar el programa**: única manera de tancar l'app. Un tancament forçat des de
   l'Administrador de tasques queda com a sessió bruta al registre.
 
 En detectar una IA en vermell, l'app **xiula i apuja el volum**, i l'alarma persisteix fins que
-el professor introdueix la **contrasenya B** (el flux "el profe s'acosta i la silencia").
+el professor introdueix la **contrasenya per tancar el programa** (el flux "el profe s'acosta i la silencia").
 
 #### La detecció d'IA és una xarxa de seguretat
 
@@ -416,12 +416,12 @@ Genera el `exam.config` firmado con HMAC (no se puede manipular sin que el clien
   - 🟡 **ATENCIÓN** — programa o tipo de archivo desconocido.
   - 🔴 **PELIGRO** — conexión a IA, archivo no permitido o trabajo fuera de la carpeta.
 - **Config / Incidencias**: muestra el archivo cargado y un historial de eventos.
-- **Contraseña A (Wi-Fi)**: restaura la red sin cerrar.
-- **Contraseña B (cerrar)**: única forma de cerrar la app. Un cierre forzado por el
+- **Contraseña para restaurar Wi-Fi**: restaura la red sin cerrar.
+- **Contraseña para cerrar el programa**: única forma de cerrar la app. Un cierre forzado por el
   Administrador de tareas queda como sesión sucia en el log.
 
 Al detectar una IA en rojo, la app **pita y sube el volumen**, y la alarma persiste hasta que el
-profesor introduce la **contraseña B** (el flujo "el profe se acerca y la silencia").
+profesor introduce la **contraseña para cerrar el programa** (el flujo "el profe se acerca y la silencia").
 
 #### La detección de IA es una red de seguridad
 

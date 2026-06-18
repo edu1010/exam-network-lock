@@ -438,7 +438,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "form",
-      "community": 4,
+      "community": 6,
       "norm_label": "form"
     },
     {
@@ -1092,10 +1092,20 @@
       "norm_label": "processevidence"
     },
     {
+      "label": ".Clip()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L90",
+      "_origin": "ast",
+      "id": "examlockclient_aiconnectionevidence_processevidence_clip",
+      "community": 50,
+      "norm_label": ".clip()"
+    },
+    {
       "label": "AiProcessClassifier",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L71",
+      "source_location": "L94",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_aiprocessclassifier",
       "community": 50,
@@ -1105,17 +1115,27 @@
       "label": "HashSet",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L73",
+      "source_location": "L96",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_cs_hashset",
       "community": 50,
       "norm_label": "hashset"
     },
     {
+      "label": "string",
+      "file_type": "code",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L137",
+      "_origin": "ast",
+      "id": "examlockclient_aiconnectionevidence_cs_string",
+      "community": 50,
+      "norm_label": "string"
+    },
+    {
       "label": ".TryGetProcess()",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L102",
+      "source_location": "L167",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_aiprocessclassifier_trygetprocess",
       "community": 50,
@@ -1125,17 +1145,27 @@
       "label": ".IsStudentFacing()",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L127",
+      "source_location": "L192",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_aiprocessclassifier_isstudentfacing",
       "community": 50,
       "norm_label": ".isstudentfacing()"
     },
     {
+      "label": ".IsDedicatedAiTool()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L203",
+      "_origin": "ast",
+      "id": "examlockclient_aiconnectionevidence_aiprocessclassifier_isdedicatedaitool",
+      "community": 50,
+      "norm_label": ".isdedicatedaitool()"
+    },
+    {
       "label": ".SafeProcessName()",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L137",
+      "source_location": "L214",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocessname",
       "community": 50,
@@ -1145,7 +1175,7 @@
       "label": "Process",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L137",
+      "source_location": "L214",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_cs_process",
       "community": 50,
@@ -1155,7 +1185,7 @@
       "label": ".SafeProcessPath()",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L152",
+      "source_location": "L229",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocesspath",
       "community": 50,
@@ -1165,11 +1195,21 @@
       "label": ".SafeCommandLine()",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L164",
+      "source_location": "L241",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_aiprocessclassifier_safecommandline",
       "community": 50,
       "norm_label": ".safecommandline()"
+    },
+    {
+      "label": ".IsAiToolCommandLine()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L260",
+      "_origin": "ast",
+      "id": "examlockclient_aiconnectionevidence_aiprocessclassifier_isaitoolcommandline",
+      "community": 50,
+      "norm_label": ".isaitoolcommandline()"
     },
     {
       "label": "AiConnectionMonitor.cs",
@@ -1778,7 +1818,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor",
-      "community": 51,
+      "community": 2,
       "norm_label": "dnscachemonitor.cs"
     },
     {
@@ -1788,7 +1828,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_dnscachemonitor",
-      "community": 51,
+      "community": 2,
       "norm_label": "dnscachemonitor"
     },
     {
@@ -1798,7 +1838,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_cs_string",
-      "community": 51,
+      "community": 2,
       "norm_label": "string"
     },
     {
@@ -1808,7 +1848,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_cs_hashset",
-      "community": 51,
+      "community": 2,
       "norm_label": "hashset"
     },
     {
@@ -1818,7 +1858,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_cs_timer",
-      "community": 51,
+      "community": 2,
       "norm_label": "timer"
     },
     {
@@ -1828,7 +1868,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_dnscachemonitor_start",
-      "community": 51,
+      "community": 2,
       "norm_label": ".start()"
     },
     {
@@ -1838,7 +1878,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_dnscachemonitor_poll",
-      "community": 51,
+      "community": 2,
       "norm_label": ".poll()"
     },
     {
@@ -1848,7 +1888,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_dnscachemonitor_check",
-      "community": 51,
+      "community": 2,
       "norm_label": ".check()"
     },
     {
@@ -1858,7 +1898,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_dnscachemonitor_isblocked",
-      "community": 51,
+      "community": 2,
       "norm_label": ".isblocked()"
     },
     {
@@ -1868,7 +1908,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_dnscachemonitor_dispose",
-      "community": 51,
+      "community": 2,
       "norm_label": ".dispose()"
     },
     {
@@ -2645,7 +2685,7 @@
       "label": ".FindDefaultConfig()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L297",
+      "source_location": "L304",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_finddefaultconfig",
       "community": 1,
@@ -2655,7 +2695,7 @@
       "label": ".TryLoadConfig()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L309",
+      "source_location": "L316",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_tryloadconfig",
       "community": 1,
@@ -2665,7 +2705,7 @@
       "label": ".InitializeServices()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L339",
+      "source_location": "L346",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_initializeservices",
       "community": 1,
@@ -2675,7 +2715,7 @@
       "label": ".StartLockdown()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L359",
+      "source_location": "L366",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_startlockdown",
       "community": 1,
@@ -2685,7 +2725,7 @@
       "label": ".StartMonitors()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L432",
+      "source_location": "L439",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_startmonitors",
       "community": 1,
@@ -2695,7 +2735,7 @@
       "label": ".OnAiDetected()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L484",
+      "source_location": "L491",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onaidetected",
       "community": 1,
@@ -2705,7 +2745,7 @@
       "label": "AiConnectionEvidence",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L484",
+      "source_location": "L491",
       "_origin": "ast",
       "id": "examlockclient_mainform_cs_aiconnectionevidence",
       "community": 1,
@@ -2715,7 +2755,7 @@
       "label": ".OnAiDns()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L500",
+      "source_location": "L507",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onaidns",
       "community": 1,
@@ -2725,7 +2765,7 @@
       "label": ".OnAiTool()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L503",
+      "source_location": "L510",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onaitool",
       "community": 1,
@@ -2735,7 +2775,7 @@
       "label": ".RaiseAiAlarm()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L506",
+      "source_location": "L513",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_raiseaialarm",
       "community": 1,
@@ -2745,7 +2785,7 @@
       "label": ".RaiseAiWarning()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L525",
+      "source_location": "L532",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_raiseaiwarning",
       "community": 1,
@@ -2755,7 +2795,7 @@
       "label": ".OnVmDetected()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L537",
+      "source_location": "L544",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onvmdetected",
       "community": 1,
@@ -2765,7 +2805,7 @@
       "label": ".OnForbiddenFile()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L555",
+      "source_location": "L562",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onforbiddenfile",
       "community": 1,
@@ -2775,7 +2815,7 @@
       "label": ".OnOutsideFolder()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L572",
+      "source_location": "L579",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onoutsidefolder",
       "community": 1,
@@ -2785,7 +2825,7 @@
       "label": ".OnUnknownProcess()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L589",
+      "source_location": "L596",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onunknownprocess",
       "community": 1,
@@ -2795,7 +2835,7 @@
       "label": ".OnUnknownFile()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L601",
+      "source_location": "L608",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onunknownfile",
       "community": 1,
@@ -2805,7 +2845,7 @@
       "label": ".SetRed()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L613",
+      "source_location": "L620",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_setred",
       "community": 1,
@@ -2815,7 +2855,7 @@
       "label": ".SetYellow()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L620",
+      "source_location": "L627",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_setyellow",
       "community": 1,
@@ -2825,7 +2865,7 @@
       "label": ".UpdateShield()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L627",
+      "source_location": "L634",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_updateshield",
       "community": 1,
@@ -2835,7 +2875,7 @@
       "label": ".AttemptRestoreWifi()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L668",
+      "source_location": "L675",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_attemptrestorewifi",
       "community": 1,
@@ -2845,7 +2885,7 @@
       "label": ".EnterSubmissionMode()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L695",
+      "source_location": "L702",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_entersubmissionmode",
       "community": 1,
@@ -2855,7 +2895,7 @@
       "label": ".ReenableRadios()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L717",
+      "source_location": "L724",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_reenableradios",
       "community": 1,
@@ -2865,7 +2905,7 @@
       "label": ".AttemptAdminClose()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L756",
+      "source_location": "L763",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_attemptadminclose",
       "community": 1,
@@ -2875,7 +2915,7 @@
       "label": ".AttemptAdminRelaunch()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L789",
+      "source_location": "L796",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_attemptadminrelaunch",
       "community": 1,
@@ -2885,7 +2925,7 @@
       "label": ".StopMonitors()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L809",
+      "source_location": "L817",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_stopmonitors",
       "community": 1,
@@ -2895,7 +2935,7 @@
       "label": ".OnFormClosing()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L823",
+      "source_location": "L831",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_onformclosing",
       "community": 1,
@@ -2905,7 +2945,7 @@
       "label": "FormClosingEventArgs",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L823",
+      "source_location": "L831",
       "_origin": "ast",
       "id": "formclosingeventargs",
       "community": 1,
@@ -2915,7 +2955,7 @@
       "label": ".RunOnUi()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L847",
+      "source_location": "L855",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_runonui",
       "community": 1,
@@ -2925,7 +2965,7 @@
       "label": "Action",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L847",
+      "source_location": "L855",
       "_origin": "ast",
       "id": "examlockclient_mainform_cs_action",
       "community": 1,
@@ -2935,7 +2975,7 @@
       "label": ".AddIncident()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L873",
+      "source_location": "L881",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_addincident",
       "community": 1,
@@ -2945,7 +2985,7 @@
       "label": ".SetStatus()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L883",
+      "source_location": "L891",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_setstatus",
       "community": 1,
@@ -2955,7 +2995,7 @@
       "label": ".NeedsAdminButIsNotElevated()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L889",
+      "source_location": "L897",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_needsadminbutisnotelevated",
       "community": 1,
@@ -2965,7 +3005,7 @@
       "label": ".UpdateAdminRelaunchButton()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L894",
+      "source_location": "L902",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_updateadminrelaunchbutton",
       "community": 1,
@@ -2975,7 +3015,7 @@
       "label": ".ReportState()",
       "file_type": "code",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L899",
+      "source_location": "L907",
       "_origin": "ast",
       "id": "examlockclient_mainform_mainform_reportstate",
       "community": 1,
@@ -3295,7 +3335,7 @@
       "label": ".Main()",
       "file_type": "code",
       "source_file": "ExamLockClient/Program.cs",
-      "source_location": "L9",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "examlockclient_program_program_main",
       "community": 41,
@@ -3305,7 +3345,7 @@
       "label": "STAThread",
       "file_type": "code",
       "source_file": "ExamLockClient/Program.cs",
-      "source_location": "L9",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "examlockclient_program_cs_stathread",
       "community": 41,
@@ -3315,7 +3355,7 @@
       "label": ".EnsureAdministrator()",
       "file_type": "code",
       "source_file": "ExamLockClient/Program.cs",
-      "source_location": "L22",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "examlockclient_program_program_ensureadministrator",
       "community": 41,
@@ -3325,7 +3365,7 @@
       "label": ".TryRelaunchAsAdministrator()",
       "file_type": "code",
       "source_file": "ExamLockClient/Program.cs",
-      "source_location": "L43",
+      "source_location": "L46",
       "_origin": "ast",
       "id": "examlockclient_program_program_tryrelaunchasadministrator",
       "community": 41,
@@ -3335,7 +3375,7 @@
       "label": "IWin32Window",
       "file_type": "code",
       "source_file": "ExamLockClient/Program.cs",
-      "source_location": "L43",
+      "source_location": "L46",
       "_origin": "ast",
       "id": "iwin32window",
       "community": 41,
@@ -3345,11 +3385,21 @@
       "label": ".IsAdministrator()",
       "file_type": "code",
       "source_file": "ExamLockClient/Program.cs",
-      "source_location": "L79",
+      "source_location": "L88",
       "_origin": "ast",
       "id": "examlockclient_program_program_isadministrator",
       "community": 41,
       "norm_label": ".isadministrator()"
+    },
+    {
+      "label": ".ParseStartupConfigPath()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/Program.cs",
+      "source_location": "L102",
+      "_origin": "ast",
+      "id": "examlockclient_program_program_parsestartupconfigpath",
+      "community": 41,
+      "norm_label": ".parsestartupconfigpath()"
     },
     {
       "label": "RadioService.cs",
@@ -3828,7 +3878,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor",
-      "community": 52,
+      "community": 54,
       "norm_label": "threatprocessmonitor.cs"
     },
     {
@@ -3838,7 +3888,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_threatprocessmonitor",
-      "community": 52,
+      "community": 54,
       "norm_label": "threatprocessmonitor"
     },
     {
@@ -3848,67 +3898,87 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_cs_hashset",
-      "community": 52,
+      "community": 54,
       "norm_label": "hashset"
     },
     {
       "label": "bool",
       "file_type": "code",
       "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
-      "source_location": "L30",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_cs_bool",
-      "community": 52,
+      "community": 54,
       "norm_label": "bool"
     },
     {
       "label": "object",
       "file_type": "code",
       "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
-      "source_location": "L33",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_cs_object",
-      "community": 52,
+      "community": 54,
       "norm_label": "object"
     },
     {
       "label": "Timer",
       "file_type": "code",
       "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
-      "source_location": "L34",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_cs_timer",
-      "community": 52,
+      "community": 54,
       "norm_label": "timer"
     },
     {
       "label": ".Start()",
       "file_type": "code",
       "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
-      "source_location": "L45",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_threatprocessmonitor_start",
-      "community": 52,
+      "community": 54,
       "norm_label": ".start()"
     },
     {
       "label": ".Poll()",
       "file_type": "code",
       "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
-      "source_location": "L57",
+      "source_location": "L50",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_threatprocessmonitor_poll",
-      "community": 52,
+      "community": 54,
       "norm_label": ".poll()"
+    },
+    {
+      "label": ".SafeProcessName()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
+      "source_location": "L83",
+      "_origin": "ast",
+      "id": "examlockclient_threatprocessmonitor_threatprocessmonitor_safeprocessname",
+      "community": 54,
+      "norm_label": ".safeprocessname()"
+    },
+    {
+      "label": "Process",
+      "file_type": "code",
+      "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
+      "source_location": "L83",
+      "_origin": "ast",
+      "id": "examlockclient_threatprocessmonitor_cs_process",
+      "community": 54,
+      "norm_label": "process"
     },
     {
       "label": ".Dispose()",
       "file_type": "code",
       "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
-      "source_location": "L97",
+      "source_location": "L96",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_threatprocessmonitor_dispose",
-      "community": 52,
+      "community": 54,
       "norm_label": ".dispose()"
     },
     {
@@ -5968,7 +6038,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "examshared_monitoring",
-      "community": 55,
+      "community": 2,
       "norm_label": "monitoring.cs"
     },
     {
@@ -5978,7 +6048,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "examshared_monitoring_statusmessage",
-      "community": 55,
+      "community": 2,
       "norm_label": "statusmessage"
     },
     {
@@ -5988,7 +6058,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "examshared_monitoring_logchunkmessage",
-      "community": 55,
+      "community": 2,
       "norm_label": "logchunkmessage"
     },
     {
@@ -5998,7 +6068,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorprotocol",
-      "community": 54,
+      "community": 2,
       "norm_label": "monitorprotocol"
     },
     {
@@ -6008,7 +6078,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_int",
-      "community": 54,
+      "community": 2,
       "norm_label": "int"
     },
     {
@@ -6018,7 +6088,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_jsonserializeroptions",
-      "community": 54,
+      "community": 2,
       "norm_label": "jsonserializeroptions"
     },
     {
@@ -6028,7 +6098,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorprotocol_serialize",
-      "community": 54,
+      "community": 2,
       "norm_label": ".serialize()"
     },
     {
@@ -6048,7 +6118,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorprotocol_deserialize",
-      "community": 54,
+      "community": 2,
       "norm_label": ".deserialize()"
     },
     {
@@ -6058,7 +6128,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_t",
-      "community": 54,
+      "community": 2,
       "norm_label": "t"
     },
     {
@@ -6068,7 +6138,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorbroadcaster",
-      "community": 64,
+      "community": 2,
       "norm_label": "monitorbroadcaster"
     },
     {
@@ -6088,7 +6158,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "ipendpoint",
-      "community": 64,
+      "community": 2,
       "norm_label": "ipendpoint"
     },
     {
@@ -6098,7 +6168,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorbroadcaster_send",
-      "community": 54,
+      "community": 2,
       "norm_label": ".send()"
     },
     {
@@ -6118,7 +6188,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorbroadcaster_getbroadcastendpoints",
-      "community": 64,
+      "community": 2,
       "norm_label": ".getbroadcastendpoints()"
     },
     {
@@ -6128,7 +6198,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_ienumerable",
-      "community": 64,
+      "community": 2,
       "norm_label": "ienumerable"
     },
     {
@@ -6138,7 +6208,7 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorbroadcaster_trygetdirectedbroadcast",
-      "community": 64,
+      "community": 2,
       "norm_label": ".trygetdirectedbroadcast()"
     },
     {
@@ -6148,7 +6218,7 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "unicastipaddressinformation",
-      "community": 64,
+      "community": 2,
       "norm_label": "unicastipaddressinformation"
     },
     {
@@ -6158,7 +6228,7 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_ipaddress",
-      "community": 64,
+      "community": 2,
       "norm_label": "ipaddress"
     },
     {
@@ -6168,7 +6238,7 @@
       "source_location": "L196",
       "_origin": "ast",
       "id": "examshared_monitoring_monitorbroadcaster_isapipa",
-      "community": 64,
+      "community": 2,
       "norm_label": ".isapipa()"
     },
     {
@@ -6238,7 +6308,7 @@
       "source_location": "L273",
       "_origin": "ast",
       "id": "examshared_monitoring_logchainverifier",
-      "community": 55,
+      "community": 2,
       "norm_label": "logchainverifier"
     },
     {
@@ -6248,7 +6318,7 @@
       "source_location": "L275",
       "_origin": "ast",
       "id": "examshared_monitoring_logchainverifier_verify",
-      "community": 55,
+      "community": 2,
       "norm_label": ".verify()"
     },
     {
@@ -6258,7 +6328,7 @@
       "source_location": "L275",
       "_origin": "ast",
       "id": "ireadonlylist",
-      "community": 55,
+      "community": 2,
       "norm_label": "ireadonlylist"
     },
     {
@@ -6268,7 +6338,7 @@
       "source_location": "L275",
       "_origin": "ast",
       "id": "examshared_monitoring_cs_logentry",
-      "community": 55,
+      "community": 2,
       "norm_label": "logentry"
     },
     {
@@ -6278,7 +6348,7 @@
       "source_location": "L305",
       "_origin": "ast",
       "id": "examshared_monitoring_logchainverifier_computehmac",
-      "community": 55,
+      "community": 2,
       "norm_label": ".computehmac()"
     },
     {
@@ -6288,7 +6358,7 @@
       "source_location": "L311",
       "_origin": "ast",
       "id": "examshared_monitoring_logchainverifier_fixedequals",
-      "community": 55,
+      "community": 2,
       "norm_label": ".fixedequals()"
     },
     {
@@ -7258,7 +7328,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "readme",
-      "community": 7,
+      "community": 51,
       "norm_label": "readme.md"
     },
     {
@@ -7268,7 +7338,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "readme_exam_network_locking",
-      "community": 7,
+      "community": 51,
       "norm_label": "exam network locking"
     },
     {
@@ -7278,7 +7348,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "readme_english",
-      "community": 7,
+      "community": 52,
       "norm_label": "english"
     },
     {
@@ -7288,7 +7358,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "readme_how_it_works",
-      "community": 7,
+      "community": 52,
       "norm_label": "how it works"
     },
     {
@@ -7298,7 +7368,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "readme_teacher_app_examconfiggenerator",
-      "community": 7,
+      "community": 52,
       "norm_label": "teacher app \u2014 examconfiggenerator"
     },
     {
@@ -7308,7 +7378,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "readme_student_app_examlockclient",
-      "community": 7,
+      "community": 52,
       "norm_label": "student app \u2014 examlockclient"
     },
     {
@@ -7318,7 +7388,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "readme_ai_detection_is_a_safety_net",
-      "community": 7,
+      "community": 52,
       "norm_label": "ai detection is a safety net"
     },
     {
@@ -7328,7 +7398,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "readme_file_monitoring_is_a_deterrent",
-      "community": 7,
+      "community": 52,
       "norm_label": "file monitoring is a deterrent"
     },
     {
@@ -7338,7 +7408,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "readme_teacher_monitor_exammonitor",
-      "community": 7,
+      "community": 52,
       "norm_label": "teacher monitor \u2014 exammonitor"
     },
     {
@@ -7348,7 +7418,7 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "readme_build",
-      "community": 7,
+      "community": 52,
       "norm_label": "build"
     },
     {
@@ -7358,7 +7428,7 @@
       "source_location": "L137",
       "_origin": "ast",
       "id": "readme_run",
-      "community": 7,
+      "community": 52,
       "norm_label": "run"
     },
     {
@@ -7368,7 +7438,7 @@
       "source_location": "L143",
       "_origin": "ast",
       "id": "readme_verify_a_log",
-      "community": 7,
+      "community": 52,
       "norm_label": "verify a log"
     },
     {
@@ -7378,7 +7448,7 @@
       "source_location": "L156",
       "_origin": "ast",
       "id": "readme_runtime_files",
-      "community": 7,
+      "community": 55,
       "norm_label": "runtime files"
     },
     {
@@ -7388,7 +7458,7 @@
       "source_location": "L161",
       "_origin": "ast",
       "id": "readme_wi_fi_adapter_name",
-      "community": 7,
+      "community": 52,
       "norm_label": "wi-fi adapter name"
     },
     {
@@ -7398,7 +7468,7 @@
       "source_location": "L166",
       "_origin": "ast",
       "id": "readme_permissions",
-      "community": 7,
+      "community": 52,
       "norm_label": "permissions"
     },
     {
@@ -7408,7 +7478,7 @@
       "source_location": "L171",
       "_origin": "ast",
       "id": "readme_notes",
-      "community": 7,
+      "community": 52,
       "norm_label": "notes"
     },
     {
@@ -8726,7 +8796,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 51,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "exammonitor",
       "id": "readme_exammonitor"
@@ -8740,7 +8810,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 51,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "examshared",
       "id": "readme_examshared"
@@ -8754,7 +8824,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 51,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "examlogverifier",
       "id": "readme_examlogverifier"
@@ -8768,7 +8838,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 51,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "examlogverifierui",
       "id": "readme_examlogverifierui"
@@ -8782,7 +8852,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 51,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "exam.config",
       "id": "readme_exam_config"
@@ -8796,7 +8866,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 51,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "hmac signature",
       "id": "readme_hmac_signature"
@@ -8810,7 +8880,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 51,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "tamper evident log",
       "id": "readme_tamper_evident_log"
@@ -8937,7 +9007,7 @@
       "author": null,
       "contributor": null,
       "rationale": "File monitoring is heuristic and intended to leave evidence rather than exhaustively hook every file open.",
-      "community": 7,
+      "community": 51,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "file monitoring",
       "id": "readme_file_monitoring"
@@ -8951,7 +9021,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 51,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "teacher monitor udp",
       "id": "readme_teacher_monitor_udp"
@@ -8965,7 +9035,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 51,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "log integrity verification",
       "id": "readme_log_integrity_verification"
@@ -9008,7 +9078,7 @@
       "author": null,
       "contributor": null,
       "rationale": "The system is a practical deterrent that records evidence, not a fully secure lock against administrator users.",
-      "community": 7,
+      "community": 51,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "deterrent system with evidence",
       "id": "readme_deterrent_system_with_evidence"
@@ -9022,7 +9092,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 55,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "unclean shutdown marker",
       "id": "readme_unclean_shutdown_marker"
@@ -9079,7 +9149,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 55,
       "community_name": "Exam Log Admin Detection",
       "norm_label": "force close evidence",
       "id": "readme_force_close_evidence"
@@ -11552,6 +11622,17 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L203",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_isdedicatedaitool",
+      "target": "examlockclient_aiconnectionevidence_processevidence",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
       "source_location": "L127",
       "weight": 1.0,
       "context": "parameter_type",
@@ -11569,6 +11650,36 @@
       "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_trygetprocess",
       "target": "examlockclient_aiconnectionevidence_processevidence"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "examlockclient_aiconnectionevidence_processevidence",
+      "target": "examlockclient_aiconnectionevidence_processevidence_clip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L260",
+      "weight": 1.0,
+      "source": "examlockclient_aiconnectionevidence_aiprocessclassifier",
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_isaitoolcommandline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L203",
+      "weight": 1.0,
+      "source": "examlockclient_aiconnectionevidence_aiprocessclassifier",
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_isdedicatedaitool",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -11632,6 +11743,17 @@
       "target": "examlockclient_aiconnectionevidence_cs_hashset"
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L137",
+      "weight": 1.0,
+      "context": "field",
+      "source": "examlockclient_aiconnectionevidence_aiprocessclassifier",
+      "target": "examlockclient_aiconnectionevidence_cs_string",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -11663,6 +11785,28 @@
       "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_trygetprocess",
       "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocesspath"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L200",
+      "weight": 1.0,
+      "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_isstudentfacing",
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_isaitoolcommandline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L211",
+      "weight": 1.0,
+      "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_isdedicatedaitool",
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_isaitoolcommandline",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -13865,9 +14009,9 @@
       "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L789",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform",
-      "target": "examlockclient_mainform_mainform_attemptadminrelaunch",
-      "confidence_score": 1.0
+      "target": "examlockclient_mainform_mainform_attemptadminrelaunch"
     },
     {
       "relation": "method",
@@ -13945,9 +14089,9 @@
       "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L889",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform",
-      "target": "examlockclient_mainform_mainform_needsadminbutisnotelevated",
-      "confidence_score": 1.0
+      "target": "examlockclient_mainform_mainform_needsadminbutisnotelevated"
     },
     {
       "relation": "method",
@@ -14165,9 +14309,9 @@
       "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L894",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform",
-      "target": "examlockclient_mainform_mainform_updateadminrelaunchbutton",
-      "confidence_score": 1.0
+      "target": "examlockclient_mainform_mainform_updateadminrelaunchbutton"
     },
     {
       "relation": "method",
@@ -14339,9 +14483,9 @@
       "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L230",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform_applylanguage",
-      "target": "examlockclient_mainform_mainform_updateadminrelaunchbutton",
-      "confidence_score": 1.0
+      "target": "examlockclient_mainform_mainform_updateadminrelaunchbutton"
     },
     {
       "relation": "calls",
@@ -14438,9 +14582,9 @@
       "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L420",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform_startlockdown",
-      "target": "examlockclient_mainform_mainform_needsadminbutisnotelevated",
-      "confidence_score": 1.0
+      "target": "examlockclient_mainform_mainform_needsadminbutisnotelevated"
     },
     {
       "relation": "calls",
@@ -14460,9 +14604,9 @@
       "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L423",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform_startlockdown",
-      "target": "examlockclient_mainform_mainform_setyellow",
-      "confidence_score": 1.0
+      "target": "examlockclient_mainform_mainform_setyellow"
     },
     {
       "relation": "calls",
@@ -14944,9 +15088,9 @@
       "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L799",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform_attemptadminrelaunch",
-      "target": "examlockclient_mainform_mainform_setstatus",
-      "confidence_score": 1.0
+      "target": "examlockclient_mainform_mainform_setstatus"
     },
     {
       "relation": "calls",
@@ -14955,9 +15099,9 @@
       "source_file": "ExamLockClient/MainForm.cs",
       "source_location": "L793",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_mainform_mainform_attemptadminrelaunch",
-      "target": "examlockclient_mainform_mainform_updateadminrelaunchbutton",
-      "confidence_score": 1.0
+      "target": "examlockclient_mainform_mainform_updateadminrelaunchbutton"
     },
     {
       "relation": "calls",
@@ -15405,11 +15549,21 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "ExamLockClient/Program.cs",
+      "source_location": "L102",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_program_program",
+      "target": "examlockclient_program_program_parsestartupconfigpath"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/Program.cs",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_program_program",
-      "target": "examlockclient_program_program_tryrelaunchasadministrator",
-      "confidence_score": 1.0
+      "target": "examlockclient_program_program_tryrelaunchasadministrator"
     },
     {
       "relation": "references",
@@ -15438,6 +15592,17 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "ExamLockClient/Program.cs",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_program_program_main",
+      "target": "examlockclient_program_program_parsestartupconfigpath"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/Program.cs",
       "source_location": "L24",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -15451,9 +15616,9 @@
       "source_file": "ExamLockClient/Program.cs",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_program_program_ensureadministrator",
-      "target": "examlockclient_program_program_tryrelaunchasadministrator",
-      "confidence_score": 1.0
+      "target": "examlockclient_program_program_tryrelaunchasadministrator"
     },
     {
       "relation": "references",
@@ -15462,9 +15627,9 @@
       "source_location": "L43",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "examlockclient_program_program_tryrelaunchasadministrator",
-      "target": "iwin32window",
-      "confidence_score": 1.0
+      "target": "iwin32window"
     },
     {
       "relation": "contains",
@@ -16215,6 +16380,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "examlockclient_threatprocessmonitor_threatprocessmonitor",
+      "target": "examlockclient_threatprocessmonitor_threatprocessmonitor_safeprocessname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
       "source_location": "L45",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -16231,6 +16406,28 @@
       "confidence_score": 1.0,
       "source": "examlockclient_threatprocessmonitor_threatprocessmonitor_start",
       "target": "examlockclient_threatprocessmonitor_threatprocessmonitor_poll"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "examlockclient_threatprocessmonitor_threatprocessmonitor_poll",
+      "target": "examlockclient_threatprocessmonitor_threatprocessmonitor_safeprocessname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
+      "source_location": "L83",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "examlockclient_threatprocessmonitor_threatprocessmonitor_safeprocessname",
+      "target": "examlockclient_threatprocessmonitor_cs_process",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -24193,5 +24390,5 @@
       "source_file": "docs/img/monitor.png"
     }
   ],
-  "built_at_commit": "71430df0797c691660818b3185898d00a33484e2"
+  "built_at_commit": "0d82cde7032c393cddff880a15c14920248c13ec"
 }

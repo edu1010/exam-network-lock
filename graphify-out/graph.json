@@ -1092,10 +1092,20 @@
       "norm_label": "processevidence"
     },
     {
+      "label": ".Clip()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L90",
+      "_origin": "ast",
+      "id": "examlockclient_aiconnectionevidence_processevidence_clip",
+      "community": 50,
+      "norm_label": ".clip()"
+    },
+    {
       "label": "AiProcessClassifier",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L71",
+      "source_location": "L94",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_aiprocessclassifier",
       "community": 50,
@@ -1105,17 +1115,27 @@
       "label": "HashSet",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L73",
+      "source_location": "L96",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_cs_hashset",
       "community": 50,
       "norm_label": "hashset"
     },
     {
+      "label": "string",
+      "file_type": "code",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L137",
+      "_origin": "ast",
+      "id": "examlockclient_aiconnectionevidence_cs_string",
+      "community": 50,
+      "norm_label": "string"
+    },
+    {
       "label": ".TryGetProcess()",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L102",
+      "source_location": "L167",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_aiprocessclassifier_trygetprocess",
       "community": 50,
@@ -1125,17 +1145,37 @@
       "label": ".IsStudentFacing()",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L127",
+      "source_location": "L192",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_aiprocessclassifier_isstudentfacing",
       "community": 50,
       "norm_label": ".isstudentfacing()"
     },
     {
+      "label": ".IsDedicatedAiTool()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L203",
+      "_origin": "ast",
+      "id": "examlockclient_aiconnectionevidence_aiprocessclassifier_isdedicatedaitool",
+      "community": 50,
+      "norm_label": ".isdedicatedaitool()"
+    },
+    {
+      "label": ".IsDedicatedAiToolProcessName()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L214",
+      "_origin": "ast",
+      "id": "examlockclient_aiconnectionevidence_aiprocessclassifier_isdedicatedaitoolprocessname",
+      "community": 50,
+      "norm_label": ".isdedicatedaitoolprocessname()"
+    },
+    {
       "label": ".SafeProcessName()",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L137",
+      "source_location": "L217",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocessname",
       "community": 50,
@@ -1145,7 +1185,7 @@
       "label": "Process",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L137",
+      "source_location": "L217",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_cs_process",
       "community": 50,
@@ -1155,7 +1195,7 @@
       "label": ".SafeProcessPath()",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L152",
+      "source_location": "L232",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocesspath",
       "community": 50,
@@ -1165,11 +1205,21 @@
       "label": ".SafeCommandLine()",
       "file_type": "code",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
-      "source_location": "L164",
+      "source_location": "L244",
       "_origin": "ast",
       "id": "examlockclient_aiconnectionevidence_aiprocessclassifier_safecommandline",
       "community": 50,
       "norm_label": ".safecommandline()"
+    },
+    {
+      "label": ".IsAiToolCommandLine()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L263",
+      "_origin": "ast",
+      "id": "examlockclient_aiconnectionevidence_aiprocessclassifier_isaitoolcommandline",
+      "community": 50,
+      "norm_label": ".isaitoolcommandline()"
     },
     {
       "label": "AiConnectionMonitor.cs",
@@ -1198,7 +1248,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "idisposable",
-      "community": 2,
+      "community": 18,
       "norm_label": "idisposable"
     },
     {
@@ -1778,7 +1828,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor",
-      "community": 51,
+      "community": 18,
       "norm_label": "dnscachemonitor.cs"
     },
     {
@@ -1788,7 +1838,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_dnscachemonitor",
-      "community": 51,
+      "community": 18,
       "norm_label": "dnscachemonitor"
     },
     {
@@ -1798,7 +1848,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_cs_string",
-      "community": 51,
+      "community": 18,
       "norm_label": "string"
     },
     {
@@ -1808,7 +1858,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_cs_hashset",
-      "community": 51,
+      "community": 18,
       "norm_label": "hashset"
     },
     {
@@ -1818,7 +1868,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_cs_timer",
-      "community": 51,
+      "community": 18,
       "norm_label": "timer"
     },
     {
@@ -1828,7 +1878,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_dnscachemonitor_start",
-      "community": 51,
+      "community": 18,
       "norm_label": ".start()"
     },
     {
@@ -1838,7 +1888,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_dnscachemonitor_poll",
-      "community": 51,
+      "community": 18,
       "norm_label": ".poll()"
     },
     {
@@ -1848,7 +1898,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_dnscachemonitor_check",
-      "community": 51,
+      "community": 18,
       "norm_label": ".check()"
     },
     {
@@ -1858,7 +1908,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_dnscachemonitor_isblocked",
-      "community": 51,
+      "community": 18,
       "norm_label": ".isblocked()"
     },
     {
@@ -1868,7 +1918,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "examlockclient_dnscachemonitor_dnscachemonitor_dispose",
-      "community": 51,
+      "community": 18,
       "norm_label": ".dispose()"
     },
     {
@@ -3168,7 +3218,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "examlockclient_processmonitor",
-      "community": 24,
+      "community": 18,
       "norm_label": "processmonitor.cs"
     },
     {
@@ -3178,7 +3228,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "examlockclient_processmonitor_processmonitor",
-      "community": 24,
+      "community": 18,
       "norm_label": "processmonitor"
     },
     {
@@ -3188,7 +3238,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "examlockclient_processmonitor_cs_hashset",
-      "community": 24,
+      "community": 18,
       "norm_label": "hashset"
     },
     {
@@ -3198,7 +3248,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "examlockclient_processmonitor_cs_object",
-      "community": 24,
+      "community": 18,
       "norm_label": "object"
     },
     {
@@ -3208,7 +3258,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "examlockclient_processmonitor_cs_timer",
-      "community": 24,
+      "community": 18,
       "norm_label": "timer"
     },
     {
@@ -3218,7 +3268,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "examlockclient_processmonitor_processmonitor_start",
-      "community": 24,
+      "community": 18,
       "norm_label": ".start()"
     },
     {
@@ -3228,7 +3278,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "examlockclient_processmonitor_processmonitor_poll",
-      "community": 24,
+      "community": 18,
       "norm_label": ".poll()"
     },
     {
@@ -3238,7 +3288,7 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "examlockclient_processmonitor_processmonitor_isallowed",
-      "community": 24,
+      "community": 18,
       "norm_label": ".isallowed()"
     },
     {
@@ -3248,7 +3298,7 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "examlockclient_processmonitor_processmonitor_safeprocessname",
-      "community": 24,
+      "community": 18,
       "norm_label": ".safeprocessname()"
     },
     {
@@ -3258,7 +3308,7 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "examlockclient_processmonitor_cs_process",
-      "community": 24,
+      "community": 18,
       "norm_label": "process"
     },
     {
@@ -3268,7 +3318,7 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "examlockclient_processmonitor_processmonitor_dispose",
-      "community": 24,
+      "community": 18,
       "norm_label": ".dispose()"
     },
     {
@@ -3838,7 +3888,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor",
-      "community": 2,
+      "community": 18,
       "norm_label": "threatprocessmonitor.cs"
     },
     {
@@ -3848,7 +3898,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_threatprocessmonitor",
-      "community": 2,
+      "community": 18,
       "norm_label": "threatprocessmonitor"
     },
     {
@@ -3858,67 +3908,87 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_cs_hashset",
-      "community": 2,
+      "community": 18,
       "norm_label": "hashset"
     },
     {
       "label": "bool",
       "file_type": "code",
       "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
-      "source_location": "L30",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_cs_bool",
-      "community": 2,
+      "community": 18,
       "norm_label": "bool"
     },
     {
       "label": "object",
       "file_type": "code",
       "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
-      "source_location": "L33",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_cs_object",
-      "community": 2,
+      "community": 18,
       "norm_label": "object"
     },
     {
       "label": "Timer",
       "file_type": "code",
       "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
-      "source_location": "L34",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_cs_timer",
-      "community": 2,
+      "community": 18,
       "norm_label": "timer"
     },
     {
       "label": ".Start()",
       "file_type": "code",
       "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
-      "source_location": "L45",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_threatprocessmonitor_start",
-      "community": 2,
+      "community": 18,
       "norm_label": ".start()"
     },
     {
       "label": ".Poll()",
       "file_type": "code",
       "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
-      "source_location": "L57",
+      "source_location": "L50",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_threatprocessmonitor_poll",
-      "community": 2,
+      "community": 18,
       "norm_label": ".poll()"
+    },
+    {
+      "label": ".SafeProcessName()",
+      "file_type": "code",
+      "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
+      "source_location": "L85",
+      "_origin": "ast",
+      "id": "examlockclient_threatprocessmonitor_threatprocessmonitor_safeprocessname",
+      "community": 18,
+      "norm_label": ".safeprocessname()"
+    },
+    {
+      "label": "Process",
+      "file_type": "code",
+      "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
+      "source_location": "L85",
+      "_origin": "ast",
+      "id": "examlockclient_threatprocessmonitor_cs_process",
+      "community": 18,
+      "norm_label": "process"
     },
     {
       "label": ".Dispose()",
       "file_type": "code",
       "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
-      "source_location": "L97",
+      "source_location": "L98",
       "_origin": "ast",
       "id": "examlockclient_threatprocessmonitor_threatprocessmonitor_dispose",
-      "community": 2,
+      "community": 18,
       "norm_label": ".dispose()"
     },
     {
@@ -11562,6 +11632,17 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L203",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "confidence_score": 1.0,
+      "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_isdedicatedaitool",
+      "target": "examlockclient_aiconnectionevidence_processevidence"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
       "source_location": "L127",
       "weight": 1.0,
       "context": "parameter_type",
@@ -11579,6 +11660,46 @@
       "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_trygetprocess",
       "target": "examlockclient_aiconnectionevidence_processevidence"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_aiconnectionevidence_processevidence",
+      "target": "examlockclient_aiconnectionevidence_processevidence_clip"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L260",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_aiconnectionevidence_aiprocessclassifier",
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_isaitoolcommandline"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L203",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_aiconnectionevidence_aiprocessclassifier",
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_isdedicatedaitool"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L214",
+      "weight": 1.0,
+      "source": "examlockclient_aiconnectionevidence_aiprocessclassifier",
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_isdedicatedaitoolprocessname",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -11642,6 +11763,17 @@
       "target": "examlockclient_aiconnectionevidence_cs_hashset"
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L137",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "examlockclient_aiconnectionevidence_aiprocessclassifier",
+      "target": "examlockclient_aiconnectionevidence_cs_string"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -11673,6 +11805,28 @@
       "confidence_score": 1.0,
       "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_trygetprocess",
       "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_safeprocesspath"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L200",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_isstudentfacing",
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_isaitoolcommandline"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/AiConnectionEvidence.cs",
+      "source_location": "L211",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_aiconnectionevidence_aiprocessclassifier_isdedicatedaitool",
+      "target": "examlockclient_aiconnectionevidence_aiprocessclassifier_isaitoolcommandline"
     },
     {
       "relation": "references",
@@ -15417,9 +15571,9 @@
       "source_file": "ExamLockClient/Program.cs",
       "source_location": "L102",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_program_program",
-      "target": "examlockclient_program_program_parsestartupconfigpath",
-      "confidence_score": 1.0
+      "target": "examlockclient_program_program_parsestartupconfigpath"
     },
     {
       "relation": "method",
@@ -15460,9 +15614,9 @@
       "source_file": "ExamLockClient/Program.cs",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "examlockclient_program_program_main",
-      "target": "examlockclient_program_program_parsestartupconfigpath",
-      "confidence_score": 1.0
+      "target": "examlockclient_program_program_parsestartupconfigpath"
     },
     {
       "relation": "calls",
@@ -16246,6 +16400,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_threatprocessmonitor_threatprocessmonitor",
+      "target": "examlockclient_threatprocessmonitor_threatprocessmonitor_safeprocessname"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
       "source_location": "L45",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -16262,6 +16426,28 @@
       "confidence_score": 1.0,
       "source": "examlockclient_threatprocessmonitor_threatprocessmonitor_start",
       "target": "examlockclient_threatprocessmonitor_threatprocessmonitor_poll"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "examlockclient_threatprocessmonitor_threatprocessmonitor_poll",
+      "target": "examlockclient_threatprocessmonitor_threatprocessmonitor_safeprocessname"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ExamLockClient/ThreatProcessMonitor.cs",
+      "source_location": "L83",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "confidence_score": 1.0,
+      "source": "examlockclient_threatprocessmonitor_threatprocessmonitor_safeprocessname",
+      "target": "examlockclient_threatprocessmonitor_cs_process"
     },
     {
       "relation": "contains",
@@ -24224,5 +24410,5 @@
       "source_file": "docs/img/monitor.png"
     }
   ],
-  "built_at_commit": "71430df0797c691660818b3185898d00a33484e2"
+  "built_at_commit": "0d82cde7032c393cddff880a15c14920248c13ec"
 }

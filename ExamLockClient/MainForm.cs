@@ -695,7 +695,7 @@ public sealed class MainForm : Form
         SetStatus(Lang.T("wifiRestored"));
     }
 
-    // Password A restores internet so students can open the browser and upload the exam.
+    // The restore Wi-Fi password restores internet so students can open the browser and upload the exam.
     // From here, normal browsing touches files outside the exam folder, so folder checking
     // would only produce false alarms: stop it and silence the alarm. The AI/VM shield stays
     // active and will sound again if a new AI connection or tool appears.

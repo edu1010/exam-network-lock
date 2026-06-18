@@ -1,16 +1,16 @@
 # Graph Report - exam-network-lock  (2026-06-19)
 
 ## Corpus Check
-- 56 files · ~42,996 words
+- 56 files · ~43,247 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 911 nodes · 1353 edges · 61 communities (52 shown, 9 thin omitted)
+- 918 nodes · 1364 edges · 59 communities (50 shown, 9 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `71430df0`
+- Built from commit: `0d82cde7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -39,7 +39,6 @@
 - [[_COMMUNITY_Exam Integrity Config Student|Exam Integrity Config Student]]
 - [[_COMMUNITY_Flags Bitmap Graphics Language|Flags Bitmap Graphics Language]]
 - [[_COMMUNITY_Flags Bitmap Graphics Language|Flags Bitmap Graphics Language]]
-- [[_COMMUNITY_Process Monitor Hash Object|Process Monitor Hash Object]]
 - [[_COMMUNITY_Style Theme Color Font|Style Theme Color Font]]
 - [[_COMMUNITY_Flags Bitmap Graphics Language|Flags Bitmap Graphics Language]]
 - [[_COMMUNITY_Style Theme Combo Grid|Style Theme Combo Grid]]
@@ -66,7 +65,6 @@
 - [[_COMMUNITY_Community 48|Community 48]]
 - [[_COMMUNITY_Community 49|Community 49]]
 - [[_COMMUNITY_Community 50|Community 50]]
-- [[_COMMUNITY_Community 51|Community 51]]
 - [[_COMMUNITY_Community 53|Community 53]]
 - [[_COMMUNITY_Community 56|Community 56]]
 - [[_COMMUNITY_Community 57|Community 57]]
@@ -117,7 +115,7 @@
 - **Student Status Snapshot** — img_monitor_student_identity, img_monitor_exam_status_ok, img_monitor_exam_in_progress_event, img_monitor_event_count, img_monitor_integrity_ok, img_monitor_last_seen_recent [EXTRACTED 1.00]
 - **Exam Monitor Operator Controls** — img_monitor_load_config_button, img_monitor_save_logs_button, img_monitor_language_selector_flags [EXTRACTED 1.00]
 
-## Communities (61 total, 9 thin omitted)
+## Communities (59 total, 9 thin omitted)
 
 ### Community 0 - "Build Left Filter Log"
 Cohesion: 0.07
@@ -128,8 +126,8 @@ Cohesion: 0.06
 Nodes (27): AiConnectionMonitor, AudioAlerter, ConfigPayload, DnsCacheMonitor, Action, AiConnectionEvidence, bool, Button (+19 more)
 
 ### Community 2 - "Monitor Dispose Start Log"
-Cohesion: 0.06
-Nodes (24): bool, HashSet, object, Timer, ThreatProcessMonitor, bool, IEnumerable, int (+16 more)
+Cohesion: 0.08
+Nodes (18): bool, IEnumerable, int, IPAddress, JsonSerializerOptions, LogEntry, T, Task (+10 more)
 
 ### Community 3 - "Volume Level Audio Channel"
 Cohesion: 0.08
@@ -192,8 +190,8 @@ Cohesion: 0.22
 Nodes (7): AiConnectionMonitor, AiConnectionEvidence, HashSet, IPAddress, object, string, Timer
 
 ### Community 18 - "Monitor Reporter Log List"
-Cohesion: 0.18
-Nodes (7): int, List, LogEntry, string, Timer, MonitorReporter, MonitorBroadcaster
+Cohesion: 0.05
+Nodes (23): HashSet, string, Timer, DnsCacheMonitor, int, List, LogEntry, string (+15 more)
 
 ### Community 19 - "Catalog Row Severity Color"
 Cohesion: 0.24
@@ -214,10 +212,6 @@ Nodes (5): Bitmap, Graphics, int, Language, Flags
 ### Community 23 - "Flags Bitmap Graphics Language"
 Cohesion: 0.36
 Nodes (5): Bitmap, Graphics, int, Language, Flags
-
-### Community 24 - "Process Monitor Hash Object"
-Cohesion: 0.24
-Nodes (5): HashSet, object, Process, Timer, ProcessMonitor
 
 ### Community 25 - "Style Theme Color Font"
 Cohesion: 0.20
@@ -300,12 +294,8 @@ Cohesion: 0.14
 Nodes (14): App del alumno — ExamLockClient, App del profesor — ExamConfigGenerator, Archivos en tiempo de ejecución, Build, Castellano, Cómo funciona, Ejecutar, La detección de IA es una red de seguridad (+6 more)
 
 ### Community 50 - "Community 50"
-Cohesion: 0.26
-Nodes (5): AiConnectionEvidence, AiProcessClassifier, HashSet, Process, ProcessEvidence
-
-### Community 51 - "Community 51"
-Cohesion: 0.27
-Nodes (4): HashSet, string, Timer, DnsCacheMonitor
+Cohesion: 0.18
+Nodes (6): AiConnectionEvidence, AiProcessClassifier, HashSet, Process, string, ProcessEvidence
 
 ### Community 53 - "Community 53"
 Cohesion: 0.22
@@ -328,7 +318,7 @@ Cohesion: 0.50
 Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphify reference: incremental update and cluster-only
 
 ## Knowledge Gaps
-- **308 isolated node(s):** `net8.0-windows`, `Microsoft.NET.Sdk`, `Language`, `int`, `Graphics` (+303 more)
+- **310 isolated node(s):** `net8.0-windows`, `Microsoft.NET.Sdk`, `Language`, `int`, `Graphics` (+305 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -342,10 +332,10 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `MainForm` connect `Box Combo List Add` to `Load Config Color Grid`?**
   _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **What connects `net8.0-windows`, `Microsoft.NET.Sdk`, `Language` to the rest of the system?**
-  _312 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _314 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Build Left Filter Log` be split into smaller, more focused modules?**
   _Cohesion score 0.07494824016563147 - nodes in this community are weakly interconnected._
 - **Should `Monitor Config Service Shield` be split into smaller, more focused modules?**
   _Cohesion score 0.062003968253968256 - nodes in this community are weakly interconnected._
 - **Should `Monitor Dispose Start Log` be split into smaller, more focused modules?**
-  _Cohesion score 0.06090808416389812 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08143939393939394 - nodes in this community are weakly interconnected._

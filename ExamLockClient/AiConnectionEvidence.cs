@@ -66,6 +66,29 @@ internal sealed class ProcessEvidence
     public required string ProcessName { get; init; }
     public string? ProcessPath { get; init; }
     public string? CommandLine { get; init; }
+
+    public string Summary
+    {
+        get
+        {
+            var sb = new StringBuilder();
+            sb.Append(ProcessName);
+            if (!string.IsNullOrWhiteSpace(ProcessPath))
+            {
+                sb.Append(" | ").Append(ProcessPath);
+            }
+
+            if (!string.IsNullOrWhiteSpace(CommandLine))
+            {
+                sb.Append(" | cmd: ").Append(Clip(CommandLine, 300));
+            }
+
+            return sb.ToString();
+        }
+    }
+
+    private static string Clip(string value, int max) =>
+        value.Length <= max ? value : value[..max] + "...";
 }
 
 internal static class AiProcessClassifier
@@ -94,9 +117,51 @@ internal static class AiProcessClassifier
         "powershell.exe", "pwsh.exe", "cmd.exe", "curl.exe", "wget.exe",
 
         // Dedicated AI tools.
-        "claude.exe", "chatgpt.exe", "copilot.exe", "ollama.exe",
+        "codex.exe", "codex-cli.exe", "claude.exe", "claude-code.exe",
+        "chatgpt.exe", "copilot.exe", "gemini.exe", "qwen.exe",
+        "aider.exe", "goose.exe", "ollama.exe",
         "lmstudio.exe", "jan.exe", "gpt4all.exe", "msty.exe",
         "lobehub.exe", "anythingllm.exe"
+    };
+
+    private static readonly HashSet<string> DedicatedAiToolProcesses = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "codex.exe", "codex-cli.exe", "claude.exe", "claude-code.exe",
+        "chatgpt.exe", "copilot.exe", "gemini.exe", "qwen.exe",
+        "aider.exe", "goose.exe", "ollama.exe", "ollama app.exe",
+        "lmstudio.exe", "jan.exe", "gpt4all.exe", "msty.exe",
+        "lobehub.exe", "anythingllm.exe", "cursor.exe", "windsurf.exe",
+        "tabnine.exe", "codeium.exe"
+    };
+
+    private static readonly string[] AiToolCommandMarkers =
+    {
+        "@openai/codex",
+        "openai-codex",
+        "codex-cli",
+        " codex ",
+        "\\codex",
+        "/codex",
+        "@anthropic-ai/claude-code",
+        "@anthropic-ai\\claude-code",
+        "claude-code",
+        " claude ",
+        "\\claude",
+        "/claude",
+        "@google/gemini-cli",
+        "gemini-cli",
+        " qwen ",
+        "qwen-code",
+        " aider ",
+        "\\aider",
+        "/aider",
+        " goose ",
+        "\\goose",
+        "/goose",
+        "cursor-agent",
+        "continue-agent",
+        "githubcopilot",
+        "copilot-chat"
     };
 
     public static ProcessEvidence? TryGetProcess(int processId)
@@ -131,8 +196,23 @@ internal static class AiProcessClassifier
             return false;
         }
 
-        return StudentFacingProcesses.Contains(evidence.ProcessName);
+        return StudentFacingProcesses.Contains(evidence.ProcessName) ||
+               IsAiToolCommandLine(evidence.CommandLine);
     }
+
+    public static bool IsDedicatedAiTool(ProcessEvidence? evidence)
+    {
+        if (evidence is null)
+        {
+            return false;
+        }
+
+        return DedicatedAiToolProcesses.Contains(evidence.ProcessName) ||
+               IsAiToolCommandLine(evidence.CommandLine);
+    }
+
+    public static bool IsDedicatedAiToolProcessName(string? processName) =>
+        !string.IsNullOrWhiteSpace(processName) && DedicatedAiToolProcesses.Contains(processName);
 
     private static string SafeProcessName(Process process)
     {
@@ -178,5 +258,20 @@ internal static class AiProcessClassifier
         }
 
         return null;
+    }
+
+    private static bool IsAiToolCommandLine(string? commandLine)
+    {
+        if (string.IsNullOrWhiteSpace(commandLine))
+        {
+            return false;
+        }
+
+        var normalized = " " + commandLine
+            .Replace('"', ' ')
+            .Replace('\'', ' ')
+            .ToLowerInvariant() + " ";
+
+        return AiToolCommandMarkers.Any(normalized.Contains);
     }
 }

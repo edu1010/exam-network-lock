@@ -5,21 +5,14 @@ namespace ExamLockClient;
 /// <summary>
 /// Flags two kinds of bypass attempts by process name (deterrent only, never kills):
 ///  - AI desktop/IDE tools (Cursor, Windsurf, the ChatGPT/Claude desktop apps, local LLMs…).
-///    CLI agents like Codex or Claude Code run as node.exe and are caught by the network/DNS
-///    monitors instead.
+///    CLI agents like Codex or Claude Code often run under node.exe/cmd.exe/powershell.exe,
+///    so their command line is inspected when Windows exposes it.
 ///  - Virtual machines / hypervisors (VirtualBox, VMware, Hyper-V worker, QEMU). A VM is a
 ///    common way to escape the lock; the host cannot see inside it, so the presence of the VM
 ///    itself is the signal.
 /// </summary>
 public sealed class ThreatProcessMonitor : IDisposable
 {
-    private static readonly HashSet<string> AiToolProcesses = new(StringComparer.OrdinalIgnoreCase)
-    {
-        "cursor.exe", "windsurf.exe", "claude.exe", "chatgpt.exe", "copilot.exe",
-        "ollama.exe", "ollama app.exe", "lmstudio.exe", "jan.exe", "gpt4all.exe",
-        "msty.exe", "lobehub.exe", "anythingllm.exe"
-    };
-
     private static readonly HashSet<string> VmProcesses = new(StringComparer.OrdinalIgnoreCase)
     {
         "vboxheadless.exe", "virtualbox.exe", "virtualboxvm.exe", "vboxsvc.exe",
@@ -68,19 +61,14 @@ public sealed class ThreatProcessMonitor : IDisposable
                     }
                 }
 
-                string exe;
-                try
-                {
-                    exe = p.ProcessName + ".exe";
-                }
-                catch
-                {
-                    continue;
-                }
+                var evidence = AiProcessClassifier.TryGetProcess(p.Id);
+                var exe = evidence?.ProcessName ?? SafeProcessName(p);
 
-                if (_detectAiTools && AiToolProcesses.Contains(exe))
+                if (_detectAiTools &&
+                    (AiProcessClassifier.IsDedicatedAiTool(evidence) ||
+                     AiProcessClassifier.IsDedicatedAiToolProcessName(exe)))
                 {
-                    AiToolDetected?.Invoke(exe);
+                    AiToolDetected?.Invoke(evidence?.Summary ?? exe);
                 }
                 else if (_detectVms && VmProcesses.Contains(exe))
                 {
@@ -91,6 +79,19 @@ public sealed class ThreatProcessMonitor : IDisposable
         catch
         {
             // Ignore transient enumeration errors.
+        }
+    }
+
+    private static string SafeProcessName(Process process)
+    {
+        try
+        {
+            var name = process.ProcessName;
+            return name.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) ? name : name + ".exe";
+        }
+        catch
+        {
+            return "unknown.exe";
         }
     }
 

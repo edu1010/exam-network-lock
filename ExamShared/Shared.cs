@@ -9,12 +9,12 @@ public sealed class ConfigPayload
 {
     public int Version { get; init; } = 2;
 
-    // Password A ("Restore Wi-Fi"): re-enables radios. Existing fields.
+    // Restore Wi-Fi password: re-enables radios. Existing fields.
     public string SaltBase64 { get; init; } = "";
     public int Iterations { get; init; }
     public string PasswordHashBase64 { get; init; } = "";
 
-    // Password B ("Close / Admin"): silences the shield and allows closing.
+    // Close program password: silences the shield and allows closing.
     public string AdminSaltBase64 { get; init; } = "";
     public string AdminPasswordHashBase64 { get; init; } = "";
 

@@ -15,8 +15,8 @@
     "semantic_hash": "67f283a68f3b67fced3fafc25b33760d"
   },
   "ExamConfigGenerator/Lang.cs": {
-    "mtime": 1781820275.0745602,
-    "ast_hash": "325b5967596568b55abc26423a36fc66",
+    "mtime": 1781824426.8660586,
+    "ast_hash": "749b8f1db3f4787a91543f644783d0b6",
     "semantic_hash": ""
   },
   "ExamConfigGenerator/MainForm.cs": {
@@ -65,13 +65,13 @@
     "semantic_hash": "f672f30e3c3a6c90acce90c877a47db5"
   },
   "ExamLockClient/Lang.cs": {
-    "mtime": 1781823360.3822412,
-    "ast_hash": "ecd92dd0993bf270613fb7c25577f9fb",
+    "mtime": 1781824438.8134778,
+    "ast_hash": "a77063e1f6bc371e9c45459188d75dcc",
     "semantic_hash": ""
   },
   "ExamLockClient/MainForm.cs": {
-    "mtime": 1781823332.6236558,
-    "ast_hash": "b588f895b92551224f18ba22cdb4dbb1",
+    "mtime": 1781824444.560249,
+    "ast_hash": "3e8bf6141c305d51fbfcf3cc5ebeb9ef",
     "semantic_hash": ""
   },
   "ExamLockClient/MonitorReporter.cs": {
@@ -90,8 +90,8 @@
     "semantic_hash": "65e7192e6af5c0614fe051c0732d9dc8"
   },
   "ExamLockClient/Program.cs": {
-    "mtime": 1781823312.9879382,
-    "ast_hash": "23f3e1bf83a9a5d517dd04ee607e617d",
+    "mtime": 1781823414.974208,
+    "ast_hash": "c5ba72272a99773406ca976785b56bba",
     "semantic_hash": ""
   },
   "ExamLockClient/RadioService.cs": {
@@ -110,9 +110,9 @@
     "semantic_hash": "44f96c248fb2b3b573e4db99e5e7e5b8"
   },
   "ExamLockClient/ThreatProcessMonitor.cs": {
-    "mtime": 1781811542.0833542,
-    "ast_hash": "0e07f20eb62c0952d4c03c047ad734c1",
-    "semantic_hash": "0e07f20eb62c0952d4c03c047ad734c1"
+    "mtime": 1781824798.713366,
+    "ast_hash": "b4e47814bb04cfaa4c6ed9e354b49cd0",
+    "semantic_hash": ""
   },
   "ExamLocking.sln": {
     "mtime": 1781811542.0854504,
@@ -210,8 +210,8 @@
     "semantic_hash": ""
   },
   "ExamShared/Shared.cs": {
-    "mtime": 1781818596.1076741,
-    "ast_hash": "cc076c066706f7ac64c5f11c899e5c3e",
+    "mtime": 1781824452.621021,
+    "ast_hash": "18e2601f37e87c0a5db6670fb37c94dd",
     "semantic_hash": ""
   },
   ".codex/skills/graphify/SKILL.md": {
@@ -265,8 +265,8 @@
     "semantic_hash": "752aa83aa64361ac32860f882dcff932"
   },
   "README.md": {
-    "mtime": 1781818714.8191824,
-    "ast_hash": "f301ba89c2aaca415aed5590cb4cf107",
+    "mtime": 1781824467.0685651,
+    "ast_hash": "b7a046ef4c1934a2609e5b39bc5546b8",
     "semantic_hash": ""
   },
   "docs/img/client.png": {
@@ -290,8 +290,8 @@
     "semantic_hash": "ee331d117827618a639707567017179b"
   },
   "ExamLockClient/AiConnectionEvidence.cs": {
-    "mtime": 1781815993.614015,
-    "ast_hash": "30c1e9404dc1c801c52842e04776ef89",
+    "mtime": 1781824740.492542,
+    "ast_hash": "7fe4f3f7d00f28e651902ccd93fda46e",
     "semantic_hash": ""
   },
   "ExamLockClient/TcpConnectionOwnerTable.cs": {

@@ -38,10 +38,10 @@ internal static class Lang
         ["secApps"] = new[] { "Allowed programs", "Programes permesos", "Programas permitidos" },
         ["secFiles"] = new[] { "Files and work folder", "Fitxers i carpeta de treball", "Archivos y carpeta de trabajo" },
 
-        ["pwdA"] = new[] { "Password A — Restore Wi-Fi", "Contrasenya A — Restaurar Wi-Fi", "Contraseña A — Restaurar Wi-Fi" },
-        ["pwdAc"] = new[] { "Confirm password A", "Confirmar contrasenya A", "Confirmar contraseña A" },
-        ["pwdB"] = new[] { "Password B — Close / Admin", "Contrasenya B — Tancar / Admin", "Contraseña B — Cerrar / Admin" },
-        ["pwdBc"] = new[] { "Confirm password B", "Confirmar contrasenya B", "Confirmar contraseña B" },
+        ["pwdA"] = new[] { "Password to restore Wi-Fi", "Contrasenya per restaurar Wi-Fi", "Contraseña para restaurar Wi-Fi" },
+        ["pwdAc"] = new[] { "Confirm restore Wi-Fi password", "Confirmar contrasenya per restaurar Wi-Fi", "Confirmar contraseña para restaurar Wi-Fi" },
+        ["pwdB"] = new[] { "Password to close the program", "Contrasenya per tancar el programa", "Contraseña para cerrar el programa" },
+        ["pwdBc"] = new[] { "Confirm close-program password", "Confirmar contrasenya per tancar el programa", "Confirmar contraseña para cerrar el programa" },
 
         ["chkWifi"] = new[] { "Disable Wi-Fi on start (best-effort)", "Desactivar Wi-Fi en iniciar (best-effort)", "Desactivar Wi-Fi al iniciar (best-effort)" },
         ["chkBt"] = new[] { "Disable Bluetooth on start", "Desactivar Bluetooth en iniciar", "Desactivar Bluetooth al iniciar" },
@@ -83,9 +83,9 @@ internal static class Lang
         ["allDocuments"] = new[] { "(the whole Documents folder)", "(tota la carpeta de Documents)", "(toda la carpeta de Documentos)" },
 
         ["valBothPwd"] = new[] { "Both passwords are required.", "Les dues contrasenyes són obligatòries.", "Las dos contraseñas son obligatorias." },
-        ["valConfirmA"] = new[] { "Password A does not match its confirmation.", "La contrasenya A no coincideix amb la confirmació.", "La contraseña A no coincide con su confirmación." },
-        ["valConfirmB"] = new[] { "Password B does not match its confirmation.", "La contrasenya B no coincideix amb la confirmació.", "La contraseña B no coincide con su confirmación." },
-        ["valDistinct"] = new[] { "Passwords A and B must be different.", "Les contrasenyes A i B han de ser diferents.", "Las contraseñas A y B deben ser distintas." },
+        ["valConfirmA"] = new[] { "The restore Wi-Fi password does not match its confirmation.", "La contrasenya per restaurar Wi-Fi no coincideix amb la confirmació.", "La contraseña para restaurar Wi-Fi no coincide con su confirmación." },
+        ["valConfirmB"] = new[] { "The close-program password does not match its confirmation.", "La contrasenya per tancar el programa no coincideix amb la confirmació.", "La contraseña para cerrar el programa no coincide con su confirmación." },
+        ["valDistinct"] = new[] { "The two passwords must be different.", "Les dues contrasenyes han de ser diferents.", "Las dos contraseñas deben ser distintas." },
         ["valFixedPath"] = new[] { "For 'Fixed path' you must enter the folder path.", "Per a 'Ruta fixa' has d'indicar la ruta de la carpeta.", "Para 'Ruta fija' debes indicar la ruta de la carpeta." },
         ["valCurrentIp"] = new[] { "No active IPv4 address was found.", "No s'ha trobat cap adreca IPv4 activa.", "No se ha encontrado ninguna direccion IPv4 activa." },
         ["statusGen"] = new[] { "Configuration generated: {0}", "Configuració generada: {0}", "Configuración generada: {0}" },
