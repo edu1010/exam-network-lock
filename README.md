@@ -134,6 +134,47 @@ WinRT Radios API (Bluetooth).
 dotnet build .\ExamLocking.sln
 ```
 
+### Linux / cross-platform client — ExamLockClient.App
+
+`ExamLockClient` is Windows-only (WinForms + WinRT). For students working on Linux there is a
+second, **cross-platform** client, `ExamLockClient.App`, built with [Avalonia](https://avaloniaui.net/).
+It speaks the exact same `exam.config` format and the same UDP monitor protocol (both live in the
+shared `ExamShared` project), so it is fully interoperable with the Windows `ExamConfigGenerator`,
+`ExamMonitor` and `ExamLogVerifier` — a class can mix Windows and Linux laptops freely.
+
+Layout:
+
+- `ExamLockClient.Core` — platform abstraction (`IPlatform`) plus the Windows and Linux backends
+  and all the monitoring logic (AI connection shield, DNS, process/VM/file monitors). No UI, so it
+  builds and can be reasoned about on its own.
+- `ExamLockClient.App` — the Avalonia UI (the drawn shield, incident list, passwords) wiring `Core`.
+
+Per-OS equivalents the Linux backend uses (vs. the Windows client):
+
+| Concern            | Windows                         | Linux                                  |
+| ------------------ | ------------------------------- | -------------------------------------- |
+| Disable Wi-Fi / BT | `netsh` / WinRT Radios          | `nmcli radio wifi off` / `rfkill`      |
+| Elevation          | UAC (`runas`)                   | `pkexec`                               |
+| TCP → owning pid   | IP Helper `GetExtendedTcpTable` | `/proc/net/tcp{,6}` + `/proc/<pid>/fd` |
+| Process detail     | WMI `Win32_Process`             | `/proc/<pid>/{comm,cmdline,exe}`       |
+| DNS cache          | WMI `MSFT_DNSClientCache`       | (no enumerable cache — TCP shield only)|
+| VM detection       | process names                   | process names (VirtualBox/QEMU/Boxes…) |
+| Alarm audio        | `Console.Beep` + Core Audio     | generated WAV via `paplay` + `pactl`   |
+
+Build / publish a self-contained Linux binary (no .NET needed on the lab machine):
+
+```bash
+dotnet publish ./ExamLockClient.App/ExamLockClient.App.csproj -c Release -r linux-x64 --self-contained
+# output: ExamLockClient.App/bin/Release/net8.0/linux-x64/publish/ExamLockClient.App
+```
+
+The same project also builds for Windows (`-r win-x64`). On the lab machine make the file executable
+(`chmod +x ExamLockClient.App`) and run it; it auto-loads `exam.config` from its folder or you can
+pick one. Radio lockdown needs root, so it offers a **Reopen as admin** button (pkexec); even without
+it the AI connection shield keeps working. Audio alarms need PulseAudio/PipeWire tools (`paplay`,
+`pactl`) and Wi-Fi toggling needs NetworkManager (`nmcli`) or `rfkill` — all standard on desktop
+distros.
+
 ### Run
 
 1. Open `ExamConfigGenerator`, fill in the options and generate `exam.config`.

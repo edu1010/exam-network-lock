@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Cross-platform core: the platform abstraction, the Windows/Linux backends and all the
+       monitoring logic. No UI here, so it builds and can be reasoned about on its own. The
+       Avalonia client (ExamLockClient.App) references this. -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExamShared\ExamShared.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- WMI is Windows-only; every call is guarded by OperatingSystem.IsWindows(). On Linux the
+         package is simply never invoked. -->
+    <PackageReference Include="System.Management" Version="8.0.0" />
+  </ItemGroup>
+</Project>

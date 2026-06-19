@@ -21,6 +21,7 @@ Thumbs.db
 # Publish output
 publish/
 dist/
+dist-linux/
 
 # Logs
 *.log
