@@ -1,7 +1,7 @@
 # Graph Report - exam-network-lock  (2026-09-07)
 
 ## Corpus Check
-- 57 files · ~44,785 words
+- 57 files · ~44,759 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -91,17 +91,17 @@
 - None detected.
 
 ## Hyperedges (group relationships)
-- **Exam Locking Evidence Workflow** — readme_examconfiggenerator, readme_examlockclient, readme_examshared, readme_examlogverifier, readme_exammonitor, readme_tamper_evident_log [EXTRACTED 1.00]
 - **Graphify Default Pipeline** — codex_skills_graphify_skill_file_detection, codex_skills_graphify_skill_ast_extraction, codex_skills_graphify_skill_semantic_extraction, codex_skills_graphify_skill_graph_build_cluster_analysis, codex_skills_graphify_skill_html_export, codex_skills_graphify_skill_manifest_cost_cleanup [EXTRACTED 1.00]
-- **Control Panel Actions** — docs_img_client_wifi_password_input, docs_img_client_close_password_input, docs_img_client_restore_wifi_button, docs_img_client_close_program_button, docs_img_client_load_config_button [EXTRACTED 1.00]
-- **Folder Scope Configuration** — docs_img_generator_bottom_folder_restriction, docs_img_generator_bottom_base_folder_exam_config, docs_img_generator_bottom_optional_subfolder, docs_img_generator_bottom_browse_subfolder [EXTRACTED 1.00]
-- **AI Provider Domain Set** — docs_img_generator_top_claude_ai_domain, docs_img_generator_top_anthropic_domain, docs_img_generator_top_openai_domain, docs_img_generator_top_chatgpt_domain, docs_img_generator_top_oaistatic_domain, docs_img_generator_top_gemini_domain, docs_img_generator_top_bard_domain [EXTRACTED 1.00]
-- **Exam Configuration Form Sections** — docs_img_generator_top_password_configuration, docs_img_generator_top_network_startup_controls, docs_img_generator_top_anti_ai_shield, docs_img_generator_top_generate_configuration_action [EXTRACTED 1.00]
-- **Exam Monitor Operator Controls** — docs_img_monitor_load_config_button, docs_img_monitor_save_logs_button, docs_img_monitor_language_selector_flags [EXTRACTED 1.00]
-- **Student Status Snapshot** — docs_img_monitor_student_identity, docs_img_monitor_exam_status_ok, docs_img_monitor_exam_in_progress_event, docs_img_monitor_event_count, docs_img_monitor_integrity_ok, docs_img_monitor_last_seen_recent [EXTRACTED 1.00]
 - **Graphify Query Navigation** — agents_query_first_rule, codex_skills_graphify_references_query_constrained_query_expansion, codex_skills_graphify_references_query_bfs_traversal, codex_skills_graphify_references_query_dfs_traversal, codex_skills_graphify_references_query_save_result_feedback, codex_skills_graphify_references_query_networkx_fallback [INFERRED 0.85]
-- **Restriction Inputs** — docs_img_generator_bottom_allowed_site_bard_google_com, docs_img_generator_bottom_allowed_executables, docs_img_generator_bottom_allowed_extensions, docs_img_generator_bottom_folder_restriction [INFERRED 0.85]
+- **Exam Locking Evidence Workflow** — readme_examconfiggenerator, readme_examlockclient, readme_examshared, readme_examlogverifier, readme_exammonitor, readme_tamper_evident_log [EXTRACTED 1.00]
 - **Exam Protection State Indicators** — docs_img_client_green_shield_check, docs_img_client_protected_status, docs_img_client_active_exam_message, docs_img_client_lock_started_event [INFERRED 0.95]
+- **Control Panel Actions** — docs_img_client_wifi_password_input, docs_img_client_close_password_input, docs_img_client_restore_wifi_button, docs_img_client_close_program_button, docs_img_client_load_config_button [EXTRACTED 1.00]
+- **Restriction Inputs** — docs_img_generator_bottom_allowed_site_bard_google_com, docs_img_generator_bottom_allowed_executables, docs_img_generator_bottom_allowed_extensions, docs_img_generator_bottom_folder_restriction [INFERRED 0.85]
+- **Folder Scope Configuration** — docs_img_generator_bottom_folder_restriction, docs_img_generator_bottom_base_folder_exam_config, docs_img_generator_bottom_optional_subfolder, docs_img_generator_bottom_browse_subfolder [EXTRACTED 1.00]
+- **Exam Configuration Form Sections** — docs_img_generator_top_password_configuration, docs_img_generator_top_network_startup_controls, docs_img_generator_top_anti_ai_shield, docs_img_generator_top_generate_configuration_action [EXTRACTED 1.00]
+- **AI Provider Domain Set** — docs_img_generator_top_claude_ai_domain, docs_img_generator_top_anthropic_domain, docs_img_generator_top_openai_domain, docs_img_generator_top_chatgpt_domain, docs_img_generator_top_oaistatic_domain, docs_img_generator_top_gemini_domain, docs_img_generator_top_bard_domain [EXTRACTED 1.00]
+- **Student Status Snapshot** — docs_img_monitor_student_identity, docs_img_monitor_exam_status_ok, docs_img_monitor_exam_in_progress_event, docs_img_monitor_event_count, docs_img_monitor_integrity_ok, docs_img_monitor_last_seen_recent [EXTRACTED 1.00]
+- **Exam Monitor Operator Controls** — docs_img_monitor_load_config_button, docs_img_monitor_save_logs_button, docs_img_monitor_language_selector_flags [EXTRACTED 1.00]
 
 ## Communities (47 total, 6 thin omitted)
 

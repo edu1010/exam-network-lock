@@ -22,6 +22,7 @@ public sealed class MainForm : Form
     private readonly Button _loadConfigButton;
     private readonly Button _adminRelaunchButton;
     private readonly List<Button> _flagButtons = new();
+    private readonly ToolTip _help = new() { AutoPopDelay = 15000, InitialDelay = 400, ReshowDelay = 100, ShowAlways = true };
 
     private ConfigPayload? _config;
     private SecureLogService? _log;
@@ -55,11 +56,14 @@ public sealed class MainForm : Form
 
     public MainForm()
     {
-        Width = 600;
-        Height = 720;
+        Width = 680;
+        Height = 800;
         StartPosition = FormStartPosition.CenterScreen;
         FormBorderStyle = FormBorderStyle.Sizable;
-        MinimumSize = new Size(560, 620);
+        MinimumSize = new Size(560, 600);
+        AutoScaleDimensions = new SizeF(96, 96);
+        AutoScaleMode = AutoScaleMode.Dpi;
+        FormClosed += (_, _) => _help.Dispose();
         MaximizeBox = true;
         MinimizeBox = true;
         BackColor = Theme.Background;
@@ -75,26 +79,28 @@ public sealed class MainForm : Form
             BackColor = Theme.Background
         };
         layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));  // language bar
-        layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 210)); // shield
-        layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 64));  // info card
-        layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));  // incidents
-        layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 132)); // controls card
+        layout.RowStyles.Add(new RowStyle(SizeType.Percent, 45));  // shield
+        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));     // info card
+        layout.RowStyles.Add(new RowStyle(SizeType.Percent, 55));   // incidents
+        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));     // controls card
         layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 26));  // status
 
         layout.Controls.Add(BuildLanguageBar(), 0, 0);
 
-        _shield = new ShieldControl { Dock = DockStyle.Fill };
+        _shield = new ShieldControl { Dock = DockStyle.Fill, MinimumSize = new Size(0, 100) };
         layout.Controls.Add(_shield, 0, 1);
 
         // --- Info card: config path + radios ---
         var infoCard = Theme.Card();
         infoCard.Dock = DockStyle.Fill;
-        var infoGrid = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 2, RowCount = 2, BackColor = Theme.Surface };
-        infoGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 70));
+        infoCard.AutoSize = true;
+        var infoGrid = new TableLayoutPanel { Dock = DockStyle.Top, AutoSize = true, ColumnCount = 2, RowCount = 2, BackColor = Theme.Surface };
+        infoGrid.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
         infoGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
         _configTitleLabel = MutedLabel("");
         infoGrid.Controls.Add(_configTitleLabel, 0, 0);
         _configPathLabel = ValueLabel("");
+        _configPathLabel.MouseEnter += ShowConfigPathHelp;
         infoGrid.Controls.Add(_configPathLabel, 1, 0);
         _radiosTitleLabel = MutedLabel("");
         infoGrid.Controls.Add(_radiosTitleLabel, 0, 1);
@@ -106,10 +112,11 @@ public sealed class MainForm : Form
         // --- Incidents ---
         var incidentsCard = Theme.Card();
         incidentsCard.Dock = DockStyle.Fill;
+        incidentsCard.MinimumSize = new Size(0, 100);
         var incidentsLayout = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 2, BackColor = Theme.Surface };
-        incidentsLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 22));
+        incidentsLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         incidentsLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-        _incidentsTitleLabel = new Label { Text = "", Dock = DockStyle.Fill, Font = Theme.Heading, ForeColor = Theme.Text };
+        _incidentsTitleLabel = new Label { Text = "", AutoSize = true, Dock = DockStyle.Fill, Font = Theme.Heading, ForeColor = Theme.Text };
         incidentsLayout.Controls.Add(_incidentsTitleLabel, 0, 0);
         _incidentList = new ListBox
         {
@@ -127,44 +134,43 @@ public sealed class MainForm : Form
         // --- Controls card: passwords + load ---
         var controlsCard = Theme.Card();
         controlsCard.Dock = DockStyle.Fill;
-        var controls = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 3, RowCount = 3, BackColor = Theme.Surface };
-        controls.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150));
+        controlsCard.AutoSize = true;
+        var controls = new TableLayoutPanel { Dock = DockStyle.Top, AutoSize = true, ColumnCount = 2, RowCount = 5, BackColor = Theme.Surface };
         controls.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
-        controls.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150));
-        controls.RowStyles.Add(new RowStyle(SizeType.Absolute, 34));
-        controls.RowStyles.Add(new RowStyle(SizeType.Absolute, 34));
-        controls.RowStyles.Add(new RowStyle(SizeType.Absolute, 34));
+        controls.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+        for (var row = 0; row < 5; row++) controls.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
         _pwdALabel = MutedLabel("");
         controls.Controls.Add(_pwdALabel, 0, 0);
+        controls.SetColumnSpan(_pwdALabel, 2);
         _restorePasswordBox = new TextBox { UseSystemPasswordChar = true, Dock = DockStyle.Fill, Margin = new Padding(0, 3, 8, 3) };
         Theme.StyleInput(_restorePasswordBox);
-        controls.Controls.Add(_restorePasswordBox, 1, 0);
+        controls.Controls.Add(_restorePasswordBox, 0, 1);
         _restoreButton = new Button { Dock = DockStyle.Fill, Margin = new Padding(0, 2, 0, 2) };
         Theme.StyleSecondary(_restoreButton);
         _restoreButton.Click += (_, _) => AttemptRestoreWifi();
-        controls.Controls.Add(_restoreButton, 2, 0);
+        controls.Controls.Add(_restoreButton, 1, 1);
 
         _pwdBLabel = MutedLabel("");
-        controls.Controls.Add(_pwdBLabel, 0, 1);
+        controls.Controls.Add(_pwdBLabel, 0, 2);
+        controls.SetColumnSpan(_pwdBLabel, 2);
         _adminPasswordBox = new TextBox { UseSystemPasswordChar = true, Dock = DockStyle.Fill, Margin = new Padding(0, 3, 8, 3) };
         Theme.StyleInput(_adminPasswordBox);
-        controls.Controls.Add(_adminPasswordBox, 1, 1);
+        controls.Controls.Add(_adminPasswordBox, 0, 3);
         _adminButton = new Button { Dock = DockStyle.Fill, Margin = new Padding(0, 2, 0, 2) };
         Theme.StylePrimary(_adminButton);
         _adminButton.Click += (_, _) => AttemptAdminClose();
-        controls.Controls.Add(_adminButton, 2, 1);
+        controls.Controls.Add(_adminButton, 1, 3);
 
         _loadConfigButton = new Button { Dock = DockStyle.Fill, Margin = new Padding(0, 2, 0, 2) };
         Theme.StyleSecondary(_loadConfigButton);
         _loadConfigButton.Click += (_, _) => LoadConfig(true);
-        controls.Controls.Add(_loadConfigButton, 2, 2);
+        controls.Controls.Add(_loadConfigButton, 1, 4);
 
         _adminRelaunchButton = new Button { Dock = DockStyle.Fill, Margin = new Padding(0, 2, 8, 2) };
         Theme.StyleSecondary(_adminRelaunchButton);
         _adminRelaunchButton.Click += (_, _) => AttemptAdminRelaunch();
-        controls.Controls.Add(_adminRelaunchButton, 0, 2);
-        controls.SetColumnSpan(_adminRelaunchButton, 2);
+        controls.Controls.Add(_adminRelaunchButton, 0, 4);
 
         controlsCard.Controls.Add(controls);
         layout.Controls.Add(controlsCard, 0, 4);
@@ -236,16 +242,28 @@ public sealed class MainForm : Form
 
         foreach (var btn in _flagButtons)
         {
+            _help.SetToolTip(btn, (Language)btn.Tag! switch { Language.Ca => "Català", Language.Es => "Español", _ => "English" });
             var selected = (Language)btn.Tag! == Lang.Current;
             btn.FlatAppearance.BorderSize = selected ? 2 : 1;
             btn.FlatAppearance.BorderColor = selected ? Theme.Accent : Theme.Border;
         }
 
+        foreach (var (control, key) in new (Control, string)[]
+        {
+            (_pwdALabel, "pwdA"), (_restorePasswordBox, "pwdA"), (_restoreButton, "pwdA"),
+            (_pwdBLabel, "pwdB"), (_adminPasswordBox, "pwdB"), (_adminButton, "pwdB"),
+            (_loadConfigButton, "loadBtn"), (_adminRelaunchButton, "reopenAdminBtn"),
+            (_incidentList, "incidents"), (_radioStateLabel, "radios"), (_shield, "shield")
+        }) _help.SetToolTip(control, UiHelp.Get(key, (int)Lang.Current));
+
         UpdateShield();
     }
 
+    private void ShowConfigPathHelp(object? sender, EventArgs e) => _help.SetToolTip(_configPathLabel, _configPathLabel.Text);
+
     private static Label MutedLabel(string text) => new()
     {
+        AutoSize = true,
         Text = text,
         Dock = DockStyle.Fill,
         TextAlign = ContentAlignment.MiddleLeft,
@@ -255,6 +273,7 @@ public sealed class MainForm : Form
 
     private static Label ValueLabel(string text) => new()
     {
+        MinimumSize = new Size(0, 22),
         Text = text,
         Dock = DockStyle.Fill,
         TextAlign = ContentAlignment.MiddleLeft,

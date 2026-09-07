@@ -31,3 +31,4 @@ dist/
 
 # dotnet tools
 .dotnet/
+.worktrees/
