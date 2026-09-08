@@ -1,3 +1,4 @@
+using ExamShared;
 using System.Text;
 using ExamLockClient.Core.Platform;
 
@@ -125,7 +126,7 @@ public sealed class FileActivityMonitor : IDisposable
             var full = Path.GetFullPath(path);
             foreach (var root in _excludedRoots)
             {
-                if (full.StartsWith(root, StringComparison.OrdinalIgnoreCase))
+                if (full.StartsWith(root, OperatingSystem.IsWindows() ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal))
                 {
                     return true;
                 }
@@ -179,6 +180,7 @@ public sealed class FileActivityMonitor : IDisposable
 
     private void InspectWatchedFile(string fullPath)
     {
+        if (Directory.Exists(fullPath)) return; // A directory with a dot is not a document.
         var ext = Path.GetExtension(fullPath).ToLowerInvariant();
         if (ext.Length == 0)
         {
@@ -188,6 +190,13 @@ public sealed class FileActivityMonitor : IDisposable
         if (_blockedExtensions.Contains(ext))
         {
             ForbiddenFileDetected?.Invoke(Path.GetFileName(fullPath));
+            return;
+        }
+
+        // Ignore exact editor metadata names only for filesystem notifications, never an explicit open.
+        if (_workFolder.Length > 0 && FileActivityNoiseFilter.IsEditorMetadata(
+                Path.GetRelativePath(_workFolder, fullPath), OperatingSystem.IsWindows()))
+        {
             return;
         }
 
@@ -232,7 +241,7 @@ public sealed class FileActivityMonitor : IDisposable
 
     private void InspectCommandLine(string commandLine)
     {
-        foreach (var token in TokenizeArguments(commandLine).Skip(1))
+        foreach (var token in FileActivityNoiseFilter.DocumentArguments(TokenizeArguments(commandLine)))
         {
             var ext = Path.GetExtension(token);
             if (string.IsNullOrEmpty(ext))
@@ -280,7 +289,7 @@ public sealed class FileActivityMonitor : IDisposable
             var root = Path.GetFullPath(_workFolder)
                 .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)
                 + Path.DirectorySeparatorChar;
-            return full.StartsWith(root, StringComparison.OrdinalIgnoreCase);
+            return full.StartsWith(root, OperatingSystem.IsWindows() ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal);
         }
         catch
         {

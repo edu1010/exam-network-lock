@@ -1,3 +1,4 @@
+using ExamShared;
 using System.Diagnostics;
 using System.Management;
 using System.Text;
@@ -61,10 +62,10 @@ public sealed class FileActivityMonitor : IDisposable
         _workFolder = workFolder?.Trim() ?? string.Empty;
         _restrictToFolder = restrictToFolder;
 
-        _inspectProcesses = new HashSet<string>(OpenerProcesses, StringComparer.OrdinalIgnoreCase);
+        _inspectProcesses = new HashSet<string>(OpenerProcesses.Select(ProcessPolicy.Normalize), StringComparer.OrdinalIgnoreCase);
         foreach (var p in allowedProcesses ?? Enumerable.Empty<string>())
         {
-            var name = p.Trim();
+            var name = ProcessPolicy.Normalize(p);
             if (name.Length > 0)
             {
                 _inspectProcesses.Add(name);
@@ -120,7 +121,7 @@ public sealed class FileActivityMonitor : IDisposable
             var full = Path.GetFullPath(path);
             foreach (var root in _excludedRoots)
             {
-                if (full.StartsWith(root, StringComparison.OrdinalIgnoreCase))
+                if (full.StartsWith(root, OperatingSystem.IsWindows() ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal))
                 {
                     return true;
                 }
@@ -174,6 +175,7 @@ public sealed class FileActivityMonitor : IDisposable
 
     private void InspectWatchedFile(string fullPath)
     {
+        if (Directory.Exists(fullPath)) return; // A directory with a dot is not a document.
         var ext = Path.GetExtension(fullPath).ToLowerInvariant();
         if (ext.Length == 0)
         {
@@ -184,6 +186,13 @@ public sealed class FileActivityMonitor : IDisposable
         if (_blockedExtensions.Contains(ext))
         {
             ForbiddenFileDetected?.Invoke(Path.GetFileName(fullPath));
+            return;
+        }
+
+        // Ignore exact editor metadata names only for filesystem notifications, never an explicit open.
+        if (_workFolder.Length > 0 && FileActivityNoiseFilter.IsEditorMetadata(
+                Path.GetRelativePath(_workFolder, fullPath), OperatingSystem.IsWindows()))
+        {
             return;
         }
 
@@ -215,7 +224,7 @@ public sealed class FileActivityMonitor : IDisposable
                 // Only inspect document-opener apps (or teacher-allowed apps); ignore the rest
                 // to avoid false alarms from system processes and compiler/JVM classpaths.
                 var name = obj["Name"] as string;
-                if (name is null || !_inspectProcesses.Contains(name))
+                if (name is null || !_inspectProcesses.Contains(ProcessPolicy.Normalize(name)))
                 {
                     continue;
                 }
@@ -237,7 +246,7 @@ public sealed class FileActivityMonitor : IDisposable
 
     private void InspectCommandLine(string commandLine)
     {
-        foreach (var token in TokenizeArguments(commandLine).Skip(1))
+        foreach (var token in FileActivityNoiseFilter.DocumentArguments(TokenizeArguments(commandLine)))
         {
             var ext = Path.GetExtension(token);
             if (string.IsNullOrEmpty(ext))
@@ -291,7 +300,7 @@ public sealed class FileActivityMonitor : IDisposable
             var root = Path.GetFullPath(_workFolder)
                 .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)
                 + Path.DirectorySeparatorChar;
-            return full.StartsWith(root, StringComparison.OrdinalIgnoreCase);
+            return full.StartsWith(root, OperatingSystem.IsWindows() ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal);
         }
         catch
         {

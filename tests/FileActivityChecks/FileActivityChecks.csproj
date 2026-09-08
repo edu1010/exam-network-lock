@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><DefineConstants>LINUX_CLIENT</DefineConstants></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../ExamShared/ExamShared.csproj" />
+    <ProjectReference Include="../../ExamLockClient.Core/ExamLockClient.Core.csproj" />
+    <PackageReference Include="System.Management" Version="8.0.0" />
+  </ItemGroup>
+</Project>

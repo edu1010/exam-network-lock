@@ -66,10 +66,10 @@
     "semantic_hash": "ff51138eac60f67aa6dc4ceb662d8365"
   },
   "ExamLockClient/FileActivityMonitor.cs": {
-    "mtime": 1788777274.31206,
-    "seen": 1788778514.171249,
-    "ast_hash": "ab464037e21aab10331f526590ce1afd",
-    "semantic_hash": "ab464037e21aab10331f526590ce1afd"
+    "mtime": 1788858377.857257,
+    "seen": 1788858507.54519,
+    "ast_hash": "2b63987ac44a9b509165e3c3c15496f3",
+    "semantic_hash": ""
   },
   "ExamLockClient/Flags.cs": {
     "mtime": 1788777274.3225427,
@@ -438,9 +438,9 @@
     "semantic_hash": ""
   },
   "ExamLockClient.Core/Monitoring/FileActivityMonitor.cs": {
-    "mtime": 1788777274.287594,
-    "seen": 1788778514.171249,
-    "ast_hash": "6e9b0bf6afa27a792d52df9d5872ef0c",
+    "mtime": 1788858214.822441,
+    "seen": 1788858507.54519,
+    "ast_hash": "b8d33513b2e29218c3fc472bd37144d9",
     "semantic_hash": ""
   },
   "ExamLockClient.Core/Monitoring/MonitorReporter.cs": {
@@ -522,9 +522,9 @@
     "semantic_hash": ""
   },
   "docs/linux-port-review.md": {
-    "mtime": 1788778670.216215,
-    "seen": 1788854926.9481595,
-    "ast_hash": "8b07926e45d2c2a0331b017159e9d04d",
+    "mtime": 1788855004.7562804,
+    "seen": 1788858507.54519,
+    "ast_hash": "6e0f8f5d0f5b27e9e95d6bde58b84e7c",
     "semantic_hash": ""
   },
   "ExamShared/ProcessPolicy.cs": {
@@ -549,6 +549,30 @@
     "mtime": 1788854774.6435797,
     "seen": 1788854926.9481595,
     "ast_hash": "f75c16a35fdd06b3b623f470d36c55d4",
+    "semantic_hash": ""
+  },
+  "ExamShared/FileActivityNoiseFilter.cs": {
+    "mtime": 1788858214.8264596,
+    "seen": 1788858507.54519,
+    "ast_hash": "e16ef37a081c37148aa165ad7e4278b7",
+    "semantic_hash": ""
+  },
+  "tests/FileActivityChecks/FileActivityChecks.csproj": {
+    "mtime": 1788858327.8295534,
+    "seen": 1788858507.54519,
+    "ast_hash": "e649cec85c6dfa29b66520e95ad1a4e1",
+    "semantic_hash": ""
+  },
+  "tests/FileActivityChecks/Program.cs": {
+    "mtime": 1788858544.499848,
+    "seen": 1788858576.8941295,
+    "ast_hash": "8612f0c744f1a92d1bbdb0fdff168bd5",
+    "semantic_hash": ""
+  },
+  "docs/folder-monitoring.md": {
+    "mtime": 1788858327.8257887,
+    "seen": 1788858507.54519,
+    "ast_hash": "f4c0127f6d807aa31124ce200ba46d2f",
     "semantic_hash": ""
   }
 }

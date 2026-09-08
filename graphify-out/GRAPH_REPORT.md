@@ -1,25 +1,25 @@
 # Graph Report - linux  (2026-09-08)
 
 ## Corpus Check
-- 88 files · ~58,307 words
+- 92 files · ~59,289 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1955 nodes · 3522 edges · 114 communities (95 shown, 19 thin omitted)
+- 1967 nodes · 3544 edges · 118 communities (96 shown, 22 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 114 edges (avg confidence: 0.82)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ca59dfeb`
+- Built from commit: `4a48df6d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - MainForm
 - MainForm
-- Monitoring.cs
+- MonitorProtocol
 - AudioAlerter
-- MainForm
+- .StartMonitors
 - Shared.cs
 - MainForm
 - Exam Network Locking
@@ -31,19 +31,19 @@
 - Incremental Update
 - ShieldControl
 - Escudo de examen Client Window
-- Theme
+- T
 - AiConnectionMonitor
 - ProcessMonitor
 - Bitmap
 - Generador de configuración de examen
 - Student edu10@EDU
 - Bitmap
-- ExamLockClient
-- WindowsPlatform
-- Padding
-- MainForm
-- Theme
 - Lang
+- WindowsPlatform
+- Theme
+- MainForm
+- Padding
+- Bitmap
 - LinuxPlatform
 - .SetStatus
 - Lang
@@ -51,14 +51,14 @@
 - Extraction Subagent Prompt
 - Export Flags
 - ConfigPayload
-- LogEntry
+- LogVerificationResult
 - MainForm
 - What You Must Do When Invoked
 - Cross Repo Merge
 - MainWindow
-- ExamShared
+- ExamLockClient.Core.Platform
 - /graphify
-- MainForm
+- Program
 - ProcessTestPlatform
 - FileActivityMonitor
 - TcpConnectionOwner
@@ -87,25 +87,25 @@
 - AiConnectionMonitor
 - AiConnectionEvidence
 - ThreatProcessMonitor
-- MonitorListener
-- .SerializePayload
+- IDisposable
+- ConfigEnvelope
 - MonitorBroadcaster
-- ListBox
+- Bitmap
 - DnsCacheMonitor
-- MonitorReporter
+- Monitoring.cs
 - MonitorReporter
 - Color
-- Control
+- SecureLogService
 - graphify reference: extra exports and benchmark
-- IDisposable
+- MonitorReporter
 - ConfigSerializer
 - SecureLogService
-- TableLayoutPanel
-- ProcessMonitor
+- AudioAlerter
+- ProcessPolicy
 - StatusMessage
 - graphify reference: query, path, explain
-- Bitmap
-- LogItem
+- .SetBluetoothAsync
+- .ScanPaths
 - StatusTier
 - .Verify
 - .BuildControlsCard
@@ -114,21 +114,25 @@
 - graphify reference: incremental update and cluster-only
 - Revisión del port Linux
 - DragEventArgs
-- Theme
+- ProcessMonitor
 - graphify reference: GitHub clone and cross-repo merge
 - graphify reference: transcribe video and audio
 - .VerifyHmac
 - PasswordHasher
 - linux/.codex/skills/graphify/references/extraction-spec.md
 - publish-linux.sh
-- ExamMonitor
+- ExamShared
 - TcpConnectionInfo
 - Program
-- ClientRow
-- IPAddress
+- ProcessMonitor
+- ExamConfigGenerator/Program.cs
 - .Get
-- .Verify
+- LogEntry
 - process-rules.md
+- NetworkAdapterService
+- NetworkAdapterService
+- ConfigIntegrityService
+- folder-monitoring.md
 
 ## God Nodes (most connected - your core abstractions)
 1. `MainForm` - 62 edges
@@ -170,35 +174,35 @@
 - **Restriction Inputs** — docs_img_generator_bottom_allowed_site_bard_google_com, docs_img_generator_bottom_allowed_executables, docs_img_generator_bottom_allowed_extensions, docs_img_generator_bottom_folder_restriction [INFERRED 0.85]
 - **Exam Protection State Indicators** — docs_img_client_green_shield_check, docs_img_client_protected_status, docs_img_client_active_exam_message, docs_img_client_lock_started_event [INFERRED 0.95]
 
-## Communities (114 total, 19 thin omitted)
+## Communities (118 total, 22 thin omitted)
 
 ### Community 0 - "MainForm"
-Cohesion: 0.14
-Nodes (8): byte, ComboBox, Control, DataGridView, T, Task, MainForm, VerifiedLogEntry
+Cohesion: 0.12
+Nodes (13): bool, byte, ComboBox, Control, DataGridView, int, List, string (+5 more)
 
 ### Community 1 - "MainForm"
 Cohesion: 0.06
 Nodes (25): AiConnectionMonitor, AudioAlerter, ConfigPayload, DnsCacheMonitor, Action, AiConnectionEvidence, bool, Control (+17 more)
 
-### Community 2 - "Monitoring.cs"
-Cohesion: 0.15
-Nodes (7): int, JsonSerializerOptions, T, MonitorProtocol, LogChunkMessage, MonitorProtocol, StatusMessage
+### Community 2 - "MonitorProtocol"
+Cohesion: 0.17
+Nodes (5): int, JsonSerializerOptions, T, MonitorProtocol, MonitorProtocol
 
 ### Community 3 - "AudioAlerter"
 Cohesion: 0.05
 Nodes (25): AudioAlerter, bool, byte, DllImport, Guid, IMMDevice, int, IntPtr (+17 more)
 
-### Community 4 - "MainForm"
-Cohesion: 0.17
-Nodes (5): int, Label, T, MainForm, FlowLayoutPanel
+### Community 4 - ".StartMonitors"
+Cohesion: 0.18
+Nodes (5): AiConnectionMonitor, DnsCacheMonitor, FileActivityMonitor, ProcessMonitor, ThreatProcessMonitor
 
 ### Community 5 - "Shared.cs"
 Cohesion: 0.16
 Nodes (11): BeepModes, ConfigDefaults, string, BeepModes, ConfigDefaults, LogEvents, WorkFolderModes, WorkFolderResolver (+3 more)
 
 ### Community 6 - "MainForm"
-Cohesion: 0.17
-Nodes (7): ClientRow, Action, Button, Dictionary, List, MainForm, Form
+Cohesion: 0.07
+Nodes (21): ClientRow, DateTime, ClientRow, Action, Button, Color, Control, DataGridView (+13 more)
 
 ### Community 7 - "Exam Network Locking"
 Cohesion: 0.19
@@ -214,7 +218,7 @@ Nodes (21): Contraseña B - Cerrar / Admin, Subir volumen y pitar al detectar IA
 
 ### Community 10 - "ExamShared.csproj"
 Cohesion: 0.06
-Nodes (30): ExamConfigGenerator, net8.0-windows, Microsoft.NET.Sdk, ExamLockClient.App, net8.0, Microsoft.NET.Sdk, net8.0, System.Management (8.0.0) (+22 more)
+Nodes (33): ExamConfigGenerator, net8.0-windows, Microsoft.NET.Sdk, ExamLockClient.App, net8.0, Microsoft.NET.Sdk, net8.0, System.Management (8.0.0) (+25 more)
 
 ### Community 11 - "Full Pipeline"
 Cohesion: 0.12
@@ -236,17 +240,13 @@ Nodes (31): color, Control, DrawingContext, Color, glyph, ShieldControl, Caption
 Cohesion: 0.20
 Nodes (14): Examen en curso Message, Contraseña B cerrar Input, Cerrar programa Button, Config Path Display, ExamLockClient Debug Build Path, Escudo de examen Client Window, Green Shield Check Icon, Incidencias Log (+6 more)
 
-### Community 16 - "Theme"
-Cohesion: 0.18
-Nodes (7): Button, Color, Font, GroupBox, ListBox, Theme, Theme
-
 ### Community 17 - "AiConnectionMonitor"
 Cohesion: 0.33
 Nodes (4): AiConnectionMonitor, IPAddress, object, string
 
 ### Community 18 - "ProcessMonitor"
-Cohesion: 0.17
-Nodes (7): HashSet, object, Pid, Timer, ProcessMonitor, ProcessMonitor, Name
+Cohesion: 0.28
+Nodes (5): HashSet, Pid, Timer, ProcessMonitor, Name
 
 ### Community 19 - "Bitmap"
 Cohesion: 0.05
@@ -261,32 +261,32 @@ Cohesion: 0.18
 Nodes (12): Event Count 7, Exam In Progress Event, Monitor de examen Window, Exam Status OK, Integrity OK, exam.config Loaded Integrity Verification Message, Language Selector Flags, Last Seen hace 2s (+4 more)
 
 ### Community 22 - "Bitmap"
-Cohesion: 0.08
-Nodes (20): ExamConfigGenerator, Bitmap, Graphics, int, Language, Flags, Flags, Dictionary (+12 more)
+Cohesion: 0.06
+Nodes (25): ExamConfigGenerator, Bitmap, Graphics, int, Language, Flags, Flags, Dictionary (+17 more)
 
-### Community 23 - "ExamLockClient"
-Cohesion: 0.07
-Nodes (21): ExamLockClient, Bitmap, Graphics, int, Language, Flags, Flags, Dictionary (+13 more)
+### Community 23 - "Lang"
+Cohesion: 0.16
+Nodes (10): Dictionary, Language, Lang, Current, FilePath, Language, Ca, En (+2 more)
 
 ### Community 24 - "WindowsPlatform"
-Cohesion: 0.06
-Nodes (24): ProcessNames, DllImport, error, Guid, IEnumerable, IMMDevice, IntPtr, IReadOnlyList (+16 more)
+Cohesion: 0.05
+Nodes (26): ProcessNames, DllImport, error, Guid, IEnumerable, IMMDevice, IntPtr, IReadOnlyList (+18 more)
 
-### Community 25 - "Padding"
+### Community 25 - "Theme"
 Cohesion: 0.18
-Nodes (8): Button, Color, Font, TextBox, Theme, Theme, Padding, Panel
+Nodes (7): Button, Color, Font, TextBox, Theme, Theme, Panel
 
 ### Community 26 - "MainForm"
 Cohesion: 0.12
-Nodes (8): Button, ctrl, key, Label, MainForm, Func, LogItem, SplitContainer
+Nodes (7): ctrl, key, Label, MainForm, Func, LogItem, SplitContainer
 
-### Community 27 - "Theme"
-Cohesion: 0.20
-Nodes (7): Button, Color, ComboBox, DataGridView, Font, Theme, Theme
-
-### Community 28 - "Lang"
+### Community 27 - "Padding"
 Cohesion: 0.16
-Nodes (10): Dictionary, Language, Lang, Current, FilePath, Language, Ca, En (+2 more)
+Nodes (9): Button, Button, Color, ComboBox, DataGridView, Font, Theme, Theme (+1 more)
+
+### Community 28 - "Bitmap"
+Cohesion: 0.06
+Nodes (25): ExamMonitor, Bitmap, Graphics, int, Language, Flags, Flags, Dictionary (+17 more)
 
 ### Community 29 - "LinuxPlatform"
 Cohesion: 0.09
@@ -297,8 +297,8 @@ Cohesion: 0.08
 Nodes (19): AppBuilder, Application, ExamLockClient.App, ExamLockClient.App.Views, App, Dictionary, Lang, Current (+11 more)
 
 ### Community 32 - "MainForm"
-Cohesion: 0.15
-Nodes (8): control, ComboBox, ctrl, GroupBox, key, List, ToolTip, MainForm
+Cohesion: 0.06
+Nodes (20): CheckBox, control, Button, ComboBox, Control, ctrl, GroupBox, int (+12 more)
 
 ### Community 33 - "Extraction Subagent Prompt"
 Cohesion: 0.28
@@ -312,13 +312,13 @@ Nodes (8): Wiki Navigation, Export Flags, FalkorDB Export, Neo4j Export, Token R
 Cohesion: 0.07
 Nodes (27): ConfigPayload, AdminPasswordHashBase64, AdminSaltBase64, AiBlocklist, AiShieldEnabled, AlarmVolumePercent, AllowedFileExtensions, AllowedProcesses (+19 more)
 
-### Community 36 - "LogEntry"
-Cohesion: 0.06
-Nodes (31): MonitorReporter, MonitorReporter, IReadOnlyList, LogIntegrity, Empty, Ok, Tampered, LogVerificationResult (+23 more)
+### Community 36 - "LogVerificationResult"
+Cohesion: 0.10
+Nodes (20): IReadOnlyList, LogIntegrity, Empty, Ok, Tampered, LogVerificationResult, Entries, Error (+12 more)
 
 ### Community 37 - "MainForm"
-Cohesion: 0.06
-Nodes (27): error, EventArgs, Thread, AudioAlerter, Pattern, VolumePercent, IMMDevice, MMDeviceEnumerator (+19 more)
+Cohesion: 0.19
+Nodes (5): EventArgs, Button, List, ToolTip, MainForm
 
 ### Community 38 - "What You Must Do When Invoked"
 Cohesion: 0.08
@@ -332,29 +332,29 @@ Nodes (6): MCP Server, Cross Repo Merge, GitHub Clone, Monorepo Subfolder Flow, 
 Cohesion: 0.15
 Nodes (12): Action, AiConnectionMonitor, DnsCacheMonitor, FileActivityMonitor, HashSet, ProcessMonitor, TextBox, ThreatProcessMonitor (+4 more)
 
-### Community 41 - "ExamShared"
-Cohesion: 0.12
-Nodes (8): ExamLockClient.Core.Platform, ExamLockClient.App.Controls, ExamShared, ExamLockClient.Core.Monitoring, BeepPattern, Continuous, ThreeBeeps, Shell
+### Community 41 - "ExamLockClient.Core.Platform"
+Cohesion: 0.15
+Nodes (7): ExamLockClient.Core.Platform, ExamLockClient.App.Controls, ExamLockClient.Core.Monitoring, BeepPattern, Continuous, ThreeBeeps, Shell
 
 ### Community 42 - "/graphify"
 Cohesion: 0.15
 Nodes (12): Project Graphify Instructions, Supported URL Types, URL Ingest, CLAUDE.md Integration, For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only (+4 more)
 
-### Community 43 - "MainForm"
-Cohesion: 0.13
-Nodes (8): Color, Control, DataGridView, Label, MainForm, LogChunkMessage, MonitorListener, StatusMessage
+### Community 43 - "Program"
+Cohesion: 0.18
+Nodes (5): STAThread, Program, StartupConfigPath, Program, IWin32Window
 
 ### Community 44 - "ProcessTestPlatform"
-Cohesion: 0.12
+Cohesion: 0.13
 Nodes (10): ProcessInfo, Summary, error, IEnumerable, IReadOnlyList, ok, Task, ProcessTestPlatform (+2 more)
 
 ### Community 45 - "FileActivityMonitor"
-Cohesion: 0.18
-Nodes (5): FileSystemWatcher, HashSet, IEnumerable, Timer, FileActivityMonitor
+Cohesion: 0.12
+Nodes (7): FileSystemWatcher, HashSet, IEnumerable, Timer, FileActivityMonitor, IEnumerable, FileActivityNoiseFilter
 
 ### Community 46 - "TcpConnectionOwner"
-Cohesion: 0.08
-Nodes (31): DllImport, int, IntPtr, IPAddress, List, TcpState, uint, MibTcp6RowOwnerPid (+23 more)
+Cohesion: 0.09
+Nodes (29): DllImport, int, IntPtr, IPAddress, List, TcpState, uint, MibTcp6RowOwnerPid (+21 more)
 
 ### Community 47 - "What You Must Do When Invoked"
 Cohesion: 0.14
@@ -440,57 +440,65 @@ Nodes (12): IPAddress, AiConnectionEvidence, CommandLine, DedupKey, Destination,
 Cohesion: 0.18
 Nodes (5): HashSet, AiProcessClassifier, HashSet, Timer, ThreatProcessMonitor
 
-### Community 72 - "MonitorListener"
-Cohesion: 0.21
-Nodes (5): bool, Task, MonitorListener, MonitorListener, UdpClient
+### Community 72 - "IDisposable"
+Cohesion: 0.19
+Nodes (6): bool, Task, MonitorListener, MonitorListener, IDisposable, UdpClient
 
-### Community 73 - ".SerializePayload"
-Cohesion: 0.29
+### Community 73 - "ConfigEnvelope"
+Cohesion: 0.33
 Nodes (5): JsonSerializerOptions, ConfigEnvelope, HmacBase64, Payload, ConfigSerializer
 
 ### Community 74 - "MonitorBroadcaster"
 Cohesion: 0.33
 Nodes (6): IEnumerable, IPAddress, MonitorBroadcaster, MonitorBroadcaster, IPEndPoint, UnicastIPAddressInformation
 
+### Community 75 - "Bitmap"
+Cohesion: 0.30
+Nodes (6): Bitmap, Graphics, int, Language, Flags, Flags
+
 ### Community 76 - "DnsCacheMonitor"
 Cohesion: 0.24
 Nodes (4): HashSet, Timer, DnsCacheMonitor, IEnumerable
 
-### Community 77 - "MonitorReporter"
-Cohesion: 0.18
-Nodes (8): List, Timer, MonitorReporter, LogChunkMessage, Entries, Kind, Machine, User
+### Community 77 - "Monitoring.cs"
+Cohesion: 0.25
+Nodes (7): LogChunkMessage, Entries, Kind, Machine, User, LogChunkMessage, StatusMessage
 
 ### Community 78 - "MonitorReporter"
-Cohesion: 0.24
-Nodes (5): int, LogEntry, string, MonitorReporter, MonitorBroadcaster
+Cohesion: 0.15
+Nodes (8): int, List, LogEntry, string, Timer, MonitorReporter, MonitorReporter, MonitorBroadcaster
 
 ### Community 79 - "Color"
-Cohesion: 0.24
+Cohesion: 0.31
 Nodes (4): Color, HashSet, LogItem, StatusTier
 
-### Community 80 - "Control"
-Cohesion: 0.31
-Nodes (3): CheckBox, Button, Control
+### Community 80 - "SecureLogService"
+Cohesion: 0.24
+Nodes (4): MonitorReporter, MonitorReporter, SecureLogService, SessionStateService
 
 ### Community 81 - "graphify reference: extra exports and benchmark"
 Cohesion: 0.22
 Nodes (8): graphify reference: extra exports and benchmark, Step 6b - Wiki (only if --wiki flag), Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag), Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag), Step 7b - SVG export (only if --svg flag), Step 7c - GraphML export (only if --graphml flag), Step 7d - MCP server (only if --mcp flag), Step 8 - Token reduction benchmark (only if total_words > 5000)
 
-### Community 82 - "IDisposable"
-Cohesion: 0.18
-Nodes (4): List, Timer, MonitorReporter, IDisposable
+### Community 82 - "MonitorReporter"
+Cohesion: 0.22
+Nodes (3): List, Timer, MonitorReporter
 
 ### Community 83 - "ConfigSerializer"
 Cohesion: 0.29
 Nodes (4): ConfigEnvelope, ConfigPayload, ConfigSerializer, WorkFolderResolver
 
 ### Community 84 - "SecureLogService"
-Cohesion: 0.22
-Nodes (5): ConfigIntegrityService, byte, int, LogEntry, SecureLogService
+Cohesion: 0.33
+Nodes (3): int, LogEntry, SecureLogService
 
-### Community 86 - "ProcessMonitor"
-Cohesion: 0.13
-Nodes (12): HashSet, Name, Pid, Timer, ProcessMonitor, HashSet, IEnumerable, ProcessDecision (+4 more)
+### Community 85 - "AudioAlerter"
+Cohesion: 0.24
+Nodes (6): Thread, AudioAlerter, Pattern, VolumePercent, IMMDevice, MMDeviceEnumerator
+
+### Community 86 - "ProcessPolicy"
+Cohesion: 0.24
+Nodes (7): HashSet, IEnumerable, ProcessDecision, Allowed, Blocked, Unknown, ProcessPolicy
 
 ### Community 87 - "StatusMessage"
 Cohesion: 0.25
@@ -500,13 +508,13 @@ Nodes (8): StatusMessage, Kind, LogCount, Machine, State, StatusText, Timestamp,
 Cohesion: 0.33
 Nodes (5): For /graphify explain, For /graphify path, graphify reference: query, path, explain, Step 0 — Constrained query expansion (REQUIRED before traversal), Step 1 — Traversal
 
-### Community 89 - "Bitmap"
-Cohesion: 0.30
-Nodes (6): Bitmap, Graphics, int, Language, Flags, Flags
+### Community 89 - ".SetBluetoothAsync"
+Cohesion: 0.22
+Nodes (7): error, error, ok, Task, RadioService, RadioService, ok
 
-### Community 90 - "LogItem"
-Cohesion: 0.13
-Nodes (10): bool, IEnumerable, int, List, string, ScanResult, LogItem, ScanResult (+2 more)
+### Community 90 - ".ScanPaths"
+Cohesion: 0.33
+Nodes (3): IEnumerable, ScanResult, ScanResult
 
 ### Community 91 - "StatusTier"
 Cohesion: 0.33
@@ -536,40 +544,40 @@ Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphif
 Cohesion: 0.50
 Nodes (3): Comprobaciones reproducibles, Diferencias de plataforma, Revisión del port Linux
 
-### Community 99 - "Theme"
-Cohesion: 0.31
-Nodes (5): Button, Color, Font, Theme, Theme
-
-### Community 106 - "ExamMonitor"
-Cohesion: 0.25
-Nodes (4): ExamMonitor, STAThread, Program, Program
+### Community 99 - "ProcessMonitor"
+Cohesion: 0.24
+Nodes (5): HashSet, Name, Pid, Timer, ProcessMonitor
 
 ### Community 107 - "TcpConnectionInfo"
 Cohesion: 0.25
 Nodes (5): IPAddress, List, TcpState, TcpConnectionInfo, List
 
-### Community 109 - "ClientRow"
+### Community 110 - "ExamConfigGenerator/Program.cs"
 Cohesion: 0.40
-Nodes (6): DateTime, ClientRow, string, ClientRow, Key, SortedDictionary
+Nodes (3): STAThread, Program, Program
+
+### Community 112 - "LogEntry"
+Cohesion: 0.20
+Nodes (9): IReadOnlyList, LogChainVerifier, LogEntry, EventData, EventType, HmacBase64, PrevHmacBase64, Sequence (+1 more)
 
 ## Knowledge Gaps
-- **458 isolated node(s):** `net8.0-windows`, `Microsoft.NET.Sdk`, `En`, `Ca`, `Es` (+453 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 628 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **19 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **462 isolated node(s):** `net8.0-windows`, `Microsoft.NET.Sdk`, `En`, `Ca`, `Es` (+457 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 634 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **22 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `MainForm` connect `MainForm` to `MainForm`, `ConfigPayload`, `LogEntry`, `AiConnectionMonitor`, `MainForm`, `FileActivityMonitor`, `ExamShared`, `MonitorReporter`, `ShieldControl`, `ProcessMonitor`, `ThreatProcessMonitor`, `DnsCacheMonitor`?**
-  _High betweenness centrality (0.193) - this node is a cross-community bridge._
-- **Why does `MainWindow` connect `MainWindow` to `.AttemptAdminClose`, `AiConnectionMonitor`, `ConfigPayload`, `LogEntry`, `ThreatProcessMonitor`, `ExamShared`, `DnsCacheMonitor`, `FileActivityMonitor`, `ShieldControl`, `.Get`, `IDisposable`, `ProcessMonitor`, `IPlatform`, `.BuildControlsCard`, `.SetStatus`, `Lang`?**
-  _High betweenness centrality (0.165) - this node is a cross-community bridge._
-- **Why does `ExamShared` connect `ExamShared` to `Monitoring.cs`, `LogEntry`, `Shared.cs`, `ExamMonitor`, `Program`, `MonitorReporter`, `.Get`, `ProcessMonitor`, `Bitmap`, `Bitmap`, `ProcessMonitor`, `LogItem`?**
-  _High betweenness centrality (0.141) - this node is a cross-community bridge._
+- **Why does `MainForm` connect `MainForm` to `MainForm`, `ConfigPayload`, `.StartMonitors`, `AiConnectionMonitor`, `MainForm`, `FileActivityMonitor`, `ExamShared`, `Program`, `MonitorReporter`, `ShieldControl`, `SecureLogService`, `ProcessMonitor`, `NetworkAdapterService`, `ThreatProcessMonitor`, `AudioAlerter`, `DnsCacheMonitor`, `.SetBluetoothAsync`?**
+  _High betweenness centrality (0.182) - this node is a cross-community bridge._
+- **Why does `MainWindow` connect `MainWindow` to `.AttemptAdminClose`, `AiConnectionMonitor`, `ProcessMonitor`, `ConfigPayload`, `ThreatProcessMonitor`, `ExamLockClient.Core.Platform`, `DnsCacheMonitor`, `FileActivityMonitor`, `ShieldControl`, `.Get`, `SecureLogService`, `MonitorReporter`, `IPlatform`, `.BuildControlsCard`, `.SetStatus`, `Lang`?**
+  _High betweenness centrality (0.155) - this node is a cross-community bridge._
+- **Why does `ExamShared` connect `ExamShared` to `MainForm`, `ProcessMonitor`, `LogVerificationResult`, `Shared.cs`, `MainForm`, `ExamLockClient.Core.Platform`, `Program`, `FileActivityMonitor`, `ExamConfigGenerator/Program.cs`, `MonitorReporter`, `Monitoring.cs`, `.Get`, `MonitorReporter`, `Bitmap`, `Bitmap`, `ProcessPolicy`?**
+  _High betweenness centrality (0.153) - this node is a cross-community bridge._
 - **What connects `net8.0-windows`, `Microsoft.NET.Sdk`, `En` to the rest of the system?**
-  _458 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _462 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `MainForm` be split into smaller, more focused modules?**
-  _Cohesion score 0.13732004429678848 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11561561561561562 - nodes in this community are weakly interconnected._
 - **Should `MainForm` be split into smaller, more focused modules?**
   _Cohesion score 0.06349206349206349 - nodes in this community are weakly interconnected._
 - **Should `AudioAlerter` be split into smaller, more focused modules?**
