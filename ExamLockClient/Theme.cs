@@ -22,6 +22,9 @@ internal static class Theme
 
     public static void StylePrimary(Button button)
     {
+        button.AutoSize = true;
+        button.MinimumSize = new Size(0, 36);
+        button.Padding = new Padding(10, 4, 10, 4);
         button.FlatStyle = FlatStyle.Flat;
         button.FlatAppearance.BorderSize = 0;
         button.BackColor = Accent;
@@ -34,6 +37,9 @@ internal static class Theme
 
     public static void StyleSecondary(Button button)
     {
+        button.AutoSize = true;
+        button.MinimumSize = new Size(0, 36);
+        button.Padding = new Padding(10, 4, 10, 4);
         button.FlatStyle = FlatStyle.Flat;
         button.FlatAppearance.BorderColor = Border;
         button.FlatAppearance.BorderSize = 1;

@@ -29,6 +29,7 @@ internal static class Theme
 
     public static void StyleSecondary(Button button)
     {
+        button.MinimumSize = new Size(0, 36);
         button.FlatStyle = FlatStyle.Flat;
         button.FlatAppearance.BorderColor = Border;
         button.FlatAppearance.BorderSize = 1;

@@ -13,6 +13,8 @@ public sealed class MainForm : Form
 
     private readonly List<(Control ctrl, string key)> _i18n = new();
     private readonly List<Button> _flagButtons = new();
+    private readonly ToolTip _help = new() { AutoPopDelay = 15000, InitialDelay = 400, ReshowDelay = 100, ShowAlways = true };
+    private readonly List<(Control control, string key)> _helpTargets = new();
 
     private readonly TextBox _passwordBox;
     private readonly TextBox _confirmBox;
@@ -32,6 +34,7 @@ public sealed class MainForm : Form
     private readonly ListBox _aiList;
     private readonly TextBox _aiInput;
     private readonly ListBox _appList;
+    private readonly ListBox _blockedAppList;
     private readonly TextBox _extensionsBox;
     private readonly TextBox _blockedExtensionsBox;
     private readonly CheckBox _restrictFolderCheck;
@@ -51,6 +54,9 @@ public sealed class MainForm : Form
         BackColor = Theme.Background;
         Font = Theme.Base;
         ForeColor = Theme.Text;
+        AutoScaleDimensions = new SizeF(96, 96);
+        AutoScaleMode = AutoScaleMode.Dpi;
+        FormClosed += (_, _) => _help.Dispose();
 
         var root = new TableLayoutPanel
         {
@@ -67,14 +73,17 @@ public sealed class MainForm : Form
 
         root.Controls.Add(BuildLanguageBar(), 0, 0);
 
-        var content = new FlowLayoutPanel
+        var scroll = new Panel { Dock = DockStyle.Fill, AutoScroll = true };
+        var content = new TableLayoutPanel
         {
-            Dock = DockStyle.Fill,
-            FlowDirection = FlowDirection.TopDown,
-            WrapContents = false,
-            AutoScroll = true,
+            Dock = DockStyle.Top,
+            ColumnCount = 1,
+            AutoSize = true,
+            AutoSizeMode = AutoSizeMode.GrowAndShrink,
             BackColor = Theme.Background
         };
+        content.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+        scroll.Controls.Add(content);
 
         // --- Passwords ---
         var pwdSection = Section("secPasswords");
@@ -157,6 +166,7 @@ public sealed class MainForm : Form
         var appSection = Section("secApps");
         var appStack = VerticalStack();
         appStack.Controls.Add(HintLabel("appsHint", new Padding(0, 0, 0, 2)));
+        appStack.Controls.Add(HintLabel("appsPolicyHint", new Padding(0, 0, 0, 8)));
         _appList = new ListBox { Width = SectionWidth - 30, Height = 100, Margin = new Padding(0, 0, 0, 6) };
         Theme.StyleList(_appList);
         appStack.Controls.Add(_appList);
@@ -168,6 +178,23 @@ public sealed class MainForm : Form
             ("btnRemove", () => RemoveSelected(_appList))));
         appSection.Controls.Add(appStack);
         content.Controls.Add(appSection);
+
+        var blockedSection = Section("secBlockedApps");
+        var blockedStack = VerticalStack();
+        blockedStack.Controls.Add(HintLabel("blockedAppsHint", new Padding(0, 0, 0, 2)));
+        _blockedAppList = new ListBox { Height = 100, Margin = new Padding(0, 0, 0, 6) };
+        Theme.StyleList(_blockedAppList);
+        blockedStack.Controls.Add(_blockedAppList);
+        var blockedManual = new TextBox();
+        Theme.StyleInput(blockedManual);
+        blockedStack.Controls.Add(InputWithButtons(blockedManual,
+            ("btnBrowseExe", () => BrowseExe(_blockedAppList)),
+            ("btnAdd", () => AddToList(_blockedAppList, blockedManual)),
+            ("btnRemove", () => RemoveSelected(_blockedAppList))));
+        blockedSection.Controls.Add(blockedStack);
+        content.Controls.Add(blockedSection);
+        _helpTargets.Add((_blockedAppList, "blockedAppsHint"));
+        _helpTargets.Add((blockedManual, "blockedAppsHint"));
 
         // --- Files & folder ---
         var fileSection = Section("secFiles");
@@ -206,7 +233,7 @@ public sealed class MainForm : Form
         fileSection.Controls.Add(fileStack);
         content.Controls.Add(fileSection);
 
-        root.Controls.Add(content, 0, 1);
+        root.Controls.Add(scroll, 0, 1);
 
         _generateButton = new Button { Dock = DockStyle.Fill, Margin = new Padding(0, 6, 0, 6) };
         Theme.StylePrimary(_generateButton);
@@ -218,6 +245,15 @@ public sealed class MainForm : Form
         root.Controls.Add(_statusLabel, 0, 3);
 
         Controls.Add(root);
+
+        foreach (var (control, key) in new (Control, string)[]
+        {
+            (_monitorTargetsBox, "monitorTargetsLabel"), (_beepModeCombo, "beepModeLabel"),
+            (_volumeCombo, "volumeLabel"), (_aiList, "aiListLabel"), (_aiInput, "aiListLabel"),
+            (_appList, "appsHint"), (appManual, "appsHint"), (_extensionsBox, "extHint"),
+            (_blockedExtensionsBox, "extBlockHint"), (_workFolderModeCombo, "baseLabel"),
+            (_workFolderBox, "subLabel"), (_workFolderHint, "chkRestrict")
+        }) _helpTargets.Add((control, key));
 
         ApplyLanguage();
     }
@@ -274,10 +310,13 @@ public sealed class MainForm : Form
 
         foreach (var btn in _flagButtons)
         {
+            _help.SetToolTip(btn, (Language)btn.Tag! switch { Language.Ca => "Català", Language.Es => "Español", _ => "English" });
             var selected = (Language)btn.Tag! == Lang.Current;
             btn.FlatAppearance.BorderSize = selected ? 2 : 1;
             btn.FlatAppearance.BorderColor = selected ? Theme.Accent : Theme.Border;
         }
+        foreach (var (control, key) in _helpTargets)
+            _help.SetToolTip(control, UiHelp.Get(key, (int)Lang.Current));
     }
 
     private void RebuildCombo()
@@ -324,6 +363,7 @@ public sealed class MainForm : Form
     private T L<T>(T ctrl, string key) where T : Control
     {
         _i18n.Add((ctrl, key));
+        _helpTargets.Add((ctrl, key));
         ctrl.Text = Lang.T(key);
         return ctrl;
     }
@@ -331,6 +371,7 @@ public sealed class MainForm : Form
     private GroupBox Section(string key)
     {
         var box = Theme.Section(Lang.T(key));
+        box.Dock = DockStyle.Top;
         _i18n.Add((box, key));
         return box;
     }
@@ -345,37 +386,52 @@ public sealed class MainForm : Form
     {
         var grid = new TableLayoutPanel
         {
-            ColumnCount = 2,
-            RowCount = rows,
+            ColumnCount = 1,
+            RowCount = rows * 2,
+            Font = Theme.Base,
+            Dock = DockStyle.Top,
             Width = SectionWidth - 24,
             AutoSize = true,
             BackColor = Theme.Background
         };
-        grid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 230));
         grid.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
         return grid;
     }
 
-    private static FlowLayoutPanel VerticalStack()
+    private static TableLayoutPanel VerticalStack()
     {
-        return new FlowLayoutPanel
+        var stack = new TableLayoutPanel
         {
-            FlowDirection = FlowDirection.TopDown,
-            WrapContents = false,
+            Font = Theme.Base,
+            ColumnCount = 1,
+            Dock = DockStyle.Top,
             AutoSize = true,
             Width = SectionWidth - 24,
             BackColor = Theme.Background
         };
+        stack.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+        stack.ControlAdded += (_, e) =>
+        {
+            if (e.Control is not null) e.Control.Dock = DockStyle.Top;
+        };
+        stack.SizeChanged += (_, _) =>
+        {
+            foreach (Control child in stack.Controls)
+                if (child is Label or CheckBox)
+                    child.MaximumSize = new Size(Math.Max(1, stack.ClientSize.Width - child.Margin.Horizontal - 6), 0);
+        };
+        return stack;
     }
 
     private TextBox AddPasswordRow(TableLayoutPanel grid, int row, string key)
     {
-        var label = new Label { Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleLeft, ForeColor = Theme.Text };
+        var label = new Label { AutoSize = true, Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleLeft, ForeColor = Theme.Text };
         L(label, key);
-        grid.Controls.Add(label, 0, row);
+        grid.Controls.Add(label, 0, row * 2);
         var box = new TextBox { UseSystemPasswordChar = true, Dock = DockStyle.Fill, Margin = new Padding(0, 4, 0, 4) };
         Theme.StyleInput(box);
-        grid.Controls.Add(box, 1, row);
+        grid.Controls.Add(box, 0, row * 2 + 1);
+        _helpTargets.Add((box, key));
         return box;
     }
 
@@ -387,12 +443,16 @@ public sealed class MainForm : Form
         return check;
     }
 
-    private FlowLayoutPanel InputWithButtons(Control input, params (string key, Action action)[] buttons)
+    private TableLayoutPanel InputWithButtons(Control input, params (string key, Action action)[] buttons)
     {
-        var row = new FlowLayoutPanel { FlowDirection = FlowDirection.LeftToRight, AutoSize = true, WrapContents = false, Margin = new Padding(0, 0, 0, 8), BackColor = Theme.Background };
+        var row = new TableLayoutPanel { ColumnCount = buttons.Length + 1, RowCount = 1, Dock = DockStyle.Top, AutoSize = true, Margin = new Padding(0, 0, 0, 8), BackColor = Theme.Background };
+        row.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+        input.Dock = DockStyle.Fill;
+        input.Margin = new Padding(0, 5, 0, 0);
         row.Controls.Add(input);
         foreach (var (key, action) in buttons)
         {
+            row.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
             var button = new Button { AutoSize = true, Margin = new Padding(6, 0, 0, 0), Padding = new Padding(8, 4, 8, 4) };
             Theme.StyleSecondary(button);
             L(button, key);
@@ -428,19 +488,22 @@ public sealed class MainForm : Form
     }
 
     private void BrowseExe()
+        => BrowseExe(_appList);
+
+    private void BrowseExe(ListBox target)
     {
         using var dialog = new OpenFileDialog
         {
-            Title = Lang.T("dlgExe"),
+            Title = Lang.T(target == _appList ? "dlgExe" : "secBlockedApps"),
             Filter = "*.exe|*.exe|*.*|*.*"
         };
 
         if (dialog.ShowDialog(this) == DialogResult.OK)
         {
             var name = Path.GetFileName(dialog.FileName);
-            if (!_appList.Items.Contains(name))
+            if (!target.Items.Contains(name))
             {
-                _appList.Items.Add(name);
+                target.Items.Add(name);
             }
         }
     }
@@ -593,6 +656,7 @@ public sealed class MainForm : Form
                 AlarmVolumePercent = _volumeCombo.SelectedIndex switch { 0 => 25, 1 => 50, 2 => 75, _ => 100 },
                 AiBlocklist = _aiList.Items.Cast<string>().ToArray(),
                 AllowedProcesses = _appList.Items.Cast<string>().ToArray(),
+                BlockedProcesses = _blockedAppList.Items.Count == 0 ? null : _blockedAppList.Items.Cast<string>().ToArray(),
                 AllowedFileExtensions = allowedExtensions,
                 // An allow-list already restricts to ONLY the listed extensions, so a block-list
                 // would be redundant; keep it empty whenever the allow-list is in use.

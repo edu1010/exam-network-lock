@@ -46,6 +46,12 @@ public sealed class LinuxPlatform : IPlatform
             AddEnv(passthrough, "WAYLAND_DISPLAY");
             AddEnv(passthrough, "XDG_RUNTIME_DIR");
 
+            // Wait for the authorization result, not for the entire GUI session. Positional
+            // arguments preserve spaces and shell metacharacters in paths and configuration names.
+            passthrough.Add("/bin/sh");
+            passthrough.Add("-c");
+            passthrough.Add("test -x \"$1\" || exit 126; \"$@\" </dev/null >/dev/null 2>&1 &");
+            passthrough.Add("exam-lock-relaunch");
             passthrough.Add(executablePath);
             passthrough.AddRange(args);
 

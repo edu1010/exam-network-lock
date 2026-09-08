@@ -1,9 +1,10 @@
+using ExamShared;
 using ExamLockClient.Core.Platform;
 
 namespace ExamLockClient.Core.Monitoring;
 
 /// <summary>
-/// Snapshots the processes running when the lockdown starts, then flags any NEW process whose
+/// Snapshots the processes running when the lockdown starts, then flags explicitly blocked programs (including at startup) or any NEW process whose
 /// executable is not in the allowed list (and not a known-safe OS process). Deterrent only — never
 /// kills anything. Names are matched bare/lower-cased so a teacher's allow-list entry ("eclipse",
 /// "code", "java") works on Windows and Linux alike.
@@ -34,79 +35,60 @@ public sealed class ProcessMonitor : IDisposable
     };
 
     private readonly IPlatform _platform;
-    private readonly HashSet<string> _allowed;
+    private readonly ProcessPolicy _policy;
     private readonly HashSet<int> _knownPids = new();
     private readonly object _gate = new();
     private System.Timers.Timer? _timer;
 
     public event Action<string>? UnknownProcessStarted;
+    public event Action<string>? BlockedProcessDetected;
 
-    public ProcessMonitor(IPlatform platform, IEnumerable<string> allowedProcesses)
+    public ProcessMonitor(IPlatform platform, IEnumerable<string> allowedProcesses, IEnumerable<string>? blockedProcesses = null)
     {
         _platform = platform;
-        _allowed = new HashSet<string>(
-            allowedProcesses.Select(ProcessNames.Bare).Where(p => p.Length > 0),
-            StringComparer.OrdinalIgnoreCase);
+        _policy = new ProcessPolicy(allowedProcesses, blockedProcesses, SafeBaseProcesses);
     }
 
     public void Start()
     {
-        foreach (var p in _platform.GetProcessList())
-        {
-            _knownPids.Add(p.Pid);
-        }
-
+        // Existing apps form the allow-list baseline, but explicit prohibitions apply immediately.
+        Poll(reportUnknown: false);
         _timer = new System.Timers.Timer(2_000) { AutoReset = true };
         _timer.Elapsed += (_, _) => Poll();
         _timer.Start();
     }
 
-    private void Poll()
+    private void Poll(bool reportUnknown = true)
     {
-        try
+        lock (_gate)
         {
-            foreach (var p in _platform.GetProcessList())
+            try
             {
-                lock (_gate)
+                var snapshot = Snapshot();
+                // Forget exited processes so a recycled PID is not exempted forever.
+                _knownPids.IntersectWith(snapshot.Select(p => p.Pid));
+                foreach (var process in snapshot)
                 {
-                    if (!_knownPids.Add(p.Pid))
+                    if (!_knownPids.Add(process.Pid)) continue;
+                    switch (_policy.Evaluate(process.Name, alreadyRunning: !reportUnknown))
                     {
-                        continue;
+                        case ProcessDecision.Blocked:
+                            BlockedProcessDetected?.Invoke(process.Name);
+                            break;
+                        case ProcessDecision.Unknown:
+                            UnknownProcessStarted?.Invoke(process.Name);
+                            break;
                     }
                 }
-
-                if (IsAllowed(p.Name))
-                {
-                    continue;
-                }
-
-                UnknownProcessStarted?.Invoke(p.Name);
+            }
+            catch
+            {
+                // Transient enumeration errors are retried on the next tick.
             }
         }
-        catch
-        {
-            // Ignore transient enumeration errors.
-        }
     }
 
-    private bool IsAllowed(string name)
-    {
-        if (SafeBaseProcesses.Contains(name))
-        {
-            return true;
-        }
+    private (int Pid, string Name)[] Snapshot() => _platform.GetProcessList().Select(p => (p.Pid, p.Name)).ToArray();
 
-        // No allow-list set: do not flag processes by name.
-        if (_allowed.Count == 0)
-        {
-            return true;
-        }
-
-        return _allowed.Contains(name);
-    }
-
-    public void Dispose()
-    {
-        _timer?.Dispose();
-    }
+    public void Dispose() => _timer?.Dispose();
 }

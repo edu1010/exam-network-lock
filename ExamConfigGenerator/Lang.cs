@@ -36,10 +36,14 @@ internal static class Lang
         ["secRadios"] = new[] { "Radios", "Ràdios", "Radios" },
         ["secAi"] = new[] { "AI shield", "Escut anti-IA", "Escudo anti-IA" },
         ["secApps"] = new[] { "Allowed programs", "Programes permesos", "Programas permitidos" },
+        ["secBlockedApps"] = new[] { "Prohibited programs", "Programes prohibits", "Programas prohibidos" },
+        ["blockedAppsHint"] = new[] { "Executable names (e.g. firefox.exe or firefox). Detected even if already open. Prohibited takes priority over allowed. No processes are closed.", "Noms d'executables (p. ex. firefox.exe o firefox). Es detecten encara que ja estiguin oberts. Prohibits té prioritat sobre permesos. No es tanquen processos.", "Nombres de ejecutables (ej. firefox.exe o firefox). Se detectan aunque ya estén abiertos. Prohibidos tiene prioridad sobre permitidos. No se cierran procesos." },
+        ["btnBrowseExe"] = new[] { "Browse…", "Examina…", "Examinar…" },
+        ["appsPolicyHint"] = new[] { "Optional strict list: new unlisted processes trigger a warning. Existing processes and known system processes are exempt. Helpers may cause warnings; leave empty to use only prohibited programs.", "Llista estricta opcional: els processos nous no inclosos generen un avís. S'exclouen els ja oberts i els processos coneguts del sistema. Els auxiliars poden generar avisos; deixa-la buida per usar només els prohibits.", "Lista estricta opcional: los procesos nuevos no incluidos generan un aviso. Se excluyen los ya abiertos y los procesos conocidos del sistema. Los auxiliares pueden generar avisos; déjala vacía para usar solo los prohibidos." },
         ["secFiles"] = new[] { "Files and work folder", "Fitxers i carpeta de treball", "Archivos y carpeta de trabajo" },
 
-        ["pwdA"] = new[] { "Password to restore Wi-Fi", "Contrasenya per restaurar Wi-Fi", "Contraseña para restaurar Wi-Fi" },
-        ["pwdAc"] = new[] { "Confirm restore Wi-Fi password", "Confirmar contrasenya per restaurar Wi-Fi", "Confirmar contraseña para restaurar Wi-Fi" },
+        ["pwdA"] = new[] { "Password to re-enable Wi-Fi", "Contrasenya per rehabilitar Wi-Fi", "Contraseña para rehabilitar Wi-Fi" },
+        ["pwdAc"] = new[] { "Confirm re-enable Wi-Fi password", "Confirmar contrasenya per rehabilitar Wi-Fi", "Confirmar contraseña para rehabilitar Wi-Fi" },
         ["pwdB"] = new[] { "Password to close the program", "Contrasenya per tancar el programa", "Contraseña para cerrar el programa" },
         ["pwdBc"] = new[] { "Confirm close-program password", "Confirmar contrasenya per tancar el programa", "Confirmar contraseña para cerrar el programa" },
 
@@ -66,7 +70,7 @@ internal static class Lang
         ["appsHint"] = new[] { "Allowed executables (e.g. eclipse.exe). Empty = no restriction.", "Executables permesos (p. ex. eclipse.exe). Buit = sense restricció.", "Ejecutables permitidos (ej. eclipse.exe). Vacío = sin restricción." },
         ["extHint"] = new[] { "Allowed extensions, comma-separated (e.g. .java,.txt,.pdf). Empty = no restriction.", "Extensions permeses, separades per comes (p. ex. .java,.txt,.pdf). Buit = sense restricció.", "Extensiones permitidas, separadas por comas (ej. .java,.txt,.pdf). Vacío = sin restricción." },
         ["extBlockHint"] = new[] { "Blocked extensions, comma-separated (e.g. .exe,.zip). Empty = nothing blocked. Disabled when allowed extensions are set (the allow-list is stricter).", "Extensions bloquejades, separades per comes (p. ex. .exe,.zip). Buit = res bloquejat. Es desactiva si hi ha extensions permeses (la llista de permeses és més estricta).", "Extensiones no permitidas, separadas por comas (ej. .exe,.zip). Vacío = no bloquea nada. Se desactiva si hay extensiones permitidas (la lista de permitidas es más estricta)." },
-        ["chkRestrict"] = new[] { "Restrict work to a folder and its subfolders", "Restringeix el treball a una carpeta i les seves subcarpetes", "Restringir el trabajo a una carpeta y sus subcarpetas" },
+        ["chkRestrict"] = new[] { "Restrict work to a folder and its subfolders (experimental)", "Restringeix el treball a una carpeta i les seves subcarpetes (experimental)", "Restringir el trabajo a una carpeta y sus subcarpetas (experimental)" },
         ["baseLabel"] = new[] { "Folder base (resolved on the student PC):", "Base de la carpeta (es resol a l'equip de l'alumne):", "Base de la carpeta (se resuelve en el equipo del alumno):" },
         ["subLabel"] = new[] { "Optional subfolder (or fixed path):", "Subcarpeta opcional (o ruta fixa):", "Subcarpeta opcional (o ruta fija):" },
 
@@ -83,7 +87,7 @@ internal static class Lang
         ["allDocuments"] = new[] { "(the whole Documents folder)", "(tota la carpeta de Documents)", "(toda la carpeta de Documentos)" },
 
         ["valBothPwd"] = new[] { "Both passwords are required.", "Les dues contrasenyes són obligatòries.", "Las dos contraseñas son obligatorias." },
-        ["valConfirmA"] = new[] { "The restore Wi-Fi password does not match its confirmation.", "La contrasenya per restaurar Wi-Fi no coincideix amb la confirmació.", "La contraseña para restaurar Wi-Fi no coincide con su confirmación." },
+        ["valConfirmA"] = new[] { "The re-enable Wi-Fi password does not match its confirmation.", "La contrasenya per rehabilitar Wi-Fi no coincideix amb la confirmació.", "La contraseña para rehabilitar Wi-Fi no coincide con su confirmación." },
         ["valConfirmB"] = new[] { "The close-program password does not match its confirmation.", "La contrasenya per tancar el programa no coincideix amb la confirmació.", "La contraseña para cerrar el programa no coincide con su confirmación." },
         ["valDistinct"] = new[] { "The two passwords must be different.", "Les dues contrasenyes han de ser diferents.", "Las dos contraseñas deben ser distintas." },
         ["valFixedPath"] = new[] { "For 'Fixed path' you must enter the folder path.", "Per a 'Ruta fixa' has d'indicar la ruta de la carpeta.", "Para 'Ruta fija' debes indicar la ruta de la carpeta." },

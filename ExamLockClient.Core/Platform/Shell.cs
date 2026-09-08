@@ -34,9 +34,12 @@ internal static class Shell
                 return false;
             }
 
-            stdout = process.StandardOutput.ReadToEnd();
-            stderr = process.StandardError.ReadToEnd();
+            // Drain both pipes concurrently: a full stderr pipe must not block stdout forever.
+            var outputTask = process.StandardOutput.ReadToEndAsync();
+            var errorTask = process.StandardError.ReadToEndAsync();
             process.WaitForExit();
+            stdout = outputTask.GetAwaiter().GetResult();
+            stderr = errorTask.GetAwaiter().GetResult();
             return process.ExitCode == 0;
         }
         catch (Exception ex)

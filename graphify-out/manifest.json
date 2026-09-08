@@ -1,302 +1,554 @@
 {
   ".codex/hooks.json": {
-    "mtime": 1781811771.2498991,
+    "mtime": 1788777274.1742215,
+    "seen": 1788778514.171249,
     "ast_hash": "16a0fe9baf378eaf316f7f7164188c38",
     "semantic_hash": "16a0fe9baf378eaf316f7f7164188c38"
   },
   "ExamConfigGenerator/ExamConfigGenerator.csproj": {
-    "mtime": 1781811542.0579493,
+    "mtime": 1788777274.2328188,
+    "seen": 1788778514.171249,
     "ast_hash": "90b6252a4245a7b85717b003a13d2c10",
     "semantic_hash": "90b6252a4245a7b85717b003a13d2c10"
   },
   "ExamConfigGenerator/Flags.cs": {
-    "mtime": 1781567329.8475468,
+    "mtime": 1788777274.2400868,
+    "seen": 1788778514.171249,
     "ast_hash": "67f283a68f3b67fced3fafc25b33760d",
     "semantic_hash": "67f283a68f3b67fced3fafc25b33760d"
   },
   "ExamConfigGenerator/Lang.cs": {
-    "mtime": 1781824426.8660586,
-    "ast_hash": "749b8f1db3f4787a91543f644783d0b6",
+    "mtime": 1788854774.6177802,
+    "seen": 1788854926.9481595,
+    "ast_hash": "09c0dd028c3ca6cbbd108c20cb0aab54",
     "semantic_hash": ""
   },
   "ExamConfigGenerator/MainForm.cs": {
-    "mtime": 1781820244.4496517,
-    "ast_hash": "57e76774e63896ebb2150f37cfef81b2",
+    "mtime": 1788854774.6137402,
+    "seen": 1788854926.9481595,
+    "ast_hash": "23251875607b6a2eeb5e7f0ce30932f4",
     "semantic_hash": ""
   },
   "ExamConfigGenerator/Program.cs": {
-    "mtime": 1781557567.1526608,
+    "mtime": 1788777274.2473528,
+    "seen": 1788778514.171249,
     "ast_hash": "b54791f73ede3835349ef8a30a15d517",
     "semantic_hash": "b54791f73ede3835349ef8a30a15d517"
   },
   "ExamConfigGenerator/Theme.cs": {
-    "mtime": 1781567329.8495574,
-    "ast_hash": "c6a303a84687dbb679e2cd7d0ebb2150",
-    "semantic_hash": "c6a303a84687dbb679e2cd7d0ebb2150"
+    "mtime": 1788854774.6208043,
+    "seen": 1788854926.9481595,
+    "ast_hash": "20acc9b73703fc04ebc9e45bfb88e1ba",
+    "semantic_hash": ""
   },
   "ExamLockClient/AiConnectionMonitor.cs": {
-    "mtime": 1781816010.3704712,
-    "ast_hash": "261dd306ba0292b5247bb1c11aaeda0b",
+    "mtime": 1788777274.309571,
+    "seen": 1788778514.171249,
+    "ast_hash": "d76f6da2150c735c8eb1b610b6ef42b8",
     "semantic_hash": ""
   },
   "ExamLockClient/AudioAlerter.cs": {
-    "mtime": 1781811542.0675395,
+    "mtime": 1788777274.31206,
+    "seen": 1788778514.171249,
     "ast_hash": "f0e0cababbce39f3bdf9603ae5b8b232",
     "semantic_hash": "f0e0cababbce39f3bdf9603ae5b8b232"
   },
   "ExamLockClient/DnsCacheMonitor.cs": {
-    "mtime": 1781819989.7580903,
-    "ast_hash": "39be7467e83c913b961054f438f1201f",
+    "mtime": 1788777274.31206,
+    "seen": 1788778514.171249,
+    "ast_hash": "b778fffc60285675ed4fb9472c4df840",
     "semantic_hash": ""
   },
   "ExamLockClient/ExamLockClient.csproj": {
-    "mtime": 1781811542.071671,
+    "mtime": 1788777274.31206,
+    "seen": 1788778514.171249,
     "ast_hash": "ff51138eac60f67aa6dc4ceb662d8365",
     "semantic_hash": "ff51138eac60f67aa6dc4ceb662d8365"
   },
   "ExamLockClient/FileActivityMonitor.cs": {
-    "mtime": 1781811542.0747313,
+    "mtime": 1788777274.31206,
+    "seen": 1788778514.171249,
     "ast_hash": "ab464037e21aab10331f526590ce1afd",
     "semantic_hash": "ab464037e21aab10331f526590ce1afd"
   },
   "ExamLockClient/Flags.cs": {
-    "mtime": 1781567329.8627496,
+    "mtime": 1788777274.3225427,
+    "seen": 1788778514.171249,
     "ast_hash": "f672f30e3c3a6c90acce90c877a47db5",
     "semantic_hash": "f672f30e3c3a6c90acce90c877a47db5"
   },
   "ExamLockClient/Lang.cs": {
-    "mtime": 1781824438.8134778,
-    "ast_hash": "a77063e1f6bc371e9c45459188d75dcc",
+    "mtime": 1788854774.6278,
+    "seen": 1788854926.9481595,
+    "ast_hash": "dd2f7e20e714473bd7fce7a23f719fc5",
     "semantic_hash": ""
   },
   "ExamLockClient/MainForm.cs": {
-    "mtime": 1781824444.560249,
-    "ast_hash": "3e8bf6141c305d51fbfcf3cc5ebeb9ef",
+    "mtime": 1788854774.6247852,
+    "seen": 1788854926.9481595,
+    "ast_hash": "f4d8da924ac6e420eb39b4b108ee0e10",
     "semantic_hash": ""
   },
   "ExamLockClient/MonitorReporter.cs": {
-    "mtime": 1781818596.1086748,
-    "ast_hash": "be15383fe348d5bcb5b9cf8b01a7368f",
+    "mtime": 1788777274.3225427,
+    "seen": 1788778514.171249,
+    "ast_hash": "211af95274d0247a00ef7303d309ebfd",
     "semantic_hash": ""
   },
   "ExamLockClient/NetworkAdapterService.cs": {
-    "mtime": 1781557567.165183,
+    "mtime": 1788777274.3225427,
+    "seen": 1788778514.171249,
     "ast_hash": "8c4a0ac5060afc3d9a34bf8514081c0a",
     "semantic_hash": "8c4a0ac5060afc3d9a34bf8514081c0a"
   },
   "ExamLockClient/ProcessMonitor.cs": {
-    "mtime": 1781567329.8627496,
-    "ast_hash": "65e7192e6af5c0614fe051c0732d9dc8",
-    "semantic_hash": "65e7192e6af5c0614fe051c0732d9dc8"
+    "mtime": 1788854774.6355839,
+    "seen": 1788854926.9481595,
+    "ast_hash": "bbef2426859de5d009e1cf298938ae7f",
+    "semantic_hash": ""
   },
   "ExamLockClient/Program.cs": {
-    "mtime": 1781823414.974208,
-    "ast_hash": "c5ba72272a99773406ca976785b56bba",
+    "mtime": 1788777274.3225427,
+    "seen": 1788778514.171249,
+    "ast_hash": "b221330f949d5aad37a24776af30db61",
     "semantic_hash": ""
   },
   "ExamLockClient/RadioService.cs": {
-    "mtime": 1781567329.8642523,
+    "mtime": 1788777274.3384023,
+    "seen": 1788778514.171249,
     "ast_hash": "beb0394c6a757f9a68700e73a111cf73",
     "semantic_hash": "beb0394c6a757f9a68700e73a111cf73"
   },
   "ExamLockClient/ShieldControl.cs": {
-    "mtime": 1781567329.8642523,
+    "mtime": 1788777274.3384023,
+    "seen": 1788778514.171249,
     "ast_hash": "5bdac69c4c5474a4e56b358bb540508b",
     "semantic_hash": "5bdac69c4c5474a4e56b358bb540508b"
   },
   "ExamLockClient/Theme.cs": {
-    "mtime": 1781567329.8642523,
-    "ast_hash": "44f96c248fb2b3b573e4db99e5e7e5b8",
-    "semantic_hash": "44f96c248fb2b3b573e4db99e5e7e5b8"
+    "mtime": 1788854774.6322775,
+    "seen": 1788854926.9481595,
+    "ast_hash": "aa02633aa9ce0f5d5eefe1c7fb7c6f9e",
+    "semantic_hash": ""
   },
   "ExamLockClient/ThreatProcessMonitor.cs": {
-    "mtime": 1781824852.802357,
-    "ast_hash": "e46f256c0a81c0967b867aa47ab5023f",
+    "mtime": 1788777274.346688,
+    "seen": 1788778514.171249,
+    "ast_hash": "9a5b90bd4ca1d4dd209a77f45d689528",
     "semantic_hash": ""
   },
   "ExamLocking.sln": {
-    "mtime": 1781811542.0854504,
-    "ast_hash": "50f662e0dc05f2c9892f199ad27c5529",
-    "semantic_hash": "50f662e0dc05f2c9892f199ad27c5529"
+    "mtime": 1788777274.346688,
+    "seen": 1788778514.171249,
+    "ast_hash": "47b20ce35aaf2b586ee477b08dcf2707",
+    "semantic_hash": ""
   },
   "ExamLogVerifierUI/EventCatalog.cs": {
-    "mtime": 1781816061.3026593,
-    "ast_hash": "b6cf77438db5fcb14de6e0b1be3fba6f",
+    "mtime": 1788854774.6385813,
+    "seen": 1788854926.9481595,
+    "ast_hash": "bab5f982d1f3036fdb0eda36968eaa4c",
     "semantic_hash": ""
   },
   "ExamLogVerifierUI/ExamLogVerifierUI.csproj": {
-    "mtime": 1781811542.0895877,
+    "mtime": 1788777274.3582792,
+    "seen": 1788778514.171249,
     "ast_hash": "90b6252a4245a7b85717b003a13d2c10",
     "semantic_hash": "90b6252a4245a7b85717b003a13d2c10"
   },
   "ExamLogVerifierUI/Flags.cs": {
-    "mtime": 1781811542.0916057,
+    "mtime": 1788777274.3582792,
+    "seen": 1788778514.171249,
     "ast_hash": "59cd58b8577dcb8454b1cd45e61bd5fa",
     "semantic_hash": "59cd58b8577dcb8454b1cd45e61bd5fa"
   },
   "ExamLogVerifierUI/Lang.cs": {
-    "mtime": 1781816071.7100954,
-    "ast_hash": "8ded3b630bfa4d5fdb81fab83c8f5402",
+    "mtime": 1788854774.640582,
+    "seen": 1788854926.9481595,
+    "ast_hash": "5a769b775180882c7e897c157b525796",
     "semantic_hash": ""
   },
   "ExamLogVerifierUI/MainForm.cs": {
-    "mtime": 1781811542.0957184,
+    "mtime": 1788777274.3683326,
+    "seen": 1788778514.171249,
     "ast_hash": "6dc8ab52684303ccd3e35f6cd8ad5a28",
     "semantic_hash": "6dc8ab52684303ccd3e35f6cd8ad5a28"
   },
   "ExamLogVerifierUI/Program.cs": {
-    "mtime": 1781811542.097773,
+    "mtime": 1788777274.3729188,
+    "seen": 1788778514.171249,
     "ast_hash": "70dc9097dd86ef3153c7621611e1c1f6",
     "semantic_hash": "70dc9097dd86ef3153c7621611e1c1f6"
   },
   "ExamLogVerifierUI/Theme.cs": {
-    "mtime": 1781811542.4187238,
+    "mtime": 1788777274.376501,
+    "seen": 1788778514.171249,
     "ast_hash": "98cf53afed7a6efa44c0aa1d1ac16369",
     "semantic_hash": "98cf53afed7a6efa44c0aa1d1ac16369"
   },
   "ExamLogVerifier/ExamLogVerifier.csproj": {
-    "mtime": 1781811542.0875628,
+    "mtime": 1788777274.3562677,
+    "seen": 1788778514.171249,
     "ast_hash": "5a8f36e6cf4265314499f5c3b7ab1cad",
     "semantic_hash": "5a8f36e6cf4265314499f5c3b7ab1cad"
   },
   "ExamLogVerifier/Program.cs": {
-    "mtime": 1781567329.866772,
+    "mtime": 1788777274.3562677,
+    "seen": 1788778514.171249,
     "ast_hash": "d4408f702c6b2e28d8d206b5208d7b14",
     "semantic_hash": "d4408f702c6b2e28d8d206b5208d7b14"
   },
   "ExamMonitor/ExamMonitor.csproj": {
-    "mtime": 1781811542.4187238,
+    "mtime": 1788777274.3784614,
+    "seen": 1788778514.171249,
     "ast_hash": "90b6252a4245a7b85717b003a13d2c10",
     "semantic_hash": "90b6252a4245a7b85717b003a13d2c10"
   },
   "ExamMonitor/Flags.cs": {
-    "mtime": 1781811542.4865575,
+    "mtime": 1788777274.3810472,
+    "seen": 1788778514.171249,
     "ast_hash": "6e061a5fcc343203d536a8c2ef3604b5",
     "semantic_hash": "6e061a5fcc343203d536a8c2ef3604b5"
   },
   "ExamMonitor/Lang.cs": {
-    "mtime": 1781811542.4897468,
+    "mtime": 1788777274.3810472,
+    "seen": 1788778514.171249,
     "ast_hash": "472249d7797371a0bb56abc9f141adcb",
     "semantic_hash": "472249d7797371a0bb56abc9f141adcb"
   },
   "ExamMonitor/MainForm.cs": {
-    "mtime": 1781811542.4917488,
+    "mtime": 1788777274.3829834,
+    "seen": 1788778514.171249,
     "ast_hash": "79cb7838aa08d30512bad8a145bd6b8a",
     "semantic_hash": "79cb7838aa08d30512bad8a145bd6b8a"
   },
   "ExamMonitor/Program.cs": {
-    "mtime": 1781811542.494208,
+    "mtime": 1788777274.3871498,
+    "seen": 1788778514.171249,
     "ast_hash": "d6a0b3bf9e9b464eae18428d13eafd85",
     "semantic_hash": "d6a0b3bf9e9b464eae18428d13eafd85"
   },
   "ExamMonitor/Theme.cs": {
-    "mtime": 1781811542.4952204,
+    "mtime": 1788777274.390189,
+    "seen": 1788778514.171249,
     "ast_hash": "ef6356fed7b2233821d96f0439cea115",
     "semantic_hash": "ef6356fed7b2233821d96f0439cea115"
   },
   "ExamShared/ExamShared.csproj": {
-    "mtime": 1781557567.1768553,
+    "mtime": 1788777274.390189,
+    "seen": 1788778514.171249,
     "ast_hash": "e1674a5aa08ea648c1e27b70cf4ab110",
     "semantic_hash": "e1674a5aa08ea648c1e27b70cf4ab110"
   },
   "ExamShared/LogVerifier.cs": {
-    "mtime": 1781811542.4982984,
+    "mtime": 1788777274.390189,
+    "seen": 1788778514.171249,
     "ast_hash": "f3537bf91d9cbef9bae884479e740ef9",
     "semantic_hash": "f3537bf91d9cbef9bae884479e740ef9"
   },
   "ExamShared/Monitoring.cs": {
-    "mtime": 1781818596.1106768,
-    "ast_hash": "7968a7b9792d8065753e53e6251e1549",
+    "mtime": 1788777274.390189,
+    "seen": 1788778514.171249,
+    "ast_hash": "d6e1fa7a229a6931e848e167bacfdb7f",
     "semantic_hash": ""
   },
   "ExamShared/Shared.cs": {
-    "mtime": 1781824452.621021,
-    "ast_hash": "18e2601f37e87c0a5db6670fb37c94dd",
+    "mtime": 1788854774.5514057,
+    "seen": 1788854926.9481595,
+    "ast_hash": "08a5f3cde91a191df31862174065dc22",
     "semantic_hash": ""
   },
   ".codex/skills/graphify/SKILL.md": {
-    "mtime": 1781811771.229503,
-    "ast_hash": "2b3477036742471691b444be392c3f81",
-    "semantic_hash": "2b3477036742471691b444be392c3f81"
+    "mtime": 1788777274.1891928,
+    "seen": 1788778514.171249,
+    "ast_hash": "bb21673e31a5a7895bf77502681e244d",
+    "semantic_hash": ""
   },
   ".codex/skills/graphify/references/add-watch.md": {
-    "mtime": 1781811756.7152102,
-    "ast_hash": "0df0589623217ca38a12bdcabfb42f4c",
-    "semantic_hash": "0df0589623217ca38a12bdcabfb42f4c"
+    "mtime": 1788777274.1952765,
+    "seen": 1788778514.171249,
+    "ast_hash": "e10311cd2f69de7d62674eff2b87420f",
+    "semantic_hash": ""
   },
   ".codex/skills/graphify/references/exports.md": {
-    "mtime": 1781811756.7162378,
-    "ast_hash": "c04ddf8f1f5ef5e262ebec491a523c74",
-    "semantic_hash": "c04ddf8f1f5ef5e262ebec491a523c74"
+    "mtime": 1788777274.1972868,
+    "seen": 1788778514.171249,
+    "ast_hash": "f8ab6da780543bb731f858496592ce88",
+    "semantic_hash": ""
   },
   ".codex/skills/graphify/references/extraction-spec.md": {
-    "mtime": 1781811756.7162378,
-    "ast_hash": "a86a7321597b23cc2b22e011b3dc6e1d",
-    "semantic_hash": "a86a7321597b23cc2b22e011b3dc6e1d"
+    "mtime": 1788777274.1992962,
+    "seen": 1788778514.171249,
+    "ast_hash": "76bd40116aec91d386e8b676c2005eb4",
+    "semantic_hash": ""
   },
   ".codex/skills/graphify/references/github-and-merge.md": {
-    "mtime": 1781811756.7172453,
-    "ast_hash": "cde13df085e4c492aeb7ba298a996d0d",
-    "semantic_hash": "cde13df085e4c492aeb7ba298a996d0d"
+    "mtime": 1788777274.205126,
+    "seen": 1788778514.171249,
+    "ast_hash": "aa0e7ef186392cad062e60483ca7dbbf",
+    "semantic_hash": ""
   },
   ".codex/skills/graphify/references/hooks.md": {
-    "mtime": 1781811756.7172453,
-    "ast_hash": "3f545db6ce646650bb9de588f5512a27",
-    "semantic_hash": "3f545db6ce646650bb9de588f5512a27"
+    "mtime": 1788777274.2071927,
+    "seen": 1788778514.171249,
+    "ast_hash": "0045c2f12c69bff3a641a8908a1ac057",
+    "semantic_hash": ""
   },
   ".codex/skills/graphify/references/query.md": {
-    "mtime": 1781811756.7182505,
-    "ast_hash": "7d1ff295a0e0aa1cc9a14e52c3a19202",
-    "semantic_hash": "7d1ff295a0e0aa1cc9a14e52c3a19202"
+    "mtime": 1788777274.2071927,
+    "seen": 1788778514.171249,
+    "ast_hash": "d6c79b38fa2ebf12307216b33f7b6b4d",
+    "semantic_hash": ""
   },
   ".codex/skills/graphify/references/transcribe.md": {
-    "mtime": 1781811756.7182505,
-    "ast_hash": "70f6aa30d6211f3a2c7e9fc45479f50c",
-    "semantic_hash": "70f6aa30d6211f3a2c7e9fc45479f50c"
+    "mtime": 1788777274.2119951,
+    "seen": 1788778514.171249,
+    "ast_hash": "cf217decf113af55483edfa042f22db5",
+    "semantic_hash": ""
   },
   ".codex/skills/graphify/references/update.md": {
-    "mtime": 1781811756.7182505,
-    "ast_hash": "0662e1a77b21d670132cd5855954bfff",
-    "semantic_hash": "0662e1a77b21d670132cd5855954bfff"
+    "mtime": 1788777274.2160249,
+    "seen": 1788778514.171249,
+    "ast_hash": "8a6c07789b1961e6f8de724e0a3d33bc",
+    "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1781811771.233548,
+    "mtime": 1788777274.2308083,
+    "seen": 1788778514.171249,
     "ast_hash": "752aa83aa64361ac32860f882dcff932",
     "semantic_hash": "752aa83aa64361ac32860f882dcff932"
   },
   "README.md": {
-    "mtime": 1781824467.0685651,
-    "ast_hash": "b7a046ef4c1934a2609e5b39bc5546b8",
+    "mtime": 1788777274.4011717,
+    "seen": 1788778514.171249,
+    "ast_hash": "fb431fa1dbb5f816a9106f65ef4e2c0b",
     "semantic_hash": ""
   },
   "docs/img/client.png": {
-    "mtime": 1781567329.875305,
+    "mtime": 1788777274.408956,
+    "seen": 1788778514.171249,
     "ast_hash": "e7cc49279754a4d9624a4300cadabab3",
     "semantic_hash": "e7cc49279754a4d9624a4300cadabab3"
   },
   "docs/img/generator-bottom.png": {
-    "mtime": 1781567329.8763132,
+    "mtime": 1788777274.4109738,
+    "seen": 1788778514.171249,
     "ast_hash": "518320ceb384871f60035bce24b8c7de",
     "semantic_hash": "518320ceb384871f60035bce24b8c7de"
   },
   "docs/img/generator-top.png": {
-    "mtime": 1781567329.8763132,
+    "mtime": 1788777274.4155679,
+    "seen": 1788778514.171249,
     "ast_hash": "d3b282cb68d7e8e1a313556e2638941d",
     "semantic_hash": "d3b282cb68d7e8e1a313556e2638941d"
   },
   "docs/img/monitor.png": {
-    "mtime": 1781811542.5085258,
+    "mtime": 1788777274.4177103,
+    "seen": 1788778514.171249,
     "ast_hash": "ee331d117827618a639707567017179b",
     "semantic_hash": "ee331d117827618a639707567017179b"
   },
   "ExamLockClient/AiConnectionEvidence.cs": {
-    "mtime": 1781824844.8182855,
-    "ast_hash": "fcfa89ebaec850fd1a1c895112c3c11d",
+    "mtime": 1788777274.309571,
+    "seen": 1788778514.171249,
+    "ast_hash": "9486598a2fc1d96e5f8f3ed34ae806b4",
     "semantic_hash": ""
   },
   "ExamLockClient/TcpConnectionOwnerTable.cs": {
-    "mtime": 1781816315.7913141,
-    "ast_hash": "1441219a4c4dcbc9569940579f5e2129",
+    "mtime": 1788777274.344779,
+    "seen": 1788778514.171249,
+    "ast_hash": "76a400c5c0bf1f969f5e91dbe996e569",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.App/App.axaml.cs": {
+    "mtime": 1788777274.2531352,
+    "seen": 1788778514.171249,
+    "ast_hash": "a612124423067db67f7f46c8e3d3b667",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.App/Controls/ShieldControl.cs": {
+    "mtime": 1788777274.257486,
+    "seen": 1788778514.171249,
+    "ast_hash": "48b419913270c82737f4a650996a93af",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.App/ExamLockClient.App.csproj": {
+    "mtime": 1788777274.257486,
+    "seen": 1788778514.171249,
+    "ast_hash": "29e6e1e3d605ee4a0ad36a86a3222af2",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.App/Lang.cs": {
+    "mtime": 1788854733.7623982,
+    "seen": 1788854926.9481595,
+    "ast_hash": "653e8fe0646618188d696dd378c146f1",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.App/Program.cs": {
+    "mtime": 1788777274.257486,
+    "seen": 1788778514.171249,
+    "ast_hash": "75b3bbd99643bf6679ef7f6f7545a13c",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.App/Theme.cs": {
+    "mtime": 1788777274.257486,
+    "seen": 1788778514.171249,
+    "ast_hash": "d571af135cee629ed19dd3150a61e7c4",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.App/Views/MainWindow.cs": {
+    "mtime": 1788854583.9842498,
+    "seen": 1788854926.9481595,
+    "ast_hash": "6a36b3ffca45f17e8579148ca3c65df9",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/ExamLockClient.Core.csproj": {
+    "mtime": 1788777274.2744062,
+    "seen": 1788778514.171249,
+    "ast_hash": "224c1766ce1c9a2f234e8fb7cb46d898",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/Monitoring/AiConnectionEvidence.cs": {
+    "mtime": 1788777274.2773724,
+    "seen": 1788778514.171249,
+    "ast_hash": "d419dc0610d3d7e928bc20801bfc6e06",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/Monitoring/AiConnectionMonitor.cs": {
+    "mtime": 1788777274.2773724,
+    "seen": 1788778514.171249,
+    "ast_hash": "ebbdd0fb9578da89dfb7933512dd2f7a",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/Monitoring/AiProcessClassifier.cs": {
+    "mtime": 1788777274.2800093,
+    "seen": 1788778514.171249,
+    "ast_hash": "e55b76b815a04d2079d9933f1e73e4e5",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/Monitoring/AudioAlerter.cs": {
+    "mtime": 1788777274.2800093,
+    "seen": 1788778514.171249,
+    "ast_hash": "de2e195ceb47f55d8836077a65f8af0c",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/Monitoring/DnsCacheMonitor.cs": {
+    "mtime": 1788777274.2800093,
+    "seen": 1788778514.171249,
+    "ast_hash": "2bb1286ac72b943346cc025d175352c0",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/Monitoring/FileActivityMonitor.cs": {
+    "mtime": 1788777274.287594,
+    "seen": 1788778514.171249,
+    "ast_hash": "6e9b0bf6afa27a792d52df9d5872ef0c",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/Monitoring/MonitorReporter.cs": {
+    "mtime": 1788777274.2906916,
+    "seen": 1788778514.171249,
+    "ast_hash": "7fa1d027da253457026c9b235cc04cdf",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/Monitoring/ProcessMonitor.cs": {
+    "mtime": 1788854583.9763818,
+    "seen": 1788854926.9481595,
+    "ast_hash": "c9b9ef54585204b9d3871377b381d868",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/Monitoring/ThreatProcessMonitor.cs": {
+    "mtime": 1788777274.2906916,
+    "seen": 1788778514.171249,
+    "ast_hash": "e4ff5908632363fb7efb01b7f76641d9",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/Platform/IPlatform.cs": {
+    "mtime": 1788777274.2906916,
+    "seen": 1788778514.171249,
+    "ast_hash": "c0f5afa9ad40fb00bfdc82fbf1e10874",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/Platform/LinuxPlatform.cs": {
+    "mtime": 1788777752.1976562,
+    "seen": 1788778514.171249,
+    "ast_hash": "ce98bf7565d9f5c163eb6178327656ca",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/Platform/PlatformFactory.cs": {
+    "mtime": 1788777274.2906916,
+    "seen": 1788778514.171249,
+    "ast_hash": "d7c93e2a89eaf5a86e0cdee05ed89385",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/Platform/ProcessNames.cs": {
+    "mtime": 1788777274.2906916,
+    "seen": 1788778514.171249,
+    "ast_hash": "474e607c058f1f6caa5296544659ee2c",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/Platform/Shell.cs": {
+    "mtime": 1788777754.459408,
+    "seen": 1788778514.171249,
+    "ast_hash": "691223173b17384911aa962c2461197a",
+    "semantic_hash": ""
+  },
+  "ExamLockClient.Core/Platform/WindowsPlatform.cs": {
+    "mtime": 1788777274.3053317,
+    "seen": 1788778514.171249,
+    "ast_hash": "8eadf174fcc1073f97c67e8754f25910",
+    "semantic_hash": ""
+  },
+  "ExamShared/UiHelp.cs": {
+    "mtime": 1788854774.5549717,
+    "seen": 1788854926.9481595,
+    "ast_hash": "cb6af6ed6a5cd738b647abeeaadd8596",
+    "semantic_hash": ""
+  },
+  "publish-linux.sh": {
+    "mtime": 1788777274.8147576,
+    "seen": 1788778514.171249,
+    "ast_hash": "b03a58575043252b01cf1489dd463987",
+    "semantic_hash": ""
+  },
+  "tests/LinuxPortChecks/LinuxPortChecks.csproj": {
+    "mtime": 1788778254.4598787,
+    "seen": 1788778514.171249,
+    "ast_hash": "de1737f6bce33f319df6e673ab5549ef",
+    "semantic_hash": ""
+  },
+  "tests/LinuxPortChecks/Program.cs": {
+    "mtime": 1788854856.0154686,
+    "seen": 1788854926.9481595,
+    "ast_hash": "e66e9d6c37b3cb2d3dd2a24980ddf0f5",
+    "semantic_hash": ""
+  },
+  "docs/linux-port-review.md": {
+    "mtime": 1788778670.216215,
+    "seen": 1788854926.9481595,
+    "ast_hash": "8b07926e45d2c2a0331b017159e9d04d",
+    "semantic_hash": ""
+  },
+  "ExamShared/ProcessPolicy.cs": {
+    "mtime": 1788854774.5575907,
+    "seen": 1788854926.9481595,
+    "ast_hash": "6f083e123836d1aa711748fd44d05d7f",
+    "semantic_hash": ""
+  },
+  "tests/ProcessPolicyChecks/ProcessPolicyChecks.csproj": {
+    "mtime": 1788854774.6455815,
+    "seen": 1788854926.9481595,
+    "ast_hash": "8d52c94f687ef3abdc6290381ac48ff0",
+    "semantic_hash": ""
+  },
+  "tests/ProcessPolicyChecks/Program.cs": {
+    "mtime": 1788854774.6485841,
+    "seen": 1788854926.9481595,
+    "ast_hash": "2c59ed7966a527e467f7828c3989fccb",
+    "semantic_hash": ""
+  },
+  "docs/process-rules.md": {
+    "mtime": 1788854774.6435797,
+    "seen": 1788854926.9481595,
+    "ast_hash": "f75c16a35fdd06b3b623f470d36c55d4",
     "semantic_hash": ""
   }
 }

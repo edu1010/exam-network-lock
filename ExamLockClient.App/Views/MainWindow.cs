@@ -67,10 +67,10 @@ public sealed class MainWindow : Window
     {
         _audio = new AudioAlerter(_platform);
 
-        Width = 600;
-        Height = 760;
-        MinWidth = 560;
-        MinHeight = 640;
+        Width = 680;
+        Height = 800;
+        MinWidth = 600;
+        MinHeight = 720;
         WindowStartupLocation = WindowStartupLocation.CenterScreen;
         Background = Palette.BackgroundBrush;
         FontFamily = FontFamily.Parse(Palette.FontFamily);
@@ -78,7 +78,7 @@ public sealed class MainWindow : Window
         var root = new Grid
         {
             Margin = new Thickness(16),
-            RowDefinitions = new RowDefinitions("Auto,220,Auto,*,Auto,Auto")
+            RowDefinitions = new RowDefinitions("Auto,180,Auto,*,Auto,Auto")
         };
 
         root.Children.Add(Place(BuildLanguageBar(), 0));
@@ -88,6 +88,7 @@ public sealed class MainWindow : Window
         root.Children.Add(Place(BuildControlsCard(), 4));
 
         _statusLabel.Foreground = Palette.TextMutedBrush;
+        _statusLabel.TextWrapping = TextWrapping.Wrap;
         _statusLabel.Margin = new Thickness(2, 6, 0, 0);
         root.Children.Add(Place(_statusLabel, 5));
 
@@ -120,6 +121,7 @@ public sealed class MainWindow : Window
         {
             var captured = lang;
             var btn = new Button { Content = label, Width = 44, Tag = lang };
+            ToolTip.SetTip(btn, lang switch { Language.Ca => "Català", Language.Es => "Español", _ => "English" });
             btn.Click += (_, _) => Lang.Set(captured);
             bar.Children.Add(btn);
         }
@@ -140,6 +142,8 @@ public sealed class MainWindow : Window
         _configPathValue.Foreground = Palette.TextBrush;
         _configPathValue.TextTrimming = TextTrimming.CharacterEllipsis;
         _radioStateValue.Foreground = Palette.TextBrush;
+        _radioStateValue.TextWrapping = TextWrapping.Wrap;
+        _configPathValue.PointerEntered += (_, _) => ToolTip.SetTip(_configPathValue, _configPathValue.Text);
 
         grid.Children.Add(Cell(_configTitle, 0, 0));
         grid.Children.Add(Cell(_configPathValue, 0, 1));
@@ -159,6 +163,7 @@ public sealed class MainWindow : Window
         };
 
         var layout = new Grid { RowDefinitions = new RowDefinitions("Auto,*") };
+        list.PointerEntered += (_, _) => ToolTip.SetTip(list, UiHelp.Get("incidents", (int)Lang.Current));
         layout.Children.Add(Cell(_incidentsTitle, 0, 0));
         layout.Children.Add(Cell(list, 1, 0));
 
@@ -169,34 +174,46 @@ public sealed class MainWindow : Window
     {
         var grid = new Grid
         {
-            ColumnDefinitions = new ColumnDefinitions("160,*,150"),
-            RowDefinitions = new RowDefinitions("Auto,Auto,Auto")
+            ColumnDefinitions = new ColumnDefinitions("*,Auto"),
+            RowDefinitions = new RowDefinitions("Auto,Auto,Auto,Auto,Auto")
         };
 
         _pwdALabel.Foreground = Palette.TextMutedBrush;
         _pwdALabel.VerticalAlignment = VerticalAlignment.Center;
         _pwdBLabel.Foreground = Palette.TextMutedBrush;
         _pwdBLabel.VerticalAlignment = VerticalAlignment.Center;
+        _pwdALabel.TextWrapping = TextWrapping.Wrap;
+        _pwdBLabel.TextWrapping = TextWrapping.Wrap;
+        foreach (var button in new[] { _restoreButton, _adminButton, _loadConfigButton, _reopenElevatedButton })
+        {
+            button.MinHeight = 36;
+            button.Padding = new Thickness(12, 6);
+            button.Margin = new Thickness(4, 4, 0, 4);
+            button.HorizontalAlignment = HorizontalAlignment.Stretch;
+            button.HorizontalContentAlignment = HorizontalAlignment.Center;
+        }
+        _restorePasswordBox.Margin = _adminPasswordBox.Margin = new Thickness(0, 4, 8, 4);
 
         _restoreButton.Click += (_, _) => AttemptRestoreWifi();
         _adminButton.Click += async (_, _) => await AttemptAdminClose();
         _adminButton.Background = Palette.AccentBrush;
         _adminButton.Foreground = Brushes.White;
         _loadConfigButton.Click += async (_, _) => await LoadConfig(forceDialog: true);
-        _reopenElevatedButton.Click += (_, _) => AttemptReopenElevated();
+        _reopenElevatedButton.Click += async (_, _) => await AttemptReopenElevated();
 
         grid.Children.Add(Cell(_pwdALabel, 0, 0));
-        grid.Children.Add(Cell(_restorePasswordBox, 0, 1));
-        grid.Children.Add(Cell(_restoreButton, 0, 2));
+        Grid.SetColumnSpan(_pwdALabel, 2);
+        grid.Children.Add(Cell(_restorePasswordBox, 1, 0));
+        grid.Children.Add(Cell(_restoreButton, 1, 1));
 
-        grid.Children.Add(Cell(_pwdBLabel, 1, 0));
-        grid.Children.Add(Cell(_adminPasswordBox, 1, 1));
-        grid.Children.Add(Cell(_adminButton, 1, 2));
+        grid.Children.Add(Cell(_pwdBLabel, 2, 0));
+        Grid.SetColumnSpan(_pwdBLabel, 2);
+        grid.Children.Add(Cell(_adminPasswordBox, 3, 0));
+        grid.Children.Add(Cell(_adminButton, 3, 1));
 
-        var reopen = Cell(_reopenElevatedButton, 2, 0);
-        Grid.SetColumnSpan(reopen, 2);
+        var reopen = Cell(_reopenElevatedButton, 4, 0);
         grid.Children.Add(reopen);
-        grid.Children.Add(Cell(_loadConfigButton, 2, 2));
+        grid.Children.Add(Cell(_loadConfigButton, 4, 1));
 
         return Card(grid);
     }
@@ -232,6 +249,13 @@ public sealed class MainWindow : Window
         _loadConfigButton.Content = Lang.T("loadBtn");
         _reopenElevatedButton.Content = Lang.T("reopenAdminBtn");
         _reopenElevatedButton.IsVisible = !_platform.IsElevated;
+        foreach (var (control, key) in new (Control, string)[]
+        {
+            (_pwdALabel, "pwdA"), (_restorePasswordBox, "pwdA"), (_restoreButton, "pwdA"),
+            (_pwdBLabel, "pwdB"), (_adminPasswordBox, "pwdB"), (_adminButton, "pwdB"),
+            (_loadConfigButton, "loadBtn"), (_reopenElevatedButton, "reopenAdminBtn"),
+            (_incidentsTitle, "incidents"), (_radioStateValue, "radios"), (_shield, "shield")
+        }) ToolTip.SetTip(control, UiHelp.Get(key, (int)Lang.Current));
 
         if (_config is null)
         {
@@ -442,10 +466,11 @@ public sealed class MainWindow : Window
             _threatMonitor.Start();
         }
 
-        if (_config.AllowedProcesses.Length > 0)
+        if (_config.AllowedProcesses.Length > 0 || _config.BlockedProcesses is { Length: > 0 })
         {
-            _processMonitor = new ProcessMonitor(_platform, _config.AllowedProcesses);
+            _processMonitor = new ProcessMonitor(_platform, _config.AllowedProcesses, _config.BlockedProcesses);
             _processMonitor.UnknownProcessStarted += exe => RunOnUi(() => OnUnknownProcess(exe));
+            _processMonitor.BlockedProcessDetected += exe => RunOnUi(() => OnBlockedProcess(exe));
             _processMonitor.Start();
         }
 
@@ -563,6 +588,14 @@ public sealed class MainWindow : Window
         }
 
         SetRed(Lang.T("statusOutside"));
+    }
+
+    private void OnBlockedProcess(string exe)
+    {
+        if (!_reported.Add("BLOCKEDPROC:" + exe)) return;
+        _log?.Append(LogEvents.BlockedProcess, exe);
+        AddIncident(string.Format(Lang.T("incBlockedProc"), exe));
+        SetRed(string.Format(Lang.T("statusBlockedProc"), exe));
     }
 
     private void OnUnknownProcess(string exe)
@@ -756,7 +789,7 @@ public sealed class MainWindow : Window
         Close();
     }
 
-    private void AttemptReopenElevated()
+    private async Task AttemptReopenElevated()
     {
         if (_platform.IsElevated)
         {
@@ -772,7 +805,17 @@ public sealed class MainWindow : Window
         }
 
         var args = _configPath.Length > 0 ? new[] { "--config", _configPath } : Array.Empty<string>();
-        if (!_platform.TryRelaunchElevated(exe, args))
+        _reopenElevatedButton.IsEnabled = false;
+        bool started;
+        try
+        {
+            started = await Task.Run(() => _platform.TryRelaunchElevated(exe, args));
+        }
+        finally
+        {
+            _reopenElevatedButton.IsEnabled = true;
+        }
+        if (!started)
         {
             SetStatus(Lang.T("adminRelaunchCanceled"));
             return;
@@ -818,6 +861,7 @@ public sealed class MainWindow : Window
 
         _reporter?.Dispose();
         _audio.Dispose();
+        Lang.Changed -= ApplyLanguage;
 
         base.OnClosing(e);
     }
