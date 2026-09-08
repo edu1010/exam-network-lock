@@ -172,6 +172,25 @@
   },
   "nodes": [
     {
+      "id": "examlockclient_theme_examlockclient_theme",
+      "label": "Theme",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "MainForm",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "norm_label": "theme",
+      "source_file": "ExamLockClient/Theme.cs",
+      "source_location": "L4"
+    },
+    {
       "id": "examlogverifierui_mainform_examlogverifierui_logitem",
       "label": "LogItem",
       "_callable": true,
@@ -498,89 +517,13 @@
       "source_location": "L14"
     },
     {
-      "id": "examlockclient_dnscachemonitor_examlockclient_dnscachemonitor",
-      "label": "DnsCacheMonitor",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s28"
-        ]
-      },
-      "norm_label": "dnscachemonitor",
-      "source_file": "ExamLockClient/DnsCacheMonitor.cs",
-      "source_location": "L11"
-    },
-    {
-      "id": "examlockclient_processmonitor_examlockclient_processmonitor",
-      "label": "ProcessMonitor",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s48"
-        ]
-      },
-      "norm_label": "processmonitor",
-      "source_file": "ExamLockClient/ProcessMonitor.cs",
-      "source_location": "L11"
-    },
-    {
-      "id": "examshared_processpolicy_examshared_processdecision",
-      "label": "ProcessDecision",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s0"
-        ]
-      },
-      "norm_label": "processdecision",
-      "source_file": "ExamShared/ProcessPolicy.cs",
-      "source_location": "L3"
-    },
-    {
-      "id": "examshared_processpolicy_examshared_processpolicy",
-      "label": "ProcessPolicy",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s0"
-        ]
-      },
-      "norm_label": "processpolicy",
-      "source_file": "ExamShared/ProcessPolicy.cs",
-      "source_location": "L6"
-    },
-    {
       "id": "examshared_uihelp_examshared_uihelp",
       "label": "UiHelp",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "ExamLockClient",
+      "community_name": "ExamShared",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
@@ -591,44 +534,6 @@
       "norm_label": "uihelp",
       "source_file": "ExamShared/UiHelp.cs",
       "source_location": "L4"
-    },
-    {
-      "id": "examlogverifierui_eventcatalog_examlogverifierui_eventcatalog",
-      "label": "EventCatalog",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifierUI",
-        "scope_chain": [
-          "s21"
-        ]
-      },
-      "norm_label": "eventcatalog",
-      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
-      "source_location": "L18"
-    },
-    {
-      "id": "examlogverifierui_eventcatalog_examlogverifierui_severity",
-      "label": "Severity",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifierUI",
-        "scope_chain": [
-          "s21"
-        ]
-      },
-      "norm_label": "severity",
-      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
-      "source_location": "L5"
     },
     {
       "id": "examlogverifierui_flags_examlogverifierui_flags",
@@ -688,23 +593,80 @@
       "source_location": "L5"
     },
     {
-      "id": "examlogverifierui_program_examlogverifierui_program",
-      "label": "Program",
+      "id": "examlockclient_monitorreporter_examlockclient_monitorreporter",
+      "label": "MonitorReporter",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
+      "community": 2,
+      "community_name": "MonitorReporter",
       "file_type": "code",
       "metadata": {
-        "namespace": "ExamLogVerifierUI",
+        "namespace": "ExamLockClient",
         "scope_chain": [
-          "s0"
+          "s66"
         ]
       },
-      "norm_label": "program",
-      "source_file": "ExamLogVerifierUI/Program.cs",
-      "source_location": "L3"
+      "norm_label": "monitorreporter",
+      "source_file": "ExamLockClient/MonitorReporter.cs",
+      "source_location": "L13"
+    },
+    {
+      "id": "examshared_monitoring_examshared_logchainverifier",
+      "label": "LogChainVerifier",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ]
+      },
+      "norm_label": "logchainverifier",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L273"
+    },
+    {
+      "id": "examshared_monitoring_examshared_logchunkmessage",
+      "label": "LogChunkMessage",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ]
+      },
+      "norm_label": "logchunkmessage",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L23"
+    },
+    {
+      "id": "examshared_monitoring_examshared_monitorbroadcaster",
+      "label": "MonitorBroadcaster",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ]
+      },
+      "norm_label": "monitorbroadcaster",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L72"
     },
     {
       "id": "examshared_monitoring_examshared_monitorlistener",
@@ -713,7 +675,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "Monitoring.cs",
+      "community_name": "MonitorReporter",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
@@ -732,7 +694,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "Monitoring.cs",
+      "community_name": "MonitorReporter",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
@@ -743,6 +705,25 @@
       "norm_label": "monitorprotocol",
       "source_file": "ExamShared/Monitoring.cs",
       "source_location": "L31"
+    },
+    {
+      "id": "examshared_monitoring_examshared_statusmessage",
+      "label": "StatusMessage",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ]
+      },
+      "norm_label": "statusmessage",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L12"
     },
     {
       "id": "examconfiggenerator_flags_examconfiggenerator_flags",
@@ -916,6 +897,25 @@
       "source_location": "L288"
     },
     {
+      "id": "examlogverifier_program_examlogverifier_program",
+      "label": "Program",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "ConfigEnvelope",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLogVerifier",
+        "scope_chain": [
+          "s103"
+        ]
+      },
+      "norm_label": "program",
+      "source_file": "ExamLogVerifier/Program.cs",
+      "source_location": "L8"
+    },
+    {
       "id": "examshared_shared_examshared_configenvelope",
       "label": "ConfigEnvelope",
       "_callable": true,
@@ -993,42 +993,80 @@
       "source_location": "L402"
     },
     {
-      "id": "examlockclient_monitorreporter_examlockclient_monitorreporter",
-      "label": "MonitorReporter",
+      "id": "examlogverifierui_eventcatalog_examlogverifierui_eventcatalog",
+      "label": "EventCatalog",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "MonitorReporter",
+      "community_name": "EventCatalog",
       "file_type": "code",
       "metadata": {
-        "namespace": "ExamLockClient",
+        "namespace": "ExamLogVerifierUI",
         "scope_chain": [
-          "s66"
+          "s21"
         ]
       },
-      "norm_label": "monitorreporter",
-      "source_file": "ExamLockClient/MonitorReporter.cs",
-      "source_location": "L13"
+      "norm_label": "eventcatalog",
+      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
+      "source_location": "L18"
     },
     {
-      "id": "examshared_monitoring_examshared_monitorbroadcaster",
-      "label": "MonitorBroadcaster",
+      "id": "examlogverifierui_eventcatalog_examlogverifierui_severity",
+      "label": "Severity",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "EventCatalog",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLogVerifierUI",
+        "scope_chain": [
+          "s21"
+        ]
+      },
+      "norm_label": "severity",
+      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
+      "source_location": "L5"
+    },
+    {
+      "id": "examshared_processpolicy_examshared_processdecision",
+      "label": "ProcessDecision",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "MonitorBroadcaster",
+      "community_name": "ProcessPolicy",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
         "scope_chain": [
-          "s168"
+          "s0"
         ]
       },
-      "norm_label": "monitorbroadcaster",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L72"
+      "norm_label": "processdecision",
+      "source_file": "ExamShared/ProcessPolicy.cs",
+      "source_location": "L3"
+    },
+    {
+      "id": "examshared_processpolicy_examshared_processpolicy",
+      "label": "ProcessPolicy",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "ProcessPolicy",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "norm_label": "processpolicy",
+      "source_file": "ExamShared/ProcessPolicy.cs",
+      "source_location": "L6"
     },
     {
       "id": "examlockclient_audioalerter_examlockclient_audioalerter",
@@ -1149,80 +1187,80 @@
       "source_location": "L190"
     },
     {
-      "id": "examshared_monitoring_examshared_statusmessage",
-      "label": "StatusMessage",
+      "id": "examlogverifierui_program_examlogverifierui_program",
+      "label": "Program",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "StatusMessage",
+      "community_name": "ExamLogVerifierUI",
       "file_type": "code",
       "metadata": {
-        "namespace": "ExamShared",
+        "namespace": "ExamLogVerifierUI",
         "scope_chain": [
-          "s168"
+          "s0"
         ]
       },
-      "norm_label": "statusmessage",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L12"
+      "norm_label": "program",
+      "source_file": "ExamLogVerifierUI/Program.cs",
+      "source_location": "L3"
     },
     {
-      "id": "examshared_monitoring_examshared_logchainverifier",
-      "label": "LogChainVerifier",
+      "id": "examlockclient_dnscachemonitor_examlockclient_dnscachemonitor",
+      "label": "DnsCacheMonitor",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": ".Verify",
+      "community_name": "DnsCacheMonitor",
       "file_type": "code",
       "metadata": {
-        "namespace": "ExamShared",
+        "namespace": "ExamLockClient",
         "scope_chain": [
-          "s168"
+          "s28"
         ]
       },
-      "norm_label": "logchainverifier",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L273"
+      "norm_label": "dnscachemonitor",
+      "source_file": "ExamLockClient/DnsCacheMonitor.cs",
+      "source_location": "L11"
     },
     {
-      "id": "examshared_monitoring_examshared_logchunkmessage",
-      "label": "LogChunkMessage",
+      "id": "examlockclient_processmonitor_examlockclient_processmonitor",
+      "label": "ProcessMonitor",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 32,
-      "community_name": "LogChunkMessage",
+      "community_name": "ProcessMonitor",
       "file_type": "code",
       "metadata": {
-        "namespace": "ExamShared",
+        "namespace": "ExamLockClient",
         "scope_chain": [
-          "s168"
+          "s48"
         ]
       },
-      "norm_label": "logchunkmessage",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L23"
+      "norm_label": "processmonitor",
+      "source_file": "ExamLockClient/ProcessMonitor.cs",
+      "source_location": "L11"
     },
     {
-      "id": "examshared_shared_examshared_configintegrityservice",
-      "label": "ConfigIntegrityService",
+      "id": "examshared_fileactivitynoisefilter_examshared_fileactivitynoisefilter",
+      "label": "FileActivityNoiseFilter",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": ".VerifyHmac",
+      "community_name": ".DocumentArguments",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
         "scope_chain": [
-          "s123"
+          "s0"
         ]
       },
-      "norm_label": "configintegrityservice",
-      "source_file": "ExamShared/Shared.cs",
-      "source_location": "L228"
+      "norm_label": "fileactivitynoisefilter",
+      "source_file": "ExamShared/FileActivityNoiseFilter.cs",
+      "source_location": "L4"
     },
     {
       "id": "examshared_logverifier_examshared_logintegrity",
@@ -1301,25 +1339,6 @@
       "source_location": "L19"
     },
     {
-      "id": "examlogverifier_program_examlogverifier_program",
-      "label": "Program",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "Program",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifier",
-        "scope_chain": [
-          "s103"
-        ]
-      },
-      "norm_label": "program",
-      "source_file": "ExamLogVerifier/Program.cs",
-      "source_location": "L8"
-    },
-    {
       "id": "examconfiggenerator_mainform_examconfiggenerator_mainform",
       "label": "MainForm",
       "_callable": true,
@@ -1355,25 +1374,6 @@
       },
       "norm_label": "theme",
       "source_file": "ExamConfigGenerator/Theme.cs",
-      "source_location": "L4"
-    },
-    {
-      "id": "examlockclient_theme_examlockclient_theme",
-      "label": "Theme",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "MainForm",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s0"
-        ]
-      },
-      "norm_label": "theme",
-      "source_file": "ExamLockClient/Theme.cs",
       "source_location": "L4"
     },
     {
@@ -1511,6 +1511,25 @@
       "norm_label": "configdefaults",
       "source_file": "ExamShared/Shared.cs",
       "source_location": "L117"
+    },
+    {
+      "id": "examshared_shared_examshared_configintegrityservice",
+      "label": "ConfigIntegrityService",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Shared.cs",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s123"
+        ]
+      },
+      "norm_label": "configintegrityservice",
+      "source_file": "ExamShared/Shared.cs",
+      "source_location": "L228"
     },
     {
       "id": "examshared_shared_examshared_logevents",
@@ -1715,12 +1734,118 @@
       "metadata": {
         "namespace": "ExamLockClient",
         "scope_chain": [
-          "s75"
+          "s94"
         ]
       },
       "norm_label": "fileactivitymonitor",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L16"
+      "source_location": "L17"
+    },
+    {
+      "id": "examconfiggenerator_mainform_examconfiggenerator_mainform_inputwithbuttons",
+      "label": ".InputWithButtons()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "MainForm",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamConfigGenerator",
+        "scope_chain": [
+          "s162"
+        ]
+      },
+      "norm_label": ".inputwithbuttons()",
+      "source_file": "ExamConfigGenerator/MainForm.cs",
+      "source_location": "L446"
+    },
+    {
+      "id": "examlockclient_theme_examlockclient_theme_card",
+      "label": ".Card()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "MainForm",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "norm_label": ".card()",
+      "source_file": "ExamLockClient/Theme.cs",
+      "source_location": "L61"
+    },
+    {
+      "id": "examlockclient_theme_examlockclient_theme_styleinput",
+      "label": ".StyleInput()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "MainForm",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "norm_label": ".styleinput()",
+      "source_file": "ExamLockClient/Theme.cs",
+      "source_location": "L53"
+    },
+    {
+      "id": "examlockclient_theme_examlockclient_theme_styleprimary",
+      "label": ".StylePrimary()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "MainForm",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s0"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Max",
+            "receiver_type": "Math",
+            "lang": "csharp",
+            "line": "L35"
+          }
+        ]
+      },
+      "norm_label": ".styleprimary()",
+      "source_file": "ExamLockClient/Theme.cs",
+      "source_location": "L23"
+    },
+    {
+      "id": "examlockclient_theme_examlockclient_theme_stylesecondary",
+      "label": ".StyleSecondary()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "MainForm",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s0"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Max",
+            "receiver_type": "Math",
+            "lang": "csharp",
+            "line": "L50"
+          }
+        ]
+      },
+      "norm_label": ".stylesecondary()",
+      "source_file": "ExamLockClient/Theme.cs",
+      "source_location": "L38"
     },
     {
       "id": "examlogverifierui_eventcatalog_examlogverifierui_eventcatalog_label",
@@ -5029,328 +5154,12 @@
       "source_location": "L38"
     },
     {
-      "id": "examlockclient_dnscachemonitor_examlockclient_dnscachemonitor_check",
-      "label": ".Check()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s28"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Add",
-            "receiver_type": "HashSet",
-            "lang": "csharp",
-            "line": "L69"
-          },
-          {
-            "callee": "Invoke",
-            "receiver_type": "AiHostnameResolved?",
-            "lang": "csharp",
-            "line": "L76"
-          }
-        ]
-      },
-      "norm_label": ".check()",
-      "source_file": "ExamLockClient/DnsCacheMonitor.cs",
-      "source_location": "L61"
-    },
-    {
-      "id": "examlockclient_dnscachemonitor_examlockclient_dnscachemonitor_dispose",
-      "label": ".Dispose()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s28"
-        ]
-      },
-      "norm_label": ".dispose()",
-      "source_file": "ExamLockClient/DnsCacheMonitor.cs",
-      "source_location": "L94"
-    },
-    {
-      "id": "examlockclient_dnscachemonitor_examlockclient_dnscachemonitor_isblocked",
-      "label": ".IsBlocked()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s28"
-        ]
-      },
-      "norm_label": ".isblocked()",
-      "source_file": "ExamLockClient/DnsCacheMonitor.cs",
-      "source_location": "L80"
-    },
-    {
-      "id": "examlockclient_dnscachemonitor_examlockclient_dnscachemonitor_poll",
-      "label": ".Poll()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s28"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Get",
-            "receiver_type": "ManagementObjectSearcher",
-            "lang": "csharp",
-            "line": "L46"
-          }
-        ]
-      },
-      "norm_label": ".poll()",
-      "source_file": "ExamLockClient/DnsCacheMonitor.cs",
-      "source_location": "L39"
-    },
-    {
-      "id": "examlockclient_dnscachemonitor_examlockclient_dnscachemonitor_start",
-      "label": ".Start()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s28"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Start",
-            "receiver_type": "Timer",
-            "lang": "csharp",
-            "line": "L36"
-          }
-        ]
-      },
-      "norm_label": ".start()",
-      "source_file": "ExamLockClient/DnsCacheMonitor.cs",
-      "source_location": "L28"
-    },
-    {
-      "id": "examlockclient_processmonitor_examlockclient_processmonitor_dispose",
-      "label": ".Dispose()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s48"
-        ]
-      },
-      "norm_label": ".dispose()",
-      "source_file": "ExamLockClient/ProcessMonitor.cs",
-      "source_location": "L91"
-    },
-    {
-      "id": "examlockclient_processmonitor_examlockclient_processmonitor_poll",
-      "label": ".Poll()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s48"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "IntersectWith",
-            "receiver_type": "HashSet",
-            "lang": "csharp",
-            "line": "L55"
-          },
-          {
-            "callee": "Add",
-            "receiver_type": "HashSet",
-            "lang": "csharp",
-            "line": "L58"
-          },
-          {
-            "callee": "Invoke",
-            "receiver_type": "BlockedProcessDetected?",
-            "lang": "csharp",
-            "line": "L62"
-          },
-          {
-            "callee": "Invoke",
-            "receiver_type": "UnknownProcessStarted?",
-            "lang": "csharp",
-            "line": "L65"
-          }
-        ]
-      },
-      "norm_label": ".poll()",
-      "source_file": "ExamLockClient/ProcessMonitor.cs",
-      "source_location": "L47"
-    },
-    {
-      "id": "examlockclient_processmonitor_examlockclient_processmonitor_snapshot",
-      "label": ".Snapshot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s48"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "GetProcesses",
-            "receiver_type": "Process",
-            "lang": "csharp",
-            "line": "L80"
-          },
-          {
-            "callee": "Add",
-            "receiver_type": "List",
-            "lang": "csharp",
-            "line": "L84"
-          },
-          {
-            "callee": "ToArray",
-            "receiver_type": "List",
-            "lang": "csharp",
-            "line": "L88"
-          }
-        ]
-      },
-      "norm_label": ".snapshot()",
-      "source_file": "ExamLockClient/ProcessMonitor.cs",
-      "source_location": "L77"
-    },
-    {
-      "id": "examlockclient_processmonitor_examlockclient_processmonitor_start",
-      "label": ".Start()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s48"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Start",
-            "receiver_type": "Timer",
-            "lang": "csharp",
-            "line": "L44"
-          }
-        ]
-      },
-      "norm_label": ".start()",
-      "source_file": "ExamLockClient/ProcessMonitor.cs",
-      "source_location": "L38"
-    },
-    {
-      "id": "examshared_processpolicy_examshared_processpolicy_evaluate",
-      "label": ".Evaluate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s0"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Contains",
-            "receiver_type": "HashSet",
-            "lang": "csharp",
-            "line": "L24"
-          }
-        ]
-      },
-      "norm_label": ".evaluate()",
-      "source_file": "ExamShared/ProcessPolicy.cs",
-      "source_location": "L19"
-    },
-    {
-      "id": "examshared_processpolicy_examshared_processpolicy_names",
-      "label": ".Names()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s0"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Select",
-            "receiver_type": "IEnumerable",
-            "lang": "csharp",
-            "line": "L40"
-          }
-        ]
-      },
-      "norm_label": ".names()",
-      "source_file": "ExamShared/ProcessPolicy.cs",
-      "source_location": "L39"
-    },
-    {
-      "id": "examshared_processpolicy_examshared_processpolicy_normalize",
-      "label": ".Normalize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s0"
-        ]
-      },
-      "norm_label": ".normalize()",
-      "source_file": "ExamShared/ProcessPolicy.cs",
-      "source_location": "L30"
-    },
-    {
       "id": "examshared_uihelp_examshared_uihelp_get",
       "label": ".Get()",
       "_callable": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "ExamLockClient",
+      "community_name": "ExamShared",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
@@ -5375,104 +5184,6 @@
       "norm_label": ".get()",
       "source_file": "ExamShared/UiHelp.cs",
       "source_location": "L6"
-    },
-    {
-      "id": "examlogverifierui_eventcatalog_examlogverifierui_eventcatalog_iscritical",
-      "label": ".IsCritical()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifierUI",
-        "scope_chain": [
-          "s21"
-        ]
-      },
-      "norm_label": ".iscritical()",
-      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
-      "source_location": "L79"
-    },
-    {
-      "id": "examlogverifierui_eventcatalog_examlogverifierui_eventcatalog_isincident",
-      "label": ".IsIncident()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifierUI",
-        "scope_chain": [
-          "s21"
-        ]
-      },
-      "norm_label": ".isincident()",
-      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
-      "source_location": "L81"
-    },
-    {
-      "id": "examlogverifierui_eventcatalog_examlogverifierui_eventcatalog_rowbg",
-      "label": ".RowBg()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifierUI",
-        "scope_chain": [
-          "s21"
-        ]
-      },
-      "norm_label": ".rowbg()",
-      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
-      "source_location": "L99"
-    },
-    {
-      "id": "examlogverifierui_eventcatalog_examlogverifierui_eventcatalog_rowtext",
-      "label": ".RowText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifierUI",
-        "scope_chain": [
-          "s21"
-        ]
-      },
-      "norm_label": ".rowtext()",
-      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
-      "source_location": "L107"
-    },
-    {
-      "id": "examlogverifierui_eventcatalog_examlogverifierui_eventcatalog_severityof",
-      "label": ".SeverityOf()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifierUI",
-        "scope_chain": [
-          "s21"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "TryGetValue",
-            "receiver_type": "Dictionary",
-            "lang": "csharp",
-            "line": "L76"
-          }
-        ]
-      },
-      "norm_label": ".severityof()",
-      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
-      "source_location": "L64"
     },
     {
       "id": "examlogverifierui_flags_examlogverifierui_flags_catalonia",
@@ -5709,36 +5420,392 @@
       "source_location": "L18"
     },
     {
-      "id": "examlogverifierui_program_examlogverifierui_program_main",
-      "label": ".Main()",
+      "id": "examlockclient_monitorreporter_examlockclient_monitorreporter_dispose",
+      "label": ".Dispose()",
       "_callable": true,
       "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
+      "community": 2,
+      "community_name": "MonitorReporter",
       "file_type": "code",
       "metadata": {
-        "namespace": "ExamLogVerifierUI",
+        "namespace": "ExamLockClient",
         "scope_chain": [
-          "s0"
+          "s66"
+        ]
+      },
+      "norm_label": ".dispose()",
+      "source_file": "ExamLockClient/MonitorReporter.cs",
+      "source_location": "L104"
+    },
+    {
+      "id": "examlockclient_monitorreporter_examlockclient_monitorreporter_readlog",
+      "label": ".ReadLog()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s66"
         ],
         "unresolved_calls": [
           {
-            "callee": "Initialize",
-            "receiver_type": "ApplicationConfiguration",
+            "callee": "ReadLines",
+            "receiver_type": "File",
             "lang": "csharp",
-            "line": "L8"
+            "line": "L77"
           },
           {
-            "callee": "Run",
-            "receiver_type": "Application",
+            "callee": "Deserialize<LogEntry>",
+            "receiver_type": "JsonSerializer",
             "lang": "csharp",
-            "line": "L9"
+            "line": "L84"
+          },
+          {
+            "callee": "Add",
+            "receiver_type": "List",
+            "lang": "csharp",
+            "line": "L87"
+          },
+          {
+            "callee": "RemoveRange",
+            "receiver_type": "List",
+            "lang": "csharp",
+            "line": "L98"
           }
         ]
       },
-      "norm_label": ".main()",
-      "source_file": "ExamLogVerifierUI/Program.cs",
-      "source_location": "L5"
+      "norm_label": ".readlog()",
+      "source_file": "ExamLockClient/MonitorReporter.cs",
+      "source_location": "L72"
+    },
+    {
+      "id": "examlockclient_monitorreporter_examlockclient_monitorreporter_setstate",
+      "label": ".SetState()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s66"
+        ]
+      },
+      "norm_label": ".setstate()",
+      "source_file": "ExamLockClient/MonitorReporter.cs",
+      "source_location": "L32"
+    },
+    {
+      "id": "examlockclient_monitorreporter_examlockclient_monitorreporter_start",
+      "label": ".Start()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s66"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Start",
+            "receiver_type": "Timer",
+            "lang": "csharp",
+            "line": "L42"
+          }
+        ]
+      },
+      "norm_label": ".start()",
+      "source_file": "ExamLockClient/MonitorReporter.cs",
+      "source_location": "L38"
+    },
+    {
+      "id": "examlockclient_monitorreporter_examlockclient_monitorreporter_tick",
+      "label": ".Tick()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s66"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Min",
+            "receiver_type": "Math",
+            "lang": "csharp",
+            "line": "L62"
+          }
+        ]
+      },
+      "norm_label": ".tick()",
+      "source_file": "ExamLockClient/MonitorReporter.cs",
+      "source_location": "L46"
+    },
+    {
+      "id": "examshared_monitoring_examshared_logchainverifier_computehmac",
+      "label": ".ComputeHmac()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "ToBase64String",
+            "receiver_type": "Convert",
+            "lang": "csharp",
+            "line": "L308"
+          },
+          {
+            "callee": "ComputeHash",
+            "receiver_type": "HMACSHA256",
+            "lang": "csharp",
+            "line": "L308"
+          }
+        ]
+      },
+      "norm_label": ".computehmac()",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L305"
+    },
+    {
+      "id": "examshared_monitoring_examshared_logchainverifier_fixedequals",
+      "label": ".FixedEquals()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "FixedTimeEquals",
+            "receiver_type": "CryptographicOperations",
+            "lang": "csharp",
+            "line": "L315"
+          },
+          {
+            "callee": "FromBase64String",
+            "receiver_type": "Convert",
+            "lang": "csharp",
+            "line": "L315"
+          }
+        ]
+      },
+      "norm_label": ".fixedequals()",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L311"
+    },
+    {
+      "id": "examshared_monitoring_examshared_logchainverifier_verify",
+      "label": ".Verify()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "FromBase64String",
+            "receiver_type": "Convert",
+            "lang": "csharp",
+            "line": "L280"
+          }
+        ]
+      },
+      "norm_label": ".verify()",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L275"
+    },
+    {
+      "id": "examshared_monitoring_examshared_monitorbroadcaster_dispose",
+      "label": ".Dispose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Dispose",
+            "receiver_type": "UdpClient",
+            "lang": "csharp",
+            "line": "L100"
+          }
+        ]
+      },
+      "norm_label": ".dispose()",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L100"
+    },
+    {
+      "id": "examshared_monitoring_examshared_monitorbroadcaster_getbroadcastendpoints",
+      "label": ".GetBroadcastEndpoints()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "GetAllNetworkInterfaces",
+            "receiver_type": "NetworkInterface",
+            "lang": "csharp",
+            "line": "L110"
+          },
+          {
+            "callee": "IsLoopback",
+            "receiver_type": "IPAddress",
+            "lang": "csharp",
+            "line": "L121"
+          },
+          {
+            "callee": "ToArray",
+            "receiver_type": "List",
+            "lang": "csharp",
+            "line": "L135"
+          },
+          {
+            "callee": "ToString",
+            "receiver_type": "IPAddress",
+            "lang": "csharp",
+            "line": "L139"
+          },
+          {
+            "callee": "Add",
+            "receiver_type": "HashSet",
+            "lang": "csharp",
+            "line": "L140"
+          },
+          {
+            "callee": "Add",
+            "receiver_type": "List",
+            "lang": "csharp",
+            "line": "L142"
+          },
+          {
+            "callee": "TryParse",
+            "receiver_type": "IPAddress",
+            "lang": "csharp",
+            "line": "L155"
+          }
+        ]
+      },
+      "norm_label": ".getbroadcastendpoints()",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L102"
+    },
+    {
+      "id": "examshared_monitoring_examshared_monitorbroadcaster_isapipa",
+      "label": ".IsApipa()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "GetAddressBytes",
+            "receiver_type": "IPAddress",
+            "lang": "csharp",
+            "line": "L198"
+          }
+        ]
+      },
+      "norm_label": ".isapipa()",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L196"
+    },
+    {
+      "id": "examshared_monitoring_examshared_monitorbroadcaster_send",
+      "label": ".Send()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Send",
+            "receiver_type": "UdpClient",
+            "lang": "csharp",
+            "line": "L90"
+          }
+        ]
+      },
+      "norm_label": ".send()",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L83"
+    },
+    {
+      "id": "examshared_monitoring_examshared_monitorbroadcaster_trygetdirectedbroadcast",
+      "label": ".TryGetDirectedBroadcast()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Equals",
+            "receiver_type": "IPAddress",
+            "lang": "csharp",
+            "line": "L188"
+          }
+        ]
+      },
+      "norm_label": ".trygetdirectedbroadcast()",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L164"
     },
     {
       "id": "examshared_monitoring_examshared_monitorlistener_dispose",
@@ -5746,7 +5813,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "Monitoring.cs",
+      "community_name": "MonitorReporter",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
@@ -5772,7 +5839,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "Monitoring.cs",
+      "community_name": "MonitorReporter",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
@@ -5810,7 +5877,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "Monitoring.cs",
+      "community_name": "MonitorReporter",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
@@ -5828,7 +5895,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "Monitoring.cs",
+      "community_name": "MonitorReporter",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
@@ -5854,7 +5921,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "Monitoring.cs",
+      "community_name": "MonitorReporter",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
@@ -5873,6 +5940,32 @@
       "norm_label": ".kindof()",
       "source_file": "ExamShared/Monitoring.cs",
       "source_location": "L45"
+    },
+    {
+      "id": "examshared_monitoring_examshared_monitorprotocol_serialize",
+      "label": ".Serialize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Serialize",
+            "receiver_type": "JsonSerializer",
+            "lang": "csharp",
+            "line": "L43"
+          }
+        ]
+      },
+      "norm_label": ".serialize()",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L42"
     },
     {
       "id": "examconfiggenerator_flags_examconfiggenerator_flags_catalonia",
@@ -6555,6 +6648,152 @@
       "source_location": "L360"
     },
     {
+      "id": "examlogverifier_program_examlogverifier_program_computehmacbase64",
+      "label": ".ComputeHmacBase64()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "ConfigEnvelope",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLogVerifier",
+        "scope_chain": [
+          "s103"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "ComputeHash",
+            "receiver_type": "HMACSHA256",
+            "lang": "csharp",
+            "line": "L118"
+          },
+          {
+            "callee": "ToBase64String",
+            "receiver_type": "Convert",
+            "lang": "csharp",
+            "line": "L119"
+          }
+        ]
+      },
+      "norm_label": ".computehmacbase64()",
+      "source_file": "ExamLogVerifier/Program.cs",
+      "source_location": "L115"
+    },
+    {
+      "id": "examlogverifier_program_examlogverifier_program_fixedequalsbase64",
+      "label": ".FixedEqualsBase64()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "ConfigEnvelope",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLogVerifier",
+        "scope_chain": [
+          "s103"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "FromBase64String",
+            "receiver_type": "Convert",
+            "lang": "csharp",
+            "line": "L124"
+          },
+          {
+            "callee": "FixedTimeEquals",
+            "receiver_type": "CryptographicOperations",
+            "lang": "csharp",
+            "line": "L126"
+          }
+        ]
+      },
+      "norm_label": ".fixedequalsbase64()",
+      "source_file": "ExamLogVerifier/Program.cs",
+      "source_location": "L122"
+    },
+    {
+      "id": "examlogverifier_program_examlogverifier_program_main",
+      "label": ".Main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "ConfigEnvelope",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLogVerifier",
+        "scope_chain": [
+          "s103"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "WriteLine",
+            "receiver_type": "Console",
+            "lang": "csharp",
+            "line": "L14"
+          },
+          {
+            "callee": "Exists",
+            "receiver_type": "File",
+            "lang": "csharp",
+            "line": "L21"
+          },
+          {
+            "callee": "ReadAllText",
+            "receiver_type": "File",
+            "lang": "csharp",
+            "line": "L35"
+          },
+          {
+            "callee": "FromBase64String",
+            "receiver_type": "Convert",
+            "lang": "csharp",
+            "line": "L45"
+          }
+        ]
+      },
+      "norm_label": ".main()",
+      "source_file": "ExamLogVerifier/Program.cs",
+      "source_location": "L10"
+    },
+    {
+      "id": "examlogverifier_program_examlogverifier_program_verifylog",
+      "label": ".VerifyLog()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "ConfigEnvelope",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLogVerifier",
+        "scope_chain": [
+          "s103"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "ReadLines",
+            "receiver_type": "File",
+            "lang": "csharp",
+            "line": "L64"
+          },
+          {
+            "callee": "Deserialize<LogEntry>",
+            "receiver_type": "JsonSerializer",
+            "lang": "csharp",
+            "line": "L74"
+          },
+          {
+            "callee": "WriteLine",
+            "receiver_type": "Console",
+            "lang": "csharp",
+            "line": "L77"
+          }
+        ]
+      },
+      "norm_label": ".verifylog()",
+      "source_file": "ExamLogVerifier/Program.cs",
+      "source_location": "L58"
+    },
+    {
       "id": "examshared_shared_examshared_configserializer_deserializeenvelope",
       "label": ".DeserializeEnvelope()",
       "_callable": true,
@@ -6749,328 +6988,172 @@
       "source_location": "L416"
     },
     {
-      "id": "examlockclient_monitorreporter_examlockclient_monitorreporter_readlog",
-      "label": ".ReadLog()",
+      "id": "examlogverifierui_eventcatalog_examlogverifierui_eventcatalog_iscritical",
+      "label": ".IsCritical()",
       "_callable": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "MonitorReporter",
+      "community_name": "EventCatalog",
       "file_type": "code",
       "metadata": {
-        "namespace": "ExamLockClient",
+        "namespace": "ExamLogVerifierUI",
         "scope_chain": [
-          "s66"
+          "s21"
+        ]
+      },
+      "norm_label": ".iscritical()",
+      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
+      "source_location": "L79"
+    },
+    {
+      "id": "examlogverifierui_eventcatalog_examlogverifierui_eventcatalog_isincident",
+      "label": ".IsIncident()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "EventCatalog",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLogVerifierUI",
+        "scope_chain": [
+          "s21"
+        ]
+      },
+      "norm_label": ".isincident()",
+      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
+      "source_location": "L81"
+    },
+    {
+      "id": "examlogverifierui_eventcatalog_examlogverifierui_eventcatalog_rowbg",
+      "label": ".RowBg()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "EventCatalog",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLogVerifierUI",
+        "scope_chain": [
+          "s21"
+        ]
+      },
+      "norm_label": ".rowbg()",
+      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
+      "source_location": "L99"
+    },
+    {
+      "id": "examlogverifierui_eventcatalog_examlogverifierui_eventcatalog_rowtext",
+      "label": ".RowText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "EventCatalog",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLogVerifierUI",
+        "scope_chain": [
+          "s21"
+        ]
+      },
+      "norm_label": ".rowtext()",
+      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
+      "source_location": "L107"
+    },
+    {
+      "id": "examlogverifierui_eventcatalog_examlogverifierui_eventcatalog_severityof",
+      "label": ".SeverityOf()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "EventCatalog",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLogVerifierUI",
+        "scope_chain": [
+          "s21"
         ],
         "unresolved_calls": [
           {
-            "callee": "ReadLines",
-            "receiver_type": "File",
+            "callee": "TryGetValue",
+            "receiver_type": "Dictionary",
             "lang": "csharp",
-            "line": "L77"
-          },
-          {
-            "callee": "Deserialize<LogEntry>",
-            "receiver_type": "JsonSerializer",
-            "lang": "csharp",
-            "line": "L84"
-          },
-          {
-            "callee": "Add",
-            "receiver_type": "List",
-            "lang": "csharp",
-            "line": "L87"
-          },
-          {
-            "callee": "RemoveRange",
-            "receiver_type": "List",
-            "lang": "csharp",
-            "line": "L98"
+            "line": "L76"
           }
         ]
       },
-      "norm_label": ".readlog()",
-      "source_file": "ExamLockClient/MonitorReporter.cs",
-      "source_location": "L72"
+      "norm_label": ".severityof()",
+      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
+      "source_location": "L64"
     },
     {
-      "id": "examlockclient_monitorreporter_examlockclient_monitorreporter_setstate",
-      "label": ".SetState()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "MonitorReporter",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s66"
-        ]
-      },
-      "norm_label": ".setstate()",
-      "source_file": "ExamLockClient/MonitorReporter.cs",
-      "source_location": "L32"
-    },
-    {
-      "id": "examlockclient_monitorreporter_examlockclient_monitorreporter_start",
-      "label": ".Start()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "MonitorReporter",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s66"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Start",
-            "receiver_type": "Timer",
-            "lang": "csharp",
-            "line": "L42"
-          }
-        ]
-      },
-      "norm_label": ".start()",
-      "source_file": "ExamLockClient/MonitorReporter.cs",
-      "source_location": "L38"
-    },
-    {
-      "id": "examlockclient_monitorreporter_examlockclient_monitorreporter_tick",
-      "label": ".Tick()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "MonitorReporter",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s66"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Min",
-            "receiver_type": "Math",
-            "lang": "csharp",
-            "line": "L62"
-          }
-        ]
-      },
-      "norm_label": ".tick()",
-      "source_file": "ExamLockClient/MonitorReporter.cs",
-      "source_location": "L46"
-    },
-    {
-      "id": "examshared_monitoring_examshared_monitorbroadcaster_send",
-      "label": ".Send()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "MonitorReporter",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s168"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Send",
-            "receiver_type": "UdpClient",
-            "lang": "csharp",
-            "line": "L90"
-          }
-        ]
-      },
-      "norm_label": ".send()",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L83"
-    },
-    {
-      "id": "examshared_monitoring_examshared_monitorprotocol_serialize",
-      "label": ".Serialize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "MonitorReporter",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s168"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Serialize",
-            "receiver_type": "JsonSerializer",
-            "lang": "csharp",
-            "line": "L43"
-          }
-        ]
-      },
-      "norm_label": ".serialize()",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L42"
-    },
-    {
-      "id": "examlockclient_monitorreporter_examlockclient_monitorreporter_dispose",
-      "label": ".Dispose()",
+      "id": "examshared_processpolicy_examshared_processpolicy_evaluate",
+      "label": ".Evaluate()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "MonitorBroadcaster",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s66"
-        ]
-      },
-      "norm_label": ".dispose()",
-      "source_file": "ExamLockClient/MonitorReporter.cs",
-      "source_location": "L104"
-    },
-    {
-      "id": "examshared_monitoring_examshared_monitorbroadcaster_dispose",
-      "label": ".Dispose()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "MonitorBroadcaster",
+      "community_name": "ProcessPolicy",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
         "scope_chain": [
-          "s168"
+          "s0"
         ],
         "unresolved_calls": [
           {
-            "callee": "Dispose",
-            "receiver_type": "UdpClient",
-            "lang": "csharp",
-            "line": "L100"
-          }
-        ]
-      },
-      "norm_label": ".dispose()",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L100"
-    },
-    {
-      "id": "examshared_monitoring_examshared_monitorbroadcaster_getbroadcastendpoints",
-      "label": ".GetBroadcastEndpoints()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "MonitorBroadcaster",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s168"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "GetAllNetworkInterfaces",
-            "receiver_type": "NetworkInterface",
-            "lang": "csharp",
-            "line": "L110"
-          },
-          {
-            "callee": "IsLoopback",
-            "receiver_type": "IPAddress",
-            "lang": "csharp",
-            "line": "L121"
-          },
-          {
-            "callee": "ToArray",
-            "receiver_type": "List",
-            "lang": "csharp",
-            "line": "L135"
-          },
-          {
-            "callee": "ToString",
-            "receiver_type": "IPAddress",
-            "lang": "csharp",
-            "line": "L139"
-          },
-          {
-            "callee": "Add",
+            "callee": "Contains",
             "receiver_type": "HashSet",
             "lang": "csharp",
-            "line": "L140"
-          },
-          {
-            "callee": "Add",
-            "receiver_type": "List",
-            "lang": "csharp",
-            "line": "L142"
-          },
-          {
-            "callee": "TryParse",
-            "receiver_type": "IPAddress",
-            "lang": "csharp",
-            "line": "L155"
+            "line": "L24"
           }
         ]
       },
-      "norm_label": ".getbroadcastendpoints()",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L102"
+      "norm_label": ".evaluate()",
+      "source_file": "ExamShared/ProcessPolicy.cs",
+      "source_location": "L19"
     },
     {
-      "id": "examshared_monitoring_examshared_monitorbroadcaster_isapipa",
-      "label": ".IsApipa()",
+      "id": "examshared_processpolicy_examshared_processpolicy_names",
+      "label": ".Names()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "MonitorBroadcaster",
+      "community_name": "ProcessPolicy",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
         "scope_chain": [
-          "s168"
+          "s0"
         ],
         "unresolved_calls": [
           {
-            "callee": "GetAddressBytes",
-            "receiver_type": "IPAddress",
+            "callee": "Select",
+            "receiver_type": "IEnumerable",
             "lang": "csharp",
-            "line": "L198"
+            "line": "L40"
           }
         ]
       },
-      "norm_label": ".isapipa()",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L196"
+      "norm_label": ".names()",
+      "source_file": "ExamShared/ProcessPolicy.cs",
+      "source_location": "L39"
     },
     {
-      "id": "examshared_monitoring_examshared_monitorbroadcaster_trygetdirectedbroadcast",
-      "label": ".TryGetDirectedBroadcast()",
+      "id": "examshared_processpolicy_examshared_processpolicy_normalize",
+      "label": ".Normalize()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "MonitorBroadcaster",
+      "community_name": "ProcessPolicy",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
         "scope_chain": [
-          "s168"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Equals",
-            "receiver_type": "IPAddress",
-            "lang": "csharp",
-            "line": "L188"
-          }
+          "s0"
         ]
       },
-      "norm_label": ".trygetdirectedbroadcast()",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L164"
+      "norm_label": ".normalize()",
+      "source_file": "ExamShared/ProcessPolicy.cs",
+      "source_location": "L30"
     },
     {
       "id": "examlockclient_audioalerter_examlockclient_audioalerter_beeploop",
@@ -7515,158 +7598,332 @@
       "source_location": "L200"
     },
     {
-      "id": "examshared_monitoring_examshared_logchainverifier_computehmac",
-      "label": ".ComputeHmac()",
+      "id": "examlogverifierui_program_examlogverifierui_program_main",
+      "label": ".Main()",
       "_callable": true,
       "_origin": "ast",
-      "community": 31,
-      "community_name": ".Verify",
+      "community": 30,
+      "community_name": "ExamLogVerifierUI",
       "file_type": "code",
       "metadata": {
-        "namespace": "ExamShared",
+        "namespace": "ExamLogVerifierUI",
         "scope_chain": [
-          "s168"
+          "s0"
         ],
         "unresolved_calls": [
           {
-            "callee": "ToBase64String",
-            "receiver_type": "Convert",
+            "callee": "Initialize",
+            "receiver_type": "ApplicationConfiguration",
             "lang": "csharp",
-            "line": "L308"
+            "line": "L8"
           },
           {
-            "callee": "ComputeHash",
-            "receiver_type": "HMACSHA256",
+            "callee": "Run",
+            "receiver_type": "Application",
             "lang": "csharp",
-            "line": "L308"
+            "line": "L9"
           }
         ]
       },
-      "norm_label": ".computehmac()",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L305"
+      "norm_label": ".main()",
+      "source_file": "ExamLogVerifierUI/Program.cs",
+      "source_location": "L5"
     },
     {
-      "id": "examshared_monitoring_examshared_logchainverifier_fixedequals",
-      "label": ".FixedEquals()",
+      "id": "examlockclient_dnscachemonitor_examlockclient_dnscachemonitor_check",
+      "label": ".Check()",
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": ".Verify",
+      "community_name": "DnsCacheMonitor",
       "file_type": "code",
       "metadata": {
-        "namespace": "ExamShared",
+        "namespace": "ExamLockClient",
         "scope_chain": [
-          "s168"
+          "s28"
         ],
         "unresolved_calls": [
           {
-            "callee": "FixedTimeEquals",
-            "receiver_type": "CryptographicOperations",
+            "callee": "Add",
+            "receiver_type": "HashSet",
             "lang": "csharp",
-            "line": "L315"
+            "line": "L69"
           },
           {
-            "callee": "FromBase64String",
-            "receiver_type": "Convert",
+            "callee": "Invoke",
+            "receiver_type": "AiHostnameResolved?",
             "lang": "csharp",
-            "line": "L315"
+            "line": "L76"
           }
         ]
       },
-      "norm_label": ".fixedequals()",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L311"
+      "norm_label": ".check()",
+      "source_file": "ExamLockClient/DnsCacheMonitor.cs",
+      "source_location": "L61"
     },
     {
-      "id": "examshared_monitoring_examshared_logchainverifier_verify",
-      "label": ".Verify()",
+      "id": "examlockclient_dnscachemonitor_examlockclient_dnscachemonitor_dispose",
+      "label": ".Dispose()",
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": ".Verify",
+      "community_name": "DnsCacheMonitor",
       "file_type": "code",
       "metadata": {
-        "namespace": "ExamShared",
+        "namespace": "ExamLockClient",
         "scope_chain": [
-          "s168"
+          "s28"
+        ]
+      },
+      "norm_label": ".dispose()",
+      "source_file": "ExamLockClient/DnsCacheMonitor.cs",
+      "source_location": "L94"
+    },
+    {
+      "id": "examlockclient_dnscachemonitor_examlockclient_dnscachemonitor_isblocked",
+      "label": ".IsBlocked()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "DnsCacheMonitor",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s28"
+        ]
+      },
+      "norm_label": ".isblocked()",
+      "source_file": "ExamLockClient/DnsCacheMonitor.cs",
+      "source_location": "L80"
+    },
+    {
+      "id": "examlockclient_dnscachemonitor_examlockclient_dnscachemonitor_poll",
+      "label": ".Poll()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "DnsCacheMonitor",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s28"
         ],
         "unresolved_calls": [
           {
-            "callee": "FromBase64String",
-            "receiver_type": "Convert",
+            "callee": "Get",
+            "receiver_type": "ManagementObjectSearcher",
             "lang": "csharp",
-            "line": "L280"
+            "line": "L46"
           }
         ]
       },
-      "norm_label": ".verify()",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L275"
+      "norm_label": ".poll()",
+      "source_file": "ExamLockClient/DnsCacheMonitor.cs",
+      "source_location": "L39"
     },
     {
-      "id": "examshared_shared_examshared_configintegrityservice_computehmacbase64",
-      "label": ".ComputeHmacBase64()",
+      "id": "examlockclient_dnscachemonitor_examlockclient_dnscachemonitor_start",
+      "label": ".Start()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "DnsCacheMonitor",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s28"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Start",
+            "receiver_type": "Timer",
+            "lang": "csharp",
+            "line": "L36"
+          }
+        ]
+      },
+      "norm_label": ".start()",
+      "source_file": "ExamLockClient/DnsCacheMonitor.cs",
+      "source_location": "L28"
+    },
+    {
+      "id": "examlockclient_processmonitor_examlockclient_processmonitor_dispose",
+      "label": ".Dispose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "ProcessMonitor",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s48"
+        ]
+      },
+      "norm_label": ".dispose()",
+      "source_file": "ExamLockClient/ProcessMonitor.cs",
+      "source_location": "L91"
+    },
+    {
+      "id": "examlockclient_processmonitor_examlockclient_processmonitor_poll",
+      "label": ".Poll()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "ProcessMonitor",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s48"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "IntersectWith",
+            "receiver_type": "HashSet",
+            "lang": "csharp",
+            "line": "L55"
+          },
+          {
+            "callee": "Add",
+            "receiver_type": "HashSet",
+            "lang": "csharp",
+            "line": "L58"
+          },
+          {
+            "callee": "Invoke",
+            "receiver_type": "BlockedProcessDetected?",
+            "lang": "csharp",
+            "line": "L62"
+          },
+          {
+            "callee": "Invoke",
+            "receiver_type": "UnknownProcessStarted?",
+            "lang": "csharp",
+            "line": "L65"
+          }
+        ]
+      },
+      "norm_label": ".poll()",
+      "source_file": "ExamLockClient/ProcessMonitor.cs",
+      "source_location": "L47"
+    },
+    {
+      "id": "examlockclient_processmonitor_examlockclient_processmonitor_snapshot",
+      "label": ".Snapshot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "ProcessMonitor",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s48"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "GetProcesses",
+            "receiver_type": "Process",
+            "lang": "csharp",
+            "line": "L80"
+          },
+          {
+            "callee": "Add",
+            "receiver_type": "List",
+            "lang": "csharp",
+            "line": "L84"
+          },
+          {
+            "callee": "ToArray",
+            "receiver_type": "List",
+            "lang": "csharp",
+            "line": "L88"
+          }
+        ]
+      },
+      "norm_label": ".snapshot()",
+      "source_file": "ExamLockClient/ProcessMonitor.cs",
+      "source_location": "L77"
+    },
+    {
+      "id": "examlockclient_processmonitor_examlockclient_processmonitor_start",
+      "label": ".Start()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "ProcessMonitor",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLockClient",
+        "scope_chain": [
+          "s48"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Start",
+            "receiver_type": "Timer",
+            "lang": "csharp",
+            "line": "L44"
+          }
+        ]
+      },
+      "norm_label": ".start()",
+      "source_file": "ExamLockClient/ProcessMonitor.cs",
+      "source_location": "L38"
+    },
+    {
+      "id": "examshared_fileactivitynoisefilter_examshared_fileactivitynoisefilter_documentarguments",
+      "label": ".DocumentArguments()",
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": ".VerifyHmac",
+      "community_name": ".DocumentArguments",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
         "scope_chain": [
-          "s123"
+          "s0"
         ],
         "unresolved_calls": [
           {
-            "callee": "ComputeHash",
-            "receiver_type": "HMACSHA256",
+            "callee": "ToArray",
+            "receiver_type": "IEnumerable",
             "lang": "csharp",
-            "line": "L235"
+            "line": "L8"
           },
           {
-            "callee": "ToBase64String",
-            "receiver_type": "Convert",
+            "callee": "Contains",
+            "receiver_type": "HashSet",
             "lang": "csharp",
-            "line": "L236"
+            "line": "L26"
           }
         ]
       },
-      "norm_label": ".computehmacbase64()",
-      "source_file": "ExamShared/Shared.cs",
-      "source_location": "L232"
+      "norm_label": ".documentarguments()",
+      "source_file": "ExamShared/FileActivityNoiseFilter.cs",
+      "source_location": "L6"
     },
     {
-      "id": "examshared_shared_examshared_configintegrityservice_verifyhmac",
-      "label": ".VerifyHmac()",
+      "id": "examshared_fileactivitynoisefilter_examshared_fileactivitynoisefilter_iseditormetadata",
+      "label": ".IsEditorMetadata()",
       "_callable": true,
       "_origin": "ast",
       "community": 35,
-      "community_name": ".VerifyHmac",
+      "community_name": ".DocumentArguments",
       "file_type": "code",
       "metadata": {
         "namespace": "ExamShared",
         "scope_chain": [
-          "s123"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "FromBase64String",
-            "receiver_type": "Convert",
-            "lang": "csharp",
-            "line": "L241"
-          },
-          {
-            "callee": "FixedTimeEquals",
-            "receiver_type": "CryptographicOperations",
-            "lang": "csharp",
-            "line": "L243"
-          }
+          "s0"
         ]
       },
-      "norm_label": ".verifyhmac()",
-      "source_file": "ExamShared/Shared.cs",
-      "source_location": "L239"
+      "norm_label": ".iseditormetadata()",
+      "source_file": "ExamShared/FileActivityNoiseFilter.cs",
+      "source_location": "L37"
     },
     {
       "id": "examshared_logverifier_examshared_logverifier_computehmac",
@@ -7769,152 +8026,6 @@
       "norm_label": ".verify()",
       "source_file": "ExamShared/LogVerifier.cs",
       "source_location": "L51"
-    },
-    {
-      "id": "examlogverifier_program_examlogverifier_program_computehmacbase64",
-      "label": ".ComputeHmacBase64()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "Program",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifier",
-        "scope_chain": [
-          "s103"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "ComputeHash",
-            "receiver_type": "HMACSHA256",
-            "lang": "csharp",
-            "line": "L118"
-          },
-          {
-            "callee": "ToBase64String",
-            "receiver_type": "Convert",
-            "lang": "csharp",
-            "line": "L119"
-          }
-        ]
-      },
-      "norm_label": ".computehmacbase64()",
-      "source_file": "ExamLogVerifier/Program.cs",
-      "source_location": "L115"
-    },
-    {
-      "id": "examlogverifier_program_examlogverifier_program_fixedequalsbase64",
-      "label": ".FixedEqualsBase64()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "Program",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifier",
-        "scope_chain": [
-          "s103"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "FromBase64String",
-            "receiver_type": "Convert",
-            "lang": "csharp",
-            "line": "L124"
-          },
-          {
-            "callee": "FixedTimeEquals",
-            "receiver_type": "CryptographicOperations",
-            "lang": "csharp",
-            "line": "L126"
-          }
-        ]
-      },
-      "norm_label": ".fixedequalsbase64()",
-      "source_file": "ExamLogVerifier/Program.cs",
-      "source_location": "L122"
-    },
-    {
-      "id": "examlogverifier_program_examlogverifier_program_main",
-      "label": ".Main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "Program",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifier",
-        "scope_chain": [
-          "s103"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "WriteLine",
-            "receiver_type": "Console",
-            "lang": "csharp",
-            "line": "L14"
-          },
-          {
-            "callee": "Exists",
-            "receiver_type": "File",
-            "lang": "csharp",
-            "line": "L21"
-          },
-          {
-            "callee": "ReadAllText",
-            "receiver_type": "File",
-            "lang": "csharp",
-            "line": "L35"
-          },
-          {
-            "callee": "FromBase64String",
-            "receiver_type": "Convert",
-            "lang": "csharp",
-            "line": "L45"
-          }
-        ]
-      },
-      "norm_label": ".main()",
-      "source_file": "ExamLogVerifier/Program.cs",
-      "source_location": "L10"
-    },
-    {
-      "id": "examlogverifier_program_examlogverifier_program_verifylog",
-      "label": ".VerifyLog()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "Program",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifier",
-        "scope_chain": [
-          "s103"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "ReadLines",
-            "receiver_type": "File",
-            "lang": "csharp",
-            "line": "L64"
-          },
-          {
-            "callee": "Deserialize<LogEntry>",
-            "receiver_type": "JsonSerializer",
-            "lang": "csharp",
-            "line": "L74"
-          },
-          {
-            "callee": "WriteLine",
-            "receiver_type": "Console",
-            "lang": "csharp",
-            "line": "L77"
-          }
-        ]
-      },
-      "norm_label": ".verifylog()",
-      "source_file": "ExamLogVerifier/Program.cs",
-      "source_location": "L58"
     },
     {
       "id": "examconfiggenerator_lang_examconfiggenerator_lang_t",
@@ -8233,24 +8344,6 @@
       "norm_label": ".hintlabel()",
       "source_file": "ExamConfigGenerator/MainForm.cs",
       "source_location": "L379"
-    },
-    {
-      "id": "examconfiggenerator_mainform_examconfiggenerator_mainform_inputwithbuttons",
-      "label": ".InputWithButtons()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "MainForm",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamConfigGenerator",
-        "scope_chain": [
-          "s162"
-        ]
-      },
-      "norm_label": ".inputwithbuttons()",
-      "source_file": "ExamConfigGenerator/MainForm.cs",
-      "source_location": "L446"
     },
     {
       "id": "examconfiggenerator_mainform_examconfiggenerator_mainform_isprivateipv4",
@@ -8739,94 +8832,6 @@
       "source_location": "L30"
     },
     {
-      "id": "examlockclient_theme_examlockclient_theme_card",
-      "label": ".Card()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "MainForm",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s0"
-        ]
-      },
-      "norm_label": ".card()",
-      "source_file": "ExamLockClient/Theme.cs",
-      "source_location": "L61"
-    },
-    {
-      "id": "examlockclient_theme_examlockclient_theme_styleinput",
-      "label": ".StyleInput()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "MainForm",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s0"
-        ]
-      },
-      "norm_label": ".styleinput()",
-      "source_file": "ExamLockClient/Theme.cs",
-      "source_location": "L53"
-    },
-    {
-      "id": "examlockclient_theme_examlockclient_theme_styleprimary",
-      "label": ".StylePrimary()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "MainForm",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s0"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Max",
-            "receiver_type": "Math",
-            "lang": "csharp",
-            "line": "L35"
-          }
-        ]
-      },
-      "norm_label": ".styleprimary()",
-      "source_file": "ExamLockClient/Theme.cs",
-      "source_location": "L23"
-    },
-    {
-      "id": "examlockclient_theme_examlockclient_theme_stylesecondary",
-      "label": ".StyleSecondary()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "MainForm",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLockClient",
-        "scope_chain": [
-          "s0"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Max",
-            "receiver_type": "Math",
-            "lang": "csharp",
-            "line": "L50"
-          }
-        ]
-      },
-      "norm_label": ".stylesecondary()",
-      "source_file": "ExamLockClient/Theme.cs",
-      "source_location": "L38"
-    },
-    {
       "id": "examlockclient_tcpconnectionownertable_examlockclient_tcpconnectionownertable_getextendedtcptable",
       "label": ".GetExtendedTcpTable()",
       "_callable": true,
@@ -9035,6 +9040,70 @@
       "norm_label": ".tryreadipv6()",
       "source_file": "ExamLockClient/TcpConnectionOwnerTable.cs",
       "source_location": "L92"
+    },
+    {
+      "id": "examshared_shared_examshared_configintegrityservice_computehmacbase64",
+      "label": ".ComputeHmacBase64()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Shared.cs",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s123"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "ComputeHash",
+            "receiver_type": "HMACSHA256",
+            "lang": "csharp",
+            "line": "L235"
+          },
+          {
+            "callee": "ToBase64String",
+            "receiver_type": "Convert",
+            "lang": "csharp",
+            "line": "L236"
+          }
+        ]
+      },
+      "norm_label": ".computehmacbase64()",
+      "source_file": "ExamShared/Shared.cs",
+      "source_location": "L232"
+    },
+    {
+      "id": "examshared_shared_examshared_configintegrityservice_verifyhmac",
+      "label": ".VerifyHmac()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Shared.cs",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s123"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "FromBase64String",
+            "receiver_type": "Convert",
+            "lang": "csharp",
+            "line": "L241"
+          },
+          {
+            "callee": "FixedTimeEquals",
+            "receiver_type": "CryptographicOperations",
+            "lang": "csharp",
+            "line": "L243"
+          }
+        ]
+      },
+      "norm_label": ".verifyhmac()",
+      "source_file": "ExamShared/Shared.cs",
+      "source_location": "L239"
     },
     {
       "id": "examshared_shared_examshared_workfolderresolver_resolve",
@@ -9775,32 +9844,32 @@
       "metadata": {
         "namespace": "ExamLockClient",
         "scope_chain": [
-          "s75"
+          "s94"
         ],
         "unresolved_calls": [
           {
             "callee": "GetTempPath",
             "receiver_type": "Path",
             "lang": "csharp",
-            "line": "L87"
+            "line": "L88"
           },
           {
             "callee": "GetEnvironmentVariable",
             "receiver_type": "Environment",
             "lang": "csharp",
-            "line": "L88"
+            "line": "L89"
           },
           {
             "callee": "GetFolderPath",
             "receiver_type": "Environment",
             "lang": "csharp",
-            "line": "L90"
+            "line": "L91"
           }
         ]
       },
       "norm_label": ".buildexcludedroots()",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L83"
+      "source_location": "L84"
     },
     {
       "id": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_dispose",
@@ -9813,12 +9882,12 @@
       "metadata": {
         "namespace": "ExamLockClient",
         "scope_chain": [
-          "s75"
+          "s94"
         ]
       },
       "norm_label": ".dispose()",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L367"
+      "source_location": "L376"
     },
     {
       "id": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_inspectcommandline",
@@ -9831,38 +9900,38 @@
       "metadata": {
         "namespace": "ExamLockClient",
         "scope_chain": [
-          "s75"
+          "s94"
         ],
         "unresolved_calls": [
           {
             "callee": "GetExtension",
             "receiver_type": "Path",
             "lang": "csharp",
-            "line": "L242"
+            "line": "L251"
           },
           {
             "callee": "Invoke",
             "receiver_type": "OutsideFolderDetected?",
             "lang": "csharp",
-            "line": "L268"
+            "line": "L277"
           },
           {
             "callee": "Contains",
             "receiver_type": "HashSet",
             "lang": "csharp",
-            "line": "L273"
+            "line": "L282"
           },
           {
             "callee": "Invoke",
             "receiver_type": "ForbiddenFileDetected?",
             "lang": "csharp",
-            "line": "L275"
+            "line": "L284"
           }
         ]
       },
       "norm_label": ".inspectcommandline()",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L238"
+      "source_location": "L247"
     },
     {
       "id": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_inspectwatchedfile",
@@ -9875,44 +9944,62 @@
       "metadata": {
         "namespace": "ExamLockClient",
         "scope_chain": [
-          "s75"
+          "s94"
         ],
         "unresolved_calls": [
+          {
+            "callee": "Exists",
+            "receiver_type": "Directory",
+            "lang": "csharp",
+            "line": "L178"
+          },
           {
             "callee": "GetExtension",
             "receiver_type": "Path",
             "lang": "csharp",
-            "line": "L177"
+            "line": "L179"
           },
           {
             "callee": "Contains",
             "receiver_type": "HashSet",
             "lang": "csharp",
-            "line": "L184"
+            "line": "L186"
           },
           {
             "callee": "Invoke",
             "receiver_type": "ForbiddenFileDetected?",
             "lang": "csharp",
-            "line": "L186"
+            "line": "L188"
           },
           {
             "callee": "GetFileName",
             "receiver_type": "Path",
             "lang": "csharp",
-            "line": "L186"
+            "line": "L188"
+          },
+          {
+            "callee": "GetRelativePath",
+            "receiver_type": "Path",
+            "lang": "csharp",
+            "line": "L194"
+          },
+          {
+            "callee": "IsWindows",
+            "receiver_type": "OperatingSystem",
+            "lang": "csharp",
+            "line": "L194"
           },
           {
             "callee": "Invoke",
             "receiver_type": "UnknownFileDetected?",
             "lang": "csharp",
-            "line": "L192"
+            "line": "L201"
           }
         ]
       },
       "norm_label": ".inspectwatchedfile()",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L175"
+      "source_location": "L176"
     },
     {
       "id": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_isinexcludedsystemlocation",
@@ -9925,20 +10012,26 @@
       "metadata": {
         "namespace": "ExamLockClient",
         "scope_chain": [
-          "s75"
+          "s94"
         ],
         "unresolved_calls": [
           {
             "callee": "GetFullPath",
             "receiver_type": "Path",
             "lang": "csharp",
-            "line": "L120"
+            "line": "L121"
+          },
+          {
+            "callee": "IsWindows",
+            "receiver_type": "OperatingSystem",
+            "lang": "csharp",
+            "line": "L124"
           }
         ]
       },
       "norm_label": ".isinexcludedsystemlocation()",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L116"
+      "source_location": "L117"
     },
     {
       "id": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_isinsideworkfolder",
@@ -9951,20 +10044,26 @@
       "metadata": {
         "namespace": "ExamLockClient",
         "scope_chain": [
-          "s75"
+          "s94"
         ],
         "unresolved_calls": [
           {
             "callee": "GetFullPath",
             "receiver_type": "Path",
             "lang": "csharp",
-            "line": "L290"
+            "line": "L299"
+          },
+          {
+            "callee": "IsWindows",
+            "receiver_type": "OperatingSystem",
+            "lang": "csharp",
+            "line": "L303"
           }
         ]
       },
       "norm_label": ".isinsideworkfolder()",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L286"
+      "source_location": "L295"
     },
     {
       "id": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_lookslikepath",
@@ -9977,12 +10076,12 @@
       "metadata": {
         "namespace": "ExamLockClient",
         "scope_chain": [
-          "s75"
+          "s94"
         ]
       },
       "norm_label": ".lookslikepath()",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L314"
+      "source_location": "L323"
     },
     {
       "id": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_normalizeroot",
@@ -9995,20 +10094,20 @@
       "metadata": {
         "namespace": "ExamLockClient",
         "scope_chain": [
-          "s75"
+          "s94"
         ],
         "unresolved_calls": [
           {
             "callee": "GetFullPath",
             "receiver_type": "Path",
             "lang": "csharp",
-            "line": "L106"
+            "line": "L107"
           }
         ]
       },
       "norm_label": ".normalizeroot()",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L102"
+      "source_location": "L103"
     },
     {
       "id": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_pollcommandlines",
@@ -10021,32 +10120,32 @@
       "metadata": {
         "namespace": "ExamLockClient",
         "scope_chain": [
-          "s75"
+          "s94"
         ],
         "unresolved_calls": [
           {
             "callee": "Get",
             "receiver_type": "ManagementObjectSearcher",
             "lang": "csharp",
-            "line": "L202"
+            "line": "L211"
           },
           {
             "callee": "Add",
             "receiver_type": "HashSet",
             "lang": "csharp",
-            "line": "L209"
+            "line": "L218"
           },
           {
             "callee": "Contains",
             "receiver_type": "HashSet",
             "lang": "csharp",
-            "line": "L218"
+            "line": "L227"
           }
         ]
       },
       "norm_label": ".pollcommandlines()",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L196"
+      "source_location": "L205"
     },
     {
       "id": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_safefileexists",
@@ -10059,20 +10158,20 @@
       "metadata": {
         "namespace": "ExamLockClient",
         "scope_chain": [
-          "s75"
+          "s94"
         ],
         "unresolved_calls": [
           {
             "callee": "Exists",
             "receiver_type": "File",
             "lang": "csharp",
-            "line": "L306"
+            "line": "L315"
           }
         ]
       },
       "norm_label": ".safefileexists()",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L302"
+      "source_location": "L311"
     },
     {
       "id": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_safeint",
@@ -10085,20 +10184,20 @@
       "metadata": {
         "namespace": "ExamLockClient",
         "scope_chain": [
-          "s75"
+          "s94"
         ],
         "unresolved_calls": [
           {
             "callee": "ToInt32",
             "receiver_type": "Convert",
             "lang": "csharp",
-            "line": "L359"
+            "line": "L368"
           }
         ]
       },
       "norm_label": ".safeint()",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L355"
+      "source_location": "L364"
     },
     {
       "id": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_start",
@@ -10111,32 +10210,32 @@
       "metadata": {
         "namespace": "ExamLockClient",
         "scope_chain": [
-          "s75"
+          "s94"
         ],
         "unresolved_calls": [
           {
             "callee": "GetProcesses",
             "receiver_type": "Process",
             "lang": "csharp",
-            "line": "L139"
+            "line": "L140"
           },
           {
             "callee": "Add",
             "receiver_type": "HashSet",
             "lang": "csharp",
-            "line": "L141"
+            "line": "L142"
           },
           {
             "callee": "Start",
             "receiver_type": "Timer",
             "lang": "csharp",
-            "line": "L146"
+            "line": "L147"
           }
         ]
       },
       "norm_label": ".start()",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L137"
+      "source_location": "L138"
     },
     {
       "id": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_startwatcher",
@@ -10149,20 +10248,20 @@
       "metadata": {
         "namespace": "ExamLockClient",
         "scope_chain": [
-          "s75"
+          "s94"
         ],
         "unresolved_calls": [
           {
             "callee": "Exists",
             "receiver_type": "Directory",
             "lang": "csharp",
-            "line": "L153"
+            "line": "L154"
           }
         ]
       },
       "norm_label": ".startwatcher()",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L151"
+      "source_location": "L152"
     },
     {
       "id": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_tokenizearguments",
@@ -10175,38 +10274,38 @@
       "metadata": {
         "namespace": "ExamLockClient",
         "scope_chain": [
-          "s75"
+          "s94"
         ],
         "unresolved_calls": [
           {
             "callee": "Add",
             "receiver_type": "List",
             "lang": "csharp",
-            "line": "L337"
+            "line": "L346"
           },
           {
             "callee": "ToString",
             "receiver_type": "StringBuilder",
             "lang": "csharp",
-            "line": "L337"
+            "line": "L346"
           },
           {
             "callee": "Clear",
             "receiver_type": "StringBuilder",
             "lang": "csharp",
-            "line": "L338"
+            "line": "L347"
           },
           {
             "callee": "Append",
             "receiver_type": "StringBuilder",
             "lang": "csharp",
-            "line": "L343"
+            "line": "L352"
           }
         ]
       },
       "norm_label": ".tokenizearguments()",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L321"
+      "source_location": "L330"
     },
     {
       "id": "drageventargs",
@@ -10216,6 +10315,61 @@
       "community_name": "MainForm",
       "file_type": "code",
       "norm_label": "drageventargs",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "examlockclient_theme",
+      "label": "ExamLockClient/Theme.cs",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "MainForm",
+      "file_type": "code",
+      "norm_label": "examlockclient/theme.cs",
+      "source_file": "ExamLockClient/Theme.cs",
+      "source_location": "L1"
+    },
+    {
+      "id": "examlockclient_theme_cs_button",
+      "label": "Button",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "MainForm",
+      "file_type": "code",
+      "norm_label": "button",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "examlockclient_theme_cs_color",
+      "label": "Color",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "MainForm",
+      "file_type": "code",
+      "norm_label": "color",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "examlockclient_theme_cs_font",
+      "label": "Font",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "MainForm",
+      "file_type": "code",
+      "norm_label": "font",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "examlockclient_theme_cs_textbox",
+      "label": "TextBox",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "MainForm",
+      "file_type": "code",
+      "norm_label": "textbox",
       "source_file": "",
       "source_location": ""
     },
@@ -10352,17 +10506,6 @@
       "source_location": ""
     },
     {
-      "id": "examlogverifierui_theme",
-      "label": "ExamLogVerifierUI/Theme.cs",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "MainForm",
-      "file_type": "code",
-      "norm_label": "examlogverifierui/theme.cs",
-      "source_file": "ExamLogVerifierUI/Theme.cs",
-      "source_location": "L1"
-    },
-    {
       "id": "examlogverifierui_theme_cs_button",
       "label": "Button",
       "_origin": "ast",
@@ -10440,6 +10583,28 @@
       "source_location": ""
     },
     {
+      "id": "padding",
+      "label": "Padding",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "MainForm",
+      "file_type": "code",
+      "norm_label": "padding",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "panel",
+      "label": "Panel",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "MainForm",
+      "file_type": "code",
+      "norm_label": "panel",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "scanresult",
       "label": "ScanResult",
       "_origin": "ast",
@@ -10469,6 +10634,17 @@
       "community_name": "MainForm",
       "file_type": "code",
       "norm_label": "statustier",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "tablelayoutpanel",
+      "label": "TableLayoutPanel",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "MainForm",
+      "file_type": "code",
+      "norm_label": "tablelayoutpanel",
       "source_file": "",
       "source_location": ""
     },
@@ -10727,6 +10903,17 @@
       "source_location": null
     },
     {
+      "id": "examlockclient_examlockclient_csproj_nuget_system_management",
+      "label": "System.Management (8.0.0)",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "ExamShared.csproj",
+      "file_type": "code",
+      "norm_label": "system.management (8.0.0)",
+      "source_file": "ExamLockClient/ExamLockClient.csproj",
+      "source_location": null
+    },
+    {
       "id": "examlocking",
       "label": "ExamLocking.sln",
       "_origin": "ast",
@@ -10782,14 +10969,25 @@
       "source_location": null
     },
     {
-      "id": "nuget_system_management",
+      "id": "tests_fileactivitychecks_fileactivitychecks",
+      "label": "FileActivityChecks.csproj",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "ExamShared.csproj",
+      "file_type": "code",
+      "norm_label": "fileactivitychecks.csproj",
+      "source_file": "tests/FileActivityChecks/FileActivityChecks.csproj",
+      "source_location": null
+    },
+    {
+      "id": "tests_fileactivitychecks_fileactivitychecks_csproj_nuget_system_management",
       "label": "System.Management (8.0.0)",
       "_origin": "ast",
       "community": 10,
       "community_name": "ExamShared.csproj",
       "file_type": "code",
       "norm_label": "system.management (8.0.0)",
-      "source_file": "ExamLockClient/ExamLockClient.csproj",
+      "source_file": "tests/FileActivityChecks/FileActivityChecks.csproj",
       "source_location": null
     },
     {
@@ -10933,6 +11131,28 @@
       "file_type": "concept",
       "norm_label": "net8.0-windows10.0.19041.0",
       "source_file": "ExamLockClient/ExamLockClient.csproj",
+      "source_location": null
+    },
+    {
+      "id": "tests_fileactivitychecks_fileactivitychecks_csproj_framework_net8_0_windows",
+      "label": "net8.0-windows",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "ExamShared.csproj",
+      "file_type": "concept",
+      "norm_label": "net8.0-windows",
+      "source_file": "tests/FileActivityChecks/FileActivityChecks.csproj",
+      "source_location": null
+    },
+    {
+      "id": "tests_fileactivitychecks_fileactivitychecks_csproj_sdk_microsoft_net_sdk",
+      "label": "Microsoft.NET.Sdk",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "ExamShared.csproj",
+      "file_type": "concept",
+      "norm_label": "microsoft.net.sdk",
+      "source_file": "tests/FileActivityChecks/FileActivityChecks.csproj",
       "source_location": null
     },
     {
@@ -11889,6 +12109,17 @@
       "source_location": "L70"
     },
     {
+      "id": "examlockclient_aiconnectionmonitor",
+      "label": "AiConnectionMonitor.cs",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "AiConnectionEvidence",
+      "file_type": "code",
+      "norm_label": "aiconnectionmonitor.cs",
+      "source_file": "ExamLockClient/AiConnectionMonitor.cs",
+      "source_location": "L1"
+    },
+    {
       "id": "examlockclient_aiconnectionmonitor_cs_hashset",
       "label": "HashSet",
       "_origin": "ast",
@@ -11966,19 +12197,30 @@
       "source_location": ""
     },
     {
+      "id": "idisposable",
+      "label": "IDisposable",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "AiConnectionEvidence",
+      "file_type": "code",
+      "norm_label": "idisposable",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "csharp_namespace:4cedb401acf3a94d",
       "label": "ExamShared",
       "_origin": "ast",
       "community": 18,
-      "community_name": "ExamLockClient",
+      "community_name": "ExamShared",
       "file_type": "code",
       "metadata": {
         "kind": "csharp_namespace",
         "namespace": "ExamShared"
       },
       "norm_label": "examshared",
-      "source_file": "ExamShared/LogVerifier.cs",
-      "source_location": "L5",
+      "source_file": "ExamShared/FileActivityNoiseFilter.cs",
+      "source_location": "L1",
       "type": "namespace"
     },
     {
@@ -11986,7 +12228,7 @@
       "label": "ExamLogVerifier",
       "_origin": "ast",
       "community": 18,
-      "community_name": "ExamLockClient",
+      "community_name": "ExamShared",
       "file_type": "code",
       "metadata": {
         "kind": "csharp_namespace",
@@ -12002,7 +12244,7 @@
       "label": "ExamLockClient",
       "_origin": "ast",
       "community": 18,
-      "community_name": "ExamLockClient",
+      "community_name": "ExamShared",
       "file_type": "code",
       "metadata": {
         "kind": "csharp_namespace",
@@ -12014,55 +12256,11 @@
       "type": "namespace"
     },
     {
-      "id": "examlockclient_aiconnectionmonitor",
-      "label": "AiConnectionMonitor.cs",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "norm_label": "aiconnectionmonitor.cs",
-      "source_file": "ExamLockClient/AiConnectionMonitor.cs",
-      "source_location": "L1"
-    },
-    {
-      "id": "examlockclient_dnscachemonitor",
-      "label": "DnsCacheMonitor.cs",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "norm_label": "dnscachemonitor.cs",
-      "source_file": "ExamLockClient/DnsCacheMonitor.cs",
-      "source_location": "L1"
-    },
-    {
-      "id": "examlockclient_dnscachemonitor_cs_hashset",
-      "label": "HashSet",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "norm_label": "hashset",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "examlockclient_dnscachemonitor_cs_timer",
-      "label": "Timer",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "norm_label": "timer",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "examlockclient_fileactivitymonitor",
       "label": "FileActivityMonitor.cs",
       "_origin": "ast",
       "community": 18,
-      "community_name": "ExamLockClient",
+      "community_name": "ExamShared",
       "file_type": "code",
       "norm_label": "fileactivitymonitor.cs",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
@@ -12073,7 +12271,7 @@
       "label": "ExamLockClient/Flags.cs",
       "_origin": "ast",
       "community": 18,
-      "community_name": "ExamLockClient",
+      "community_name": "ExamShared",
       "file_type": "code",
       "norm_label": "examlockclient/flags.cs",
       "source_file": "ExamLockClient/Flags.cs",
@@ -12084,21 +12282,10 @@
       "label": "ExamLockClient/MainForm.cs",
       "_origin": "ast",
       "community": 18,
-      "community_name": "ExamLockClient",
+      "community_name": "ExamShared",
       "file_type": "code",
       "norm_label": "examlockclient/mainform.cs",
       "source_file": "ExamLockClient/MainForm.cs",
-      "source_location": "L1"
-    },
-    {
-      "id": "examlockclient_monitorreporter",
-      "label": "MonitorReporter.cs",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "norm_label": "monitorreporter.cs",
-      "source_file": "ExamLockClient/MonitorReporter.cs",
       "source_location": "L1"
     },
     {
@@ -12106,40 +12293,18 @@
       "label": "ProcessMonitor.cs",
       "_origin": "ast",
       "community": 18,
-      "community_name": "ExamLockClient",
+      "community_name": "ExamShared",
       "file_type": "code",
       "norm_label": "processmonitor.cs",
       "source_file": "ExamLockClient/ProcessMonitor.cs",
       "source_location": "L1"
     },
     {
-      "id": "examlockclient_processmonitor_cs_hashset",
-      "label": "HashSet",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "norm_label": "hashset",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "examlockclient_processmonitor_cs_timer",
-      "label": "Timer",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "norm_label": "timer",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "examlockclient_program",
       "label": "ExamLockClient/Program.cs",
       "_origin": "ast",
       "community": 18,
-      "community_name": "ExamLockClient",
+      "community_name": "ExamShared",
       "file_type": "code",
       "norm_label": "examlockclient/program.cs",
       "source_file": "ExamLockClient/Program.cs",
@@ -12150,102 +12315,18 @@
       "label": "ExamLogVerifier/Program.cs",
       "_origin": "ast",
       "community": 18,
-      "community_name": "ExamLockClient",
+      "community_name": "ExamShared",
       "file_type": "code",
       "norm_label": "examlogverifier/program.cs",
       "source_file": "ExamLogVerifier/Program.cs",
       "source_location": "L1"
     },
     {
-      "id": "examshared_processpolicy",
-      "label": "ProcessPolicy.cs",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "norm_label": "processpolicy.cs",
-      "source_file": "ExamShared/ProcessPolicy.cs",
-      "source_location": "L1"
-    },
-    {
-      "id": "examshared_processpolicy_cs_hashset",
-      "label": "HashSet",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "norm_label": "hashset",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "examshared_processpolicy_cs_ienumerable",
-      "label": "IEnumerable",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "norm_label": "ienumerable",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "examshared_processpolicy_examshared_processdecision_allowed",
-      "label": "Allowed",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s0"
-        ]
-      },
-      "norm_label": "allowed",
-      "source_file": "ExamShared/ProcessPolicy.cs",
-      "source_location": "L3"
-    },
-    {
-      "id": "examshared_processpolicy_examshared_processdecision_blocked",
-      "label": "Blocked",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s0"
-        ]
-      },
-      "norm_label": "blocked",
-      "source_file": "ExamShared/ProcessPolicy.cs",
-      "source_location": "L3"
-    },
-    {
-      "id": "examshared_processpolicy_examshared_processdecision_unknown",
-      "label": "Unknown",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s0"
-        ]
-      },
-      "norm_label": "unknown",
-      "source_file": "ExamShared/ProcessPolicy.cs",
-      "source_location": "L3"
-    },
-    {
       "id": "examshared_uihelp",
       "label": "UiHelp.cs",
       "_origin": "ast",
       "community": 18,
-      "community_name": "ExamLockClient",
+      "community_name": "ExamShared",
       "file_type": "code",
       "norm_label": "uihelp.cs",
       "source_file": "ExamShared/UiHelp.cs",
@@ -12256,171 +12337,32 @@
       "label": "Dictionary",
       "_origin": "ast",
       "community": 18,
-      "community_name": "ExamLockClient",
+      "community_name": "ExamShared",
       "file_type": "code",
       "norm_label": "dictionary",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "name",
-      "label": "Name",
+      "id": "tests_fileactivitychecks_program",
+      "label": "FileActivityChecks/Program.cs",
       "_origin": "ast",
       "community": 18,
-      "community_name": "ExamLockClient",
+      "community_name": "ExamShared",
       "file_type": "code",
-      "norm_label": "name",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "pid",
-      "label": "Pid",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ExamLockClient",
-      "file_type": "code",
-      "norm_label": "pid",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": "fileactivitychecks/program.cs",
+      "source_file": "tests/FileActivityChecks/Program.cs",
+      "source_location": "L1"
     },
     {
       "id": "tests_processpolicychecks_program",
       "label": "ProcessPolicyChecks/Program.cs",
       "_origin": "ast",
       "community": 18,
-      "community_name": "ExamLockClient",
+      "community_name": "ExamShared",
       "file_type": "code",
       "norm_label": "processpolicychecks/program.cs",
       "source_file": "tests/ProcessPolicyChecks/Program.cs",
-      "source_location": "L1"
-    },
-    {
-      "id": "csharp_namespace:923dfdc28dc1d8c9",
-      "label": "ExamLogVerifierUI",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "metadata": {
-        "kind": "csharp_namespace",
-        "namespace": "ExamLogVerifierUI"
-      },
-      "norm_label": "examlogverifierui",
-      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
-      "source_location": "L3",
-      "type": "namespace"
-    },
-    {
-      "id": "examlogverifierui_eventcatalog",
-      "label": "EventCatalog.cs",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "norm_label": "eventcatalog.cs",
-      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
-      "source_location": "L1"
-    },
-    {
-      "id": "examlogverifierui_eventcatalog_cs_color",
-      "label": "Color",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "norm_label": "color",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "examlogverifierui_eventcatalog_cs_dictionary",
-      "label": "Dictionary",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "norm_label": "dictionary",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "examlogverifierui_eventcatalog_examlogverifierui_severity_critical",
-      "label": "Critical",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifierUI",
-        "scope_chain": [
-          "s21"
-        ]
-      },
-      "norm_label": "critical",
-      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
-      "source_location": "L7"
-    },
-    {
-      "id": "examlogverifierui_eventcatalog_examlogverifierui_severity_good",
-      "label": "Good",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifierUI",
-        "scope_chain": [
-          "s21"
-        ]
-      },
-      "norm_label": "good",
-      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
-      "source_location": "L9"
-    },
-    {
-      "id": "examlogverifierui_eventcatalog_examlogverifierui_severity_info",
-      "label": "Info",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifierUI",
-        "scope_chain": [
-          "s21"
-        ]
-      },
-      "norm_label": "info",
-      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
-      "source_location": "L10"
-    },
-    {
-      "id": "examlogverifierui_eventcatalog_examlogverifierui_severity_warning",
-      "label": "Warning",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamLogVerifierUI",
-        "scope_chain": [
-          "s21"
-        ]
-      },
-      "norm_label": "warning",
-      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
-      "source_location": "L8"
-    },
-    {
-      "id": "examlogverifierui_flags",
-      "label": "ExamLogVerifierUI/Flags.cs",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
-      "file_type": "code",
-      "norm_label": "examlogverifierui/flags.cs",
-      "source_file": "ExamLogVerifierUI/Flags.cs",
       "source_location": "L1"
     },
     {
@@ -12553,35 +12495,35 @@
       "source_location": "L9"
     },
     {
-      "id": "examlogverifierui_mainform",
-      "label": "ExamLogVerifierUI/MainForm.cs",
+      "id": "examlockclient_monitorreporter",
+      "label": "MonitorReporter.cs",
       "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
+      "community": 2,
+      "community_name": "MonitorReporter",
       "file_type": "code",
-      "norm_label": "examlogverifierui/mainform.cs",
-      "source_file": "ExamLogVerifierUI/MainForm.cs",
+      "norm_label": "monitorreporter.cs",
+      "source_file": "ExamLockClient/MonitorReporter.cs",
       "source_location": "L1"
     },
     {
-      "id": "examlogverifierui_program",
-      "label": "ExamLogVerifierUI/Program.cs",
+      "id": "examlockclient_monitorreporter_cs_list",
+      "label": "List",
       "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
+      "community": 2,
+      "community_name": "MonitorReporter",
       "file_type": "code",
-      "norm_label": "examlogverifierui/program.cs",
-      "source_file": "ExamLogVerifierUI/Program.cs",
-      "source_location": "L1"
+      "norm_label": "list",
+      "source_file": "",
+      "source_location": ""
     },
     {
-      "id": "examlogverifierui_program_cs_stathread",
-      "label": "STAThread",
+      "id": "examlockclient_monitorreporter_cs_timer",
+      "label": "Timer",
       "_origin": "ast",
-      "community": 19,
-      "community_name": "Lang",
+      "community": 2,
+      "community_name": "MonitorReporter",
       "file_type": "code",
-      "norm_label": "stathread",
+      "norm_label": "timer",
       "source_file": "",
       "source_location": ""
     },
@@ -12590,18 +12532,51 @@
       "label": "Monitoring.cs",
       "_origin": "ast",
       "community": 2,
-      "community_name": "Monitoring.cs",
+      "community_name": "MonitorReporter",
       "file_type": "code",
       "norm_label": "monitoring.cs",
       "source_file": "ExamShared/Monitoring.cs",
       "source_location": "L1"
     },
     {
+      "id": "examshared_monitoring_cs_ienumerable",
+      "label": "IEnumerable",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "norm_label": "ienumerable",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "examshared_monitoring_cs_ipaddress",
+      "label": "IPAddress",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "norm_label": "ipaddress",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "examshared_monitoring_cs_ireadonlylist",
+      "label": "IReadOnlyList",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "norm_label": "ireadonlylist",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "examshared_monitoring_cs_jsonserializeroptions",
       "label": "JsonSerializerOptions",
       "_origin": "ast",
       "community": 2,
-      "community_name": "Monitoring.cs",
+      "community_name": "MonitorReporter",
       "file_type": "code",
       "norm_label": "jsonserializeroptions",
       "source_file": "",
@@ -12612,9 +12587,207 @@
       "label": "Task",
       "_origin": "ast",
       "community": 2,
-      "community_name": "Monitoring.cs",
+      "community_name": "MonitorReporter",
       "file_type": "code",
       "norm_label": "task",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "examshared_monitoring_examshared_logchunkmessage_entries",
+      "label": "Entries",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ]
+      },
+      "norm_label": "entries",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L28"
+    },
+    {
+      "id": "examshared_monitoring_examshared_logchunkmessage_kind",
+      "label": "Kind",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ]
+      },
+      "norm_label": "kind",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L25"
+    },
+    {
+      "id": "examshared_monitoring_examshared_logchunkmessage_machine",
+      "label": "Machine",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ]
+      },
+      "norm_label": "machine",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L27"
+    },
+    {
+      "id": "examshared_monitoring_examshared_logchunkmessage_user",
+      "label": "User",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ]
+      },
+      "norm_label": "user",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L26"
+    },
+    {
+      "id": "examshared_monitoring_examshared_statusmessage_kind",
+      "label": "Kind",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ]
+      },
+      "norm_label": "kind",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L14"
+    },
+    {
+      "id": "examshared_monitoring_examshared_statusmessage_logcount",
+      "label": "LogCount",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ]
+      },
+      "norm_label": "logcount",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L19"
+    },
+    {
+      "id": "examshared_monitoring_examshared_statusmessage_machine",
+      "label": "Machine",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ]
+      },
+      "norm_label": "machine",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L16"
+    },
+    {
+      "id": "examshared_monitoring_examshared_statusmessage_state",
+      "label": "State",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ]
+      },
+      "norm_label": "state",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L17"
+    },
+    {
+      "id": "examshared_monitoring_examshared_statusmessage_statustext",
+      "label": "StatusText",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ]
+      },
+      "norm_label": "statustext",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L18"
+    },
+    {
+      "id": "examshared_monitoring_examshared_statusmessage_timestamp",
+      "label": "Timestamp",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ]
+      },
+      "norm_label": "timestamp",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L20"
+    },
+    {
+      "id": "examshared_monitoring_examshared_statusmessage_user",
+      "label": "User",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s168"
+        ]
+      },
+      "norm_label": "user",
+      "source_file": "ExamShared/Monitoring.cs",
+      "source_location": "L15"
+    },
+    {
+      "id": "ipendpoint",
+      "label": "IPEndPoint",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "norm_label": "ipendpoint",
       "source_file": "",
       "source_location": ""
     },
@@ -12623,9 +12796,20 @@
       "label": "UdpClient",
       "_origin": "ast",
       "community": 2,
-      "community_name": "Monitoring.cs",
+      "community_name": "MonitorReporter",
       "file_type": "code",
       "norm_label": "udpclient",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "unicastipaddressinformation",
+      "label": "UnicastIPAddressInformation",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "MonitorReporter",
+      "file_type": "code",
+      "norm_label": "unicastipaddressinformation",
       "source_file": "",
       "source_location": ""
     },
@@ -13180,81 +13364,178 @@
       "source_location": "L15"
     },
     {
-      "id": "examlockclient_monitorreporter_cs_list",
-      "label": "List",
+      "id": "examlogverifierui_eventcatalog_cs_color",
+      "label": "Color",
       "_origin": "ast",
       "community": 28,
-      "community_name": "MonitorReporter",
+      "community_name": "EventCatalog",
       "file_type": "code",
-      "norm_label": "list",
+      "norm_label": "color",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "examlockclient_monitorreporter_cs_timer",
-      "label": "Timer",
+      "id": "examlogverifierui_eventcatalog_cs_dictionary",
+      "label": "Dictionary",
       "_origin": "ast",
       "community": 28,
-      "community_name": "MonitorReporter",
+      "community_name": "EventCatalog",
       "file_type": "code",
-      "norm_label": "timer",
+      "norm_label": "dictionary",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "idisposable",
-      "label": "IDisposable",
+      "id": "examlogverifierui_eventcatalog_examlogverifierui_severity_critical",
+      "label": "Critical",
       "_origin": "ast",
       "community": 28,
-      "community_name": "MonitorReporter",
+      "community_name": "EventCatalog",
       "file_type": "code",
-      "norm_label": "idisposable",
+      "metadata": {
+        "namespace": "ExamLogVerifierUI",
+        "scope_chain": [
+          "s21"
+        ]
+      },
+      "norm_label": "critical",
+      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
+      "source_location": "L7"
+    },
+    {
+      "id": "examlogverifierui_eventcatalog_examlogverifierui_severity_good",
+      "label": "Good",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "EventCatalog",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLogVerifierUI",
+        "scope_chain": [
+          "s21"
+        ]
+      },
+      "norm_label": "good",
+      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
+      "source_location": "L9"
+    },
+    {
+      "id": "examlogverifierui_eventcatalog_examlogverifierui_severity_info",
+      "label": "Info",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "EventCatalog",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLogVerifierUI",
+        "scope_chain": [
+          "s21"
+        ]
+      },
+      "norm_label": "info",
+      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
+      "source_location": "L10"
+    },
+    {
+      "id": "examlogverifierui_eventcatalog_examlogverifierui_severity_warning",
+      "label": "Warning",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "EventCatalog",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "ExamLogVerifierUI",
+        "scope_chain": [
+          "s21"
+        ]
+      },
+      "norm_label": "warning",
+      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
+      "source_location": "L8"
+    },
+    {
+      "id": "examshared_processpolicy",
+      "label": "ProcessPolicy.cs",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "ProcessPolicy",
+      "file_type": "code",
+      "norm_label": "processpolicy.cs",
+      "source_file": "ExamShared/ProcessPolicy.cs",
+      "source_location": "L1"
+    },
+    {
+      "id": "examshared_processpolicy_cs_hashset",
+      "label": "HashSet",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "ProcessPolicy",
+      "file_type": "code",
+      "norm_label": "hashset",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "examshared_monitoring_cs_ienumerable",
+      "id": "examshared_processpolicy_cs_ienumerable",
       "label": "IEnumerable",
       "_origin": "ast",
       "community": 29,
-      "community_name": "MonitorBroadcaster",
+      "community_name": "ProcessPolicy",
       "file_type": "code",
       "norm_label": "ienumerable",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "examshared_monitoring_cs_ipaddress",
-      "label": "IPAddress",
+      "id": "examshared_processpolicy_examshared_processdecision_allowed",
+      "label": "Allowed",
       "_origin": "ast",
       "community": 29,
-      "community_name": "MonitorBroadcaster",
+      "community_name": "ProcessPolicy",
       "file_type": "code",
-      "norm_label": "ipaddress",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "norm_label": "allowed",
+      "source_file": "ExamShared/ProcessPolicy.cs",
+      "source_location": "L3"
     },
     {
-      "id": "ipendpoint",
-      "label": "IPEndPoint",
+      "id": "examshared_processpolicy_examshared_processdecision_blocked",
+      "label": "Blocked",
       "_origin": "ast",
       "community": 29,
-      "community_name": "MonitorBroadcaster",
+      "community_name": "ProcessPolicy",
       "file_type": "code",
-      "norm_label": "ipendpoint",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "norm_label": "blocked",
+      "source_file": "ExamShared/ProcessPolicy.cs",
+      "source_location": "L3"
     },
     {
-      "id": "unicastipaddressinformation",
-      "label": "UnicastIPAddressInformation",
+      "id": "examshared_processpolicy_examshared_processdecision_unknown",
+      "label": "Unknown",
       "_origin": "ast",
       "community": 29,
-      "community_name": "MonitorBroadcaster",
+      "community_name": "ProcessPolicy",
       "file_type": "code",
-      "norm_label": "unicastipaddressinformation",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "namespace": "ExamShared",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "norm_label": "unknown",
+      "source_file": "ExamShared/ProcessPolicy.cs",
+      "source_location": "L3"
     },
     {
       "id": "examlockclient_audioalerter",
@@ -13413,202 +13694,163 @@
       "source_location": ""
     },
     {
-      "id": "examshared_monitoring_examshared_statusmessage_kind",
-      "label": "Kind",
+      "id": "csharp_namespace:923dfdc28dc1d8c9",
+      "label": "ExamLogVerifierUI",
       "_origin": "ast",
       "community": 30,
-      "community_name": "StatusMessage",
+      "community_name": "ExamLogVerifierUI",
       "file_type": "code",
       "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s168"
-        ]
+        "kind": "csharp_namespace",
+        "namespace": "ExamLogVerifierUI"
       },
-      "norm_label": "kind",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L14"
+      "norm_label": "examlogverifierui",
+      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
+      "source_location": "L3",
+      "type": "namespace"
     },
     {
-      "id": "examshared_monitoring_examshared_statusmessage_logcount",
-      "label": "LogCount",
+      "id": "examlogverifierui_eventcatalog",
+      "label": "EventCatalog.cs",
       "_origin": "ast",
       "community": 30,
-      "community_name": "StatusMessage",
+      "community_name": "ExamLogVerifierUI",
       "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s168"
-        ]
-      },
-      "norm_label": "logcount",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L19"
+      "norm_label": "eventcatalog.cs",
+      "source_file": "ExamLogVerifierUI/EventCatalog.cs",
+      "source_location": "L1"
     },
     {
-      "id": "examshared_monitoring_examshared_statusmessage_machine",
-      "label": "Machine",
+      "id": "examlogverifierui_flags",
+      "label": "ExamLogVerifierUI/Flags.cs",
       "_origin": "ast",
       "community": 30,
-      "community_name": "StatusMessage",
+      "community_name": "ExamLogVerifierUI",
       "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s168"
-        ]
-      },
-      "norm_label": "machine",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L16"
+      "norm_label": "examlogverifierui/flags.cs",
+      "source_file": "ExamLogVerifierUI/Flags.cs",
+      "source_location": "L1"
     },
     {
-      "id": "examshared_monitoring_examshared_statusmessage_state",
-      "label": "State",
+      "id": "examlogverifierui_mainform",
+      "label": "ExamLogVerifierUI/MainForm.cs",
       "_origin": "ast",
       "community": 30,
-      "community_name": "StatusMessage",
+      "community_name": "ExamLogVerifierUI",
       "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s168"
-        ]
-      },
-      "norm_label": "state",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L17"
+      "norm_label": "examlogverifierui/mainform.cs",
+      "source_file": "ExamLogVerifierUI/MainForm.cs",
+      "source_location": "L1"
     },
     {
-      "id": "examshared_monitoring_examshared_statusmessage_statustext",
-      "label": "StatusText",
+      "id": "examlogverifierui_program",
+      "label": "ExamLogVerifierUI/Program.cs",
       "_origin": "ast",
       "community": 30,
-      "community_name": "StatusMessage",
+      "community_name": "ExamLogVerifierUI",
       "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s168"
-        ]
-      },
-      "norm_label": "statustext",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L18"
+      "norm_label": "examlogverifierui/program.cs",
+      "source_file": "ExamLogVerifierUI/Program.cs",
+      "source_location": "L1"
     },
     {
-      "id": "examshared_monitoring_examshared_statusmessage_timestamp",
-      "label": "Timestamp",
+      "id": "examlogverifierui_program_cs_stathread",
+      "label": "STAThread",
       "_origin": "ast",
       "community": 30,
-      "community_name": "StatusMessage",
+      "community_name": "ExamLogVerifierUI",
       "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s168"
-        ]
-      },
-      "norm_label": "timestamp",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L20"
-    },
-    {
-      "id": "examshared_monitoring_examshared_statusmessage_user",
-      "label": "User",
-      "_origin": "ast",
-      "community": 30,
-      "community_name": "StatusMessage",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s168"
-        ]
-      },
-      "norm_label": "user",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L15"
-    },
-    {
-      "id": "examshared_monitoring_cs_ireadonlylist",
-      "label": "IReadOnlyList",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": ".Verify",
-      "file_type": "code",
-      "norm_label": "ireadonlylist",
+      "norm_label": "stathread",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "examshared_monitoring_examshared_logchunkmessage_entries",
-      "label": "Entries",
+      "id": "examlogverifierui_theme",
+      "label": "ExamLogVerifierUI/Theme.cs",
       "_origin": "ast",
-      "community": 32,
-      "community_name": "LogChunkMessage",
+      "community": 30,
+      "community_name": "ExamLogVerifierUI",
       "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s168"
-        ]
-      },
-      "norm_label": "entries",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L28"
+      "norm_label": "examlogverifierui/theme.cs",
+      "source_file": "ExamLogVerifierUI/Theme.cs",
+      "source_location": "L1"
     },
     {
-      "id": "examshared_monitoring_examshared_logchunkmessage_kind",
-      "label": "Kind",
+      "id": "examlockclient_dnscachemonitor",
+      "label": "DnsCacheMonitor.cs",
       "_origin": "ast",
-      "community": 32,
-      "community_name": "LogChunkMessage",
+      "community": 31,
+      "community_name": "DnsCacheMonitor",
       "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s168"
-        ]
-      },
-      "norm_label": "kind",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L25"
+      "norm_label": "dnscachemonitor.cs",
+      "source_file": "ExamLockClient/DnsCacheMonitor.cs",
+      "source_location": "L1"
     },
     {
-      "id": "examshared_monitoring_examshared_logchunkmessage_machine",
-      "label": "Machine",
+      "id": "examlockclient_dnscachemonitor_cs_hashset",
+      "label": "HashSet",
       "_origin": "ast",
-      "community": 32,
-      "community_name": "LogChunkMessage",
+      "community": 31,
+      "community_name": "DnsCacheMonitor",
       "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s168"
-        ]
-      },
-      "norm_label": "machine",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L27"
+      "norm_label": "hashset",
+      "source_file": "",
+      "source_location": ""
     },
     {
-      "id": "examshared_monitoring_examshared_logchunkmessage_user",
-      "label": "User",
+      "id": "examlockclient_dnscachemonitor_cs_timer",
+      "label": "Timer",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "DnsCacheMonitor",
+      "file_type": "code",
+      "norm_label": "timer",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "examlockclient_processmonitor_cs_hashset",
+      "label": "HashSet",
       "_origin": "ast",
       "community": 32,
-      "community_name": "LogChunkMessage",
+      "community_name": "ProcessMonitor",
       "file_type": "code",
-      "metadata": {
-        "namespace": "ExamShared",
-        "scope_chain": [
-          "s168"
-        ]
-      },
-      "norm_label": "user",
-      "source_file": "ExamShared/Monitoring.cs",
-      "source_location": "L26"
+      "norm_label": "hashset",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "examlockclient_processmonitor_cs_timer",
+      "label": "Timer",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "ProcessMonitor",
+      "file_type": "code",
+      "norm_label": "timer",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "name",
+      "label": "Name",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "ProcessMonitor",
+      "file_type": "code",
+      "norm_label": "name",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "pid",
+      "label": "Pid",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "ProcessMonitor",
+      "file_type": "code",
+      "norm_label": "pid",
+      "source_file": "",
+      "source_location": ""
     },
     {
       "id": "graphify_skill_honesty_rules",
@@ -13620,6 +13862,28 @@
       "norm_label": "honesty rules",
       "source_file": ".codex/skills/graphify/SKILL.md",
       "source_location": "L608"
+    },
+    {
+      "id": "examshared_fileactivitynoisefilter",
+      "label": "FileActivityNoiseFilter.cs",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": ".DocumentArguments",
+      "file_type": "code",
+      "norm_label": "fileactivitynoisefilter.cs",
+      "source_file": "ExamShared/FileActivityNoiseFilter.cs",
+      "source_location": "L1"
+    },
+    {
+      "id": "examshared_fileactivitynoisefilter_cs_ienumerable",
+      "label": "IEnumerable",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": ".DocumentArguments",
+      "file_type": "code",
+      "norm_label": "ienumerable",
+      "source_file": "",
+      "source_location": ""
     },
     {
       "id": "examshared_logverifier",
@@ -13872,6 +14136,30 @@
       "source_location": "L1"
     },
     {
+      "id": "docs_folder_monitoring",
+      "label": "folder-monitoring.md",
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "folder-monitoring.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "folder-monitoring.md",
+      "source_file": "docs/folder-monitoring.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_folder_monitoring_restricci\u00f3n_de_carpeta_experimental",
+      "label": "Restricci\u00f3n de carpeta (experimental)",
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "folder-monitoring.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "restriccion de carpeta (experimental)",
+      "source_file": "docs/folder-monitoring.md",
+      "source_location": "L1"
+    },
+    {
       "id": "checkbox",
       "label": "CheckBox",
       "_origin": "ast",
@@ -14103,90 +14391,13 @@
       "source_location": ""
     },
     {
-      "id": "examlockclient_theme",
-      "label": "ExamLockClient/Theme.cs",
+      "id": "form",
+      "label": "Form",
       "_origin": "ast",
       "community": 4,
       "community_name": "MainForm",
       "file_type": "code",
-      "norm_label": "examlockclient/theme.cs",
-      "source_file": "ExamLockClient/Theme.cs",
-      "source_location": "L1"
-    },
-    {
-      "id": "examlockclient_theme_cs_button",
-      "label": "Button",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "MainForm",
-      "file_type": "code",
-      "norm_label": "button",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "examlockclient_theme_cs_color",
-      "label": "Color",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "MainForm",
-      "file_type": "code",
-      "norm_label": "color",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "examlockclient_theme_cs_font",
-      "label": "Font",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "MainForm",
-      "file_type": "code",
-      "norm_label": "font",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "examlockclient_theme_cs_textbox",
-      "label": "TextBox",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "MainForm",
-      "file_type": "code",
-      "norm_label": "textbox",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "padding",
-      "label": "Padding",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "MainForm",
-      "file_type": "code",
-      "norm_label": "padding",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "panel",
-      "label": "Panel",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "MainForm",
-      "file_type": "code",
-      "norm_label": "panel",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "tablelayoutpanel",
-      "label": "TableLayoutPanel",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "MainForm",
-      "file_type": "code",
-      "norm_label": "tablelayoutpanel",
+      "norm_label": "form",
       "source_file": "",
       "source_location": ""
     },
@@ -15736,17 +15947,6 @@
       "community_name": "MainForm",
       "file_type": "code",
       "norm_label": "font",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "form",
-      "label": "Form",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "MainForm",
-      "file_type": "code",
-      "norm_label": "form",
       "source_file": "",
       "source_location": ""
     },
@@ -19934,7 +20134,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L240",
+      "source_location": "L249",
+      "weight": 1.0
+    },
+    {
+      "source": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_inspectcommandline",
+      "target": "examshared_fileactivitynoisefilter_examshared_fileactivitynoisefilter_documentarguments",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "ExamLockClient/FileActivityMonitor.cs",
+      "source_location": "L249",
       "weight": 1.0
     },
     {
@@ -19946,7 +20158,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L249",
+      "source_location": "L258",
       "weight": 1.0
     },
     {
@@ -19958,7 +20170,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L249",
+      "source_location": "L258",
       "weight": 1.0
     },
     {
@@ -19970,7 +20182,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L256",
+      "source_location": "L265",
       "weight": 1.0
     },
     {
@@ -19982,7 +20194,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L261",
+      "source_location": "L270",
+      "weight": 1.0
+    },
+    {
+      "source": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_inspectwatchedfile",
+      "target": "examshared_fileactivitynoisefilter_examshared_fileactivitynoisefilter_iseditormetadata",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "ExamLockClient/FileActivityMonitor.cs",
+      "source_location": "L193",
       "weight": 1.0
     },
     {
@@ -19994,7 +20218,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L206",
+      "source_location": "L215",
+      "weight": 1.0
+    },
+    {
+      "source": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor_pollcommandlines",
+      "target": "examshared_processpolicy_examshared_processpolicy_normalize",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "ExamLockClient/FileActivityMonitor.cs",
+      "source_location": "L227",
       "weight": 1.0
     },
     {
@@ -20006,7 +20242,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L229",
+      "source_location": "L238",
       "weight": 1.0
     },
     {
@@ -20018,7 +20254,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L145",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -20030,7 +20266,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L148",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -20042,7 +20278,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L160",
+      "source_location": "L161",
       "weight": 1.0
     },
     {
@@ -20054,7 +20290,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L166",
+      "source_location": "L167",
       "weight": 1.0
     },
     {
@@ -23838,6 +24074,18 @@
       "weight": 1.0
     },
     {
+      "source": "examshared_fileactivitynoisefilter_examshared_fileactivitynoisefilter_documentarguments",
+      "target": "examshared_processpolicy_examshared_processpolicy_normalize",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "ExamShared/FileActivityNoiseFilter.cs",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
       "source": "examshared_logverifier_examshared_logverifier_verify",
       "target": "examshared_logverifier_examshared_logverifier_computehmac",
       "relation": "calls",
@@ -24166,7 +24414,7 @@
         "ref_qualifier": "System.Timers"
       },
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L41",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -24637,7 +24885,7 @@
         "ref_token": "FileSystemWatcher"
       },
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L42",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -24757,7 +25005,7 @@
         "ref_token": "HashSet"
       },
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -27077,6 +27325,24 @@
       "weight": 1.0
     },
     {
+      "source": "tests_fileactivitychecks_program",
+      "target": "examlockclient_fileactivitymonitor_examlockclient_fileactivitymonitor",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "metadata": {
+        "using_kind": "alias",
+        "alias": "Monitor",
+        "target_fqn": "ExamLockClient.FileActivityMonitor",
+        "scope_kind": "file"
+      },
+      "source_file": "tests/FileActivityChecks/Program.cs",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
       "source": "examconfiggenerator_mainform",
       "target": "csharp_namespace:4cedb401acf3a94d",
       "relation": "imports",
@@ -27108,6 +27374,23 @@
       },
       "source_file": "ExamConfigGenerator/Program.cs",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "examlockclient_fileactivitymonitor",
+      "target": "csharp_namespace:4cedb401acf3a94d",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "metadata": {
+        "using_kind": "namespace",
+        "target_fqn": "ExamShared",
+        "scope_kind": "file"
+      },
+      "source_file": "ExamLockClient/FileActivityMonitor.cs",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -27227,6 +27510,23 @@
       },
       "source_file": "ExamMonitor/MainForm.cs",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_fileactivitychecks_program",
+      "target": "csharp_namespace:4cedb401acf3a94d",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "metadata": {
+        "using_kind": "namespace",
+        "target_fqn": "ExamShared",
+        "scope_kind": "file"
+      },
+      "source_file": "tests/FileActivityChecks/Program.cs",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -29178,7 +29478,7 @@
         "ref_token": "IEnumerable"
       },
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L321",
+      "source_location": "L330",
       "weight": 1.0
     },
     {
@@ -29194,6 +29494,21 @@
       },
       "source_file": "ExamLogVerifierUI/MainForm.cs",
       "source_location": "L804",
+      "weight": 1.0
+    },
+    {
+      "source": "examshared_fileactivitynoisefilter_examshared_fileactivitynoisefilter_documentarguments",
+      "target": "examshared_fileactivitynoisefilter_cs_ienumerable",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "IEnumerable"
+      },
+      "source_file": "ExamShared/FileActivityNoiseFilter.cs",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -29664,7 +29979,7 @@
         "ref_token": "IDisposable"
       },
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -30211,6 +30526,17 @@
       "weight": 1.0
     },
     {
+      "source": "docs_folder_monitoring",
+      "target": "docs_folder_monitoring_restricci\u00f3n_de_carpeta_experimental",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/folder-monitoring.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "docs_process_rules",
       "target": "docs_process_rules_programas_permitidos_y_prohibidos",
       "relation": "contains",
@@ -30515,7 +30841,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -30526,7 +30852,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -31197,6 +31523,28 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamMonitor/Theme.cs",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "examshared_fileactivitynoisefilter",
+      "target": "csharp_namespace:4cedb401acf3a94d",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ExamShared/FileActivityNoiseFilter.cs",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "examshared_fileactivitynoisefilter",
+      "target": "examshared_fileactivitynoisefilter_examshared_fileactivitynoisefilter",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ExamShared/FileActivityNoiseFilter.cs",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -32554,6 +32902,36 @@
       "weight": 1.0
     },
     {
+      "source": "examlockclient_examlockclient",
+      "target": "examlockclient_examlockclient_csproj_nuget_system_management",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ExamLockClient/ExamLockClient.csproj",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_fileactivitychecks_fileactivitychecks",
+      "target": "examshared_examshared",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/FileActivityChecks/FileActivityChecks.csproj",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_fileactivitychecks_fileactivitychecks",
+      "target": "tests_fileactivitychecks_fileactivitychecks_csproj_nuget_system_management",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/FileActivityChecks/FileActivityChecks.csproj",
+      "weight": 1.0
+    },
+    {
       "source": "tests_processpolicychecks_processpolicychecks",
       "target": "examshared_examshared",
       "relation": "imports",
@@ -33594,7 +33972,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L102",
+      "source_location": "L103",
       "weight": 1.0
     },
     {
@@ -33605,7 +33983,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L116",
+      "source_location": "L117",
       "weight": 1.0
     },
     {
@@ -33616,7 +33994,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L137",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -33627,7 +34005,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L151",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -33638,7 +34016,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L175",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -33649,7 +34027,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L196",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -33660,7 +34038,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L238",
+      "source_location": "L247",
       "weight": 1.0
     },
     {
@@ -33671,7 +34049,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L286",
+      "source_location": "L295",
       "weight": 1.0
     },
     {
@@ -33682,7 +34060,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L302",
+      "source_location": "L311",
       "weight": 1.0
     },
     {
@@ -33693,7 +34071,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L314",
+      "source_location": "L323",
       "weight": 1.0
     },
     {
@@ -33704,7 +34082,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L321",
+      "source_location": "L330",
       "weight": 1.0
     },
     {
@@ -33715,7 +34093,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L355",
+      "source_location": "L364",
       "weight": 1.0
     },
     {
@@ -33726,7 +34104,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L367",
+      "source_location": "L376",
       "weight": 1.0
     },
     {
@@ -33737,7 +34115,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ExamLockClient/FileActivityMonitor.cs",
-      "source_location": "L83",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -35754,6 +36132,28 @@
       "weight": 1.0
     },
     {
+      "source": "examshared_fileactivitynoisefilter_examshared_fileactivitynoisefilter",
+      "target": "examshared_fileactivitynoisefilter_examshared_fileactivitynoisefilter_iseditormetadata",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ExamShared/FileActivityNoiseFilter.cs",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "examshared_fileactivitynoisefilter_examshared_fileactivitynoisefilter",
+      "target": "examshared_fileactivitynoisefilter_examshared_fileactivitynoisefilter_documentarguments",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ExamShared/FileActivityNoiseFilter.cs",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
       "source": "examshared_logverifier_examshared_logverifier",
       "target": "examshared_logverifier_examshared_logverifier_computehmac",
       "relation": "method",
@@ -36169,6 +36569,26 @@
       "confidence_score": 1.0,
       "source_file": "ExamShared/UiHelp.cs",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_fileactivitychecks_fileactivitychecks",
+      "target": "tests_fileactivitychecks_fileactivitychecks_csproj_framework_net8_0_windows",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/FileActivityChecks/FileActivityChecks.csproj",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_fileactivitychecks_fileactivitychecks",
+      "target": "tests_fileactivitychecks_fileactivitychecks_csproj_sdk_microsoft_net_sdk",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/FileActivityChecks/FileActivityChecks.csproj",
       "weight": 1.0
     },
     {
@@ -37154,16 +37574,6 @@
     {
       "source": "examlockclient_examlockclient",
       "target": "examshared_examshared",
-      "relation": "imports",
-      "_origin": "semantic",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "ExamLockClient/ExamLockClient.csproj",
-      "weight": 1.0
-    },
-    {
-      "source": "examlockclient_examlockclient",
-      "target": "nuget_system_management",
       "relation": "imports",
       "_origin": "semantic",
       "confidence": "EXTRACTED",
@@ -39557,5 +39967,5 @@
       "source_file": "docs/img/client.png"
     }
   ],
-  "built_at_commit": "4cac77e2deba67afafee2e56a7dd6dcfa6377ab8"
+  "built_at_commit": "885341b003ebd0044a78f732f7ff16c43a5e661f"
 }

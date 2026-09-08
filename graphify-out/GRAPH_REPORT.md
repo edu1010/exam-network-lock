@@ -1,23 +1,23 @@
 # Graph Report - exam-network-lock  (2026-09-08)
 
 ## Corpus Check
-- 61 files · ~45,937 words
+- 65 files · ~46,860 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1028 nodes · 1731 edges · 54 communities (45 shown, 9 thin omitted)
+- 1040 nodes · 1748 edges · 54 communities (46 shown, 8 thin omitted)
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 75 edges (avg confidence: 0.83)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4cac77e2`
+- Built from commit: `885341b0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - MainForm
 - MainForm
-- Monitoring.cs
+- MonitorReporter
 - AudioAlerter
 - MainForm
 - Shared.cs
@@ -33,7 +33,7 @@
 - Escudo de examen Client Window
 - ConfigPayload
 - AiConnectionEvidence
-- ExamLockClient
+- ExamShared
 - Lang
 - Generador de configuración de examen
 - Student edu10@EDU
@@ -43,17 +43,17 @@
 - ConfigEnvelope
 - StatusTier
 - .InitializeServices
-- MonitorReporter
-- MonitorBroadcaster
-- StatusMessage
-- .Verify
-- LogChunkMessage
+- EventCatalog
+- ProcessPolicy
+- ExamLogVerifierUI
+- DnsCacheMonitor
+- ProcessMonitor
 - Extraction Subagent Prompt
 - Export Flags
-- .VerifyHmac
+- .DocumentArguments
 - LogVerificationResult
 - process-rules.md
-- Program
+- folder-monitoring.md
 - Cross Repo Merge
 - /graphify
 - TcpConnectionOwner
@@ -76,11 +76,11 @@
 3. `MainForm` - 44 edges
 4. `ConfigPayload` - 32 edges
 5. `MainForm` - 26 edges
-6. `AudioAlerter` - 21 edges
-7. `FileActivityMonitor` - 21 edges
-8. `ExamLockClient` - 17 edges
-9. `LogEntry` - 17 edges
-10. `/graphify` - 17 edges
+6. `FileActivityMonitor` - 22 edges
+7. `AudioAlerter` - 21 edges
+8. `ExamShared` - 18 edges
+9. `ExamLockClient` - 17 edges
+10. `LogEntry` - 17 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Query First Rule` --semantically_similar_to--> `Existing Graph Fast Path`  [INFERRED] [semantically similar]
@@ -110,35 +110,35 @@
 - **Restriction Inputs** — docs_img_generator_bottom_allowed_site_bard_google_com, docs_img_generator_bottom_allowed_executables, docs_img_generator_bottom_allowed_extensions, docs_img_generator_bottom_folder_restriction [INFERRED 0.85]
 - **Exam Protection State Indicators** — docs_img_client_green_shield_check, docs_img_client_protected_status, docs_img_client_active_exam_message, docs_img_client_lock_started_event [INFERRED 0.95]
 
-## Communities (54 total, 9 thin omitted)
+## Communities (54 total, 8 thin omitted)
 
 ### Community 0 - "MainForm"
-Cohesion: 0.07
-Nodes (27): DragEventArgs, Button, Color, ComboBox, Control, ctrl, DataGridView, HashSet (+19 more)
+Cohesion: 0.05
+Nodes (35): DragEventArgs, Button, Color, Font, TextBox, Theme, Button, Color (+27 more)
 
 ### Community 1 - "MainForm"
 Cohesion: 0.06
 Nodes (23): error, EventArgs, Action, Button, Control, HashSet, Label, List (+15 more)
 
-### Community 2 - "Monitoring.cs"
-Cohesion: 0.22
-Nodes (5): JsonSerializerOptions, Task, MonitorListener, MonitorProtocol, UdpClient
+### Community 2 - "MonitorReporter"
+Cohesion: 0.06
+Nodes (28): List, Timer, MonitorReporter, IEnumerable, IPAddress, IReadOnlyList, JsonSerializerOptions, Task (+20 more)
 
 ### Community 3 - "AudioAlerter"
 Cohesion: 0.09
 Nodes (17): DllImport, IntPtr, AudioAlerter, Pattern, VolumePercent, BeepPattern, Continuous, ThreeBeeps (+9 more)
 
 ### Community 4 - "MainForm"
-Cohesion: 0.05
-Nodes (30): CheckBox, control, Button, ComboBox, Control, ctrl, GroupBox, IPAddress (+22 more)
+Cohesion: 0.06
+Nodes (23): CheckBox, control, Button, ComboBox, Control, ctrl, GroupBox, IPAddress (+15 more)
 
 ### Community 5 - "Shared.cs"
-Cohesion: 0.29
-Nodes (5): BeepModes, ConfigDefaults, LogEvents, WorkFolderModes, WorkFolderResolver
+Cohesion: 0.22
+Nodes (6): BeepModes, ConfigDefaults, ConfigIntegrityService, LogEvents, WorkFolderModes, WorkFolderResolver
 
 ### Community 6 - "MainForm"
 Cohesion: 0.05
-Nodes (33): ClientRow, ExamMonitor, DateTime, Bitmap, Graphics, Flags, Dictionary, Lang (+25 more)
+Nodes (32): ClientRow, ExamMonitor, DateTime, Bitmap, Graphics, Flags, Dictionary, Lang (+24 more)
 
 ### Community 7 - "English"
 Cohesion: 0.07
@@ -153,8 +153,8 @@ Cohesion: 0.11
 Nodes (21): Contraseña B - Cerrar / Admin, Subir volumen y pitar al detectar IA, Dominios/IPs considerados IA, anthropic.com, Escudo anti-IA, bard.google.com, chatgpt.com, claude.ai (+13 more)
 
 ### Community 10 - "ExamShared.csproj"
-Cohesion: 0.11
-Nodes (17): ExamConfigGenerator, net8.0-windows, Microsoft.NET.Sdk, ExamLockClient, Microsoft.NET.Sdk, net8.0, Microsoft.NET.Sdk, net8.0-windows (+9 more)
+Cohesion: 0.09
+Nodes (20): ExamConfigGenerator, net8.0-windows, Microsoft.NET.Sdk, ExamLockClient, System.Management (8.0.0), Microsoft.NET.Sdk, net8.0, Microsoft.NET.Sdk (+12 more)
 
 ### Community 11 - "Full Pipeline"
 Cohesion: 0.13
@@ -181,16 +181,16 @@ Cohesion: 0.07
 Nodes (27): ConfigPayload, AdminPasswordHashBase64, AdminSaltBase64, AiBlocklist, AiShieldEnabled, AlarmVolumePercent, AllowedFileExtensions, AllowedProcesses (+19 more)
 
 ### Community 17 - "AiConnectionEvidence"
-Cohesion: 0.06
-Nodes (29): HashSet, IPAddress, Process, AiConnectionEvidence, CommandLine, DedupKey, Destination, IsStudentFacingProcess (+21 more)
+Cohesion: 0.05
+Nodes (30): HashSet, IPAddress, Process, AiConnectionEvidence, CommandLine, DedupKey, Destination, IsStudentFacingProcess (+22 more)
 
-### Community 18 - "ExamLockClient"
-Cohesion: 0.06
-Nodes (20): ExamShared, ExamLogVerifier, ExamLockClient, HashSet, Timer, DnsCacheMonitor, HashSet, Timer (+12 more)
+### Community 18 - "ExamShared"
+Cohesion: 0.15
+Nodes (5): ExamShared, ExamLogVerifier, ExamLockClient, Dictionary, UiHelp
 
 ### Community 19 - "Lang"
-Cohesion: 0.08
-Nodes (22): ExamLogVerifierUI, Color, Dictionary, EventCatalog, Severity, Critical, Good, Info (+14 more)
+Cohesion: 0.17
+Nodes (11): Bitmap, Graphics, Flags, Dictionary, Lang, Current, FilePath, Language (+3 more)
 
 ### Community 20 - "Generador de configuración de examen"
 Cohesion: 0.21
@@ -213,28 +213,32 @@ Cohesion: 0.21
 Nodes (8): LogEntry, EventData, EventType, HmacBase64, PrevHmacBase64, Sequence, Timestamp, SecureLogService
 
 ### Community 25 - "ConfigEnvelope"
-Cohesion: 0.29
-Nodes (5): JsonSerializerOptions, ConfigEnvelope, HmacBase64, Payload, ConfigSerializer
+Cohesion: 0.22
+Nodes (6): Program, JsonSerializerOptions, ConfigEnvelope, HmacBase64, Payload, ConfigSerializer
 
 ### Community 26 - "StatusTier"
 Cohesion: 0.33
 Nodes (6): StatusTier, Error, Ok, Red, Unverified, Warning
 
-### Community 28 - "MonitorReporter"
+### Community 28 - "EventCatalog"
+Cohesion: 0.23
+Nodes (8): Color, Dictionary, EventCatalog, Severity, Critical, Good, Info, Warning
+
+### Community 29 - "ProcessPolicy"
 Cohesion: 0.24
-Nodes (4): List, Timer, MonitorReporter, IDisposable
+Nodes (7): HashSet, IEnumerable, ProcessDecision, Allowed, Blocked, Unknown, ProcessPolicy
 
-### Community 29 - "MonitorBroadcaster"
-Cohesion: 0.29
-Nodes (5): IEnumerable, IPAddress, MonitorBroadcaster, IPEndPoint, UnicastIPAddressInformation
+### Community 30 - "ExamLogVerifierUI"
+Cohesion: 0.22
+Nodes (3): ExamLogVerifierUI, STAThread, Program
 
-### Community 30 - "StatusMessage"
-Cohesion: 0.25
-Nodes (8): StatusMessage, Kind, LogCount, Machine, State, StatusText, Timestamp, User
+### Community 31 - "DnsCacheMonitor"
+Cohesion: 0.31
+Nodes (3): HashSet, Timer, DnsCacheMonitor
 
-### Community 32 - "LogChunkMessage"
-Cohesion: 0.40
-Nodes (5): LogChunkMessage, Entries, Kind, Machine, User
+### Community 32 - "ProcessMonitor"
+Cohesion: 0.28
+Nodes (5): HashSet, Timer, ProcessMonitor, Name, Pid
 
 ### Community 33 - "Extraction Subagent Prompt"
 Cohesion: 0.28
@@ -293,24 +297,24 @@ Cohesion: 0.50
 Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphify reference: incremental update and cluster-only
 
 ## Knowledge Gaps
-- **288 isolated node(s):** `net8.0-windows`, `Microsoft.NET.Sdk`, `En`, `Ca`, `Es` (+283 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 419 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **292 isolated node(s):** `net8.0-windows`, `Microsoft.NET.Sdk`, `En`, `Ca`, `Es` (+287 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 425 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `MainForm` connect `MainForm` to `AudioAlerter`, `MainForm`, `FileActivityMonitor`, `ShieldControl`, `ConfigPayload`, `AiConnectionEvidence`, `ExamLockClient`, `LogEntry`, `.InitializeServices`, `MonitorReporter`?**
-  _High betweenness centrality (0.227) - this node is a cross-community bridge._
-- **Why does `ExamShared` connect `ExamLockClient` to `Monitoring.cs`, `LogVerificationResult`, `Shared.cs`, `MainForm`, `Lang`, `Lang`?**
-  _High betweenness centrality (0.099) - this node is a cross-community bridge._
-- **Why does `MainForm` connect `MainForm` to `StatusTier`, `Lang`, `MainForm`?**
-  _High betweenness centrality (0.093) - this node is a cross-community bridge._
+- **Why does `MainForm` connect `MainForm` to `ProcessMonitor`, `MonitorReporter`, `AudioAlerter`, `MainForm`, `FileActivityMonitor`, `ShieldControl`, `ConfigPayload`, `AiConnectionEvidence`, `ExamShared`, `LogEntry`, `.InitializeServices`, `DnsCacheMonitor`?**
+  _High betweenness centrality (0.238) - this node is a cross-community bridge._
+- **Why does `ExamShared` connect `ExamShared` to `MonitorReporter`, `.DocumentArguments`, `LogVerificationResult`, `Shared.cs`, `MainForm`, `Lang`, `ProcessPolicy`, `ExamLogVerifierUI`?**
+  _High betweenness centrality (0.102) - this node is a cross-community bridge._
+- **Why does `MainForm` connect `MainForm` to `StatusTier`, `MainForm`, `ExamLogVerifierUI`?**
+  _High betweenness centrality (0.095) - this node is a cross-community bridge._
 - **What connects `net8.0-windows`, `Microsoft.NET.Sdk`, `En` to the rest of the system?**
-  _288 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _292 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `MainForm` be split into smaller, more focused modules?**
-  _Cohesion score 0.06523855890944498 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05422838031533684 - nodes in this community are weakly interconnected._
 - **Should `MainForm` be split into smaller, more focused modules?**
   _Cohesion score 0.06322624743677376 - nodes in this community are weakly interconnected._
-- **Should `AudioAlerter` be split into smaller, more focused modules?**
-  _Cohesion score 0.09230769230769231 - nodes in this community are weakly interconnected._
+- **Should `MonitorReporter` be split into smaller, more focused modules?**
+  _Cohesion score 0.05612244897959184 - nodes in this community are weakly interconnected._

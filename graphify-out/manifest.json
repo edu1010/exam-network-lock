@@ -66,10 +66,10 @@
     "semantic_hash": "ff51138eac60f67aa6dc4ceb662d8365"
   },
   "ExamLockClient/FileActivityMonitor.cs": {
-    "mtime": 1788776693.5287952,
-    "seen": 1788778064.334882,
-    "ast_hash": "ab464037e21aab10331f526590ce1afd",
-    "semantic_hash": "ab464037e21aab10331f526590ce1afd"
+    "mtime": 1788858377.8531206,
+    "seen": 1788858498.2495923,
+    "ast_hash": "2b63987ac44a9b509165e3c3c15496f3",
+    "semantic_hash": ""
   },
   "ExamLockClient/Flags.cs": {
     "mtime": 1788776693.5317054,
@@ -387,6 +387,30 @@
     "mtime": 1788854741.2351127,
     "seen": 1788854917.866863,
     "ast_hash": "f75c16a35fdd06b3b623f470d36c55d4",
+    "semantic_hash": ""
+  },
+  "ExamShared/FileActivityNoiseFilter.cs": {
+    "mtime": 1788858213.5022805,
+    "seen": 1788858498.2495923,
+    "ast_hash": "e16ef37a081c37148aa165ad7e4278b7",
+    "semantic_hash": ""
+  },
+  "tests/FileActivityChecks/FileActivityChecks.csproj": {
+    "mtime": 1788858421.881277,
+    "seen": 1788858498.2495923,
+    "ast_hash": "373fe1e3357f18a9471d08c71e046b88",
+    "semantic_hash": ""
+  },
+  "tests/FileActivityChecks/Program.cs": {
+    "mtime": 1788858544.4975905,
+    "seen": 1788858569.8349206,
+    "ast_hash": "8612f0c744f1a92d1bbdb0fdff168bd5",
+    "semantic_hash": ""
+  },
+  "docs/folder-monitoring.md": {
+    "mtime": 1788858326.655452,
+    "seen": 1788858498.2495923,
+    "ast_hash": "f4c0127f6d807aa31124ce200ba46d2f",
     "semantic_hash": ""
   }
 }
