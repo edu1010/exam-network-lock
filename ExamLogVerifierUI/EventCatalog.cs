@@ -26,6 +26,7 @@ internal static class EventCatalog
         [LogEvents.AiToolDetected] = Severity.Critical,
         [LogEvents.VmDetected] = Severity.Critical,
         [LogEvents.ForbiddenFile] = Severity.Critical,
+        [LogEvents.BlockedProcess] = Severity.Critical,
         [LogEvents.OutsideFolder] = Severity.Critical,
         // The shield's top alarm state — only raised alongside a real incident on the client.
         [LogEvents.ShieldRed] = Severity.Critical,

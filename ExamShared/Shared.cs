@@ -39,6 +39,8 @@ public sealed class ConfigPayload
 
     // Allowed programs (exe names, e.g. "eclipse.exe") and file extensions (e.g. ".java").
     public string[] AllowedProcesses { get; init; } = Array.Empty<string>();
+    // Null is omitted from JSON to preserve the signed representation of older configurations.
+    public string[]? BlockedProcesses { get; init; }
     public string[] AllowedFileExtensions { get; init; } = Array.Empty<string>();
 
     // Explicitly blocked file extensions (e.g. ".exe"). Empty = nothing blocked. Only meaningful
@@ -183,6 +185,7 @@ public static class LogEvents
     public const string AiCleared = "AI_CLEARED";
 
     public const string UnknownProcess = "UNKNOWN_PROCESS";
+    public const string BlockedProcess = "BLOCKED_PROCESS";
     public const string ForbiddenFile = "FORBIDDEN_FILE";
     public const string UnknownFile = "UNKNOWN_FILE";
     public const string OutsideFolder = "OUTSIDE_FOLDER";

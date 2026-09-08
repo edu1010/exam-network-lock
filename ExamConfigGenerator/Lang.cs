@@ -36,6 +36,10 @@ internal static class Lang
         ["secRadios"] = new[] { "Radios", "Ràdios", "Radios" },
         ["secAi"] = new[] { "AI shield", "Escut anti-IA", "Escudo anti-IA" },
         ["secApps"] = new[] { "Allowed programs", "Programes permesos", "Programas permitidos" },
+        ["secBlockedApps"] = new[] { "Prohibited programs", "Programes prohibits", "Programas prohibidos" },
+        ["blockedAppsHint"] = new[] { "Executable names (e.g. firefox.exe or firefox). Detected even if already open. Prohibited takes priority over allowed. No processes are closed.", "Noms d'executables (p. ex. firefox.exe o firefox). Es detecten encara que ja estiguin oberts. Prohibits té prioritat sobre permesos. No es tanquen processos.", "Nombres de ejecutables (ej. firefox.exe o firefox). Se detectan aunque ya estén abiertos. Prohibidos tiene prioridad sobre permitidos. No se cierran procesos." },
+        ["btnBrowseExe"] = new[] { "Browse…", "Examina…", "Examinar…" },
+        ["appsPolicyHint"] = new[] { "Optional strict list: new unlisted processes trigger a warning. Existing processes and known system processes are exempt. Helpers may cause warnings; leave empty to use only prohibited programs.", "Llista estricta opcional: els processos nous no inclosos generen un avís. S'exclouen els ja oberts i els processos coneguts del sistema. Els auxiliars poden generar avisos; deixa-la buida per usar només els prohibits.", "Lista estricta opcional: los procesos nuevos no incluidos generan un aviso. Se excluyen los ya abiertos y los procesos conocidos del sistema. Los auxiliares pueden generar avisos; déjala vacía para usar solo los prohibidos." },
         ["secFiles"] = new[] { "Files and work folder", "Fitxers i carpeta de treball", "Archivos y carpeta de trabajo" },
 
         ["pwdA"] = new[] { "Password to re-enable Wi-Fi", "Contrasenya per rehabilitar Wi-Fi", "Contraseña para rehabilitar Wi-Fi" },

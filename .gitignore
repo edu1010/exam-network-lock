@@ -32,3 +32,4 @@ dist/
 # dotnet tools
 .dotnet/
 .worktrees/
+graphify-out/20??-??-??/

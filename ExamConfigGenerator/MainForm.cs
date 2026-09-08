@@ -34,6 +34,7 @@ public sealed class MainForm : Form
     private readonly ListBox _aiList;
     private readonly TextBox _aiInput;
     private readonly ListBox _appList;
+    private readonly ListBox _blockedAppList;
     private readonly TextBox _extensionsBox;
     private readonly TextBox _blockedExtensionsBox;
     private readonly CheckBox _restrictFolderCheck;
@@ -165,6 +166,7 @@ public sealed class MainForm : Form
         var appSection = Section("secApps");
         var appStack = VerticalStack();
         appStack.Controls.Add(HintLabel("appsHint", new Padding(0, 0, 0, 2)));
+        appStack.Controls.Add(HintLabel("appsPolicyHint", new Padding(0, 0, 0, 8)));
         _appList = new ListBox { Width = SectionWidth - 30, Height = 100, Margin = new Padding(0, 0, 0, 6) };
         Theme.StyleList(_appList);
         appStack.Controls.Add(_appList);
@@ -176,6 +178,23 @@ public sealed class MainForm : Form
             ("btnRemove", () => RemoveSelected(_appList))));
         appSection.Controls.Add(appStack);
         content.Controls.Add(appSection);
+
+        var blockedSection = Section("secBlockedApps");
+        var blockedStack = VerticalStack();
+        blockedStack.Controls.Add(HintLabel("blockedAppsHint", new Padding(0, 0, 0, 2)));
+        _blockedAppList = new ListBox { Height = 100, Margin = new Padding(0, 0, 0, 6) };
+        Theme.StyleList(_blockedAppList);
+        blockedStack.Controls.Add(_blockedAppList);
+        var blockedManual = new TextBox();
+        Theme.StyleInput(blockedManual);
+        blockedStack.Controls.Add(InputWithButtons(blockedManual,
+            ("btnBrowseExe", () => BrowseExe(_blockedAppList)),
+            ("btnAdd", () => AddToList(_blockedAppList, blockedManual)),
+            ("btnRemove", () => RemoveSelected(_blockedAppList))));
+        blockedSection.Controls.Add(blockedStack);
+        content.Controls.Add(blockedSection);
+        _helpTargets.Add((_blockedAppList, "blockedAppsHint"));
+        _helpTargets.Add((blockedManual, "blockedAppsHint"));
 
         // --- Files & folder ---
         var fileSection = Section("secFiles");
@@ -469,19 +488,22 @@ public sealed class MainForm : Form
     }
 
     private void BrowseExe()
+        => BrowseExe(_appList);
+
+    private void BrowseExe(ListBox target)
     {
         using var dialog = new OpenFileDialog
         {
-            Title = Lang.T("dlgExe"),
+            Title = Lang.T(target == _appList ? "dlgExe" : "secBlockedApps"),
             Filter = "*.exe|*.exe|*.*|*.*"
         };
 
         if (dialog.ShowDialog(this) == DialogResult.OK)
         {
             var name = Path.GetFileName(dialog.FileName);
-            if (!_appList.Items.Contains(name))
+            if (!target.Items.Contains(name))
             {
-                _appList.Items.Add(name);
+                target.Items.Add(name);
             }
         }
     }
@@ -634,6 +656,7 @@ public sealed class MainForm : Form
                 AlarmVolumePercent = _volumeCombo.SelectedIndex switch { 0 => 25, 1 => 50, 2 => 75, _ => 100 },
                 AiBlocklist = _aiList.Items.Cast<string>().ToArray(),
                 AllowedProcesses = _appList.Items.Cast<string>().ToArray(),
+                BlockedProcesses = _blockedAppList.Items.Count == 0 ? null : _blockedAppList.Items.Cast<string>().ToArray(),
                 AllowedFileExtensions = allowedExtensions,
                 // An allow-list already restricts to ONLY the listed extensions, so a block-list
                 // would be redundant; keep it empty whenever the allow-list is in use.

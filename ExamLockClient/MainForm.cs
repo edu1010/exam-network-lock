@@ -484,10 +484,11 @@ public sealed class MainForm : Form
             _threatMonitor.Start();
         }
 
-        if (_config.AllowedProcesses.Length > 0)
+        if (_config.AllowedProcesses.Length > 0 || _config.BlockedProcesses is { Length: > 0 })
         {
-            _processMonitor = new ProcessMonitor(_config.AllowedProcesses);
+            _processMonitor = new ProcessMonitor(_config.AllowedProcesses, _config.BlockedProcesses);
             _processMonitor.UnknownProcessStarted += exe => RunOnUi(() => OnUnknownProcess(exe));
+            _processMonitor.BlockedProcessDetected += exe => RunOnUi(() => OnBlockedProcess(exe));
             _processMonitor.Start();
         }
 
@@ -610,6 +611,14 @@ public sealed class MainForm : Form
         }
 
         SetRed(Lang.T("statusOutside"));
+    }
+
+    private void OnBlockedProcess(string exe)
+    {
+        if (!_reported.Add("BLOCKEDPROC:" + exe)) return;
+        _log?.Append(LogEvents.BlockedProcess, exe);
+        AddIncident(string.Format(Lang.T("incBlockedProc"), exe));
+        SetRed(string.Format(Lang.T("statusBlockedProc"), exe));
     }
 
     private void OnUnknownProcess(string exe)

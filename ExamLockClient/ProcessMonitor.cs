@@ -1,9 +1,10 @@
+using ExamShared;
 using System.Diagnostics;
 
 namespace ExamLockClient;
 
 /// <summary>
-/// Snapshots the processes running when the lockdown starts, then flags any NEW
+/// Snapshots the processes running when the lockdown starts, then flags explicitly blocked programs (including at startup) or any NEW
 /// process whose executable is not in the allowed list (and not a known-safe OS
 /// process). Deterrent only — it never kills anything.
 /// </summary>
@@ -21,93 +22,71 @@ public sealed class ProcessMonitor : IDisposable
         "examlockclient.exe"
     };
 
-    private readonly HashSet<string> _allowed;
+    private readonly ProcessPolicy _policy;
     private readonly HashSet<int> _knownPids = new();
     private readonly object _gate = new();
     private System.Timers.Timer? _timer;
 
-    /// <summary>Raised with the executable name of a new, non-allowed process.</summary>
     public event Action<string>? UnknownProcessStarted;
+    public event Action<string>? BlockedProcessDetected;
 
-    public ProcessMonitor(IEnumerable<string> allowedProcesses)
+    public ProcessMonitor(IEnumerable<string> allowedProcesses, IEnumerable<string>? blockedProcesses = null)
     {
-        _allowed = new HashSet<string>(
-            allowedProcesses.Select(p => p.Trim()).Where(p => p.Length > 0),
-            StringComparer.OrdinalIgnoreCase);
+        _policy = new ProcessPolicy(allowedProcesses, blockedProcesses, SafeBaseProcesses);
     }
 
     public void Start()
     {
-        // Baseline: everything already running is accepted.
-        foreach (var p in Process.GetProcesses())
-        {
-            _knownPids.Add(p.Id);
-        }
-
+        // Existing apps form the allow-list baseline, but explicit prohibitions apply immediately.
+        Poll(reportUnknown: false);
         _timer = new System.Timers.Timer(2_000) { AutoReset = true };
         _timer.Elapsed += (_, _) => Poll();
         _timer.Start();
     }
 
-    private void Poll()
+    private void Poll(bool reportUnknown = true)
     {
-        try
+        lock (_gate)
         {
-            foreach (var p in Process.GetProcesses())
+            try
             {
-                lock (_gate)
+                var snapshot = Snapshot();
+                // Forget exited processes so a recycled PID is not exempted forever.
+                _knownPids.IntersectWith(snapshot.Select(p => p.Pid));
+                foreach (var process in snapshot)
                 {
-                    if (!_knownPids.Add(p.Id))
+                    if (!_knownPids.Add(process.Pid)) continue;
+                    switch (_policy.Evaluate(process.Name, alreadyRunning: !reportUnknown))
                     {
-                        continue;
+                        case ProcessDecision.Blocked:
+                            BlockedProcessDetected?.Invoke(process.Name);
+                            break;
+                        case ProcessDecision.Unknown:
+                            UnknownProcessStarted?.Invoke(process.Name);
+                            break;
                     }
                 }
-
-                var exe = SafeProcessName(p);
-                if (IsAllowed(exe))
-                {
-                    continue;
-                }
-
-                UnknownProcessStarted?.Invoke(exe);
+            }
+            catch
+            {
+                // Transient enumeration errors are retried on the next tick.
             }
         }
-        catch
-        {
-            // Ignore transient enumeration errors.
-        }
     }
 
-    private bool IsAllowed(string exe)
+    private static (int Pid, string Name)[] Snapshot()
     {
-        if (SafeBaseProcesses.Contains(exe))
+        var snapshot = new List<(int Pid, string Name)>();
+        foreach (var process in Process.GetProcesses())
         {
-            return true;
+            using (process)
+            {
+                try { snapshot.Add((process.Id, process.ProcessName + ".exe")); }
+                catch { /* Process exited or is inaccessible; do not invent an unknown program. */ }
+            }
         }
-
-        // If the teacher set no allowlist, do not flag processes by name.
-        if (_allowed.Count == 0)
-        {
-            return true;
-        }
-
-        return _allowed.Contains(exe);
+        return snapshot.ToArray();
     }
 
-    private static string SafeProcessName(Process p)
-    {
-        try
-        {
-            return p.ProcessName + ".exe";
-        }
-        catch
-        {
-            return "unknown.exe";
-        }
-    }
-
-    public void Dispose()
-    {
-        _timer?.Dispose();
-    }
+    public void Dispose() => _timer?.Dispose();
 }

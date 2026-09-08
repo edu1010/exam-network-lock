@@ -32,6 +32,8 @@ internal static class Lang
 
     private static readonly Dictionary<string, string[]> Table = new()
     {
+        ["incBlockedProc"] = new[] { "Prohibited program: {0}", "Programa prohibit: {0}", "Programa prohibido: {0}" },
+        ["statusBlockedProc"] = new[] { "Prohibited program detected: {0}", "Programa prohibit detectat: {0}", "Programa prohibido detectado: {0}" },
         // key                       EN                                   CA                                       ES
         ["title"] = new[] { "Exam shield", "Escut d'examen", "Escudo de examen" },
         ["config"] = new[] { "Config", "Config", "Config" },

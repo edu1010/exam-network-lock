@@ -8,6 +8,8 @@ public static class UiHelp
 
     private static readonly Dictionary<string, string[]> Text = new()
     {
+        ["blockedAppsHint"] = ["Report these executable names, including programs already running. Prohibited overrides allowed. Processes are not terminated.", "Informa d'aquests executables, inclosos els ja oberts. Prohibits té prioritat sobre permesos. No es tanquen processos.", "Informa de estos ejecutables, incluidos los ya abiertos. Prohibidos tiene prioridad sobre permitidos. No se cierran procesos."],
+        ["btnBrowseExe"] = ["Select an executable to add its filename to the prohibited list.", "Selecciona un executable per afegir-ne el nom a la llista de prohibits.", "Selecciona un ejecutable para añadir su nombre a la lista de prohibidos."],
         ["pwdA"] = ["Password used to re-enable Wi-Fi for submission. The program stays open.", "Contrasenya per tornar a habilitar el Wi-Fi i lliurar l'examen. El programa continua obert.", "Contraseña para rehabilitar Wi-Fi y entregar el examen. El programa sigue abierto."],
         ["pwdAc"] = ["Repeat the Wi-Fi password to check for typing mistakes.", "Repeteix la contrasenya del Wi-Fi per comprovar que és correcta.", "Repite la contraseña de Wi-Fi para comprobar que está bien escrita."],
         ["pwdB"] = ["Teacher password used to end the session and close the program.", "Contrasenya del professor per finalitzar la sessió i tancar el programa.", "Contraseña del profesor para finalizar la sesión y cerrar el programa."],

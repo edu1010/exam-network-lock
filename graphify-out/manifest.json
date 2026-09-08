@@ -18,15 +18,15 @@
     "semantic_hash": "67f283a68f3b67fced3fafc25b33760d"
   },
   "ExamConfigGenerator/Lang.cs": {
-    "mtime": 1788777592.1153138,
-    "seen": 1788778064.334882,
-    "ast_hash": "a11ad817cc0b93638e1b020ffcb2f7c7",
+    "mtime": 1788854639.8269925,
+    "seen": 1788854917.866863,
+    "ast_hash": "09c0dd028c3ca6cbbd108c20cb0aab54",
     "semantic_hash": ""
   },
   "ExamConfigGenerator/MainForm.cs": {
-    "mtime": 1788778354.4147425,
-    "seen": 1788778498.5958602,
-    "ast_hash": "660b38c4fc541eb709b5f2040b069e1f",
+    "mtime": 1788854733.7686372,
+    "seen": 1788854917.866863,
+    "ast_hash": "23251875607b6a2eeb5e7f0ce30932f4",
     "semantic_hash": ""
   },
   "ExamConfigGenerator/Program.cs": {
@@ -78,15 +78,15 @@
     "semantic_hash": "f672f30e3c3a6c90acce90c877a47db5"
   },
   "ExamLockClient/Lang.cs": {
-    "mtime": 1788777592.1219456,
-    "seen": 1788778064.334882,
-    "ast_hash": "c8ba87f280004c0c41a734ac02c112a8",
+    "mtime": 1788854733.7623982,
+    "seen": 1788854917.866863,
+    "ast_hash": "dd2f7e20e714473bd7fce7a23f719fc5",
     "semantic_hash": ""
   },
   "ExamLockClient/MainForm.cs": {
-    "mtime": 1788778352.3439634,
-    "seen": 1788778498.5958602,
-    "ast_hash": "8b9adf201e630ebf5c4eb502040797c2",
+    "mtime": 1788854733.7686372,
+    "seen": 1788854917.866863,
+    "ast_hash": "f4d8da924ac6e420eb39b4b108ee0e10",
     "semantic_hash": ""
   },
   "ExamLockClient/MonitorReporter.cs": {
@@ -102,10 +102,10 @@
     "semantic_hash": "8c4a0ac5060afc3d9a34bf8514081c0a"
   },
   "ExamLockClient/ProcessMonitor.cs": {
-    "mtime": 1788776693.557862,
-    "seen": 1788778064.334882,
-    "ast_hash": "65e7192e6af5c0614fe051c0732d9dc8",
-    "semantic_hash": "65e7192e6af5c0614fe051c0732d9dc8"
+    "mtime": 1788854583.9715822,
+    "seen": 1788854917.866863,
+    "ast_hash": "bbef2426859de5d009e1cf298938ae7f",
+    "semantic_hash": ""
   },
   "ExamLockClient/Program.cs": {
     "mtime": 1788776693.5598772,
@@ -144,9 +144,9 @@
     "semantic_hash": "50f662e0dc05f2c9892f199ad27c5529"
   },
   "ExamLogVerifierUI/EventCatalog.cs": {
-    "mtime": 1788776693.5957148,
-    "seen": 1788778064.334882,
-    "ast_hash": "f5ba60d56305a992c8ef0caee11fcdd1",
+    "mtime": 1788854517.7271457,
+    "seen": 1788854917.866863,
+    "ast_hash": "bab5f982d1f3036fdb0eda36968eaa4c",
     "semantic_hash": ""
   },
   "ExamLogVerifierUI/ExamLogVerifierUI.csproj": {
@@ -162,9 +162,9 @@
     "semantic_hash": "59cd58b8577dcb8454b1cd45e61bd5fa"
   },
   "ExamLogVerifierUI/Lang.cs": {
-    "mtime": 1788776693.603045,
-    "seen": 1788778064.334882,
-    "ast_hash": "6d26b94de9168e76ca38197bad3900de",
+    "mtime": 1788854733.7686372,
+    "seen": 1788854917.866863,
+    "ast_hash": "5a769b775180882c7e897c157b525796",
     "semantic_hash": ""
   },
   "ExamLogVerifierUI/MainForm.cs": {
@@ -252,9 +252,9 @@
     "semantic_hash": ""
   },
   "ExamShared/Shared.cs": {
-    "mtime": 1788776693.6387758,
-    "seen": 1788778064.334882,
-    "ast_hash": "565c13f98cb7afbaf6b32274a14b92d8",
+    "mtime": 1788854507.849362,
+    "seen": 1788854917.866863,
+    "ast_hash": "08a5f3cde91a191df31862174065dc22",
     "semantic_hash": ""
   },
   ".codex/skills/graphify/SKILL.md": {
@@ -360,9 +360,33 @@
     "semantic_hash": ""
   },
   "ExamShared/UiHelp.cs": {
-    "mtime": 1788777433.5910532,
-    "seen": 1788778064.334882,
-    "ast_hash": "09abb93134acbed0e0d3f8ae3816d2b9",
+    "mtime": 1788854647.4193907,
+    "seen": 1788854917.866863,
+    "ast_hash": "cb6af6ed6a5cd738b647abeeaadd8596",
+    "semantic_hash": ""
+  },
+  "ExamShared/ProcessPolicy.cs": {
+    "mtime": 1788854509.9902627,
+    "seen": 1788854917.866863,
+    "ast_hash": "6f083e123836d1aa711748fd44d05d7f",
+    "semantic_hash": ""
+  },
+  "tests/ProcessPolicyChecks/ProcessPolicyChecks.csproj": {
+    "mtime": 1788854736.7879584,
+    "seen": 1788854917.866863,
+    "ast_hash": "8d52c94f687ef3abdc6290381ac48ff0",
+    "semantic_hash": ""
+  },
+  "tests/ProcessPolicyChecks/Program.cs": {
+    "mtime": 1788854739.0540457,
+    "seen": 1788854917.866863,
+    "ast_hash": "2c59ed7966a527e467f7828c3989fccb",
+    "semantic_hash": ""
+  },
+  "docs/process-rules.md": {
+    "mtime": 1788854741.2351127,
+    "seen": 1788854917.866863,
+    "ast_hash": "f75c16a35fdd06b3b623f470d36c55d4",
     "semantic_hash": ""
   }
 }
