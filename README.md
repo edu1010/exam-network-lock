@@ -2,6 +2,8 @@
 
 **Languages / Idiomes / Idiomas:** [English](#english) · [Català](#català) · [Castellano](#castellano)
 
+**Guía para el profesorado (castellano):** [Manual visual en PDF](output/pdf/guia-profesorado.pdf) · [Versión editable y consultable](docs/guia-profesorado.md). Incluye preparación, explicación de las herramientas, supervisión, entrega, revisión de registros, soluciones habituales y una hoja rápida imprimible.
+
 Classroom exam-locking system. Two desktop apps (WinForms, .NET 8) plus a log verifier.
 Sistema de bloqueig per a exàmens. Dues aplicacions d'escriptori més un verificador de registres.
 Sistema de bloqueo para exámenes. Dos aplicaciones de escritorio más un verificador de registros.

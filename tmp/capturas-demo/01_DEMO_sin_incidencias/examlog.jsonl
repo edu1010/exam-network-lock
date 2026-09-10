@@ -1,0 +1,3 @@
+{"Sequence": 1, "Timestamp": "2026-09-09T10:01:00.0000000+02:00", "EventType": "APP_STARTED", "EventData": "Sesión ficticia para la guía", "PrevHmacBase64": "GENESIS", "HmacBase64": "zt42oPNyOTCrf+razuEa8r5J9AGwkFpXgFeWlJxpx9k="}
+{"Sequence": 2, "Timestamp": "2026-09-09T10:02:00.0000000+02:00", "EventType": "CONFIG_VALID", "EventData": "Configuración de demostración", "PrevHmacBase64": "zt42oPNyOTCrf+razuEa8r5J9AGwkFpXgFeWlJxpx9k=", "HmacBase64": "Ux9+yFJLpQDtqPxqwtykbzFwJv+Lm6wikFanvb8Nv0g="}
+{"Sequence": 3, "Timestamp": "2026-09-09T10:03:00.0000000+02:00", "EventType": "NORMAL_EXIT", "EventData": "Ejemplo de cierre normal", "PrevHmacBase64": "Ux9+yFJLpQDtqPxqwtykbzFwJv+Lm6wikFanvb8Nv0g=", "HmacBase64": "gOEWcs1vavPi7ceydP4EYdsZMEIdSs2ReYt+rS801bA="}
