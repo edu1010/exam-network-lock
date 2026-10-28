@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
+using Avalonia.Controls.Templates;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Styling;
@@ -21,6 +22,13 @@ public static class Ui
 
         return control;
     }
+
+    /// <summary>
+    /// Row template that tolerates null: when ItemsSource is replaced, Avalonia rebuilds recycled
+    /// containers with null content, and a template that dereferences it breaks rendering.
+    /// </summary>
+    public static FuncDataTemplate<T> RowTemplate<T>(Func<T, Control> build) where T : class =>
+        new((item, _) => item is null ? new Panel() : build(item));
 
     /// <summary>Removes the item padding so templated rows sit edge to edge like a data grid.</summary>
     public static ListBox TableRows(ListBox list)

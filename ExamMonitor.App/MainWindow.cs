@@ -80,7 +80,7 @@ public sealed class MainWindow : Window
         }
 
         _grid.Background = Palette.Surface;
-        _grid.ItemTemplate = new FuncDataTemplate<GridLine>((line, _) => BuildRow(line));
+        _grid.ItemTemplate = Ui.RowTemplate<GridLine>(BuildRow);
 
         var table = new Grid { RowDefinitions = new RowDefinitions("Auto,*") };
         table.Children.Add(Ui.Cell(new Border { Child = _header, BorderBrush = Palette.Border, BorderThickness = new Thickness(0, 0, 0, 1) }, 0));

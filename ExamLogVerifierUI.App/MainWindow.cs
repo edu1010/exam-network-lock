@@ -216,7 +216,7 @@ public sealed class MainWindow : Window
         filterRow.Children.Add(_leftFilter);
 
         _logsGrid.Background = Palette.Surface;
-        _logsGrid.ItemTemplate = new FuncDataTemplate<LogLine>((line, _) =>
+        _logsGrid.ItemTemplate = Ui.RowTemplate<LogLine>(line =>
         {
             var item = line.Item;
             var grid = new Grid { ColumnDefinitions = new ColumnDefinitions(LogColumns), Background = TierBg(item.Tier).ToBrush() };
@@ -261,7 +261,7 @@ public sealed class MainWindow : Window
 
         var mono = new FontFamily("DejaVu Sans Mono, Consolas, monospace");
         _eventsGrid.Background = Palette.Surface;
-        _eventsGrid.ItemTemplate = new FuncDataTemplate<EventLine>((line, _) =>
+        _eventsGrid.ItemTemplate = Ui.RowTemplate<EventLine>(line =>
         {
             var grid = new Grid { ColumnDefinitions = new ColumnDefinitions(EventColumns), Background = line.Back };
             grid.Children.Add(Ui.Cell(GridCell(line.Line, Palette.TextMuted, align: TextAlignment.Right), 0, 0));
