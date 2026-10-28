@@ -31,6 +31,7 @@ public sealed class MainWindow : Window
     private readonly CheckBox _raiseVolumeCheck;
     private readonly CheckBox _detectVmCheck;
     private readonly CheckBox _monitorCheck;
+    private readonly CheckBox _defaultConfigCheck;
     private readonly TextBox _monitorTargetsBox = new() { Watermark = "192.168.1.70" };
     private readonly ComboBox _beepModeCombo = new() { Width = 300 };
     private readonly ComboBox _volumeCombo = new() { Width = 300 };
@@ -64,6 +65,12 @@ public sealed class MainWindow : Window
         _languageBar = new LanguageBar(i => { Lang.Set((Language)i); ApplyLanguage(); });
 
         var content = new StackPanel { Margin = new Thickness(0, 0, 10, 0) };
+
+        // --- Config kind ---
+        var kindStack = new StackPanel();
+        _defaultConfigCheck = AddCheck(kindStack, "chkDefault", false);
+        kindStack.Children.Add(HintLabel("defaultHint", new Thickness(0, 4, 0, 0)));
+        content.Children.Add(Section("secKind", kindStack));
 
         // --- Passwords ---
         var pwdStack = new StackPanel();
@@ -420,6 +427,13 @@ public sealed class MainWindow : Window
             return;
         }
 
+        var isDefault = _defaultConfigCheck.IsChecked == true;
+        if (isDefault && _monitorCheck.IsChecked != true)
+        {
+            await Warn(Lang.T("valDefaultMonitor"));
+            return;
+        }
+
         var workFolderMode = SelectedWorkFolderMode();
         var folderText = _workFolderBox.Text?.Trim() ?? "";
         var workFolderAbsolute = workFolderMode == WorkFolderModes.Absolute ? folderText : "";
@@ -431,7 +445,7 @@ public sealed class MainWindow : Window
             return;
         }
 
-        var fileName = await Pickers.SaveFile(this, Lang.T("dlgSave"), "exam.config", "config", ("Config (*.config)", new[] { "*.config" }));
+        var fileName = await Pickers.SaveFile(this, Lang.T(isDefault ? "dlgSaveDefault" : "dlgSave"), isDefault ? "default.config" : "exam.config", "config", ("Config (*.config)", new[] { "*.config" }));
         if (fileName is null)
         {
             return;
@@ -457,6 +471,7 @@ public sealed class MainWindow : Window
             var payload = new ConfigPayload
             {
                 Version = 2,
+                IsDefaultConfig = isDefault ? true : null,
                 SaltBase64 = Convert.ToBase64String(salt),
                 Iterations = iterations,
                 PasswordHashBase64 = hashBase64,

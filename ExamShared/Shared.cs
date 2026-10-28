@@ -9,6 +9,10 @@ public sealed class ConfigPayload
 {
     public int Version { get; init; } = 2;
 
+    // Default (base) config: loaded on every client start until an exam config takes over, see
+    // DefaultConfigStore. Null (omitted from JSON) for exam configs, so older signatures stay valid.
+    public bool? IsDefaultConfig { get; init; }
+
     // Restore Wi-Fi password: re-enables radios. Existing fields.
     public string SaltBase64 { get; init; } = "";
     public int Iterations { get; init; }

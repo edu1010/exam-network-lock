@@ -22,6 +22,7 @@ public sealed class MonitorReporter : IDisposable
 
     private volatile string _state = "Idle";
     private volatile string _statusText = "";
+    private volatile string _configMode = "exam";
     private System.Timers.Timer? _timer;
 
     public MonitorReporter(string logPath, IEnumerable<string>? monitorTargets = null)
@@ -35,6 +36,8 @@ public sealed class MonitorReporter : IDisposable
         _state = state;
         _statusText = statusText;
     }
+
+    public void SetConfigMode(bool isDefaultConfig) => _configMode = isDefaultConfig ? "default" : "exam";
 
     public void Start()
     {
@@ -55,7 +58,8 @@ public sealed class MonitorReporter : IDisposable
             State = _state,
             StatusText = _statusText,
             LogCount = entries.Count,
-            Timestamp = DateTime.Now.ToString("O")
+            Timestamp = DateTime.Now.ToString("O"),
+            ConfigMode = _configMode
         });
 
         for (var i = 0; i < entries.Count; i += MonitorProtocol.MaxEntriesPerChunk)

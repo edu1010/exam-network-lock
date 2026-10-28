@@ -34,6 +34,7 @@ public sealed class MainWindow : Window
     private readonly Button _adminButton = new();
     private readonly Button _loadConfigButton = new();
     private readonly Button _reopenElevatedButton = new();
+    private readonly Button _defaultConfigButton = new();
 
     private readonly AudioAlerter _audio;
 
@@ -41,6 +42,7 @@ public sealed class MainWindow : Window
     private SecureLogService? _log;
     private SessionStateService? _session;
     private MonitorReporter? _reporter;
+    private ConfigPushReceiver? _pushReceiver;
 
     private AiConnectionMonitor? _aiMonitor;
     private DnsCacheMonitor? _dnsMonitor;
@@ -49,6 +51,7 @@ public sealed class MainWindow : Window
     private FileActivityMonitor? _fileMonitor;
 
     private string _configPath = string.Empty;
+    private volatile bool _isDefaultConfig; // also read by the push receiver's thread
     private string _stateStr = "Idle";
     private bool _adminAuthenticated;
     private bool _relaunchClosing;
@@ -100,7 +103,11 @@ public sealed class MainWindow : Window
         Lang.Changed += ApplyLanguage;
         ApplyLanguage();
 
-        Opened += async (_, _) => await LoadConfig(forceDialog: false);
+        Opened += async (_, _) =>
+        {
+            StartPushReceiver();
+            await LoadConfig(forceDialog: false);
+        };
     }
 
     private static Control Place(Control control, int row)
@@ -178,7 +185,7 @@ public sealed class MainWindow : Window
         var grid = new Grid
         {
             ColumnDefinitions = new ColumnDefinitions("*,Auto"),
-            RowDefinitions = new RowDefinitions("Auto,Auto,Auto,Auto,Auto")
+            RowDefinitions = new RowDefinitions("Auto,Auto,Auto,Auto,Auto,Auto")
         };
 
         _pwdALabel.Foreground = Palette.TextMutedBrush;
@@ -187,7 +194,7 @@ public sealed class MainWindow : Window
         _pwdBLabel.VerticalAlignment = VerticalAlignment.Center;
         _pwdALabel.TextWrapping = TextWrapping.Wrap;
         _pwdBLabel.TextWrapping = TextWrapping.Wrap;
-        foreach (var button in new[] { _restoreButton, _adminButton, _loadConfigButton, _reopenElevatedButton })
+        foreach (var button in new[] { _restoreButton, _adminButton, _loadConfigButton, _reopenElevatedButton, _defaultConfigButton })
         {
             button.MinHeight = 36;
             button.Padding = new Thickness(12, 6);
@@ -203,6 +210,7 @@ public sealed class MainWindow : Window
         _adminButton.Foreground = Brushes.White;
         _loadConfigButton.Click += async (_, _) => await LoadConfig(forceDialog: true);
         _reopenElevatedButton.Click += async (_, _) => await AttemptReopenElevated();
+        _defaultConfigButton.Click += async (_, _) => await SetDefaultConfig();
 
         grid.Children.Add(Cell(_pwdALabel, 0, 0));
         Grid.SetColumnSpan(_pwdALabel, 2);
@@ -217,6 +225,7 @@ public sealed class MainWindow : Window
         var reopen = Cell(_reopenElevatedButton, 4, 0);
         grid.Children.Add(reopen);
         grid.Children.Add(Cell(_loadConfigButton, 4, 1));
+        grid.Children.Add(Cell(_defaultConfigButton, 5, 1));
 
         return Card(grid);
     }
@@ -250,21 +259,18 @@ public sealed class MainWindow : Window
         _restoreButton.Content = Lang.T("restoreBtn");
         _adminButton.Content = Lang.T("closeBtn");
         _loadConfigButton.Content = Lang.T("loadBtn");
+        _defaultConfigButton.Content = Lang.T("defaultBtn");
         _reopenElevatedButton.Content = Lang.T(_platform.ElevatesPerAction ? "lockRadiosAdminBtn" : "reopenAdminBtn");
         _reopenElevatedButton.IsVisible = ShowElevationButton();
         foreach (var (control, key) in new (Control, string)[]
         {
             (_pwdALabel, "pwdA"), (_restorePasswordBox, "pwdA"), (_restoreButton, "pwdA"),
             (_pwdBLabel, "pwdB"), (_adminPasswordBox, "pwdB"), (_adminButton, "pwdB"),
-            (_loadConfigButton, "loadBtn"), (_reopenElevatedButton, _platform.ElevatesPerAction ? "lockRadiosAdminBtn" : "reopenAdminBtn"),
+            (_loadConfigButton, "loadBtn"), (_defaultConfigButton, "defaultBtn"), (_reopenElevatedButton, _platform.ElevatesPerAction ? "lockRadiosAdminBtn" : "reopenAdminBtn"),
             (_incidentsTitle, "incidents"), (_radioStateValue, "radios"), (_shield, "shield")
         }) ToolTip.SetTip(control, UiHelp.Get(key, (int)Lang.Current));
 
-        if (_config is null)
-        {
-            _configPathValue.Text = Lang.T("notLoaded");
-        }
-
+        UpdateConfigLabel();
         UpdateShield();
     }
 
@@ -272,7 +278,8 @@ public sealed class MainWindow : Window
 
     private async Task LoadConfig(bool forceDialog)
     {
-        if (_config is not null)
+        // An exam config is final; the default config only stands in until the exam one is opened.
+        if (_config is not null && !_isDefaultConfig)
         {
             return;
         }
@@ -280,14 +287,20 @@ public sealed class MainWindow : Window
         var candidate = Program.StartupConfigPath;
         if (!forceDialog && !string.IsNullOrWhiteSpace(candidate) && File.Exists(candidate))
         {
-            TryLoadConfig(candidate);
+            await TryLoadConfig(candidate);
             return;
         }
 
         candidate = FindDefaultConfig();
         if (!forceDialog && candidate is not null)
         {
-            TryLoadConfig(candidate);
+            await TryLoadConfig(candidate);
+            return;
+        }
+
+        if (!forceDialog && File.Exists(DefaultConfigStore.FilePath))
+        {
+            await TryLoadConfig(DefaultConfigStore.FilePath);
             return;
         }
 
@@ -304,11 +317,15 @@ public sealed class MainWindow : Window
 
         if (files.Count == 0)
         {
-            SetStatus(Lang.T("needConfig"));
+            if (_config is null)
+            {
+                SetStatus(Lang.T("needConfig"));
+            }
+
             return;
         }
 
-        TryLoadConfig(files[0].Path.LocalPath);
+        await TryLoadConfig(files[0].Path.LocalPath);
     }
 
     private static string? FindDefaultConfig()
@@ -323,7 +340,7 @@ public sealed class MainWindow : Window
         return File.Exists(appDir) ? appDir : null;
     }
 
-    private void TryLoadConfig(string path)
+    private async Task TryLoadConfig(string path)
     {
         try
         {
@@ -337,9 +354,15 @@ public sealed class MainWindow : Window
                 return;
             }
 
+            if (_config is not null)
+            {
+                await EndCurrentSession();
+            }
+
             _config = envelope.Payload;
             _configPath = path;
-            _configPathValue.Text = path;
+            _isDefaultConfig = _config.IsDefaultConfig == true || DefaultConfigStore.IsDefaultPath(path);
+            UpdateConfigLabel();
 
             InitializeServices(path, _config.LogSecretBase64);
             _log?.Append(LogEvents.AppStarted);
@@ -361,7 +384,13 @@ public sealed class MainWindow : Window
 
         _log = new SecureLogService(logPath, logSecretBase64);
         _session = new SessionStateService(sessionPath);
-        _reporter = new MonitorReporter(logPath, _config?.MonitorTargets);
+        // The default config's monitor IPs always apply, so the teacher keeps seeing the student
+        // even when the exam config was generated without them.
+        var targets = (_config?.MonitorTargets ?? Array.Empty<string>())
+            .Concat(DefaultConfigStore.TryLoad()?.MonitorTargets ?? Array.Empty<string>())
+            .Distinct();
+        _reporter = new MonitorReporter(logPath, targets);
+        _reporter.SetConfigMode(_isDefaultConfig);
 
         if (_session.HasUncleanPreviousSession())
         {
@@ -369,6 +398,164 @@ public sealed class MainWindow : Window
         }
 
         _session.MarkSessionStart();
+    }
+
+    private void UpdateConfigLabel() =>
+        _configPathValue.Text = _config is null ? Lang.T("notLoaded")
+            : _isDefaultConfig ? Lang.T("defaultTag") + "  " + _configPath
+            : _configPath;
+
+    // ----- Default config -----
+
+    /// <summary>
+    /// Leaves the default config before another one takes over: closes its session cleanly (so its
+    /// log shows no unclean exit), gives the radios back and resets the shield for the new config.
+    /// </summary>
+    private async Task EndCurrentSession()
+    {
+        _audio.StopAlarm();
+        StopMonitors();
+        if (_config is { DisableWifi: true } or { DisableBluetooth: true })
+        {
+            await ReenableRadios();
+        }
+
+        _log?.Append(LogEvents.NormalExit);
+        _session?.MarkSessionCleanEnd();
+        _reporter?.Dispose();
+        _reporter = null;
+        _log = null;
+        _session = null;
+        _config = null;
+
+        _reported.Clear();
+        _wifiDisableFailed = _btDisableFailed = _radiosLockedPrivileged = false;
+        _submissionMode = _threatActive = _redActive = _yellowActive = _incidentWarning = false;
+        _shieldInitialized = false;
+        _lastShield = ShieldControl.ShieldStatus.Idle;
+    }
+
+    /// <summary>
+    /// Installs a config as this machine's default. Replacing an existing default needs its
+    /// password B (typed in the close box), so a student cannot swap in a laxer one.
+    /// </summary>
+    private async Task SetDefaultConfig()
+    {
+        var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+        {
+            Title = Lang.T("dlgSelectDefault"),
+            AllowMultiple = false,
+            FileTypeFilter = new[]
+            {
+                new FilePickerFileType("Config") { Patterns = new[] { "*.config" } },
+                FilePickerFileTypes.All
+            }
+        });
+
+        if (files.Count == 0)
+        {
+            return;
+        }
+
+        string json;
+        try
+        {
+            json = File.ReadAllText(files[0].Path.LocalPath, Encoding.UTF8);
+        }
+        catch (Exception ex)
+        {
+            SetStatus(string.Format(Lang.T("loadFail"), ex.Message));
+            return;
+        }
+
+        var envelope = DefaultConfigStore.TryParseSigned(json);
+        if (envelope is null)
+        {
+            SetStatus(Lang.T("integrityFail"));
+            return;
+        }
+
+        if (envelope.Payload.IsDefaultConfig != true)
+        {
+            SetStatus(Lang.T("defaultNotMarked"));
+            return;
+        }
+
+        var password = _adminPasswordBox.Text ?? string.Empty;
+        _adminPasswordBox.Text = string.Empty;
+        var current = DefaultConfigStore.TryLoad();
+        if (current is not null && !VerifyAdminPassword(current, password))
+        {
+            SetStatus(Lang.T("defaultNeedsB"));
+            return;
+        }
+
+        try
+        {
+            DefaultConfigStore.Save(json);
+        }
+        catch (Exception ex)
+        {
+            SetStatus(string.Format(Lang.T("defaultSaveFail"), ex.Message));
+            return;
+        }
+
+        AddIncident(Lang.T("defaultSaved"));
+        SetStatus(Lang.T("defaultSaved"));
+        await ApplyNewDefault();
+    }
+
+    private static bool VerifyAdminPassword(ConfigPayload config, string password)
+    {
+        try
+        {
+            return PasswordHasher.VerifyPassword(password, config.AdminSaltBase64, config.Iterations, config.AdminPasswordHashBase64);
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    private void StartPushReceiver()
+    {
+        // A push is authorized by the saved default's password B or, before there is one, by the
+        // config currently running (so the teacher can deploy the first default from the monitor).
+        // An exam config is only accepted while the default is running: an exam is never replaced.
+        var receiver = new ConfigPushReceiver(() => DefaultConfigStore.TryLoad() ?? _config, () => _config is null || _isDefaultConfig);
+        receiver.DefaultConfigUpdated += () => RunOnUi(async () =>
+        {
+            AddIncident(Lang.T(_config is null || _isDefaultConfig ? "defaultPushed" : "defaultPushedLater"));
+            await ApplyNewDefault();
+        });
+        receiver.ExamConfigReceived += path => RunOnUi(async () =>
+        {
+            if (_config is null || _isDefaultConfig)
+            {
+                AddIncident(Lang.T("examPushed"));
+                await TryLoadConfig(path);
+            }
+        });
+
+        try
+        {
+            receiver.Start();
+            _pushReceiver = receiver;
+        }
+        catch
+        {
+            // Port taken (another client instance): pushes just won't reach this one.
+            receiver.Dispose();
+        }
+    }
+
+    /// <summary>A new default takes effect now if nothing or the old default is running; an exam is never interrupted.</summary>
+    private async Task ApplyNewDefault()
+    {
+        if (_config is null || _isDefaultConfig)
+        {
+            await TryLoadConfig(DefaultConfigStore.FilePath);
+        }
     }
 
     // ----- Lockdown orchestration -----
@@ -441,7 +628,7 @@ public sealed class MainWindow : Window
         else
         {
             UpdateShield();
-            SetStatus(Lang.T("statusActive"));
+            SetStatus(Lang.T(_isDefaultConfig ? "statusDefaultActive" : "statusActive"));
         }
     }
 
@@ -947,6 +1134,7 @@ public sealed class MainWindow : Window
         }
 
         _reporter?.Dispose();
+        _pushReceiver?.Dispose();
         _audio.Dispose();
         Lang.Changed -= ApplyLanguage;
 

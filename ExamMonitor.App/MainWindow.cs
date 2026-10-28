@@ -23,6 +23,8 @@ public sealed class MainWindow : Window
         public string Machine = "";
         public string State = "Idle";
         public string StatusText = "";
+        public string ConfigMode = "";
+        public string Ip = "";
         public DateTime LastSeen;
         public readonly SortedDictionary<int, LogEntry> Entries = new();
         public string Key => User + "@" + Machine;
@@ -33,6 +35,7 @@ public sealed class MainWindow : Window
 
     // Column widths shared by the header and every row so they line up like a DataGridView.
     private const string Columns = "2*,1.2*,3*,0.8*,1.4*,1.2*";
+    private const int StaleSeconds = 20;
 
     private static readonly IBrush GreenBack = Palette.Brush(187, 247, 208);
     private static readonly IBrush AmberBack = Palette.Brush(253, 230, 138);
@@ -50,6 +53,8 @@ public sealed class MainWindow : Window
     private readonly SelectableTextBlock _addressLabel = new() { Foreground = Palette.TextMuted, TextWrapping = TextWrapping.Wrap };
     private readonly Button _loadButton = Ui.Secondary(new Button());
     private readonly Button _saveButton = Ui.Secondary(new Button());
+    private readonly Button _pushButton = Ui.Secondary(new Button());
+    private readonly Button _pushExamButton = Ui.Secondary(new Button());
     private readonly DispatcherTimer _refresh = new() { Interval = TimeSpan.FromSeconds(1) };
 
     private string? _logSecret;
@@ -68,9 +73,11 @@ public sealed class MainWindow : Window
 
         _loadButton.Click += async (_, _) => await LoadConfig();
         _saveButton.Click += async (_, _) => await SaveLogs();
+        _pushButton.Click += async (_, _) => await PushConfig(exam: false);
+        _pushExamButton.Click += async (_, _) => await PushConfig(exam: true);
 
         var toolbar = new Grid { ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto"), Margin = new Thickness(0, 0, 0, 10) };
-        toolbar.Children.Add(Ui.Cell(new StackPanel { Orientation = Orientation.Horizontal, Spacing = 6, Children = { _loadButton, _saveButton } }, 0, 0));
+        toolbar.Children.Add(Ui.Cell(new StackPanel { Orientation = Orientation.Horizontal, Spacing = 6, Children = { _loadButton, _saveButton, _pushButton, _pushExamButton } }, 0, 0));
         toolbar.Children.Add(Ui.Cell(_languageBar, 0, 2));
 
         for (var i = 0; i < _headerCells.Length; i++)
@@ -160,6 +167,10 @@ public sealed class MainWindow : Window
         Title = Lang.T("title");
         _loadButton.Content = Lang.T("loadBtn");
         _saveButton.Content = Lang.T("saveBtn");
+        _pushButton.Content = Lang.T("pushBtn");
+        ToolTip.SetTip(_pushButton, Lang.T("pushTip"));
+        _pushExamButton.Content = Lang.T("pushExamBtn");
+        ToolTip.SetTip(_pushExamButton, Lang.T("pushExamTip"));
         var keys = new[] { "colStudent", "colState", "colIncident", "colEvents", "colIntegrity", "colSeen" };
         for (var i = 0; i < keys.Length; i++)
         {
@@ -178,6 +189,8 @@ public sealed class MainWindow : Window
         var row = Upsert(m.User, m.Machine);
         row.State = m.State;
         row.StatusText = m.StatusText;
+        row.ConfigMode = m.ConfigMode;
+        row.Ip = m.SourceIp;
         row.LastSeen = DateTime.Now;
     }
 
@@ -213,10 +226,10 @@ public sealed class MainWindow : Window
         foreach (var row in _clients.Values.OrderBy(r => r.Key, StringComparer.OrdinalIgnoreCase))
         {
             var seconds = (int)Math.Max(0, (DateTime.Now - row.LastSeen).TotalSeconds);
-            var stale = seconds > 20;
+            var stale = seconds > StaleSeconds;
             lines.Add(new GridLine(
                 row.Key,
-                StateText(row.State),
+                row.ConfigMode == "default" ? StateText(row.State) + " · " + Lang.T("modeDefault") : StateText(row.State),
                 row.StatusText,
                 row.Entries.Count.ToString(),
                 Integrity(row),
@@ -349,6 +362,101 @@ public sealed class MainWindow : Window
             return Array.Empty<string>();
         }
     }
+
+    // ----- Push config -----
+
+    /// <summary>
+    /// Sends a config to the students seen recently: as their new default config, or (exam) as an
+    /// exam to start now on those running their default config. A pushed exam is not kept as the
+    /// default, so the next launch goes back to the default config.
+    /// </summary>
+    private async Task PushConfig(bool exam)
+    {
+        var title = Lang.T(exam ? "pushExamBtn" : "pushBtn");
+        var path = await Pickers.OpenFile(this, title, ("Config (*.config)", new[] { "*.config" }));
+        if (path is null)
+        {
+            return;
+        }
+
+        string json;
+        try
+        {
+            json = File.ReadAllText(path, Encoding.UTF8);
+        }
+        catch
+        {
+            json = "";
+        }
+
+        var envelope = DefaultConfigStore.TryParseSigned(json);
+        if (envelope is null)
+        {
+            await MessageBox.Show(this, Lang.T("configInvalid"), title, MessageKind.Error);
+            return;
+        }
+
+        // Guard against the wrong button: an exam config installed as the default would lock the
+        // students down every time they open the app.
+        if (exam == (envelope.Payload.IsDefaultConfig == true))
+        {
+            await MessageBox.Show(this, Lang.T(exam ? "pushIsDefault" : "pushNotDefault"), title, MessageKind.Warning);
+            return;
+        }
+
+        var targets = _clients.Values
+            .Where(r => (DateTime.Now - r.LastSeen).TotalSeconds <= StaleSeconds && IPAddress.TryParse(r.Ip, out _))
+            .Where(r => !exam || r.ConfigMode == "default")
+            .OrderBy(r => r.Key, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+        if (targets.Count == 0)
+        {
+            await MessageBox.Show(this, Lang.T(exam ? "pushExamNoClients" : "pushNoClients"), title, MessageKind.Warning);
+            return;
+        }
+
+        var password = await PasswordPrompt.Show(this, string.Format(Lang.T(exam ? "pushExamPrompt" : "pushPrompt"), targets.Count), title, Lang.T("pushSend"), Lang.T("cancel"));
+        if (string.IsNullOrEmpty(password))
+        {
+            return;
+        }
+
+        _pushButton.IsEnabled = _pushExamButton.IsEnabled = false;
+        _statusLabel.Text = string.Format(Lang.T("pushing"), targets.Count);
+        (string Key, string? Error)[] results;
+        try
+        {
+            results = await Task.WhenAll(targets.Select(async r =>
+                (r.Key, await ConfigPushSender.PushAsync(IPAddress.Parse(r.Ip), exam ? ConfigPushTargets.Exam : ConfigPushTargets.Default,
+                    Path.GetFileName(path), json, password))));
+        }
+        finally
+        {
+            _pushButton.IsEnabled = _pushExamButton.IsEnabled = true;
+        }
+
+        var failed = results.Where(r => r.Error is not null).ToList();
+        var done = string.Format(Lang.T(exam ? "pushExamDone" : "pushDone"), results.Length - failed.Count, results.Length);
+        var text = new StringBuilder(done);
+        foreach (var (key, error) in failed)
+        {
+            text.Append('\n').Append(key).Append(": ").Append(PushErrorText(error!));
+        }
+
+        _statusLabel.Text = done;
+        await MessageBox.Show(this, text.ToString(), title, failed.Count == 0 ? MessageKind.Info : MessageKind.Warning);
+    }
+
+    private static string PushErrorText(string error) => error switch
+    {
+        ConfigPushErrors.Auth => Lang.T("pushErrAuth"),
+        ConfigPushErrors.Invalid => Lang.T("configInvalid"),
+        ConfigPushErrors.NoAuthority => Lang.T("pushErrNoConfig"),
+        ConfigPushErrors.Save => Lang.T("pushErrSave"),
+        ConfigPushErrors.Busy => Lang.T("pushErrBusy"),
+        ConfigPushErrors.WrongKind => Lang.T("pushErrKind"),
+        _ => Lang.T("pushErrUnreachable")
+    };
 
     // ----- Save -----
 

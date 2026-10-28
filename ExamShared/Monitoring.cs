@@ -4,6 +4,7 @@ using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace ExamShared;
 
@@ -18,6 +19,11 @@ public sealed class StatusMessage
     public string StatusText { get; init; } = "";
     public int LogCount { get; init; }
     public string Timestamp { get; init; } = "";
+    public string ConfigMode { get; init; } = ""; // "default" while running on the base config, else "exam"
+
+    /// <summary>Sender address, filled in by <see cref="MonitorListener"/>; not on the wire.</summary>
+    [JsonIgnore]
+    public string SourceIp { get; set; } = "";
 }
 
 public sealed class LogChunkMessage
@@ -31,6 +37,7 @@ public sealed class LogChunkMessage
 public static class MonitorProtocol
 {
     public const int UdpPort = 48710;
+    public const int ConfigPushPort = 48711; // TCP, see ConfigPushReceiver
     public const int MaxEntriesPerChunk = 5;
 
     private static readonly JsonSerializerOptions Options = new()
@@ -265,6 +272,7 @@ public sealed class MonitorListener : IDisposable
                     var msg = MonitorProtocol.Deserialize<StatusMessage>(result.Buffer);
                     if (msg is not null)
                     {
+                        msg.SourceIp = result.RemoteEndPoint.Address.ToString();
                         StatusReceived?.Invoke(msg);
                     }
                 }
