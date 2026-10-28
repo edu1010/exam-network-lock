@@ -1,46 +1,42 @@
 # Revisión del port Linux
 
-La rama Linux incluye el estado de `main` en `04e0648`: contraseñas diferenciadas,
-detección de herramientas IA de escritorio y CLI, supervisión de procesos, archivos,
-máquinas virtuales y envío de registros al monitor del profesor. Las configuraciones,
-contraseñas y el protocolo de registros se comparten mediante `ExamShared`.
+La rama `linux` incluye todo `main` (último merge: guía del profesorado, `e9d816c`) y añade
+versiones Avalonia de las **cuatro** aplicaciones: cliente del alumno, generador, monitor y
+verificador con interfaz. Configuración, contraseñas, registros y protocolo de red se comparten
+mediante `ExamShared`; los textos (`Lang.cs`) y la clasificación de eventos (`EventCatalog.cs`) se
+enlazan desde los proyectos WinForms, de modo que no se duplican.
 
-Las mejoras de interfaz se aplican al generador y cliente WinForms de esta rama y
-al cliente Avalonia: etiquetas completas, botones con tamaño según su contenido,
-disposición adaptable y ayudas EN/CA/ES compartidas en `ExamShared/UiHelp.cs`.
-La restricción de carpetas está identificada como experimental.
+## Privilegios
 
-Se corrige el relanzamiento con `pkexec`: la ventana permanece receptiva mientras
-se solicita autorización y el proceso de autorización termina tras lanzar el cliente,
-sin esperar a que termine la sesión de examen. Los argumentos se pasan por separado
-para conservar rutas con espacios. Cancelar la autorización mantiene la ventana actual.
-La captura de stdout/stderr ahora drena ambos canales simultáneamente para evitar bloqueos.
+- **El alumno no necesita sudo.** Todo el cliente se ejecuta como el usuario de la sesión.
+- Wi-Fi: `nmcli radio wifi off` (NetworkManager lo permite al usuario activo; ver
+  `nmcli general permissions`) y, si falla, `rfkill` (buscado también en `/usr/sbin`; `/dev/rfkill`
+  tiene ACL `uaccess` para el usuario de la sesión).
+- Bluetooth: `rfkill` y, si no, `bluetoothctl power off`. Un equipo sin adaptador cuenta como
+  desactivado. Todas las órdenes externas tienen tiempo límite (p. ej. `bluetoothctl` se queda
+  colgado si `bluetoothd` no está activo).
+- Solo si el bloqueo sin privilegios falla aparece **Bloquear radios (admin)**: lanza `pkexec` con
+  un script fijo que únicamente ejecuta `nmcli`/`rfkill` como root. El programa no se reabre como
+  root. Al final, la contraseña A/B vuelve a activar las radios (con `pkexec` si se bloquearon así).
+- polkit pide la contraseña de administrador (en estos equipos, la de root o de un usuario del grupo
+  `sudo`): la teclea el profesorado.
 
-## Diferencias de plataforma
+## Validación en Debian 12 (bookworm, X11, usuario LDAP sin sudo)
 
-- Solo el cliente del alumno está portado a Linux. El generador, monitor y verificador
-  gráfico siguen siendo WinForms para Windows.
-- Linux usa `nmcli`/`rfkill`, `/proc` y herramientas de audio PulseAudio/PipeWire.
-  Su funcionamiento real depende de los permisos y servicios del equipo.
-- Linux no enumera la caché DNS: la vigilancia de IA depende de conexiones TCP y
-  procesos. No tiene la misma cobertura DNS que Windows.
-- La vigilancia de archivos es heurística; no bloquea accesos al sistema de archivos.
+- Solución completa compilada (`-p:EnableWindowsTargeting=true` para los proyectos WinForms).
+- `LinuxPortChecks` (14), `ProcessPolicyChecks` y `FileActivityChecks` superados.
+- Binarios portables lanzados con entorno mínimo (`env -i`, sin .NET en el PATH): los cuatro abren.
+- Flujo real: el cliente desactiva Wi-Fi como usuario, detecta un programa prohibido y una conexión
+  a IA, el monitor recibe estado y registro (integridad OK), la contraseña A reactiva la Wi-Fi y la
+  B cierra con `NORMAL_EXIT`. El verificador marca registros íntegros, con incidencias y manipulados.
+- Fallo simulado de `nmcli`: aparece el aviso amarillo y el botón; `pkexec` muestra el diálogo de
+  polkit y cancelarlo deja el cliente funcionando.
 
-## Comprobaciones reproducibles
+## Limitaciones conocidas
 
-Validado en Windows: solución completa compilada sin errores ni advertencias,
-doce comprobaciones del port y dieciséis de reglas de procesos superadas, además de
-publicación autocontenida para `linux-x64`.
-La interfaz WinForms se ha renderizado en EN/CA/ES con dos tamaños por aplicación.
-
-```sh
-dotnet build ExamLockClient.App/ExamLockClient.App.csproj
-dotnet run --project tests/LinuxPortChecks/LinuxPortChecks.csproj
-dotnet run --project tests/ProcessPolicyChecks/ProcessPolicyChecks.csproj
-dotnet publish ExamLockClient.App/ExamLockClient.App.csproj -c Release -r linux-x64 --self-contained
-```
-
-Antes de distribuirlo, probar en un escritorio Linux real: carga de `exam.config`,
-cancelación y aceptación de `pkexec`, Wi-Fi/Bluetooth, alarma, notificación al monitor,
-reactivación con contraseña y cierre autorizado. La compilación cruzada desde Windows
-no valida esas integraciones del sistema operativo.
+- Linux no enumera la caché DNS: la vigilancia de IA depende de conexiones TCP y procesos.
+- Sin root no se puede atribuir a un proceso las conexiones de **otros** usuarios; aparecen como
+  aviso no atribuido. Las del propio alumno sí se atribuyen.
+- La vigilancia de archivos es heurística (inotify); no bloquea accesos.
+- Arrastrar y soltar en el verificador depende del soporte XDND de Avalonia; los botones
+  «Añadir registros/carpeta» y pasar rutas por línea de órdenes funcionan siempre.

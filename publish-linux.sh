@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 # ============================================================================
-#  publish-linux.sh - Genera el ejecutable Linux self-contained (con .NET
-#  embebido) del cliente del alumno en dist-linux/.
+#  publish-linux.sh - Genera los ejecutables Linux portables (self-contained,
+#  un solo fichero, con .NET embebido) de las cuatro aplicaciones en dist-linux/.
 #
-#  Solo el cliente multiplataforma (ExamLockClient.App, Avalonia) tiene sentido
-#  en Linux: ExamConfigGenerator/ExamMonitor/ExamLogVerifierUI son WinForms y se
-#  quedan en Windows (usa publish.cmd para esos). El .exe lleva el runtime de
-#  .NET dentro, asi que corre en maquinas sin .NET instalado.
+#    ExamLockClient       cliente del alumno (no necesita sudo)
+#    ExamConfigGenerator  generador de exam.config (profesorado)
+#    ExamMonitor          monitor en vivo por la LAN (profesorado)
+#    ExamLogVerifierUI    verificador de registros (profesorado)
+#
+#  Son versiones Avalonia de las apps WinForms (publish.cmd sigue generando las
+#  de Windows). No requieren .NET instalado ni permisos de administrador.
 #
 #  Uso opcional:  ./publish-linux.sh [RID]   (por defecto linux-x64)
 #  Ejemplos:      ./publish-linux.sh             -> linux-x64
@@ -18,8 +21,15 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 RID="${1:-linux-x64}"
-PROJECT="ExamLockClient.App/ExamLockClient.App.csproj"
-OUTDIR="dist-linux/ExamLockClient.App"
+OUTDIR="dist-linux"
+
+# proyecto:nombre-final-del-ejecutable
+APPS=(
+  "ExamLockClient.App:ExamLockClient"
+  "ExamConfigGenerator.App:ExamConfigGenerator"
+  "ExamMonitor.App:ExamMonitor"
+  "ExamLogVerifierUI.App:ExamLogVerifierUI"
+)
 
 # --- Localizar dotnet (PATH o rutas por defecto) ---
 DOTNET="dotnet"
@@ -31,39 +41,48 @@ if ! command -v dotnet >/dev/null 2>&1; then
   elif [ -x "/usr/lib/dotnet/dotnet" ]; then
     DOTNET="/usr/lib/dotnet/dotnet"
   else
-    echo "[ERROR] No se encontro 'dotnet'. Instala el .NET 8 SDK desde https://dotnet.microsoft.com/download" >&2
+    echo "[ERROR] No se encontro 'dotnet'. Instala el .NET 8 SDK (sin sudo):" >&2
+    echo "  curl -sSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel 8.0" >&2
     exit 1
   fi
 fi
 
 echo "============================================================"
-echo " Publicando exam-network-lock (cliente Linux)  |  RID: $RID"
-echo " Salida: $(pwd)/dist-linux"
+echo " Publicando exam-network-lock (Linux)  |  RID: $RID"
+echo " Salida: $(pwd)/$OUTDIR"
 echo "============================================================"
 echo
 
 # --- Limpiar salida anterior para que dist-linux solo tenga lo nuevo ---
-rm -rf dist-linux
+rm -rf "$OUTDIR"
+mkdir -p "$OUTDIR"
+TMP="$(mktemp -d)"
+trap 'rm -rf "$TMP"' EXIT
 
-echo "--- ExamLockClient.App ..."
-"$DOTNET" publish "$PROJECT" -c Release -r "$RID" --self-contained true \
-  -p:DebugType=none -p:DebugSymbols=false -o "$OUTDIR" --nologo -v minimal
+for entry in "${APPS[@]}"; do
+  PROJECT="${entry%%:*}"
+  NAME="${entry##*:}"
+  echo "--- $PROJECT -> $NAME"
+  "$DOTNET" publish "$PROJECT/$PROJECT.csproj" -c Release -r "$RID" --self-contained true \
+    -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true \
+    -p:DebugType=none -p:DebugSymbols=false -o "$TMP/$PROJECT" --nologo -v minimal
 
-# Asegurar el bit de ejecucion del binario nativo.
-if [ -f "$OUTDIR/ExamLockClient.App" ]; then
-  chmod +x "$OUTDIR/ExamLockClient.App"
-fi
+  # El binario nativo se llama como el ensamblado; se copia con su nombre final.
+  BIN="$(find "$TMP/$PROJECT" -maxdepth 1 -type f -perm -u+x ! -name '*.so' ! -name '*.dll' | head -n 1)"
+  if [ -z "$BIN" ]; then
+    echo "[ERROR] No se encontro el ejecutable publicado de $PROJECT" >&2
+    exit 1
+  fi
+  cp "$BIN" "$OUTDIR/$NAME"
+  chmod +x "$OUTDIR/$NAME"
+done
 
 echo
 echo "============================================================"
-echo " Listo. Ejecutable generado:"
+echo " Listo. Ejecutables generados:"
 echo "============================================================"
-if [ -f "$OUTDIR/ExamLockClient.App" ]; then
-  ls -lh "$OUTDIR/ExamLockClient.App" | awk '{print $5"\t"$9}'
-else
-  ls -lh "$OUTDIR"
-fi
+ls -lh "$OUTDIR" | awk 'NR>1 {print $5"\t"$9}'
 echo
-echo "Para ejecutarlo en el equipo del alumno:"
-echo "  cp exam.config \"$OUTDIR/\"            # opcional: junto al binario"
-echo "  \"$OUTDIR/ExamLockClient.App\""
+echo "En el equipo del alumno (sin sudo):"
+echo "  cp exam.config <carpeta>/ && <carpeta>/ExamLockClient --config <carpeta>/exam.config"
+echo "  (o deja exam.config junto al binario / en la carpeta actual y ejecuta ./ExamLockClient)"

@@ -43,6 +43,15 @@ public interface IPlatform
     bool IsElevated { get; }
     bool TryRelaunchElevated(string executablePath, IReadOnlyList<string> args);
 
+    /// <summary>
+    /// True when privileged work is requested per action (Linux: one pkexec prompt for the radio
+    /// command only) instead of relaunching the whole client elevated (Windows UAC).
+    /// </summary>
+    bool ElevatesPerAction { get; }
+
+    /// <summary>Turns the requested radios on/off through a one-off privilege prompt. Only used when <see cref="ElevatesPerAction"/>.</summary>
+    Task<(bool ok, string error)> SetRadiosPrivilegedAsync(bool wifi, bool bluetooth, bool on);
+
     // ---- Radios (best-effort; the AI shield is the safety net) ----
     bool DisableWifi(out string error);
     bool EnableWifi(out string error);

@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Cross-platform (Avalonia) build of ExamLogVerifierUI for Linux. Same strings and logic as the
+       WinForms app; only the UI layer is rewritten. Publish with ./publish-linux.sh. -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>ExamLogVerifierUI</RootNamespace>
+    <AssemblyName>ExamLogVerifierUI</AssemblyName>
+    <RuntimeIdentifiers>linux-x64;linux-arm64;win-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <!-- Self-contained single-file publish so it runs on lab machines without a .NET install. -->
+  <PropertyGroup>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' != ''">
+    <SelfContained>true</SelfContained>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\ExamLogVerifierUI\Lang.cs" Link="Lang.cs" />
+    <Compile Include="..\ExamLogVerifierUI\EventCatalog.cs" Link="EventCatalog.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- EventCatalog.cs is shared with the WinForms app and uses System.Drawing.Color. -->
+    <Using Include="System.Drawing.Color" Alias="Color" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExamShared\ExamShared.csproj" />
+    <ProjectReference Include="..\ExamDesktop.Ui\ExamDesktop.Ui.csproj" />
+  </ItemGroup>
+</Project>

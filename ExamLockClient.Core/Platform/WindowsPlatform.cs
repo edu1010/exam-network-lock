@@ -67,6 +67,11 @@ public sealed class WindowsPlatform : IPlatform
         }
     }
 
+    public bool ElevatesPerAction => false;
+
+    public Task<(bool ok, string error)> SetRadiosPrivilegedAsync(bool wifi, bool bluetooth, bool on) =>
+        Task.FromResult((false, "Not supported on Windows: relaunch elevated instead."));
+
     // ---- Radios ----
 
     public bool DisableWifi(out string error) =>

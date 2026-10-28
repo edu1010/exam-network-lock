@@ -54,10 +54,13 @@ public sealed class MainWindow : Window
     private bool _relaunchClosing;
     private bool _closeLogged;
     private bool _wifiDisableFailed;
+    private bool _btDisableFailed;
+    private bool _radiosLockedPrivileged;
     private bool _submissionMode;
     private bool _threatActive;
     private bool _redActive;
     private bool _yellowActive;
+    private bool _incidentWarning;
     private readonly HashSet<string> _reported = new();
 
     private ShieldControl.ShieldStatus _lastShield = ShieldControl.ShieldStatus.Idle;
@@ -247,13 +250,13 @@ public sealed class MainWindow : Window
         _restoreButton.Content = Lang.T("restoreBtn");
         _adminButton.Content = Lang.T("closeBtn");
         _loadConfigButton.Content = Lang.T("loadBtn");
-        _reopenElevatedButton.Content = Lang.T("reopenAdminBtn");
-        _reopenElevatedButton.IsVisible = !_platform.IsElevated;
+        _reopenElevatedButton.Content = Lang.T(_platform.ElevatesPerAction ? "lockRadiosAdminBtn" : "reopenAdminBtn");
+        _reopenElevatedButton.IsVisible = ShowElevationButton();
         foreach (var (control, key) in new (Control, string)[]
         {
             (_pwdALabel, "pwdA"), (_restorePasswordBox, "pwdA"), (_restoreButton, "pwdA"),
             (_pwdBLabel, "pwdB"), (_adminPasswordBox, "pwdB"), (_adminButton, "pwdB"),
-            (_loadConfigButton, "loadBtn"), (_reopenElevatedButton, "reopenAdminBtn"),
+            (_loadConfigButton, "loadBtn"), (_reopenElevatedButton, _platform.ElevatesPerAction ? "lockRadiosAdminBtn" : "reopenAdminBtn"),
             (_incidentsTitle, "incidents"), (_radioStateValue, "radios"), (_shield, "shield")
         }) ToolTip.SetTip(control, UiHelp.Get(key, (int)Lang.Current));
 
@@ -414,6 +417,7 @@ public sealed class MainWindow : Window
             {
                 _log?.Append(LogEvents.BluetoothFailed, error);
                 radioStates.Add(Lang.T("btFail"));
+                _btDisableFailed = true;
             }
         }
 
@@ -427,10 +431,12 @@ public sealed class MainWindow : Window
         }
 
         AddIncident(Lang.T("lockStarted"));
+        _reopenElevatedButton.IsVisible = ShowElevationButton();
         if (NeedsElevationButIsNot())
         {
-            AddIncident(Lang.T("incNoAdmin"));
-            SetYellow(Lang.T("statusNoAdmin"));
+            var perAction = _platform.ElevatesPerAction;
+            AddIncident(Lang.T(perAction ? "incRadioNeedsAdmin" : "incNoAdmin"));
+            SetYellow(Lang.T(perAction ? "statusRadioNeedsAdmin" : "statusNoAdmin"), radioOnly: true);
         }
         else
         {
@@ -629,9 +635,10 @@ public sealed class MainWindow : Window
         UpdateShield();
     }
 
-    private void SetYellow(string status)
+    private void SetYellow(string status, bool radioOnly = false)
     {
         _yellowActive = true;
+        _incidentWarning |= !radioOnly;
         SetStatus(status);
         UpdateShield();
     }
@@ -729,7 +736,13 @@ public sealed class MainWindow : Window
         var states = new List<string>();
         if (!_wifiDisableFailed && _config.DisableWifi)
         {
-            if (_platform.EnableWifi(out var error))
+            var enabled = _platform.EnableWifi(out var error);
+            if (!enabled && _radiosLockedPrivileged)
+            {
+                (enabled, error) = await _platform.SetRadiosPrivilegedAsync(true, false, on: true);
+            }
+
+            if (enabled)
             {
                 _log?.Append(LogEvents.WifiEnabled);
                 states.Add(Lang.T("wifiOn"));
@@ -741,9 +754,14 @@ public sealed class MainWindow : Window
             }
         }
 
-        if (_config.DisableBluetooth)
+        if (_config.DisableBluetooth && !_btDisableFailed)
         {
             var (ok, _) = await _platform.SetBluetoothAsync(true);
+            if (!ok && _radiosLockedPrivileged)
+            {
+                (ok, _) = await _platform.SetRadiosPrivilegedAsync(false, true, on: true);
+            }
+
             if (ok)
             {
                 _log?.Append(LogEvents.BluetoothEnabled);
@@ -791,6 +809,12 @@ public sealed class MainWindow : Window
 
     private async Task AttemptReopenElevated()
     {
+        if (_platform.ElevatesPerAction)
+        {
+            await AttemptPrivilegedRadioLock();
+            return;
+        }
+
         if (_platform.IsElevated)
         {
             _reopenElevatedButton.IsVisible = false;
@@ -823,6 +847,69 @@ public sealed class MainWindow : Window
 
         _relaunchClosing = true;
         Close();
+    }
+
+    /// <summary>
+    /// Linux: only the radio lockdown needs root, so instead of running the whole client as root
+    /// the teacher authorizes just this command through pkexec. Students never need sudo.
+    /// </summary>
+    private async Task AttemptPrivilegedRadioLock()
+    {
+        if (_config is null || _submissionMode)
+        {
+            return;
+        }
+
+        var wifi = _config.DisableWifi && _wifiDisableFailed;
+        var bluetooth = _config.DisableBluetooth && _btDisableFailed;
+        _reopenElevatedButton.IsEnabled = false;
+        (bool ok, string error) result;
+        try
+        {
+            result = await _platform.SetRadiosPrivilegedAsync(wifi, bluetooth, on: false);
+        }
+        finally
+        {
+            _reopenElevatedButton.IsEnabled = true;
+        }
+
+        if (!result.ok)
+        {
+            SetStatus(string.Format(Lang.T("radiosAdminFailed"), result.error.Trim()));
+            return;
+        }
+
+        _radiosLockedPrivileged = true;
+        var states = new List<string>();
+        if (_config.DisableWifi)
+        {
+            if (wifi)
+            {
+                _log?.Append(LogEvents.WifiDisabled);
+            }
+
+            _wifiDisableFailed = false;
+            states.Add(Lang.T("wifiOff"));
+        }
+
+        if (_config.DisableBluetooth)
+        {
+            if (bluetooth)
+            {
+                _log?.Append(LogEvents.BluetoothDisabled);
+            }
+
+            _btDisableFailed = false;
+            states.Add(Lang.T("btOff"));
+        }
+
+        _radioStateValue.Text = string.Join("    ", states);
+        _reopenElevatedButton.IsVisible = false;
+        AddIncident(Lang.T("radiosLockedAdmin"));
+        _yellowActive = _incidentWarning;
+        UpdateShield();
+
+        SetStatus(Lang.T("radiosLockedAdmin"));
     }
 
     // ----- Lifecycle -----
@@ -885,8 +972,22 @@ public sealed class MainWindow : Window
         ReportState();
     }
 
-    private bool NeedsElevationButIsNot() =>
-        _config is not null && !_platform.IsElevated && (_config.DisableWifi || _config.DisableBluetooth);
+    private bool NeedsElevationButIsNot()
+    {
+        if (_config is null || _platform.IsElevated)
+        {
+            return false;
+        }
+
+        // Linux: unprivileged nmcli/rfkill/bluetoothctl normally work for the desktop user, so only
+        // an actual failure asks for admin. Windows needs elevation up front for netsh.
+        return _platform.ElevatesPerAction
+            ? _wifiDisableFailed || _btDisableFailed
+            : _config.DisableWifi || _config.DisableBluetooth;
+    }
+
+    private bool ShowElevationButton() =>
+        _platform.ElevatesPerAction ? NeedsElevationButIsNot() && !_submissionMode : !_platform.IsElevated;
 
     private void ReportState() => _reporter?.SetState(_stateStr, _statusLabel.Text ?? string.Empty);
 }

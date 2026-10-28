@@ -55,7 +55,7 @@ public sealed class LinuxPlatform : IPlatform
             passthrough.Add(executablePath);
             passthrough.AddRange(args);
 
-            return Shell.Run("pkexec", passthrough.ToArray());
+            return Shell.Run("pkexec", TimeSpan.FromMinutes(5), out _, out _, passthrough.ToArray());
         }
         catch
         {
@@ -112,13 +112,74 @@ public sealed class LinuxPlatform : IPlatform
 
     public Task<(bool ok, string error)> SetBluetoothAsync(bool on) => Task.Run(() =>
     {
+        // Lab desktops often have no adapter at all: nothing to switch, so nothing failed.
+        if (!HasBluetoothAdapter())
+        {
+            return (true, string.Empty);
+        }
+
         var action = on ? "unblock" : "block";
         if (Shell.Run("rfkill", out _, out var err, action, "bluetooth"))
         {
             return (true, string.Empty);
         }
 
-        return (false, FirstNonEmpty(err, "rfkill unavailable"));
+        // BlueZ lets the active desktop user power the adapter without root. bluetoothctl may exit 0
+        // even when there is no controller, so trust only its explicit success message.
+        if (Shell.Run("bluetoothctl", TimeSpan.FromSeconds(5), out var btOut, out var btErr, "power", on ? "on" : "off")
+            && btOut.Contains("succeeded", StringComparison.OrdinalIgnoreCase))
+        {
+            return (true, string.Empty);
+        }
+
+        return (false, FirstNonEmpty(err, btErr, btOut.Trim(), "rfkill/bluetoothctl unavailable"));
+    });
+
+    private static bool HasBluetoothAdapter()
+    {
+        try
+        {
+            return Directory.Exists("/sys/class/bluetooth") && Directory.EnumerateFileSystemEntries("/sys/class/bluetooth").Any();
+        }
+        catch
+        {
+            return true; // unknown: try the tools anyway
+        }
+    }
+
+    // ---- Privileged radio toggling (only this feature asks for an admin password) ----
+
+    public bool ElevatesPerAction => true;
+
+    public Task<(bool ok, string error)> SetRadiosPrivilegedAsync(bool wifi, bool bluetooth, bool on) => Task.Run(() =>
+    {
+        // Fixed script, no user input: pkexec runs only the radio commands as root, never the GUI.
+        var commands = new List<string>();
+        if (wifi)
+        {
+            commands.Add(on
+                ? "{ rfkill unblock wifi; nmcli radio wifi on; true; }"
+                : "{ nmcli radio wifi off 2>/dev/null || rfkill block wifi; }");
+        }
+
+        if (bluetooth)
+        {
+            commands.Add(on ? "rfkill unblock bluetooth" : "rfkill block bluetooth");
+        }
+
+        if (commands.Count == 0)
+        {
+            return (true, string.Empty);
+        }
+
+        var script = "PATH=/usr/sbin:/usr/bin:/sbin:/bin; " + string.Join(" && ", commands);
+        // Long timeout: the teacher has to type the administrator password in the pkexec prompt.
+        if (Shell.Run("pkexec", TimeSpan.FromMinutes(5), out var stdout, out var stderr, "/bin/sh", "-c", script))
+        {
+            return (true, string.Empty);
+        }
+
+        return (false, FirstNonEmpty(stderr, stdout, "pkexec failed or was canceled"));
     });
 
     // ---- TCP connections ----

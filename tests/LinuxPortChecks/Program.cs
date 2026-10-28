@@ -39,6 +39,15 @@ Check(await Task.WhenAny(read, Task.Delay(TimeSpan.FromSeconds(20))) == read,
 Check(await read, "Both redirected streams captured completely");
 Check(!Shell.Run(Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString("N")), out _, out var failure)
     && failure.Length > 0, "Missing command reports failure");
+if (OperatingSystem.IsLinux())
+{
+    // bluetoothctl without bluetoothd never exits; the client must not hang on such a tool.
+    var started = DateTime.UtcNow;
+    Check(!Shell.Run("/bin/sleep", TimeSpan.FromSeconds(1), out _, out var timedOut, "30")
+        && timedOut.Contains("timed out") && DateTime.UtcNow - started < TimeSpan.FromSeconds(10),
+        "Hung command is killed after its timeout");
+    Check(Shell.Resolve("sh").StartsWith('/'), "Bare command names resolve to a full path");
+}
 
 var platform = new ProcessTestPlatform { Processes = [new(101, "firefox", null, null), new(102, "helper", null, null)] };
 var prohibited = new List<string>();
@@ -67,6 +76,8 @@ internal sealed class ProcessTestPlatform : IPlatform
     public IReadOnlyList<ProcessInfo> GetProcessList() => Processes;
     public ProcessInfo? TryGetProcess(int pid) => Processes.FirstOrDefault(p => p.Pid == pid);
     public bool TryRelaunchElevated(string executablePath, IReadOnlyList<string> args) => throw new NotSupportedException();
+    public bool ElevatesPerAction => false;
+    public Task<(bool ok, string error)> SetRadiosPrivilegedAsync(bool wifi, bool bluetooth, bool on) => throw new NotSupportedException();
     public bool DisableWifi(out string error) => throw new NotSupportedException();
     public bool EnableWifi(out string error) => throw new NotSupportedException();
     public Task<(bool ok, string error)> SetBluetoothAsync(bool on) => throw new NotSupportedException();

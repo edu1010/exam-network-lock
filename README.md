@@ -136,46 +136,56 @@ WinRT Radios API (Bluetooth).
 dotnet build .\ExamLocking.sln
 ```
 
-### Linux / cross-platform client — ExamLockClient.App
+### Linux — all four apps (Avalonia)
 
-`ExamLockClient` is Windows-only (WinForms + WinRT). For students working on Linux there is a
-second, **cross-platform** client, `ExamLockClient.App`, built with [Avalonia](https://avaloniaui.net/).
-It speaks the exact same `exam.config` format and the same UDP monitor protocol (both live in the
-shared `ExamShared` project), so it is fully interoperable with the Windows `ExamConfigGenerator`,
-`ExamMonitor` and `ExamLogVerifier` — a class can mix Windows and Linux laptops freely.
+The WinForms apps are Windows-only. For Linux there are **Avalonia** builds of all of them, speaking
+the exact same `exam.config` format and UDP monitor protocol (both live in `ExamShared`), so Windows
+and Linux machines can be mixed freely in one class:
 
-Layout:
+| Linux app (portable binary) | Project                    | Who / privileges                        |
+| --------------------------- | -------------------------- | --------------------------------------- |
+| `ExamLockClient`            | `ExamLockClient.App`       | student — **no sudo needed**            |
+| `ExamConfigGenerator`       | `ExamConfigGenerator.App`  | teacher — no sudo                       |
+| `ExamMonitor`               | `ExamMonitor.App`          | teacher — no sudo (UDP 48710)           |
+| `ExamLogVerifierUI`         | `ExamLogVerifierUI.App`    | teacher — no sudo; accepts paths as args|
 
-- `ExamLockClient.Core` — platform abstraction (`IPlatform`) plus the Windows and Linux backends
-  and all the monitoring logic (AI connection shield, DNS, process/VM/file monitors). No UI, so it
-  builds and can be reasoned about on its own.
-- `ExamLockClient.App` — the Avalonia UI (the drawn shield, incident list, passwords) wiring `Core`.
+The teacher apps link the WinForms apps' `Lang.cs` (and `EventCatalog.cs`), so strings and rules
+stay in one place; only the UI layer is rewritten. Shared Avalonia pieces live in `ExamDesktop.Ui`.
+The student client is split into `ExamLockClient.Core` (platform abstraction `IPlatform`, Windows
+and Linux backends, all monitors; no UI) and `ExamLockClient.App` (the Avalonia UI).
 
 Per-OS equivalents the Linux backend uses (vs. the Windows client):
 
-| Concern            | Windows                         | Linux                                  |
-| ------------------ | ------------------------------- | -------------------------------------- |
-| Disable Wi-Fi / BT | `netsh` / WinRT Radios          | `nmcli radio wifi off` / `rfkill`      |
-| Elevation          | UAC (`runas`)                   | `pkexec`                               |
-| TCP → owning pid   | IP Helper `GetExtendedTcpTable` | `/proc/net/tcp{,6}` + `/proc/<pid>/fd` |
-| Process detail     | WMI `Win32_Process`             | `/proc/<pid>/{comm,cmdline,exe}`       |
-| DNS cache          | WMI `MSFT_DNSClientCache`       | (no enumerable cache — TCP shield only)|
-| VM detection       | process names                   | process names (VirtualBox/QEMU/Boxes…) |
-| Alarm audio        | `Console.Beep` + Core Audio     | generated WAV via `paplay` + `pactl`   |
+| Concern            | Windows                         | Linux                                          |
+| ------------------ | ------------------------------- | ---------------------------------------------- |
+| Disable Wi-Fi / BT | `netsh` / WinRT Radios          | `nmcli` / `rfkill` / `bluetoothctl` (as user)  |
+| Elevation          | UAC relaunch (`runas`)          | `pkexec` for the radio command only, on demand |
+| TCP → owning pid   | IP Helper `GetExtendedTcpTable` | `/proc/net/tcp{,6}` + `/proc/<pid>/fd`         |
+| Process detail     | WMI `Win32_Process`             | `/proc/<pid>/{comm,cmdline,exe}`               |
+| DNS cache          | WMI `MSFT_DNSClientCache`       | (no enumerable cache — TCP shield only)        |
+| VM detection       | process names                   | process names (VirtualBox/QEMU/Boxes…)         |
+| Alarm audio        | `Console.Beep` + Core Audio     | generated WAV via `paplay` + `pactl`           |
 
-Build / publish a self-contained Linux binary (no .NET needed on the lab machine):
+**No sudo for students.** The Linux client runs entirely as the logged-in user. On a desktop
+session NetworkManager lets the active user switch Wi-Fi off (`nmcli radio wifi off`) and
+`/dev/rfkill` is granted to the seat user, so the radio lockdown normally works unprivileged. A
+machine without a Bluetooth adapter counts as "BT off". Only if the unprivileged command fails does
+the client turn yellow and show **Lock radios (admin)**: it asks for the administrator password via
+`pkexec` for *that radio command alone* (the teacher types it), never for the whole program.
+
+Build the four portable binaries (self-contained single files, no .NET needed on the target):
 
 ```bash
-dotnet publish ./ExamLockClient.App/ExamLockClient.App.csproj -c Release -r linux-x64 --self-contained
-# output: ExamLockClient.App/bin/Release/net8.0/linux-x64/publish/ExamLockClient.App
+./publish-linux.sh            # -> dist-linux/{ExamLockClient,ExamConfigGenerator,ExamMonitor,ExamLogVerifierUI}
+./publish-linux.sh linux-arm64
 ```
 
-The same project also builds for Windows (`-r win-x64`). On the lab machine make the file executable
-(`chmod +x ExamLockClient.App`) and run it; it auto-loads `exam.config` from its folder or you can
-pick one. Radio lockdown needs root, so it offers a **Reopen as admin** button (pkexec); even without
-it the AI connection shield keeps working. Audio alarms need PulseAudio/PipeWire tools (`paplay`,
-`pactl`) and Wi-Fi toggling needs NetworkManager (`nmcli`) or `rfkill` — all standard on desktop
-distros.
+The .NET 8 SDK can be installed without root: `curl -sSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel 8.0`
+(the script also looks in `~/.dotnet`). On the lab machine copy the binary, `chmod +x` it and run it;
+the client auto-loads `exam.config` from the current folder or its own folder (or `--config <path>`).
+The first start unpacks native libraries into `~/.net` (user-writable, no root). Requirements:
+an X11/Wayland desktop, NetworkManager, and PulseAudio/PipeWire tools (`paplay`, `pactl`) for sound —
+all standard on Debian 12 desktops.
 
 ### Run
 
