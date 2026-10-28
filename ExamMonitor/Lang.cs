@@ -36,6 +36,7 @@ internal static class Lang
         ["noConfig"] = new[] { "No exam.config: logs shown but integrity not verified.", "Sense exam.config: registres mostrats sense verificar la integritat.", "Sin exam.config: registros mostrados sin verificar la integridad." },
         ["configLoaded"] = new[] { "exam.config loaded: log integrity is verified.", "exam.config carregat: la integritat del registre es verifica.", "exam.config cargado: la integridad del registro se verifica." },
         ["configInvalid"] = new[] { "Invalid exam.config.", "exam.config no vàlid.", "exam.config no válido." },
+        ["listeningOn"] = new[] { "Listening on {0} (UDP {1}). Put this IP in the config's teacher monitor IPs if students are on another network (e.g. Wi-Fi).", "Escoltant a {0} (UDP {1}). Posa aquesta IP a les IPs del monitor de la config si l'alumnat és en una altra xarxa (p. ex. Wi-Fi).", "Escuchando en {0} (UDP {1}). Pon esta IP en «IPs del monitor» de la config si el alumnado está en otra red (p. ej. Wi-Fi)." },
         ["savedTo"] = new[] { "Logs saved to: {0}", "Registres desats a: {0}", "Registros guardados en: {0}" },
 
         ["colStudent"] = new[] { "Student", "Alumne", "Alumno" },

@@ -1,3 +1,6 @@
+using System.Net;
+using System.Net.NetworkInformation;
+using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
 using Avalonia;
@@ -44,6 +47,7 @@ public sealed class MainWindow : Window
     private readonly Grid _header = new() { ColumnDefinitions = new ColumnDefinitions(Columns) };
     private readonly TextBlock[] _headerCells = new TextBlock[6];
     private readonly TextBlock _statusLabel = Ui.Muted();
+    private readonly SelectableTextBlock _addressLabel = new() { Foreground = Palette.TextMuted, TextWrapping = TextWrapping.Wrap };
     private readonly Button _loadButton = Ui.Secondary(new Button());
     private readonly Button _saveButton = Ui.Secondary(new Button());
     private readonly DispatcherTimer _refresh = new() { Interval = TimeSpan.FromSeconds(1) };
@@ -82,7 +86,7 @@ public sealed class MainWindow : Window
         table.Children.Add(Ui.Cell(new Border { Child = _header, BorderBrush = Palette.Border, BorderThickness = new Thickness(0, 0, 0, 1) }, 0));
         table.Children.Add(Ui.Cell(_grid, 1));
 
-        var root = new Grid { Margin = new Thickness(12), RowDefinitions = new RowDefinitions("Auto,*,Auto") };
+        var root = new Grid { Margin = new Thickness(12), RowDefinitions = new RowDefinitions("Auto,*,Auto,Auto") };
         root.Children.Add(Ui.Cell(toolbar, 0));
         root.Children.Add(Ui.Cell(new Border
         {
@@ -95,6 +99,8 @@ public sealed class MainWindow : Window
         }, 1));
         _statusLabel.Margin = new Thickness(2, 8, 0, 0);
         root.Children.Add(Ui.Cell(_statusLabel, 2));
+        _addressLabel.Margin = new Thickness(2, 4, 0, 0);
+        root.Children.Add(Ui.Cell(_addressLabel, 3));
         Content = root;
 
         _listener.StatusReceived += m => Dispatcher.UIThread.Post(() => OnStatus(m));
@@ -317,6 +323,31 @@ public sealed class MainWindow : Window
         _statusLabel.Text = _statusOverride.Length > 0
             ? _statusOverride
             : Lang.T("listening") + "   " + (_logSecret is null ? Lang.T("noConfig") : Lang.T("configLoaded"));
+        var ips = LocalIpv4Addresses();
+        _addressLabel.Text = ips.Length > 0
+            ? string.Format(Lang.T("listeningOn"), string.Join(", ", ips), MonitorProtocol.UdpPort)
+            : string.Empty;
+    }
+
+    /// <summary>This PC's LAN IPv4 addresses: what students need when broadcast cannot reach the monitor.</summary>
+    private static string[] LocalIpv4Addresses()
+    {
+        try
+        {
+            return NetworkInterface.GetAllNetworkInterfaces()
+                .Where(n => n.OperationalStatus == OperationalStatus.Up && n.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+                .Where(n => !n.Name.StartsWith("docker", StringComparison.OrdinalIgnoreCase) && !n.Name.StartsWith("br-", StringComparison.Ordinal)
+                    && !n.Name.StartsWith("veth", StringComparison.Ordinal) && !n.Name.StartsWith("virbr", StringComparison.Ordinal))
+                .SelectMany(n => n.GetIPProperties().UnicastAddresses)
+                .Where(a => a.Address.AddressFamily == AddressFamily.InterNetwork && !IPAddress.IsLoopback(a.Address))
+                .Select(a => a.Address.ToString())
+                .Distinct()
+                .ToArray();
+        }
+        catch
+        {
+            return Array.Empty<string>();
+        }
     }
 
     // ----- Save -----

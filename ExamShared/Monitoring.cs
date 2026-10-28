@@ -71,29 +71,54 @@ public static class MonitorProtocol
 /// <summary>Client side: send-only UDP broadcaster (no inbound socket on the student PC).</summary>
 public sealed class MonitorBroadcaster : IDisposable
 {
+    // Interfaces change during an exam (Wi-Fi off, then back with a new DHCP lease), so the
+    // directed-broadcast list is rebuilt periodically instead of once at startup.
+    private static readonly TimeSpan EndpointRefresh = TimeSpan.FromSeconds(30);
+
     private readonly UdpClient _udp;
-    private readonly IPEndPoint[] _broadcasts;
+    private readonly string[] _targets;
+    private IPEndPoint[] _broadcasts;
+    private DateTime _endpointsBuiltUtc;
 
     public MonitorBroadcaster(IEnumerable<string>? targets = null)
     {
         _udp = new UdpClient { EnableBroadcast = true };
-        _broadcasts = GetBroadcastEndpoints(targets);
+        _targets = targets?.ToArray() ?? Array.Empty<string>();
+        _broadcasts = GetBroadcastEndpoints(_targets);
+        _endpointsBuiltUtc = DateTime.UtcNow;
     }
 
     public void Send(object message)
     {
+        byte[] bytes;
         try
         {
-            var bytes = MonitorProtocol.Serialize(message);
-            foreach (var endpoint in _broadcasts)
-            {
-                _udp.Send(bytes, bytes.Length, endpoint);
-            }
+            bytes = MonitorProtocol.Serialize(message);
         }
         catch
         {
-            // No network (e.g. Wi-Fi disabled during the exam): silently skip; it will
-            // succeed once the student restores the connection.
+            return;
+        }
+
+        if (DateTime.UtcNow - _endpointsBuiltUtc > EndpointRefresh)
+        {
+            _broadcasts = GetBroadcastEndpoints(_targets);
+            _endpointsBuiltUtc = DateTime.UtcNow;
+        }
+
+        // Each destination on its own: an unreachable 255.255.255.255 (no default route) must not
+        // stop the teacher's unicast IP or the directed broadcasts from being tried.
+        foreach (var endpoint in _broadcasts)
+        {
+            try
+            {
+                _udp.Send(bytes, bytes.Length, endpoint);
+            }
+            catch
+            {
+                // No network (e.g. Wi-Fi disabled during the exam): skip; it will succeed once
+                // the student restores the connection.
+            }
         }
     }
 
