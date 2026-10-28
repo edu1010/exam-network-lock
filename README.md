@@ -178,7 +178,13 @@ Build the four portable binaries (self-contained single files, no .NET needed on
 ```bash
 ./publish-linux.sh            # -> dist-linux/{ExamLockClient,ExamConfigGenerator,ExamMonitor,ExamLogVerifierUI}
 ./publish-linux.sh linux-arm64
+./package-deb.sh              # -> dist-linux/exam-network-lock_<version>_amd64.deb (all four)
 ```
+
+Loose binaries lose their execute bit when shared through Google Drive or e-mail; the `.deb` keeps
+it. With sudo: `sudo apt install ./exam-network-lock_*.deb` (menu entries + `exam-lock-client`,
+`exam-config-generator`, `exam-monitor`, `exam-log-verifier`). Without sudo (students):
+`dpkg -x exam-network-lock_*.deb ~/examen` and run `~/examen/opt/exam-network-lock/ExamLockClient`.
 
 The .NET 8 SDK can be installed without root: `curl -sSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel 8.0`
 (the script also looks in `~/.dotnet`). On the lab machine copy the binary, `chmod +x` it and run it;
