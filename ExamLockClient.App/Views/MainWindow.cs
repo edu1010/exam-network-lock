@@ -279,10 +279,27 @@ public sealed class MainWindow : Window
 
     private async Task LoadConfig(bool forceDialog)
     {
-        // An exam config is final; the default config only stands in until the exam one is opened.
-        if (_config is not null && !_isDefaultConfig)
+        // Replacing a loaded config (default or exam) needs its password B, typed in the close box
+        // first, so a student cannot swap in another config on their own.
+        if (_config is not null)
         {
-            return;
+            if (!forceDialog)
+            {
+                return;
+            }
+
+            var password = _adminPasswordBox.Text ?? string.Empty;
+            _adminPasswordBox.Text = string.Empty;
+            if (!VerifyAdminPassword(_config, password))
+            {
+                if (password.Length > 0)
+                {
+                    _log?.Append(LogEvents.AdminAuthFailed);
+                }
+
+                SetStatus(Lang.T("loadNeedsB"));
+                return;
+            }
         }
 
         var candidate = Program.StartupConfigPath;
@@ -437,11 +454,26 @@ public sealed class MainWindow : Window
     }
 
     /// <summary>
-    /// Installs a config as this machine's default. Replacing an existing default needs its
-    /// password B (typed in the close box), so a student cannot swap in a laxer one.
+    /// Installs a config as this machine's default. Needs password B (typed in the close box) of the
+    /// saved default or, if there is none yet, of the config currently loaded, so a student cannot
+    /// swap in a laxer one. Only a machine with no config at all installs it freely.
     /// </summary>
     private async Task SetDefaultConfig()
     {
+        var authority = DefaultConfigStore.TryLoad() ?? _config;
+        var password = _adminPasswordBox.Text ?? string.Empty;
+        _adminPasswordBox.Text = string.Empty;
+        if (authority is not null && !VerifyAdminPassword(authority, password))
+        {
+            if (password.Length > 0)
+            {
+                _log?.Append(LogEvents.AdminAuthFailed);
+            }
+
+            SetStatus(Lang.T("defaultNeedsB"));
+            return;
+        }
+
         var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
             Title = Lang.T("dlgSelectDefault"),
@@ -479,15 +511,6 @@ public sealed class MainWindow : Window
         if (envelope.Payload.IsDefaultConfig != true)
         {
             SetStatus(Lang.T("defaultNotMarked"));
-            return;
-        }
-
-        var password = _adminPasswordBox.Text ?? string.Empty;
-        _adminPasswordBox.Text = string.Empty;
-        var current = DefaultConfigStore.TryLoad();
-        if (current is not null && !VerifyAdminPassword(current, password))
-        {
-            SetStatus(Lang.T("defaultNeedsB"));
             return;
         }
 
