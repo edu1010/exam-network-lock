@@ -8,7 +8,7 @@ namespace ExamLockClient.Core.Platform;
 
 /// <summary>
 /// Linux backend. Radios are toggled with NetworkManager (nmcli) or rfkill; active connections and
-/// their owning process come from /proc/net/tcp{,6} cross-referenced with /proc/&lt;pid&gt;/fd; process
+/// their owning process come from /proc/net/{tcp,udp}{,6} cross-referenced with /proc/&lt;pid&gt;/fd; process
 /// detail comes from /proc; audio uses PulseAudio/PipeWire tools (pactl + paplay).
 /// </summary>
 public sealed class LinuxPlatform : IPlatform
@@ -191,6 +191,12 @@ public sealed class LinuxPlatform : IPlatform
 
         var any = ReadProcNetTcp("/proc/net/tcp", isV6: false, connections, inodeToPid);
         var any6 = ReadProcNetTcp("/proc/net/tcp6", isV6: true, connections, inodeToPid);
+
+        // QUIC (HTTP/3) runs over UDP and browsers use it for Google services such as Gemini. Its
+        // sockets are connected, so the kernel lists them with the remote address and state 01
+        // (same layout as /proc/net/tcp); unconnected UDP sockets show 07 and are skipped by callers.
+        ReadProcNetTcp("/proc/net/udp", isV6: false, connections, inodeToPid);
+        ReadProcNetTcp("/proc/net/udp6", isV6: true, connections, inodeToPid);
         return any || any6;
     }
 

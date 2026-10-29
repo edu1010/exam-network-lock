@@ -14,5 +14,7 @@
     <!-- WMI is Windows-only; every call is guarded by OperatingSystem.IsWindows(). On Linux the
          package is simply never invoked. -->
     <PackageReference Include="System.Management" Version="8.0.0" />
+    <!-- Reads browser history databases (BrowserHistoryMonitor); bundles its native SQLite. -->
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.11" />
   </ItemGroup>
 </Project>

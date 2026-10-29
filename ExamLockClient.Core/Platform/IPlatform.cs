@@ -58,7 +58,10 @@ public interface IPlatform
     Task<(bool ok, string error)> SetBluetoothAsync(bool on);
 
     // ---- Network introspection ----
-    /// <summary>Active TCP connections with the owning pid when the OS exposes it.</summary>
+    /// <summary>
+    /// Active TCP connections with the owning pid when the OS exposes it. On Linux this also
+    /// includes connected UDP sockets (QUIC / HTTP/3, which browsers use for Google services).
+    /// </summary>
     bool TryGetTcpConnections(out List<TcpConnectionInfo> connections);
 
     /// <summary>Resolved hostnames from the OS DNS cache. Empty when the OS has no enumerable cache.</summary>

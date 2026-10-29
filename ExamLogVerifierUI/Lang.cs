@@ -140,6 +140,7 @@ internal static class Lang
         ["ev.AI_DETECTED"] = new[] { "AI connection detected", "Connexió a IA detectada", "Conexión a IA detectada" },
         ["ev.AI_DNS_DETECTED"] = new[] { "Possible AI hostname resolved (DNS)", "Possible nom d'amfitrió d'IA resolt (DNS)", "Posible host de IA resuelto (DNS)" },
         ["ev.AI_UNATTRIBUTED_DETECTED"] = new[] { "Possible AI connection (unattributed)", "Possible connexió a IA (sense atribució)", "Posible conexión a IA (sin atribución)" },
+        ["ev.AI_URL_VISITED"] = new[] { "AI website visited (browser history)", "Web d'IA visitada (historial del navegador)", "Web de IA visitada (historial del navegador)" },
         ["ev.AI_TOOL_DETECTED"] = new[] { "AI tool/process detected", "Eina/procés d'IA detectat", "Herramienta/proceso de IA detectado" },
         ["ev.VM_DETECTED"] = new[] { "Virtual machine detected", "Màquina virtual detectada", "Máquina virtual detectada" },
         ["ev.AI_CLEARED"] = new[] { "AI alarm cleared", "Alarma d'IA reconeguda", "Alarma de IA reconocida" },

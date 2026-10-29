@@ -46,6 +46,7 @@ public sealed class MainWindow : Window
 
     private AiConnectionMonitor? _aiMonitor;
     private DnsCacheMonitor? _dnsMonitor;
+    private BrowserHistoryMonitor? _historyMonitor;
     private ThreatProcessMonitor? _threatMonitor;
     private ProcessMonitor? _processMonitor;
     private FileActivityMonitor? _fileMonitor;
@@ -649,6 +650,10 @@ public sealed class MainWindow : Window
             _dnsMonitor = new DnsCacheMonitor(_platform, blocklist);
             _dnsMonitor.AiHostnameResolved += host => RunOnUi(() => OnAiDns(host));
             _dnsMonitor.Start();
+
+            _historyMonitor = new BrowserHistoryMonitor(blocklist);
+            _historyMonitor.AiUrlVisited += (host, url) => RunOnUi(() => OnAiUrl(host, url));
+            _historyMonitor.Start();
         }
 
         if (_config.AiShieldEnabled || _config.DetectVirtualMachines)
@@ -696,6 +701,9 @@ public sealed class MainWindow : Window
 
     private void OnAiDns(string host) =>
         RaiseAiWarning("DNS:" + host, LogEvents.AiDnsDetected, host, "incAiPossible", "statusAiPossible");
+
+    private void OnAiUrl(string host, string url) =>
+        RaiseAiAlarm("URL:" + host, LogEvents.AiUrlVisited, url, "incAiUrl", "statusAiUrl");
 
     private void OnAiTool(string name) =>
         RaiseAiAlarm("TOOL:" + name, LogEvents.AiToolDetected, name, "incAiTool", "statusAi");
@@ -1105,11 +1113,13 @@ public sealed class MainWindow : Window
     {
         _aiMonitor?.Dispose();
         _dnsMonitor?.Dispose();
+        _historyMonitor?.Dispose();
         _threatMonitor?.Dispose();
         _processMonitor?.Dispose();
         _fileMonitor?.Dispose();
         _aiMonitor = null;
         _dnsMonitor = null;
+        _historyMonitor = null;
         _threatMonitor = null;
         _processMonitor = null;
         _fileMonitor = null;

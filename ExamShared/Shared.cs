@@ -131,7 +131,14 @@ public static class ConfigDefaults
         "chatgpt.com",
         "oaistatic.com",
         "gemini.google.com",
+        "gemini.google",
         "bard.google.com",
+        "aistudio.google.com",
+        "makersuite.google.com",
+        "alkalimakersuite-pa.clients6.google.com",
+        "notebooklm.google.com",
+        "notebooklm.google",
+        "labs.google",
         "generativelanguage.googleapis.com",
         "copilot.microsoft.com",
         "perplexity.ai",
@@ -154,6 +161,7 @@ public static class ConfigDefaults
         "api.cohere.ai",
         "api.groq.com",
         "api.perplexity.ai",
+        "cloudcode-pa.googleapis.com", // Gemini CLI / Gemini Code Assist
         "api.githubcopilot.com",
         "copilot-proxy.githubusercontent.com",
         "githubcopilot.com",
@@ -185,6 +193,7 @@ public static class LogEvents
     public const string AiDnsDetected = "AI_DNS_DETECTED";
     public const string AiUnattributedDetected = "AI_UNATTRIBUTED_DETECTED";
     public const string AiToolDetected = "AI_TOOL_DETECTED";
+    public const string AiUrlVisited = "AI_URL_VISITED";
     public const string VmDetected = "VM_DETECTED";
     public const string AiCleared = "AI_CLEARED";
 

@@ -24,6 +24,7 @@ internal static class EventCatalog
         // Critical — a student-facing process contacted AI, opened a forbidden file, left the folder, or ran a VM.
         [LogEvents.AiDetected] = Severity.Critical,
         [LogEvents.AiToolDetected] = Severity.Critical,
+        [LogEvents.AiUrlVisited] = Severity.Critical,
         [LogEvents.VmDetected] = Severity.Critical,
         [LogEvents.ForbiddenFile] = Severity.Critical,
         [LogEvents.BlockedProcess] = Severity.Critical,

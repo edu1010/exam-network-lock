@@ -92,6 +92,8 @@ internal static class Lang
         ["lockStarted"] = new[] { "Lockdown started.", "Bloqueig iniciat.", "Bloqueo iniciado." },
         ["incNoAdmin"] = new[] { "Running without elevated permissions.", "Executant-se sense permisos elevats.", "Ejecutando sin permisos elevados." },
         ["incAi"] = new[] { "⚠ AI detected: {0}", "⚠ IA detectada: {0}", "⚠ IA detectada: {0}" },
+        ["incAiUrl"] = new[] { "⚠ AI website visited: {0}", "⚠ Web d'IA visitada: {0}", "⚠ Web de IA visitada: {0}" },
+        ["statusAiUrl"] = new[] { "An AI website was opened in the browser. Notify the teacher.", "S'ha obert una web d'IA al navegador. Avisa el professor.", "Se ha abierto una web de IA en el navegador. Avisa al profesor." },
         ["incAiPossible"] = new[] { "Possible AI activity: {0}", "Possible activitat d'IA: {0}", "Posible actividad de IA: {0}" },
         ["incAiTool"] = new[] { "⚠ AI tool: {0}", "⚠ Eina d'IA: {0}", "⚠ Herramienta de IA: {0}" },
         ["incVm"] = new[] { "⛔ Virtual machine: {0}", "⛔ Màquina virtual: {0}", "⛔ Máquina virtual: {0}" },
